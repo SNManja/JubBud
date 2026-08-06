@@ -1,0 +1,22 @@
+{
+  "_comment_work_modes": "Configuración de modalidades permitidas (Remote, Hybrid, On-site) y manejo de vacantes sin modalidad especificada.",
+  "work_modes": {
+    "allow_remote": true,
+    "allow_hybrid": true,
+    "allow_onsite": true,
+    "allow_unspecified": true
+  },
+  "_comment_location_preferences": "Filtros por País y Regiones. 'allowed_countries' define los países permitidos para vacantes presenciales o híbridas, y 'allowed_remote_regions' para vacantes remotas.",
+  "location_preferences": {
+    "allow_unspecified_location": true,
+    "allowed_countries": [
+      "Argentina"
+    ],
+    "allowed_remote_regions": [
+      "Worldwide", "Global", "LatAm", "Argentina", "EMEA", "US", "Anywhere"
+    ],
+    "blocked_countries": [
+      "Israel", "Ukraine", "Thailand", "Japan", "United Kingdom", "UK", "Germany", "France"
+    ]
+  }
+}
