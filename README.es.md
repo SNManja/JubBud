@@ -20,21 +20,21 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
                                     ▼
            [ETAPA 2: FILTRADO DURO PRE-PARSEO (Python / 0 Tokens)]
            - Filtra por `title_blacklist.md`, `department_blacklist.md` y `location_filters.json`.
-           - Muestra el listado numerado (1 a N) de vacantes retenidas en el chat.
-           - ⛔ PAUSA OBLIGATORIA: Esperar confirmación explícita del usuario ("1, 3", "todas").
                                     │
                                     ▼
            [ETAPA 3: PARSEO & ESTRUCTURACIÓN EN MEMORIA]
-           - Estructura las posiciones elegidas en memoria (vía API o `job_parser_agent`).
+           - Estructura las posiciones en memoria (vía API o `job_parser_agent`).
                                     │
                                     ▼
-           [ETAPA 4: FILTRADO DETERMINISTA POST-PARSEO (Python / 0 Tokens)]
+           [ETAPA 4: FILTRADO DETERMINISTA POST-PARSEO Y CAP POR BOARD (Python / 0 Tokens)]
            - Filtra por `blacklist_roles.md`, `blacklist_seniority.md` y `location_filters.json`.
+           - Aplica el límite máximo `max_jobs_per_board` de `profile/pipeline_config.json`.
            - Si falla por rol, seniority o país -> Descarte inmediato (0 escrituras, 0 tokens de rankeo).
                                     │
                                     ▼
-           [ETAPA 5: RANKEADO EN LOTES VÍA SUBAGENTE LLM (`job_ranker_agent`)]
+           [ETAPA 5: RANKEADO EN LOTES Y TIMER VÍA SUBAGENTE LLM (`job_ranker_agent`)]
            - Divide las vacantes retenidas en lotes de tamaño k = min(5, ceil(R / 4)).
+           - Realiza una pausa de `delay_between_batches_seconds` entre llamadas de lote.
            - Cada lote es evaluado por `job_ranker_agent` en una sola llamada de subagente.
                                     │
                                     ▼
@@ -50,21 +50,26 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
    - **Pre-Parseo**: Descarta títulos, áreas o países no permitidos directamente en los metadatos de la API sin llamar al LLM.
    - **Post-Parseo**: Descarta puestos con seniority incompatible (`Senior`, `Lead`) o roles excluidos (`Sales`, `Recruiter`) en Python antes del rankeo.
 
-2. **Caché de Memoria y Prevención de Quota Limits**:
-   - `LAST_FETCHED_JOBS_CACHE` almacena en memoria Python los diccionarios completos de los portales de empleo.
-   - El agente transmite únicamente cadenas cortas de selección (ej: `job_items_or_selection="1, 3"`), impidiendo la generación de JSONs gigantes en los prompts y eliminando los errores `429 RESOURCE_EXHAUSTED`.
+2. **Ejecución Automática del Pipeline y Límite por Board**:
+   - Ejecuta el filtrado y el rankeo en lotes automáticamente sin requerir pausas de confirmación en el chat.
+   - `max_jobs_per_board` en `profile/pipeline_config.json` limita la cantidad máxima de empleos a evaluar por consulta evitando picos de consumo.
+   - `delay_between_batches_seconds` añade una pausa configurable entre llamadas de lote al LLM para prevenir rate limits (`429`).
 
-3. **Gestión Determinista de Tableros (`profile/board_urls.json`)**:
+3. **Caché de Memoria y Prevención de Quota Limits**:
+   - `LAST_FETCHED_JOBS_CACHE` almacena en memoria Python los diccionarios completos de los portales de empleo.
+   - El agente transmite únicamente cadenas cortas de selección (ej: `job_items_or_selection="todas"`), impidiendo la generación de JSONs gigantes en los prompts.
+
+4. **Gestión Determinista de Tableros (`profile/board_urls.json`)**:
    - Registro persistente de portales de empleo ordenados determinísticamente: **nunca analizados primero**, seguidos de los analizados hace más tiempo.
    - Salida formateada con fechas relativas en español (*"Hoy (06/08/2026 a las 04:02 hs)"*, *"Nunca"*).
 
-4. **Inspección Extensa y Enlaces de Postulación Directos (`get_job_details`)**:
+5. **Inspección Extensa y Enlaces de Postulación Directos (`get_job_details`)**:
    - Al consultar cualquier vacante almacenada, el agente recupera todos los campos estructurados e incluye obligatoriamente el **link directo a la oferta (`source_url`)** y el **método explícito de postulación (`application_method`)**.
 
-5. **Gestión de Estados y Deshacer (Undo)**:
+6. **Gestión de Estados y Deshacer (Undo)**:
    - Permite clasificar empleos como descalificados (`disqualified`) o aplicados (`applied`), eliminar registros o revertir la última acción (`revert_last_job_action`).
 
-6. ⛔ **Política Cero Mock Data**:
+7. ⛔ **Política Cero Mock Data**:
    - Prohibición estricta de generar o persistir datos ficticios o de prueba (`test_adk_rank_1`) en `jobs.json`.
 
 ---
@@ -80,6 +85,7 @@ jobbud/
 ├── GEMINI.md                    # Especificación de arquitectura y reglas del agente
 ├── profile/                     # Perfil del candidato y reglas de filtrado
 │   ├── candidate_profile.md     # Perfil profesional y preferencias del usuario
+│   ├── pipeline_config.json     # Límites del pipeline (cap por board, timer de lote, auto flag)
 │   ├── board_urls.json          # Registro persistente de tableros de empleo
 │   ├── location_filters.json    # Países permitidos, bloqueados y reglas remotas
 │   ├── title_blacklist.md       # Términos excluidos en títulos (Pre-Parseo)
@@ -111,6 +117,7 @@ Todos los archivos de configuración y filtrado residen en la carpeta [`profile/
 | Archivo | Tipo / Rol | Etapa de Aplicación | Descripción y Reglas de Filtrado |
 | :--- | :--- | :--- | :--- |
 | **[`profile/candidate_profile.md`](file:///home/santi/jobbud/profile/candidate_profile.md)** | Perfil Profesional | **Etapa 5 (Rankeo LLM)** | Define la formación académica (Computación UBA), experiencia laboral, stack técnico principal, nivel de inglés (C2) y expectativas. Utilizado por `job_ranker_agent` para calcular el fit score (0-100). |
+| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Configuración del Pipeline | **Etapas 4 y 5 (Reglas del Pipeline)** | Configura `max_jobs_per_board` (máximo de empleos a rankear por consulta), `delay_between_batches_seconds` (timer entre lotes) y `auto_pipeline_execution`. |
 | **[`profile/board_urls.json`](file:///home/santi/jobbud/profile/board_urls.json)** | Registro de Tableros | **Etapa 1 (Obtención de Datos)** | Registro JSON persistente de las URLs de portales de empleo guardados (Greenhouse, Ashby, etc.) con sus fechas de análisis. Administrado determinísticamente por `src/tools/boards.py`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Filtro Duro Pre-Parseo** | **Etapa 2 (Python / 0 Tokens)** | Lista negra de términos en el título original del puesto. Omite directamente vacantes como *Sales, Recruiter, HR, Director, Chief, Manager* antes de parsear. |
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Filtro Duro Pre-Parseo** | **Etapa 2 (Python / 0 Tokens)** | Lista negra de departamentos/áreas presentes en los metadatos de la API del portal. Omite vacantes no técnicas (ej. *Customer Service, Marketing, Finance*). |

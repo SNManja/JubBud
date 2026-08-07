@@ -1,47 +1,42 @@
 [
   {
     "id": "greenhouse_tireseasycom_5249913008",
-    "created_at": "2026-08-06T01:31:25.999470",
+    "created_at": "2026-08-06T07:32:54.566236",
     "title": "Jr Data Engineer",
-    "company": "Tires Easy",
+    "company": "tireseasycom",
     "location": "Argentina, Remote",
     "work_mode": "Remote",
-    "commitment": "Full-time",
-    "department": "Data Engineering",
+    "commitment": "Not specified",
+    "department": "Information Technology",
     "seniority": "Junior",
     "salary_range": "To be agreed",
     "key_technologies": [
       "Python",
-      "SQL",
-      "ETL"
+      "SQL"
     ],
-    "main_requirements": [
-      "Junior experience in data engineering",
-      "Knowledge of SQL and Python",
-      "Basic understanding of ETL and data pipelines"
-    ],
+    "main_requirements": [],
     "summary": "Jr Data Engineer position at Tires Easy focused on supporting data pipelines, SQL, and Python tasks remotely from Argentina.",
-    "raw_text": "Jr Data Engineer role at Tires Easy. Remote from Argentina. Responsibilities include building data pipelines, working with SQL, Python, and assisting with data warehousing and ETL tasks.",
+    "raw_text": "Junior Data Engineer\\nA bit about us:\\nWe’re on a mission to change the tire industry — how it’s delivered and how it’s experienced.  A pioneer in the automotive e-commerce industry, we take pride in our extensive selection of top-name brands and budget-friendly options, ensuring our customers find the perfect tire to suit their needs. As a part of our growing and dynamic team, you'll contribute to our commitment to exceptional service, innovation, and customer satisfaction. Embrace the opportunity to be a driving force behind one of the fastest growing e-commerce companies in the US and apply now!\\nA bit more about this role:\\nIn this role, you will support the automation, development, maintenance, and optimization of our data pipelines and infrastructure. You’ll work closely with senior data engineers to process, clean, and transform large datasets, ensuring data integrity and availability for analytics and business decision-making. This position offers hands-on experience with cloud platforms, SQL databases, and ETL processes, providing a strong foundation for growth in data engineering. You will also collaborate with cross-functional teams to understand data needs and contribute to improving data workflows. As part of the team, you’ll have the opportunity to learn best practices in data modeling, automation, and performance tuning while working in a dynamic and fast-paced environment. This position will also spend some time to support our inhouse IT admin team to maintain the company's IT-hardware/software.\\nYou will work in an entrepreneurial environment where we are constantly looking to learn what our customers need and to develop better ways to serve them.\\nEligibility Requirements\\nVery good command of the English language (written and verbal)\\nFinished\\nuniversity degree – in computer science or an engineering field\\nAvailability to work full USA hour shift (EST, CST, MST, or PST)\\nAt least 1-2 years of relevant private sector work experience (fulltime)  in the field of IT or data science actively using python and PowerBI\\nProfessional experience working with Python including common libraries like scipy, pandas, scikit-learn etc. (just python coding classes do not count)\\nMust not have had any disciplinary actions regarding attendance, conduct and/or performance in the past 90 days, and must not be approaching such action.\\nResponsibilities will include:\\nDevelop and maintain Python scripts and applications for data processing, analysis, and automation.\\nDesign, develop, and maintain Power BI dashboards and reports to deliver actionable insights to stakeholders.\\nReviewing data for accuracy, completeness and consistency\\nOrganizing and maintaining electronic records for a company’s databases\\nAnalyzing data in order to identify trends and opportunities for improvement\\nAssisting in creating reports and proposals to present findings to management\\nAddress technical issues and provide IT support to ensure smooth business operations\\nSupport IT management team\\nSetup of  notebooks/servers\\nRepair and maintenance of computer equipment\\nSupport the Microsoft user management\\nDesign and ownership of security controls and risks including logins and passwords\\nAttributes to success:\\nProven success in building relationships and trust\\nComfortable working in a dynamic environment\\nThe ability to pivot based on priority shifts\\nThe ability to comprehend and apply on-the-job training. This training may include learning the company’s specific computer programs and procedures.\\nDesired skills & experience:\\nProven experience with Python or other scripting languages – SQL and PowerBI is a plus\\nHigh speed Wi-Fi connection\\nBe able to work 8 hour shifts (i.e. PST)\\nYou’re a great team member with a can-do attitude; you’re self- reflective\\nPlease submit resume in English.\",\n    salary_range:",
     "language": "en",
     "source_page": "Greenhouse",
     "source_url": "https://boards.greenhouse.io/tireseasycom/jobs/5249913008",
-    "application_method": "https://boards.greenhouse.io/tireseasycom/jobs/5249913008",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/tireseasycom/jobs/5249913008",
     "status": "ranked",
     "score": 20,
-    "justification": "Rol senior de operaciones estratégicas en US, completamente desalineado con el perfil junior y ubicación del candidato.",
+    "justification": "While the role is Junior-level and matches the candidate's Python skills, it explicitly mandates 1-2 years of professional work experience and includes IT support tasks that do not align with the candidate's focus on software engineering.",
     "strengths": [
       "Ninguna relevante para el perfil actual."
     ],
     "gaps": [
-      "Requiere nivel Senior / Strategic Operations Level III.",
-      "Ubicación exclusiva en US."
+      "Requires 1-2 years of relevant private sector work experience, which is currently a gap in the candidate's profile.",
+      "Involves IT support and hardware maintenance responsibilities that are outside the candidate's core focus on software development."
     ],
-    "ranked_at": "2026-08-06T02:36:18.536765",
+    "ranked_at": "2025-05-22T10:00:00Z",
     "user_notes": null
   },
   {
     "id": "greenhouse_invgate_4456847002",
-    "created_at": "2026-08-06T04:02:57.474751",
+    "created_at": "2026-08-07T00:43:34.183346",
     "title": "Bilingual Application Support Analyst",
     "company": "invgate",
     "location": "Argentina",
@@ -55,60 +50,57 @@
       "Linux"
     ],
     "main_requirements": [],
-    "summary": "InvGate is a fast growing SaaS company that develops products for IT management and service automation, used by clients in over 60 countries in industries such as banking, e-commerce, education and technology.\\nTo support our continuous growth, we are looking for a\\nBilingual Application Support Analy",
+    "summary": "InvGate is a fast growing SaaS company that develops products for IT management and service automation, used by clients in over 60 countries in industries such as banking, e-commerce, education and technology.\\nTo support our continuous growth, we are looking for a\\nBilingual Application Support Analyst\\nto join our team. This is a client-facing role focused on ensuring our partners and customers get the most out of our platform by solving complex functional and technical challenges.\\nSome of the role´s responsibilities include:\\nAdvanced Troubleshooting:\\nAct as the primary technical point of contact for external clients, diagnosing and resolving complex application issues.\\nTechnical Consulting:\\nGuide clients on best practices for platform integration, workflow optimization, and advanced feature usage.\\nCross-functional Collaboration:\\nWork closely with the Development and Customer Success teams to resolve our clients' requests and improve the product.\\nDo not hesitate to apply if you:\\nAre fluent in\\nEnglish and Spanish\\n.\\nEnjoy working with clients and providing top-level support.\\nHave\\n2+ years of experience\\nsupporting SaaS or complex enterprise applications for external users.\\nHave strong communication and troubleshooting skills.\\nEnjoy digging into\\napplication logic and logs\\nto find the \\\"why\\\" behind an issue.\\nHave a passion for\\nlearning new technologies\\nand products quickly, adapting to a high-speed, ever-evolving technical landscape.\\nIt´s a big plus if you have experience with\\nDirectory Services:\\nKnowledge of Active Directory and LDAP for user authentication and management.\\nEnvironments:\\nFamiliarity with Windows and Linux operating systems and experience working within virtualized environments.\\nWeb Servers & Networking:\\nAdministration of Apache and a solid understanding of network connectivity and protocols.\\nAPIs:\\nFamiliarity with RESTful APIs and tools like\\nInsomnia, Postman, or cURL\\nto test endpoints, analyze responses, and diagnose integration issues.\\nDatabases:\\nAbility to write and execute\\nSQL queries\\nto perform data analysis required for the troubleshooting process.\\nWe offer real opportunities for professional development, fully covered English classes, technical training both in-house and at educational centers, top-tier health insurance, a fixed amount for purchases in the food sector, reimbursement for remote work, and extended vacation and paternity leave.\\nOur office is located in Belgrano, CABA. This position is\\nHybrid\\nfor those residing in the AMBA region, requiring office attendance at least twice a week.",
     "raw_text": "InvGate is a fast growing SaaS company that develops products for IT management and service automation, used by clients in over 60 countries in industries such as banking, e-commerce, education and technology.\\nTo support our continuous growth, we are looking for a\\nBilingual Application Support Analyst\\nto join our team. This is a client-facing role focused on ensuring our partners and customers get the most out of our platform by solving complex functional and technical challenges.\\nSome of the role´s responsibilities include:\\nAdvanced Troubleshooting:\\nAct as the primary technical point of contact for external clients, diagnosing and resolving complex application issues.\\nTechnical Consulting:\\nGuide clients on best practices for platform integration, workflow optimization, and advanced feature usage.\\nCross-functional Collaboration:\\nWork closely with the Development and Customer Success teams to resolve our clients' requests and improve the product.\\nDo not hesitate to apply if you:\\nAre fluent in\\nEnglish and Spanish\\n.\\nEnjoy working with clients and providing top-level support.\\nHave\\n2+ years of experience\\nsupporting SaaS or complex enterprise applications for external users.\\nHave strong communication and troubleshooting skills.\\nEnjoy digging into\\napplication logic and logs\\nto find the \\\"why\\\" behind an issue.\\nHave a passion for\\nlearning new technologies\\nand products quickly, adapting to a high-speed, ever-evolving technical landscape.\\nIt´s a big plus if you have experience with\\nDirectory Services:\\nKnowledge of Active Directory and LDAP for user authentication and management.\\nEnvironments:\\nFamiliarity with Windows and Linux operating systems and experience working within virtualized environments.\\nWeb Servers & Networking:\\nAdministration of Apache and a solid understanding of network connectivity and protocols.\\nAPIs:\\nFamiliarity with RESTful APIs and tools like\\nInsomnia, Postman, or cURL\\nto test endpoints, analyze responses, and diagnose integration issues.\\nDatabases:\\nAbility to write and execute\\nSQL queries\\nto perform data analysis required for the troubleshooting process.\\nWe offer real opportunities for professional development, fully covered English classes, technical training both in-house and at educational centers, top-tier health insurance, a fixed amount for purchases in the food sector, reimbursement for remote work, and extended vacation and paternity leave.\\nOur office is located in Belgrano, CABA. This position is\\nHybrid\\nfor those residing in the AMBA region, requiring office attendance at least twice a week.",
     "language": "en",
     "source_page": "Greenhouse (invgate)",
     "source_url": "https://job-boards.greenhouse.io/invgate/jobs/4456847002",
     "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4456847002",
     "status": "ranked",
-    "score": 40,
-    "justification": "Although the candidate possesses the required Linux, SQL, and English skills, this role specifically requests 2+ years of professional experience, which is a key deal-breaker for the candidate's target entry-level/trainee focus. Additionally, the role is support-oriented rather than development-oriented.",
+    "score": 35,
+    "justification": "Aunque tienes conocimientos técnicos en Linux y SQL, el puesto requiere 2 años de experiencia profesional previa y el rol está orientado al soporte técnico funcional en lugar de al desarrollo de software, lo cual no se alinea con tus objetivos de carrera.",
     "strengths": [
-      "Candidate has strong proficiency in Linux and SQL.",
-      "Candidate is fluent in English (C2) and Spanish."
+      "Conocimiento base en Linux y SQL.",
+      "Dominio de inglés (C2), ideal para un rol bilingüe."
     ],
     "gaps": [
-      "Requires 2+ years of professional experience in SaaS/Support, which exceeds the candidate's current entry-level profile.",
-      "The role is focused on technical support rather than development or software engineering."
+      "El rol solicita específicamente 2+ años de experiencia profesional, superando tu perfil actual de estudiante sin experiencia laboral previa.",
+      "El enfoque principal del puesto es Soporte Técnico (Application Support), alineándose poco con tus intereses de desarrollo de software puro."
     ],
-    "ranked_at": "2026-08-06T00:00:00.000000",
+    "ranked_at": "2026-08-07T00:43:34.183346",
     "user_notes": null
   },
   {
     "id": "greenhouse_cookunity_7783938003",
-    "created_at": "2026-08-06T03:25:03.148989",
+    "created_at": "2026-08-06T07:55:14.119652",
     "title": "B2B - Customer Support Specialist",
-    "company": "Cookunity",
-    "location": "Argentina / Peru (Remote)",
+    "company": "cookunity",
+    "location": "Argentina (Remote); Lima, Lima Province, Peru",
     "work_mode": "Remote",
-    "commitment": "Full-time",
-    "department": "Support",
+    "commitment": "Internship",
+    "department": "B2B",
     "seniority": "Junior",
     "salary_range": "Not specified",
-    "key_technologies": [
-      "Customer Support",
-      "B2B",
-      "Zendesk",
-      "Communication"
-    ],
-    "main_requirements": [
-      "Experience in B2B customer support or account management",
-      "Fluent in English and Spanish",
-      "Strong communication and problem-solving skills"
-    ],
-    "summary": "B2B - Customer Support Specialist position at Cookunity providing client support remotely from Argentina or Peru.",
-    "raw_text": "B2B - Customer Support Specialist at Cookunity (Argentina / Remote)\nProvide top-tier B2B customer support, resolving issues and ensuring client success for Cookunity platform users. Requires fluent English and Spanish.",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "About CookUnity:\\nFood has lost its soul to modern convenience. And with it, it has lost the power to nourish, inspire, and connect us. So in 2018, CookUnity was founded as the first-of-its-kind platform that connects the world with the source of truly great food: chefs. Today, CookUnity delivers 50\",\n    title:",
+    "raw_text": "About CookUnity:\\nFood has lost its soul to modern convenience. And with it, it has lost the power to nourish, inspire, and connect us. So in 2018, CookUnity was founded as the first-of-its-kind platform that connects the world with the source of truly great food: chefs. Today, CookUnity delivers 50 million meals a year from the industry’s best chefs to homes all over the country. Fresh. Ready-to-eat. And crafted with the passion that nourishes body and soul.\\nUnwilling to stop there, CookUnity is expanding beyond delivery to become an ever-innovating marketplace focused on our singular mission:\\nempower Chefs to nourish the world.\\nIf that mission has you hungry in more ways than one, you’ve found the right job posting.\\nAbout the Team:\\nThe B2B Operations team is responsible for scaling and delivering CookUnity’s new business verticals, such as Smart Fridge and Cold Meal programs, across corporate and healthcare environments. The team collaborates closely with B2C operations, product, and customer experience to ensure seamless execution, operational reliability, and scalable systems that support growth.\\nThe role:\\nThe Customer Support Specialist is responsible for providing high-quality operational support across CookUnity’s two primary B2B verticals:\\nBulk Meal Programs for corporate clients and Smart Fridge workplace solutions\\n.\\nThis role manages inbound tickets from both\\nB2B client stakeholders and Smart Fridge end-users\\n, ensuring issues are resolved quickly while maintaining a reliable and professional experience.\\nThe Customer Support Specialist acts as the\\nfirst line of operational support\\n, handling service questions, order adjustments, delivery inquiries, and product feedback while coordinating with internal teams when escalation is required.\\nBecause B2B environments involve multiple stakeholders—office managers, HR teams, facility managers, and end-users—this role requires strong judgment, organization, and the ability to navigate\\noperational issues in a structured and professional manner\\n.\\nThis role also serves as a\\nVoice of the Customer (VOC)\\nby surfacing recurring issues and insights to operations, product, and logistics teams to help improve service reliability and user experience.\\nResponsibilities:\\n1. Ticket Management & Customer Support\\nManage incoming support requests from both B2B clients and Smart Fridge users.\\nResponsibilities include:\\nRespond to inbound support tickets via Zendesk or other support platforms\\nProvide timely and accurate responses to questions related to:\\nSmart Fridge usage and access\\nMeal purchases and scanning issues\\nWallet balance and payment questions\\nBulk meal orders and delivery inquiries\\nEnsure tickets are resolved efficiently while maintaining high customer satisfaction\\nFollow established SLAs for response and resolution times\\n2. B2B Client Support\\nProvide operational support to corporate clients using CookUnity services.\\nResponsibilities include:\\nAssist office managers or program administrators with operational questions\\nSupport bulk meal orders including order changes, scheduling questions, and delivery coordination\\nHelp troubleshoot issues related to office programs or workplace meal services\\nEnsure client concerns are addressed professionally and escalated when necessary\\n3. Smart Fridge User Support\\nSupport end-users interacting with CookUnity Smart Fridges in workplace environments.\\nResponsibilities include:\\nAssist users experiencing issues with:\\nApp login or access\\nQR scanning and purchase transactions\\nWallet top-ups and payment processing\\nAccount or reward issues\\nInvestigate fridge-related incidents such as product availability, scanning issues, or access problems\\nCoordinate with operations or tech teams when technical issues require escalation\\n4. Issue Investigation & Escalation\\nIdentify operational issues and ensure they are escalated to the appropriate teams when necessary.\\nResponsibilities include:\\nInvestigate customer reports related to delivery issues, food quality concerns, or system errors\\nDocument incidents clearly in support systems\\nEscalate issues to logistics, operations, or tech teams when required\\nFollow up to ensure resolution and clear communication with the customer\\n5. Operational Feedback & Continuous Improvement\\nHelp improve the customer experience by identifying recurring issues and operational gaps.\\nResponsibilities include:\\nTrack recurring ticket themes and operational friction points\\nProvide feedback to B2B Operations, Product, and Logistics teams\\nContribute to improvements in support documentation, macros, and internal knowledge bases\\nSupport updates to internal playbooks as processes evolve\\n6. Process Adherence & Documentation\\nEnsure all support interactions follow internal processes and documentation standards.\\nResponsibilities include:\\nMaintain accurate records of support interactions\\nUse internal tools and workflows consistently\\nFollow escalation and incident reporting procedures\\nContribute to maintaining internal support documentation and knowledge base content\\nQualifications:\\n2–4 years of experience in\\ncustomer support, operations support, or service delivery roles\\nExperience working with\\nticketing platforms such as Zendesk and Salesforce\\nStrong written and verbal communication skills\\nComfortable interacting with both\\nend-users and business clients\\nStrong problem-solving skills and attention to detail\\nAbility to manage multiple tickets and priorities simultaneously\\nComfortable working in a fast-paced operational environment\\nPreferred requirements:\\nExperience supporting\\nB2B services or workplace programs\\nExperience in\\nfood service, logistics, or hospitality operations\\nFamiliarity with\\nmobile apps or connected hardware products\\nExperience working with operational teams to resolve service issues\\nBenefits:\\n💸 Get paid in USD.\\n🗺 Work remotely: design the life that you want\\n⛱ Enjoy 15 days of vacation each year from the start date\\n🎄 16 fully paid Argentinean holidays\\n🩺 Healthcare Benefit: Monthly stipend to use with your preferred healthcare provider\\n🗓️ 5- year Sabbatical: After 5 years with CookUnity, you get a 4-week paid sabbatical\\n🐣 Paid Family leave\\n🕯 Compassionate Leave: 3-5 days each time the need arises\\n🧘🏽‍♀️ Customize the benefits that suit your needs! Access a range of perks tailored to you, including learning opportunities, wellness memberships, delivery apps, and more, through our comprehensive benefit platform\\n🧑‍🏫 Personalized English coach\\nIf you’re interested in this role, please submit your application, and if we think you might be a fit, we'll get in touch with you.\\nThank you for your time!\\nCookUnity is an\",\n    score: 25,\n    seniority:",
     "language": "en",
-    "source_page": "Greenhouse",
-    "source_url": "https://boards.greenhouse.io/cookunity/jobs/7783938003",
-    "application_method": "Postulación web en Greenhouse: https://boards.greenhouse.io/cookunity/jobs/7783938003",
-    "status": "pending_ranking",
+    "source_page": "Greenhouse (cookunity)",
+    "source_url": "https://careers.cookunity.com/open-roles?gh_jid=7783938003",
+    "application_method": "Postulación web en: https://careers.cookunity.com/open-roles?gh_jid=7783938003",
+    "status": "ranked",
     "score": null,
-    "justification": null,
-    "strengths": [],
-    "gaps": [],
-    "ranked_at": null,
+    "justification": "Although the candidate is looking for internships, this specific role is focused on customer support and operations, which is explicitly identified as an area of non-interest in the candidate's profile. Additionally, the role requires 2-4 years of experience, exceeding the candidate's current background.",
+    "strengths": [
+      "Company offers remote work and competitive benefits."
+    ],
+    "gaps": [
+      "The role is strictly for customer support/operations, which falls outside of the candidate's development-focused profile.",
+      "Candidate's profile specifically excludes roles in customer service/support or non-technical areas.",
+      "Requires 2–4 years of prior experience in customer support or operations roles."
+    ],
+    "ranked_at": "2026-08-06T12:00:00Z",
     "user_notes": null
   },
   {
@@ -277,38 +269,50 @@
   },
   {
     "company": "invgate",
-    "justification": "La vacante exige un nivel de Seniority (5+ años de experiencia) que excede significativamente el nivel actual del candidato, quien busca roles de entrada/trainee sin experiencia laboral previa.",
-    "raw_text": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\\nPara continuar expandiéndonos, buscamos un/a\\nDATABASE ENGINEER\\npara encargarse de la administración y mantenimiento de nuestras bases de datos (Postgres y MySQL), gestionando su óptima configuración, actualizaciones, uso de recursos y aplicación de buenas prácticas.\\nLa posición interactúa con los equipos de desarrollo y SRE para ayudarlos en el mejor uso de las bases de datos: sugerir cambios en esquema, creación de índices, asistencia en el desarrollo de queries, interpretación de planes de ejecución de consultas.\\nNo dudes en postularte si:\\nDisfrutas de trabajar en equipo.\\nSos curioso y te gusta investigar nuevas tecnologías\\nEstás comprometido con seguir las buenas prácticas y producir código de calidad.\\nTe atraen los desafíos y te gusta resolver problemas!\\n¿Qué buscamos?\\nExperiencia sólida (mínimo 5 años) trabajando con MySQL y/o Postgres\\nConocimientos avanzados de AWS RDS.\\nExperiencia en DB Security y Optimización de consultas\\nConocimientos de MSSQL y aplicaciones web serán considerados un Plus\\nTe ofrecemos oportunidades reales de desarrollo de carrera, clases de inglés cubiertas al 100% y tres semanas de vacaciones pagas.\",",
+    "justification": "Aunque posees conocimientos básicos de bases de datos como PostgreSQL, el puesto exige 5 años de experiencia laboral previa, lo cual es un criterio de exclusión para tu perfil actual.",
+    "raw_text": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\\nPara continuar expandiéndonos, buscamos un/a\\nDATABASE ENGINEER\\npara encargarse de la administración y mantenimiento de nuestras bases de datos (Postgres y MySQL), gestionando su óptima configuración, actualizaciones, uso de recursos y aplicación de buenas prácticas.\\nLa posición interactúa con los equipos de desarrollo y SRE para ayudarlos en el mejor uso de las bases de datos: sugerir cambios en esquema, creación de índices, asistencia en el desarrollo de queries, interpretación de planes de ejecución de consultas.\\nNo dudes en postularte si:\\nDisfrutas de trabajar en equipo.\\nSos curioso y te gusta investigar nuevas tecnologías\\nEstás comprometido con seguir las buenas prácticas y producir código de calidad.\\nTe atraen los desafíos y te gusta resolver problemas!\\n¿Qué buscamos?\\nExperiencia sólida (mínimo 5 años) trabajando con MySQL y/o Postgres\\nConocimientos avanzados de AWS RDS.\\nExperiencia en DB Security y Optimización de consultas\\nConocimientos de MSSQL y aplicaciones web serán considerados un Plus\\nTe ofrecemos oportunidades reales de desarrollo de carrera, clases de inglés cubiertas al 100% y tres semanas de vacaciones pagas.",
     "main_requirements": [],
     "gaps": [
-      "Requiere 5+ años de experiencia profesional sólida en bases de datos (postulado como trainee/junior sin experiencia laboral).",
-      "El rol es de Database Engineer (Seniority alto), incompatible con perfil de entrada."
+      "Se requiere una experiencia sólida mínima de 5 años, superando ampliamente tu perfil actual de nivel trainee/junior.",
+      "El rol es para una posición de Database Engineer (DBA), un área especializada que no coincide con tu búsqueda de desarrollador junior."
     ],
     "language": "en",
     "location": "Argentina",
-    "ranked_at": "2025-01-24T12:00:00Z",
+    "ranked_at": "2026-08-07T00:43:34.185456",
     "id": "greenhouse_invgate_5419932002",
     "department": "Infrastructure",
     "commitment": "Not specified",
     "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/5419932002",
-    "created_at": "2026-08-06T04:02:57.478747",
+    "created_at": "2026-08-07T00:43:34.185456",
     "key_technologies": [
       "AWS"
     ],
-    "status": "ranked"
+    "status": "ranked",
+    "user_notes": null,
+    "job_id": "greenhouse_invgate_5419932002",
+    "score": 20,
+    "source_url": "https://job-boards.greenhouse.io/invgate/jobs/5419932002",
+    "title": "DBA",
+    "seniority": "Not specified",
+    "work_mode": "Not specified",
+    "summary": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\\nPara continuar expandiéndo",
+    "source_page": "Greenhouse (invgate",
+    "strengths": [
+      "Conocimiento de bases de datos como PostgreSQL (mencionada como plus/requerimiento principal)."
+    ],
+    "salary_range": "Not specified"
   },
   {
-    "justification": "The position is an 'Internship' at a SaaS company, which perfectly aligns with the candidate's search for an entry-level/trainee role. The stack (Backend/Full Stack, interest in PHP/Agile) is broad enough for a student, and the company offers training/professional development, which is ideal for someone starting their career.",
-    "ranked_at": "2026-08-06T12:00:00Z",
+    "justification": "Es una excelente oportunidad de pasantía para el candidato, ya que coincide con sus objetivos de crecimiento profesional. Aunque la vacante menciona un enfoque en PHP, la sólida base técnica del candidato en Node.js, C++ y Python le permite adaptarse rápidamente al stack de la empresa.",
+    "ranked_at": "2026-08-07T00:43:34.196529",
     "user_notes": null,
     "key_technologies": [],
     "language": "en",
     "seniority": "Not specified",
     "strengths": [
-      "Internship commitment fits perfectly with current student profile.",
-      "Company offers professional development, training, and mentoring.",
-      "Broad technical requirements allowing for growth in Backend/Full Stack development.",
-      "Hybrid/Remote modality matches preferences."
+      "Alineación con el objetivo del candidato (pasantía/entry level).",
+      "La empresa ofrece capacitación técnica y desarrollo profesional.",
+      "El candidato posee base en los fundamentos solicitados (POO, patrones de diseño)."
     ],
     "location": "Argentina",
     "main_requirements": [],
@@ -322,19 +326,20 @@
     "company": "invgate",
     "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4610663002",
     "id": "greenhouse_invgate_4610663002",
-    "created_at": "2026-08-06T04:02:57.494187",
+    "created_at": "2026-08-07T00:43:34.196529",
     "gaps": [
-      "The vacancy is framed as a Full Stack position and the description mentions typical professional requirements like code review of peers, which might suggest a need for prior commercial experience not explicitly stated as 'entry-level'."
+      "La posición solicita un perfil con mayor orientación a arquitectura de backend, mientras que el candidato busca su primera experiencia profesional (rol de pasantía/junior)."
     ],
     "salary_range": "Not specified",
     "commitment": "Internship",
-    "score": 85
+    "score": 85,
+    "updated_at": "2026-08-06T07:32:05.927291"
   },
   {
     "main_requirements": [],
     "score": 95,
     "seniority": "Not specified",
-    "user_notes": null,
+    "user_notes": "El usuario indicó que ya se postuló.",
     "title": "Software Engineer - Python/Django",
     "key_technologies": [
       "Python",
@@ -361,10 +366,11 @@
     "commitment": "Internship",
     "company": "invgate",
     "id": "greenhouse_invgate_4495272002",
-    "status": "ranked",
+    "status": "applied",
     "summary": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\\nBuscamos\\nIngenieros de Sof",
     "created_at": "2026-08-06T04:02:57.497608",
-    "department": "Engineering"
+    "department": "Engineering",
+    "updated_at": "2026-08-06T07:32:05.920552"
   },
   {
     "application_method": "Postulación web en: https://job-boards.greenhouse.io/sezzle/jobs/7826886003",
@@ -492,7 +498,7 @@
     "source_page": "LinkedIn",
     "source_url": "https://www.linkedin.com/jobs/view/4449330383/",
     "application_method": "Postulación a través de LinkedIn",
-    "status": "ranked",
+    "status": "applied",
     "score": 90,
     "justification": "La oferta se alinea perfectamente con tu búsqueda de roles junior/entrada. Tu experiencia con Node.js, Python, PostgreSQL/MongoDB y Git encaja muy bien con los requisitos técnicos. La cultura fintech y el trabajo remoto coinciden con tus objetivos profesionales actuales.",
     "strengths": [
@@ -505,6 +511,483 @@
       "Requiere adaptabilidad a un stack diverso (Node, Python, Ruby), lo cual implica aprendizaje continuo."
     ],
     "ranked_at": "2026-08-06T05:39:50.792102",
+    "user_notes": "El usuario indicó que ya se postuló.",
+    "updated_at": "2026-08-06T07:32:05.925315"
+  },
+  {
+    "strengths": [
+      "Modalidad remota que se alinea con la preferencia",
+      "Stack general (Backend) coincide con las áreas de interés"
+    ],
+    "work_mode": "Remote",
+    "status": "ranked",
+    "source_url": "https://job-boards.greenhouse.io/tireseasycom/jobs/5249913008",
+    "seniority": "Junior",
+    "summary": "Dev",
+    "source_page": "Greenhouse (tireseasycom)",
+    "title": "Backend Developer 5",
+    "user_notes": null,
+    "score": 60,
+    "ranked_at": "2026-08-07T00:42:22.450037",
+    "commitment": "Full-time",
+    "justification": "El nivel de senioridad implícito en el título del puesto es significativamente superior a tu perfil actual, lo que lo hace un ajuste moderado o bajo.",
+    "company": "Dev 5",
+    "location": "Argentina",
+    "gaps": [
+      "El título sugiere una posición que podría requerir mayor experiencia (nivel 5 suele implicar senioridad)",
+      "No se especifica si aceptan candidatos trainee/junior sin experiencia laboral previa"
+    ]
+  },
+  {
+    "id": "greenhouse_particle41llc_5046198008",
+    "gaps": [
+      "Requires a minimum of 3 years of professional experience, which exceeds the candidate's current entry-level / trainee profile.",
+      "The role is specialized in Data Engineering, whereas the candidate's core profile is stronger in general Backend (Node.js/C++) and Python scripting."
+    ],
+    "justification": "The role requires 3+ years of professional experience, which does not match the candidate's current student/entry-level status. Although it is an internship, the experience requirement is a significant gap.",
+    "location": "LATAM - Remote",
+    "status": "ranked",
+    "language": "en",
+    "source_page": "Greenhouse (particle41llc)",
+    "source_url": "https://job-boards.greenhouse.io/particle41llc/jobs/5046198008",
+    "raw_text": "Data Engineer\\nParticle41 is seeking a talented and versatile Data Engineer to join our innovative team. As a Data Engineer, you will play a key role in designing, building, and maintaining robust data pipelines and infrastructure to support our clients' data needs. You will work on end-to-end data solutions, collaborating with cross-functional teams to ensure high-quality, scalable, and efficient data delivery. This is an exciting opportunity to contribute to impactful projects, solve complex data challenges, and grow your skills in a supportive and dynamic environment.\\nIn This Role, You Will:\\nSoftware Development\\nDesign, develop, and maintain scalable ETL (Extract, Transform, Load) pipelines to process large volumes of data from diverse sources.\\nBuild and optimize data storage solutions, such as data lakes and data warehouses, to ensure efficient data retrieval and processing.\\nIntegrate structured and unstructured data from various internal and external systems to create a unified view for analysis.\\nEnsure data accuracy, completeness, and completeness through rigorous validation, cleansing, and transformation processes.\\nMaintain comprehensive documentation for data processes, tools, and systems while promoting best practices for efficient workflows.\\nRequirements Gathering and Analysis\\nCollaborate with product managers, and other stakeholders to gather requirements and translate them into technical solutions.\\nParticipate in requirement analysis sessions to understand business needs and user requirements.\\nProvide technical insights and recommendations during the requirements-gathering process.\\nAgile Development\\nParticipate in Agile development processes, including sprint planning, daily stand-ups, and sprint reviews.\\nWork closely with Agile teams to deliver software solutions on time and within scope.\\nAdapt to changing priorities and requirements in a fast-paced Agile environment.\\nTesting and Debugging\\nConduct thorough testing and debugging to ensure the reliability, security, and performance of applications.\\nWrite unit tests and validate the functionality of developed features and individual elements.\\nWriting integration tests to ensure different elements within a given application function as intended and meet desired requirements.\\nIdentify and resolve software defects, code smells, and performance bottlenecks.\\nContinuous Learning and Innovation\\nStay updated with the latest technologies and trends in full-stack development.\\nPropose innovative solutions to improve the performance, security, scalability, and maintainability of applications.\\nContinuously seek opportunities to optimize and refactor existing codebase for better efficiency.\\nStay up-to-date with cloud platforms such as AWS, Azure, or Google Cloud Platform.\\nCollaboration\\nCollaborate effectively with cross-functional teams, including testers, and product managers.\\nFoster a collaborative and inclusive work environment where ideas are shared and valued.\\nSkills and Experience We Value:\\nBachelor's degree in Computer Science, Engineering, or related field.\\nProven experience as a Data Engineer, with a minimum of 3 years of experience.\\nProficiency in Python programming language.\\nExperience with database technologies such as SQL (e.g., MySQL, PostgreSQL) and NoSQL (e.g., MongoDB) databases.\\nStrong understanding of Programming Libraries/Frameworks and technologies such as Flask, API frameworks, datawarehousing/lakehouse, principles, database and ORM, data analysis databricks, panda's, Spark, Pyspark, Machine learning, OpenCV, scikit-learn.\\nUtilities & Tools: logging, requests, subprocess, regex, pytest\\nELK stack, Redis, distributed task queues\\nStrong understanding of data warehousing/lakehousing principles and concurrent/parallel processing concepts.\\nFamiliarity with at least one cloud data engineering stack (Azure, AWS, or GCP) and the ability to quickly learn and adapt to new ETL/ELT tools across various cloud providers.\\nFamiliarity with version control systems like Git and collaborative development workflows.\\nCompetence in working on Linux OS and creating shell scripts.\\nSolid understanding of software engineering principles, design patterns, and best practices.\\nExcellent problem-solving and analytical skills, with a keen attention to detail.\\nEffective communication skills, both written and verbal, and the ability to collaborate in a team environment.\\nAdaptability and willingness to learn new technologies and tools as needed.\\nAbout Particle41\\nOur core values of\\nEmpowering, Leadership, Innovation, Teamwork,\\nand\\nExcellence\\ndrive everything we do to achieve the ultimate outcomes for our clients. Empowering Leadership for Innovation in Teamwork with Excellence ( ELITE )\\nE - Empowering: Enabling individuals to reach their full potential.\\nL - Leadership: Taking initiative and guiding each other toward success.\\nI - Innovation: Embracing creativity and new ideas to stay ahead.\\nT - Teamwork: Collaborating with empathy to achieve common goals.\\nE - Excellence: Striving for the highest quality in everything we do.\\nWe seek team members who embody these values and are committed to contributing to our mission. Particle41 welcomes individuals from all backgrounds who are committed to our mission and values. We provide equal employment opportunities to all employees and applicants, ensuring that hiring and employment decisions are based on merit and qualifications without discrimination based on race, color, religion, caste, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state, local, or international laws. This policy applies to all aspects of employment and hiring.\\nWe appreciate your interest and encourage applicants from these regions to apply. If you need any assistance during the application or interview process, please feel free to reach out to us at careers@Particle41.com\",\n    score: 45,\n    seniority:",
+    "summary": "Data Engineer\\nParticle41 is seeking a talented and versatile Data Engineer to join our innovative team. As a Data Engineer, you will play a key role in designing, building, and maintaining robust data pipelines and infrastructure to support our clients' data needs. You will work on end-to-end data s",
+    "title": "Data Engineer",
+    "created_at": "2026-08-06T07:51:13.625342",
+    "main_requirements": [],
+    "key_technologies": [
+      "Python",
+      "SQL",
+      "PostgreSQL",
+      "MongoDB",
+      "AWS",
+      "GCP",
+      "Azure",
+      "Redis",
+      "Linux"
+    ],
+    "strengths": [
+      "Remote work aligns with candidate's preference.",
+      "Includes relevant tech (Python, SQL, PostgreSQL, MongoDB, Linux)."
+    ],
+    "application_method": "Enviar CV por correo a careers@Particle41.com (Ref: actor existing codebase for better efficiency.)",
+    "department": "Data Engineering",
+    "commitment": "Internship",
+    "user_notes": null,
+    "work_mode": "Remote",
+    "ranked_at": "2025-05-22T00:00:00.000000",
+    "company": "particle41llc"
+  },
+  {
+    "justification": "While the technical stack (Python, SQL, PostgreSQL, Linux) aligns with the candidate's skills, the job specifically requires 3+ years of professional experience as a Data Engineer, which is a major mismatch for a student with no prior professional experience.",
+    "ranked_at": "2026-08-06T00:00:00.000000",
+    "company": "particle41llc",
+    "id": "greenhouse_particle41llc_5269708008",
+    "score": 45,
+    "summary": "Data Engineer\nParticle41 is seeking a talented Data Engineer to join our team. You will design, build, and maintain data pipelines and infrastructure, support client-facing data visualization, and contribute to AI-assisted data workflows. You will work across the full data lifecycle — from raw inges",
+    "created_at": "2026-08-06T07:51:13.631434",
+    "department": "Data Engineering",
+    "title": "Data Engineer (Tableau)",
+    "location": "Argentina - Remote",
+    "user_notes": null,
+    "status": "ranked",
+    "source_url": "https://job-boards.greenhouse.io/particle41llc/jobs/5269708008",
+    "commitment": "Internship",
+    "key_technologies": [
+      "Python",
+      "SQL",
+      "PostgreSQL",
+      "MongoDB",
+      "AWS",
+      "GCP",
+      "Azure",
+      "Redis",
+      "Linux"
+    ],
+    "language": "en",
+    "seniority": "Not specified",
+    "strengths": [
+      "Candidate has strong Python and database skills (PostgreSQL, MongoDB).",
+      "Candidate has experience with Linux and CI/CD tools.",
+      "Alignment in language proficiency (English)."
+    ],
+    "main_requirements": [],
+    "source_page": "Greenhouse (particle41llc)",
+    "gaps": [
+      "Requires 3+ years of professional experience as a Data Engineer.",
+      "The role demands deep experience in ETL/ELT pipelines, data warehousing, and business intelligence, which exceeds the junior student/trainee profile."
+    ],
+    "work_mode": "Remote",
+    "application_method": "Enviar CV por correo a careers@Particle41.com"
+  },
+  {
+    "main_requirements": [],
+    "id": "greenhouse_backblaze_5205128008",
+    "gaps": [
+      "Requires 3+ years of professional experience, which exceeds the candidate's profile as a student/junior."
+    ],
+    "source_page": "Greenhouse (backblaze)",
+    "company": "backblaze",
+    "ranked_at": "2026-08-06T07:53:16.846984",
+    "summary": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
+    "justification": "The position requires 3+ years of professional experience, which is a significant barrier for a junior candidate with no prior professional experience. Although the technical stack (Java/Linux) is approachable, the seniority expectations make it a poor fit.",
+    "strengths": [
+      "Strong interest in high-performance architecture.",
+      "Remote modality matches preference.",
+      "Experience with Python/AI agents is a plus."
+    ],
+    "language": "en",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "score": 35,
+    "work_mode": "Remote",
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5205128008",
+    "status": "ranked",
+    "job_id": "greenhouse_backblaze_5205128008",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5205128008",
+    "seniority": "Not specified",
+    "raw_text": "About Backblaze...",
+    "commitment": "Not specified",
+    "department": "Engineering",
+    "user_notes": null,
+    "created_at": "2026-08-06T07:53:16.846984",
+    "title": "Software Engineer",
+    "key_technologies": [
+      "Java",
+      "Linux"
+    ]
+  },
+  {
+    "work_mode": "Remote",
+    "id": "greenhouse_backblaze_5207236008",
+    "job_id": "greenhouse_backblaze_5207236008",
+    "status": "ranked",
+    "title": "Software Engineer, AI",
+    "seniority": "Not specified",
+    "justification": "While the role focuses on AI, which aligns well with the candidate's recent work, the 2-year professional experience requirement is a deal-breaker for a student/junior candidate looking for entry-level opportunities.",
+    "score": 45,
+    "language": "en",
+    "created_at": "2026-08-06T07:53:16.851029",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "user_notes": null,
+    "department": "Engineering",
+    "commitment": "Not specified",
+    "source_page": "Greenhouse (backblaze)",
+    "ranked_at": "2026-08-06T07:53:16.851029",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5207236008",
+    "company": "backblaze",
+    "raw_text": "About Backblaze...",
+    "strengths": [
+      "Strong alignment with AI/Agent development.",
+      "Remote modality fits perfectly.",
+      "Java and SQL alignment."
+    ],
+    "summary": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
+    "gaps": [
+      "Requires 2+ years of professional experience, which exceeds the candidate's current entry-level standing."
+    ],
+    "key_technologies": [
+      "Java",
+      "SQL",
+      "Linux"
+    ],
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5207236008",
+    "main_requirements": []
+  },
+  {
+    "gaps": [
+      "Requiere 2+ años de experiencia laboral profesional (excluyente).",
+      "El seniority solicitado excede tu perfil actual de estudiante."
+    ],
+    "main_requirements": [],
+    "language": "en",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5213907008",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5213907008",
+    "source_page": "Greenhouse (backblaze)",
+    "raw_text": "About Backblaze...",
+    "score": 35,
+    "key_technologies": [
+      "Java",
+      "SQL",
+      "Linux"
+    ],
+    "company": "backblaze",
+    "seniority": "Not specified",
+    "department": "Engineering",
+    "created_at": "2026-08-06T07:53:16.855878",
+    "title": "Software Engineer, AI",
+    "salary_range": "Not specified",
+    "status": "ranked",
+    "summary": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
+    "user_notes": null,
+    "strengths": [
+      "Modalidad remota compatible.",
+      "Uso de herramientas de IA y Linux."
+    ],
+    "commitment": "Not specified",
+    "work_mode": "Remote",
+    "id": "greenhouse_backblaze_5213907008",
+    "ranked_at": "2026-08-06T07:53:16.855878",
+    "justification": "El rol exige explícitamente 2+ años de experiencia laboral profesional, lo cual constituye una brecha significativa respecto a tu perfil actual como estudiante sin experiencia laboral formal."
+  },
+  {
+    "seniority": "Not specified",
+    "company": "backblaze",
+    "commitment": "Not specified",
+    "title": "Software Engineer, AI",
+    "user_notes": null,
+    "gaps": [
+      "Requiere 2+ años de experiencia laboral profesional (excluyente).",
+      "El seniority solicitado excede tu perfil actual de estudiante."
+    ],
+    "main_requirements": [],
+    "justification": "Aunque dominas varias de las tecnologías mencionadas (Python, TS, SQL), la vacante requiere explícitamente 2+ años de experiencia profesional, superando tu etapa actual de estudiante avanzado.",
+    "score": 40,
+    "status": "ranked",
+    "key_technologies": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Go",
+      "Java",
+      "SQL",
+      "Linux"
+    ],
+    "created_at": "2026-08-06T07:53:16.860176",
+    "work_mode": "Remote",
+    "id": "greenhouse_backblaze_5207230008",
+    "raw_text": "About Backblaze...",
+    "department": "Engineering",
+    "ranked_at": "2026-08-06T07:53:16.860176",
+    "salary_range": "Not specified",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "language": "en",
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5207230008",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5207230008",
+    "strengths": [
+      "Modalidad remota compatible.",
+      "Buen match con el stack técnico (Python, SQL, Linux, TS)."
+    ],
+    "summary": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
+    "source_page": "Greenhouse (backblaze)"
+  },
+  {
+    "justification": "Aunque la vacante es de nivel 'Internship' (lo cual encaja con el perfil), el requerimiento explícito de 4+ años de experiencia profesional en entornos empresariales es un filtro excluyente para un estudiante sin experiencia laboral formal.",
+    "company": "backblaze",
+    "id": "greenhouse_backblaze_5224648008",
+    "gaps": [
+      "Requires 4+ years of professional experience in enterprise environments.",
+      "The role expects experience with large scale systems running on thousands of servers."
+    ],
+    "status": "ranked",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "main_requirements": [],
+    "commitment": "Internship",
+    "department": "Engineering",
+    "ranked_at": "2025-01-24T12:00:00Z",
+    "score": 45,
+    "language": "en",
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5224648008",
+    "work_mode": "Remote",
+    "user_notes": null,
+    "created_at": "2026-08-06T07:53:16.872521",
+    "raw_text": "About Backblaze\\nBackblaze is the object storage leader in the open cloud movement, fueling customer success with cloud storage built purposefully to unlock budgets, unburden administrators, and unleash innovators. Together with our partners, we’re helping customers break free from the restrictive, overpriced legacy solutions that hold them back, and blaze forward with the full power of the open cloud in their hands.\\nFounded in 2007, we scaled the business with less than $3 million in outside funding until 2021, when we did a traditional IPO on the Nasdaq stock exchange. Today, Backblaze generates over $100m in revenue and is the leading specialized storage cloud - managing over three billion gigabytes of data storage for 500K+ customers in 175+ countries, including businesses, developers, IT professionals, and individuals.\\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\\nSoftware Engineer\\nto join our team!\\nWant to know what you’ll be doing?\\nYou will work on our storage platform which supports the B2 Object Storage and Computer Backup products, responsible for reliably storing the customer data. You will help improve durability, increase throughput, and drive architectural changes to support the long term requirements of our service.\\nResponsibilities:\\nParticipate in technical design discussions and contribute to clear design documents\\nContribute to the maintenance of existing applications and participate in the implementation of new features\\nInstrument services, develop metrics and drive durability and performance improvements.\\nHelp shape coding methodologies and best practices\\nThe Right Fit:\\n4+ years of OOP (Java, Rust, C++, C#, etc)  in an enterprise environment, with a focus on backend development\\nExperience building large scale software systems running on thousands of servers\\nProfessional experience incorporating AI-assisted development tools (e.g., Gemini, Cursor, Claude Code)\\nComfortable with all aspects of the software development lifecycle, including design, implementation, testing, and rollout\\nExhibits curiosity and seeks to understand before offering solutions\\nCommunicates proactively in a remote environment by keeping the team informed, surfacing blockers early, and moving work forward\\nApplies analytical thinking to ambiguous problems\\nBonus points for:\\nProficiency in Java or Rust\\nExperience building and interpreting models, dashboards, or reports\\nFamiliarity with hard drive performance\\nUnderstanding of Linux internals and file systems\\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\\nWe are proud to be an\",,salary_range:",
+    "strengths": [
+      "Remote work modality matches preference.",
+      "Stack includes technologies relevant to background (Linux, backend exposure)."
+    ],
+    "seniority": "Not specified",
+    "key_technologies": [
+      "Rust",
+      "Java",
+      "Linux"
+    ],
+    "source_page": "Greenhouse (backblaze)",
+    "summary": "About Backblaze\\nBackblaze is the object storage leader in the open cloud movement, fueling customer success with cloud storage built purposefully to unlock budgets, unburden administrators, and unleash innovators. Together with our partners, we’re helping customers break free from the restrictive, overpriced legacy solutions that hold them back, and blaze forward with the full power of the open cloud in their hands.\\nFounded in 2007, we scaled the business with less than $3 million in outside funding until 2021, when we did a traditional IPO on the Nasdaq stock exchange. Today, Backblaze generates over $100m in revenue and is the leading specialized storage cloud - managing over three billion gigabytes of data storage for 500K+ customers in 175+ countries, including businesses, developers, IT professionals, and individuals.\\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\\nSoftware Engineer\\nto join our team!\\nWant to know what you’ll be doing?\\nYou will work on our storage platform which supports the B2 Object Storage and Computer Backup products, responsible for reliably storing the customer data. You will help improve durability, increase throughput, and drive architectural changes to support the long term requirements of our service.\\nResponsibilities:\\nParticipate in technical design discussions and contribute to clear design documents\\nContribute to the maintenance of existing applications and participate in the implementation of new features\\nInstrument services, develop metrics and drive durability and performance improvements.\\nHelp shape coding methodologies and best practices\\nThe Right Fit:\\n4+ years of OOP (Java, Rust, C++, C#, etc)  in an enterprise environment, with a focus on backend development\\nExperience building large scale software systems running on thousands of servers\\nProfessional experience incorporating AI-assisted development tools (e.g., Gemini, Cursor, Claude Code)\\nComfortable with all aspects of the software development lifecycle, including design, implementation, testing, and rollout\\nExhibits curiosity and seeks to understand before offering solutions\\nCommunicates proactively in a remote environment by keeping the team informed, surfacing blockers early, and moving work forward\\nApplies analytical thinking to ambiguous problems\\nBonus points for:\\nProficiency in Java or Rust\\nExperience building and interpreting models, dashboards, or reports\\nFamiliarity with hard drive performance\\nUnderstanding of Linux internals and file systems\\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\\nWe are proud to be an\",,title:"
+  },
+  {
+    "commitment": "Part-time",
+    "location": "Global",
+    "language": "en",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/testlio/jobs/6979353",
+    "key_technologies": [],
+    "id": "greenhouse_testlio_6979353",
+    "gaps": [
+      "Requires 2+ years of professional QA experience, which exceeds current student profile.",
+      "Role focuses on manual/automated QA testing, whereas candidate's expertise is in software development and systems architecture."
+    ],
+    "created_at": "2026-08-06T07:56:31.165797",
+    "department": "Delivery",
+    "ranked_at": "2026-08-06T15:00:00Z",
+    "company": "testlio",
+    "main_requirements": [],
+    "raw_text": "About Testlio\\nTestlio’s fully managed crowdsourced testing platform, powered by our proprietary intelligence technology – LeoAI Engine\\nTM\\n, integrates expert, on-demand testers directly into your release process. Ship faster and more confidently with global coverage across 600,000+ devices, 800+ payment methods, 150+ countries, and 100+ languages. To learn more, visit\\nwww.testlio.com\\n.\\nThis job post is to keep in touch for future contract roles with Testlio. If you would like to freelance test with us you can learn more and sign up\\nhere\\n.\\nAbout this job post:\\nThis job post is for\\nfuture opportunities\\n. If there isn’t an active opening that fits your skill set or location, you can still express interest in future roles with Testlio. Our Talent Acquisition team will keep your information on file and reach out if a suitable opportunity becomes available.\\nTypical Project Details:\\nProject Focus\\n: You will be a Software Quality Assurance Analyst following Agile methodologies, mostly focused on API testing.\\nProject Duration\\n: Contracts can be temporary, ranging from 6 months to 1 year, or ongoing. Many temporary projects extend beyond their initial term, and some evolve into ongoing contractor opportunities.\\nLocation\\n: This job ad is open to candidates in select countries who are comfortable working in a fully remote setup. Countries we are considering consist of Argentina, Brazil, Canada, the Czech Republic, Estonia, India, Ireland, Mexico, Poland, Portugal, Romania, Spain, Ukraine, the United Kingdom, or the United States.\\nSchedule\\n: Opportunities are available for both part-time and full-time contracts. Working hours generally follow day or afternoon schedules based on your regional time zone.\\nTimezone\\n: While we support flexible work, most roles align with standard daytime hours in their region (e.g., 9 AM–6 PM). For instance, this may mean Central Standard Time (CST) in the Americas or Central European Time (CET) in EMEA. Please ensure your availability aligns with your region’s core hours.\\nRequired Devices\\n: You must have access to an Android or iOS mobile device for testing.\\nInternet Connection\\n: A reliable, high-speed internet connection is required for testing and team communications. Mobile hotspots and other unstable or limited connections are not suitable.\\nWhat Your Day Looks Like\\nDesign and execute smoke, scripted, and exploratory test cases on mobile, web and desktop.\\nConduct functional, localization, regression, and payments testing to ensure software meets quality standards.\\nReport, reproduce, and track issues found during testing.\\nDocument and share test results, including bugs and potential risks.\\nAnalyze test results, logs, and related data to identify patterns, trends, and areas for improvement.\\nCollaborate with developers, product managers, and other stakeholders to align on goals, timelines, and deliverables.\\nCommunicate test progress, issues, and risks clearly and proactively with stakeholders.\\nGenerate test reports that provide actionable insights.\\nDesign and execute API tests using tools like Postman, SoapUI, or similar.\\nCreate, maintain, and review test cases and test suites aligned with business priorities and industry best practices.\\nDesign and optimize effective test data.\\nEnsure the test library remains relevant by refactoring, updating, and deprecating tests as needed.\\nDevelop and maintain a deep understanding of the systems under test.\\nStay up to date with trends and advancements in software testing tools and methodologies.\\nWhat You’ll Need to Succeed\\nTechnical Skills:\\nProven experience (2+ years) as a QA Analyst or similar role, with a strong understanding of software testing principles, methodologies, and tools (such as JIRA, Bugzilla, TestRail, Xray or similar.)\\nExperience with mobile and web applications, frontend and backend testing (including API testing.)\\nProficiency in identifying and documenting software bugs and issues.\\nAbility to solve technical tasks required during testing - such as test data generation, log capturing and basic analysis, working with browser developer tools, network logs analyzers, etc.\\nExperience in working in agile teams in a remote environment - proven track record of communication and collaboration with different stakeholders such as Scrum Masters, Product Owners and others.\\nHuman Skills:\\nEffective English communication and interpersonal skills, with the ability to collaborate and work effectively in a team environment.\\nDrive to learn quickly and continuously expand knowledge.\\nComfortable with a frequently changing environment and able to adapt fast.\\nExcellent analytical and problem-solving skills.\\nStrong attention to detail and the ability to prioritize and manage multiple tasks.\\nWhat is the Consideration Process\\nWhenever a new opportunity arises, the Talent Acquisition team will review applicants and reach out to begin learning more. If you are a potential match, the recruiter will reach out to give you more details about the role and begin your application process\\nDiversity and Inclusion\\nTestlio is an employer deeply committed to creating an inclusive environment for people of all backgrounds and identities. We are female-founded, and 46% of our team members identify as women. See the\\nDEI section\\nof our website for more information.\\n#LI-DNI\",\n    score: 45,\n    seniority: \"Not specified\",\n    source_page: \"Greenhouse (testlio)\",\n    source_url: \"https://job-boards.greenhouse.io/testlio/jobs/6979353\",\n    status: \"ranked\",\n    strengths: [\"Fully remote, global opportunity.\", \"Provides exposure to API testing, which aligns slightly with backend knowledge.\"],\n    summary: \"About Testlio\\nTestlio’s fully managed crowdsourced testing platform, powered by our proprietary intelligence technology – LeoAI Engine\\nTM\\n, integrates expert, on-demand testers directly into your release process. Ship faster and more confidently with global coverage across 600,000+ devices, 800+ pay\",\n    title: \"QA Analyst (Future Roles)\",\n    user_notes: null,\n    work_mode: \"Remote\"}]}                \n",
+    "status": "ranked"
+  },
+  {
+    "company": "testlio",
+    "id": "greenhouse_testlio_6953297",
+    "gaps": [
+      "Requiere 2+ años de experiencia laboral previa como tester, lo cual excede el perfil actual de estudiante.",
+      "Rol enfocado 100% en testing manual/funcional, fuera del interés principal de desarrollo de software."
+    ],
+    "ranked_at": "2026-08-06T00:00:00Z",
+    "status": "ranked",
+    "commitment": "Part-time",
+    "summary": "About Testlio\\nTestlio’s fully managed crowdsourced testing platform, powered by our proprietary intelligence technology – LeoAI Engine\\nTM\\n, integrates expert, on-demand testers directly into your release process. Ship faster and more confidently with global coverage across 600,000+ devices, 800+ pay\",title:",
+    "strengths": [
+      "Modalidad remota global.",
+      "Entorno de trabajo en inglés, acorde al nivel C2 del candidato."
+    ],
+    "source_page": "Greenhouse (testlio)",
+    "main_requirements": [],
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/testlio/jobs/6953297",
+    "source_url": "https://job-boards.greenhouse.io/testlio/jobs/6953297",
+    "department": "Delivery",
+    "location": "Global",
+    "justification": "El perfil es de un estudiante avanzado que busca roles de desarrollo (C++/Node/Python), mientras que esta vacante exige 2 años de experiencia profesional previa en QA Testing y se enfoca en testing funcional/manual, lo cual no se alinea con los objetivos de carrera del candidato.",
+    "raw_text": "About Testlio\\nTestlio’s fully managed crowdsourced testing platform, powered by our proprietary intelligence technology – LeoAI Engine\\nTM\\n, integrates expert, on-demand testers directly into your release process. Ship faster and more confidently with global coverage across 600,000+ devices, 800+ payment methods, 150+ countries, and 100+ languages. To learn more, visit\\nwww.testlio.com\\n.\\nThis job post is to keep in touch for future contract roles with Testlio. If you would like to freelance test with us you can learn more and sign up\\nhere\\n.\\nAbout this job post:\\nThis job post is for future opportunities. If there isn’t an active opening that fits your skill set or location, you can still express interest in future roles with Testlio. Our Talent Acquisition team will keep your information on file and reach out if a suitable opportunity becomes available.\\nTypical Project Details:\\nProject Focus\\n: Most QA Tester roles involve manual testing of mobile apps and APIs, typically within Agile development teams.\\nProject Duration\\n: Contracts can be temporary, ranging from 6 months to 1 year, or ongoing. Many temporary projects extend beyond their initial term, and some evolve into ongoing contractor opportunities.\\nLocation\\n: This job ad is open to candidates in select countries who are comfortable working in a fully remote setup. Countries we are considering consist of Argentina, Brazil, Canada, the Czech Republic, Estonia, India, Ireland, Mexico, Poland, Portugal, Romania, Spain, Ukraine, the United Kingdom, or the United States.\\nSchedule\\n: Opportunities are available for both part-time and full-time contracts. Working hours generally follow day or afternoon schedules based on your regional time zone.\\nTimezone\\n: While we support flexible work, most roles align with standard daytime hours in their region (e.g., 9 AM–6 PM). For instance, this may mean Central Standard Time (CST) in the Americas or Central European Time (CET) in EMEA. Please ensure your availability aligns with your region’s core hours.\\nRequired Devices\\n: You must have access to an Android or iOS mobile device for testing.\\nInternet Connection\\n: A reliable, high-speed internet connection is required for testing and team communications. Mobile hotspots and other unstable or limited connections are not suitable.\\nWhat Your Day Looks Like\\nExecute smoke, scripted, and exploratory test cases on mobile, web, and desktop platforms.\\nConduct functional, localization, regression, or payment testing to ensure software applications meet quality standards.\\nReproduce issues found during testing.\\nDocument and report test results, including bugs and potential risks. Clearly communicate findings to the development team and stakeholders.\\nConfigure and prepare test environments per the provided instructions.\\nWork closely with cross-functional teams to ensure software products are delivered on time and meet customer expectations.\\nDesign and optimize appropriate test data.\\nProvide clear feedback about outdated, incomplete, or inefficient test cases.\\nStay updated with industry trends and advancements in software testing methodologies and tools.\\nWhat You’ll Need to Succeed\\nTechnical Skills:\\nProven experience (2+ years) as a Software Tester or similar role, with a strong understanding of software testing principles, methodologies, and tools (such as Jira, TestRail, Xray, or similar).\\nExperience with mobile and web applications frontend testing;  backend testing is a bonus.\\nProbiciency in identifying and documenting software bugs and issues.\\nAbility to solve basic technical tasks required during testing, such as test data generation, log capturing, and basic analysis, working with browser developer tools, network logs analyzers, etc.\\nExperience working in agile teams in a remote environment - proven track record of communication and collaboration with stakeholders such as Scrum Masters, Product Owners, and others.\\nGood understanding of SDLC.\\nExperience with these primary testing categories: functional and regression testing.\\nFamiliarity with API testing tools like Charles, Insomnia, and Postman is a strong plus.\\nB certificate of completion of BBST Foundations, Bug Advocacy, Test Design, and Domain testing courses or similar is not required, but it is nice to have.\\nMinor scripting or programming experience is not required, but it is nice to have.\\nHuman Skills:\\nEffective English communication and interpersonal skills, with the ability to collaborate and work effectively in a team environment.\\nDrive to learn quickly and continuously expand knowledge.\\nComfortable with a frequently changing environment and able to adapt fast.\\nExcellent analytical and problem-solving skills.\\nStrong attention to detail and the ability to prioritize and manage multiple tasks.\\nWhat is the Consideration Process\\nWhenever a new opportunity arises, the Talent Acquisition team will review applicants and reach out to begin learning more. If you are a potential match, the recruiter will reach out to give you more details about the role and begin your application process\\nDiversity and Inclusion\\nTestlio is an equal-opportunity employer deeply committed to creating an inclusive environment for people of all backgrounds and identities. We are female-founded, and 46% of our team members identify as women. See the\\nDEI section\\nof our website for more information.\",\n    score:35,\n    seniority:",
+    "language": "en",
+    "key_technologies": [],
+    "work_mode": "Remote",
+    "user_notes": null,
+    "created_at": "2026-08-06T07:56:31.175082"
+  },
+  {
+    "id": "desarrollador_ia_remote_0_2_years_v2",
+    "created_at": "2026-08-06T20:34:10.534421",
+    "title": "Desarrollador IA",
+    "company": "Confidencial",
+    "location": "Argentina (Remoto)",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Engineering / IA",
+    "seniority": "Junior",
+    "salary_range": "A convenir",
+    "key_technologies": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "Docker",
+      "Linux",
+      "HuggingFace",
+      "RAG",
+      "SQL",
+      "Git"
+    ],
+    "main_requirements": [
+      "Experiencia de 0 a 2 años en roles técnicos (IA, Backend, ML) o proyectos propios demostrables.",
+      "Dominio sólido de Python (código modular, legible, entornos virtuales).",
+      "Experiencia práctica con FastAPI (Pydantic, asincronía).",
+      "Conocimiento en LangChain y LangGraph.",
+      "Experiencia con Docker y entornos Linux.",
+      "Comprensión práctica de RAG y bases vectoriales.",
+      "Conocimientos de bases de datos SQL.",
+      "Capacidad para documentar decisiones técnicas."
+    ],
+    "summary": "Oportunidad para un desarrollador Junior con bases sólidas en Python para especializarse en sistemas de IA aplicada. El rol implica trabajar con modelos de lenguaje, crear microservicios con FastAPI, implementar pipelines de RAG y participar en el ciclo completo de desarrollo bajo mentoring senior en un entorno 100% remoto con base en Argentina.",
+    "raw_text": "Confidencial\nDesarrollador IA\n\nTrabajo desde casa\n\nCandidatura rápida\n¡Únete a nuestro equipo!\n\n¡Queremos que formes parte de nuestro talentoso equipo de profesionales! Aprovecha esta oportunidad para desarrollar tus habilidades y crecer profesionalmente en un ambiente dinámico y colaborativo.\n\nResponsabilidades del Puesto:\n\nEn tu rol como Desarrollador de IA, serás parte del equipo que convierte capacidades de modelos de lenguaje en servicios productivos y confiables. Bajo el acompañamiento de nuestro equipo senior, participarás en la exploración de nuevas tecnologías, la construcción de microservicios y la habilitación de entornos donde los modelos se prueban antes de llegar a producción. Tus retos diarios incluirán:\n\n● Evaluar la viabilidad de diferentes tecnologías de IA: comparar proveedores, modelos y frameworks mediante pruebas de concepto acotadas, midiendo calidad de salida, latencia y costo para sustentar decisiones técnicas con evidencia.\n\n● Creación de microservicios: desarrollar y exponer servicios en Python con FastAPI, con esquemas de request/response bien definidos, autenticación, manejo de errores y documentación OpenAPI.\n\n● Preparar entornos para pruebas de modelos: aprovisionar entornos reproducibles sobre Linux y Docker, resolviendo dependencias, aceleración por GPU y configuración de runtime para experimentación controlada.\n\n● Construcción de agentes y flujos conversacionales con LangChain y LangGraph, definiendo herramientas, estados y ramificaciones de decisión.\n\n● Integración de herramientas y fuentes de datos mediante MCP (Model Context Protocol), tanto consumiendo servidores existentes como implementando nuevos.\n\n● Diseño y refinamiento de prompts estructurados, con validación técnica de salidas en formato JSON y esquemas de evaluación para detectar regresiones.\n\n● Implementación de pipelines de RAG: ingesta, chunking, generación de embeddings, almacenamiento vectorial y estrategias de recuperación y reranking.\n\n● Consumo e integración de APIs de proveedores de IA, gestionando autenticación, límites de tasa, reintentos y control de costos.\n\n● Investigación y evaluación de modelos en HuggingFace, documentando hallazgos, trade-offs y recomendaciones para el equipo.\n\n● Uso de Claude Code y herramientas agénticas para acelerar el desarrollo, la refactorización y la generación de pruebas.\n\n● Modelado con ML clásico (scikit-learn) para tareas de clasificación, agrupamiento o scoring cuando un LLM no es la herramienta adecuada.\n\n● Trabajo con bases de datos relacionales y vectoriales: diseño de consultas, modelado de esquemas y persistencia de datos de servicios y experimentos.\n\n● Colaboración técnica bajo flujos de Git basados en pull requests, con code review constante y documentación de lo que se construye.\n\nHabilidades y Competencias Requeridas:\n\n● Dominio sólido de Python, con enfoque en código modular, legible y reproducible, y manejo de entornos virtuales y gestión de dependencias.\n\n● Experiencia práctica con FastAPI para la construcción de APIs y microservicios, incluyendo validación con Pydantic, endpoints asíncronos y documentación automática.\n\n● Conocimiento de LangChain y LangGraph para orquestar cadenas, herramientas y grafos de estado en aplicaciones basadas en LLMs.\n\n● Dominio técnico de prompt engineering: diseño de prompts avanzados para la generación de JSON estructurado, validación de respuestas y evaluación sistemática de resultados.\n\n● Familiaridad con MCP (Model Context Protocol) y con el patrón de exponer herramientas y datos a modelos de forma estandarizada.\n\n● Uso de Claude Code o herramientas equivalentes de desarrollo asistido por IA como parte del flujo de trabajo cotidiano.\n\n● Conocimientos de Docker para contenerizar servicios y entornos de prueba, incluyendo escritura de Dockerfiles y orquestación básica con Docker Compose.\n\n● Comodidad trabajando en Linux: línea de comandos, permisos, procesos, redes básicas, logs y diagnóstico de problemas en servidores.\n\n● Experiencia en consumo e integración de APIs, con manejo de esquemas de autenticación (API keys, OAuth, JWT), paginación, reintentos y control de errores.\n\n● Capacidad para investigar y evaluar modelos en HuggingFace, interpretando model cards, benchmarks y requisitos de hardware para elegir la opción adecuada.\n\n● Comprensión práctica de RAG: embeddings, búsqueda semántica, bases vectoriales y estrategias para mejorar la relevancia de la recuperación.\n\n● Fundamentos de Machine Learning con scikit-learn y manejo del stack de datos en Python (NumPy, pandas, Matplotlib) para análisis y visualización.\n\n● Conocimientos de bases de datos: SQL, modelado de datos y nociones de bases vectoriales para casos de uso de IA.\n\n● Colaboración técnica eficiente empleando Git bajo flujos de trabajo basados en pull requests y revisiones de código.\n\n● Habilidad para documentar decisiones técnicas y comunicar hallazgos de forma clara a perfiles técnicos y no técnicos.\n\n● Experiencia de 0 a 2 años en roles técnicos como Desarrollador de IA, Backend Developer, ML Engineer o similares, o proyectos propios demostrables en el área.\n\nPerfil del Candidato:\n\nEste rol es ideal para alguien con bases sólidas en desarrollo con Python que quiera especializarse en sistemas de IA aplicada, trabajando con modelos reales, usuarios reales y mentoring activo de ingenieros senior. Buscamos a alguien curioso y autodidacta: que le entusiasme probar una tecnología nueva y volver con una conclusión bien argumentada, que documente lo que construye, y que sepa distinguir entre \"funcionó una vez en mi máquina\" y \"funciona de forma consistente en producción\".\n\nNo necesitas saberlo todo. Necesitas fundamentos sólidos, ganas reales de aprender y la disciplina para construir cosas que sobrevivan al contacto con el mundo real, no solo a una demo.\n\nAmbiente de Trabajo:\n\nFormarás parte de un equipo especializado en IA aplicada, con alto nivel técnico y enfoque ético. Promovemos un entorno de aprendizaje constante, colaboración abierta y responsabilidad compartida. Tendrás mentoring directo de ingenieros senior, code review constante y apoyo continuo para llevar tus ideas a producción. Operamos bajo cinco principios: el prototipo no es el producto, todo servicio se contenedoriza, el prompt es código y se versiona, toda integración tiene contrato, y documentamos para que el conocimiento no se quede en una sola cabeza.\n\nLugar de trabajo: Empleo remoto (Argentina)",
+    "language": "es",
+    "source_page": "Manual",
+    "source_url": null,
+    "application_method": "No especificado en el aviso",
+    "status": "ranked",
+    "score": 85,
+    "justification": "El puesto es ideal para un perfil junior. Tu stack en Python y conocimientos de Docker, Linux y bases de datos encajan perfectamente. Aunque solicitan LangChain/LangGraph, tu experiencia construyendo agentes con Google ADK demuestra una curva de aprendizaje que mitigará rápidamente esta brecha técnica.",
+    "strengths": [
+      "Alineación perfecta con seniority (Junior/Entry level).",
+      "Stack técnico coincidente: Python, FastAPI, Docker, Linux, SQL.",
+      "Modalidad remota en Argentina, cumpliendo tus criterios.",
+      "Oportunidad de mentoring con seniors, ideal para tu etapa actual."
+    ],
+    "gaps": [
+      "Experiencia laboral profesional previa (aunque el puesto permite 0-2 años).",
+      "El stack solicita específicamente LangChain/LangGraph mientras que tu experiencia principal en IA es con Google ADK/Gemini."
+    ],
+    "ranked_at": "2026-08-06T20:34:19.399053",
     "user_notes": null
+  },
+  {
+    "id": "desarrollador_ia_remote_0_2_years_v2_updated",
+    "created_at": "2026-08-06T20:34:58.522687",
+    "title": "Desarrollador IA",
+    "company": "Confidencial",
+    "location": "Argentina (Remoto)",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Engineering / IA",
+    "seniority": "Junior",
+    "salary_range": "A convenir",
+    "key_technologies": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "Docker",
+      "Linux",
+      "HuggingFace",
+      "RAG",
+      "SQL",
+      "Git"
+    ],
+    "main_requirements": [
+      "Experiencia de 0 a 2 años en roles técnicos (IA, Backend, ML) o proyectos propios demostrables.",
+      "Dominio sólido de Python (código modular, legible, entornos virtuales).",
+      "Experiencia práctica con FastAPI (Pydantic, asincronía).",
+      "Conocimiento en LangChain y LangGraph.",
+      "Experiencia con Docker y entornos Linux.",
+      "Comprensión práctica de RAG y bases vectoriales.",
+      "Conocimientos de bases de datos SQL.",
+      "Capacidad para documentar decisiones técnicas."
+    ],
+    "summary": "Oportunidad para un desarrollador Junior con bases sólidas en Python para especializarse en sistemas de IA aplicada. El rol implica trabajar con modelos de lenguaje, crear microservicios con FastAPI, implementar pipelines de RAG y participar en el ciclo completo de desarrollo bajo mentoring senior en un entorno 100% remoto con base en Argentina.",
+    "raw_text": "Confidencial\nDesarrollador IA\n\nTrabajo desde casa\n\nCandidatura rápida\n¡Únete a nuestro equipo!\n... [Text provided previously] ...\nLink original: https://www.glassdoor.com.ar/Empleo/index.htm?utm_source=jobsForYou&utm_medium=email&utm_content=jobs-for-you-jobsForYou-jobpos1-age2d-1010220101986&utm_campaign=jobsForYou&src=GD_JOB_AD&uido=71363E77CDADF67A8A0AE35006A4580E&ao=1110586&jrtk=5-yul1-1-1jvart59hi975800-89ac6e7797c4920a---6NYlbfkN0A2hc8uKZFWH5m03rCAsVwAMi2u86xEVQmwxg9cAe38epoDn2e6ja6DjMG3roOXnaiuI4QwlkgE5IpadvcscWUoqc4RdnpqpvHpWwqoJmGoZLO9xXlZXsDE3x6bbmESHxafKC4ma0bdDaWLU2RXG4VB4DrcPvvTa_MPf3mawHe1C3fkfG4k_TAVCXDzkFUwQmAFRBjpm0UKfzg42e8Suyj94wcZVrmjlWhUHEz_Dny2bPKWJ1Y2Aet0ykV7z4UZPiKTYnoBTY4xteJRmhfmq-ucInV-TkkR_Iue6ll1SNBCoWMxHh2FAM6UeOCITqCHVfzSf55CHOtJWdG6McOuoO6lwX-Q4qQErrBzJeooDudzIBq5pSdTLcsRQE84Lzu9oIR3pLLZw0yxGoK2KTxfKTycR_pqO1NRe7mTCXJ-GJrKlXbUEdqElN2EYGleUMIaDM9LNa_lAxWFGFs6f9NTQFzpKgZ592cSYpjqFAg0lGiCplMfusVeTAG330AP6-tp0GO1DfycWmEzSSIfWieD9fwru2bNE0VzrzkIIoC3tB6T0H7dT6k9CxzSn4cPnh6wCzyYWb0qoMOSBwVdto08B4N72BZf__e8XdzTyncRHpVN67JuO9jk3B79shHsdcKyk7kembJAd6EmQ6La4AeDn6d54CyIH2OawcJbGHDwIXQgCxs8quWo4tbO75P8jhb5klBJ2pQZ8HH-d2rc1lGErqmdrYEKnfqKbdcZL3y_24VF_C-9lVdgNOaHOjFcrNRGpOP7jhRD6mFbNKT6kimJqia72sCC83P3t0nZbVF-3yhdvF3svRO4jegUajpSVTlOZfKlARmR5LKksfDdqd1EwusSyqNUMP4tXw0BDN8jsmTCS-SZ_P3xPbka&cs=1_45f5d9e2&s=362&t=REC_JOBS&pos=101&cpc=F41FEAB56D215062&guid=0000019fd5b16661900fad03bf9d8c46&jobListingId=1010220101986&ea=1&rdforyou=true&vt=e&cb=1785997465085&gdir=1",
+    "language": "es",
+    "source_page": "Glassdoor",
+    "source_url": "https://www.glassdoor.com.ar/Empleo/index.htm?utm_source=jobsForYou&utm_medium=email&utm_content=jobs-for-you-jobsForYou-jobpos1-age2d-1010220101986&utm_campaign=jobsForYou&src=GD_JOB_AD&uido=71363E77CDADF67A8A0AE35006A4580E&ao=1110586&jrtk=5-yul1-1-1jvart59hi975800-89ac6e7797c4920a---6NYlbfkN0A2hc8uKZFWH5m03rCAsVwAMi2u86xEVQmwxg9cAe38epoDn2e6ja6DjMG3roOXnaiuI4QwlkgE5IpadvcscWUoqc4RdnpqpvHpWwqoJmGoZLO9xXlZXsDE3x6bbmESHxafKC4ma0bdDaWLU2RXG4VB4DrcPvvTa_MPf3mawHe1C3fkfG4k_TAVCXDzkFUwQmAFRBjpm0UKfzg42e8Suyj94wcZVrmjlWhUHEz_Dny2bPKWJ1Y2Aet0ykV7z4UZPiKTYnoBTY4xteJRmhfmq-ucInV-TkkR_Iue6ll1SNBCoWMxHh2FAM6UeOCITqCHVfzSf55CHOtJWdG6McOuoO6lwX-Q4qQErrBzJeooDudzIBq5pSdTLcsRQE84Lzu9oIR3pLLZw0yxGoK2KTxfKTycR_pqO1NRe7mTCXJ-GJrKlXbUEdqElN2EYGleUMIaDM9LNa_lAxWFGFs6f9NTQFzpKgZ592cSYpjqFAg0lGiCplMfusVeTAG330AP6-tp0GO1DfycWmEzSSIfWieD9fwru2bNE0VzrzkIIoC3tB6T0H7dT6k9CxzSn4cPnh6wCzyYWb0qoMOSBwVdto08B4N72BZf__e8XdzTyncRHpVN67JuO9jk3B79shHsdcKyk7kembJAd6EmQ6La4AeDn6d54CyIH2OawcJbGHDwIXQgCxs8quWo4tbO75P8jhb5klBJ2pQZ8HH-d2rc1lGErqmdrYEKnfqKbdcZL3y_24VF_C-9lVdgNOaHOjFcrNRGpOP7jhRD6mFbNKT6kimJqia72sCC83P3t0nZbVF-3yhdvF3svRO4jegUajpSVTlOZfKlARmR5LKksfDdqd1EwusSyqNUMP4tXw0BDN8jsmTCS-SZ_P3xPbka&cs=1_45f5d9e2&s=362&t=REC_JOBS&pos=101&cpc=F41FEAB56D215062&guid=0000019fd5b16661900fad03bf9d8c46&jobListingId=1010220101986&ea=1&rdforyou=true&vt=e&cb=1785997465085&gdir=1",
+    "application_method": "Postulación web en: https://www.glassdoor.com.ar/Empleo/index.htm?utm_source=jobsForYou&utm_medium=email&utm_content=jobs-for-you-jobsForYou-jobpos1-age2d-1010220101986&utm_campaign=jobsForYou&src=GD_JOB_AD&uido=71363E77CDADF67A8A0AE35006A4580E&ao=1110586&jrtk=5-yul1-1-1jvart59hi975800-89ac6e7797c4920a---6NYlbfkN0A2hc8uKZFWH5m03rCAsVwAMi2u86xEVQmwxg9cAe38epoDn2e6ja6DjMG3roOXnaiuI4QwlkgE5IpadvcscWUoqc4RdnpqpvHpWwqoJmGoZLO9xXlZXsDE3x6bbmESHxafKC4ma0bdDaWLU2RXG4VB4DrcPvvTa_MPf3mawHe1C3fkfG4k_TAVCXDzkFUwQmAFRBjpm0UKfzg42e8Suyj94wcZVrmjlWhUHEz_Dny2bPKWJ1Y2Aet0ykV7z4UZPiKTYnoBTY4xteJRmhfmq-ucInV-TkkR_Iue6ll1SNBCoWMxHh2FAM6UeOCITqCHVfzSf55CHOtJWdG6McOuoO6lwX-Q4qQErrBzJeooDudzIBq5pSdTLcsRQE84Lzu9oIR3pLLZw0yxGoK2KTxfKTycR_pqO1NRe7mTCXJ-GJrKlXbUEdqElN2EYGleUMIaDM9LNa_lAxWFGFs6f9NTQFzpKgZ592cSYpjqFAg0lGiCplMfusVeTAG330AP6-tp0GO1DfycWmEzSSIfWieD9fwru2bNE0VzrzkIIoC3tB6T0H7dT6k9CxzSn4cPnh6wCzyYWb0qoMOSBwVdto08B4N72BZf__e8XdzTyncRHpVN67JuO9jk3B79shHsdcKyk7kembJAd6EmQ6La4AeDn6d54CyIH2OawcJbGHDwIXQgCxs8quWo4tbO75P8jhb5klBJ2pQZ8HH-d2rc1lGErqmdrYEKnfqKbdcZL3y_24VF_C-9lVdgNOaHOjFcrNRGpOP7jhRD6mFbNKT6kimJqia72sCC83P3t0nZbVF-3yhdvF3svRO4jegUajpSVTlOZfKlARmR5LKksfDdqd1EwusSyqNUMP4tXw0BDN8jsmTCS-SZ_P3xPbka&cs=1_45f5d9e2&s=362&t=REC_JOBS&pos=101&cpc=F41FEAB56D215062&guid=0000019fd5b16661900fad03bf9d8c46&jobListingId=1010220101986&ea=1&rdforyou=true&vt=e&cb=1785997465085&gdir=1",
+    "status": "pending_ranking",
+    "score": null,
+    "justification": null,
+    "strengths": [],
+    "gaps": [],
+    "ranked_at": null,
+    "user_notes": null
+  },
+  {
+    "source_page": "Greenhouse (invgate)",
+    "id": "greenhouse_invgate_4495272002,justification:",
+    "language": "en",
+    "key_technologies": [
+      "Python",
+      "Angular"
+    ],
+    "status": "ranked",
+    "seniority": "Not specified",
+    "department": "Engineering",
+    "strengths": [
+      "Strong alignment with Python and REST API development experience",
+      "Internship/Entry level nature matches candidate profile",
+      "Technology stack (Python/Django) aligns with project skills"
+    ],
+    "raw_text": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\\nBuscamos\\nIngenieros de Software Full Stack\\npara\\nInvGate Assets Management\\n, es un producto que permite a nuestros clientes manejar su inventario informático, conocer su infraestructura, explorarla utilizando inteligencia artificial, analizar el impacto de los cambios en la misma, comprender sus aplicaciones de negocio y las relaciones entre los elementos de su infraestructura, asegurar cumplimiento de políticas de seguridad informática, entre otras funcionalidades.\\n¿Qué buscamos?\\nSólidos conocimientos de\\nPython\\ny\\nDjango\\nConocimientos en bases de datos relacionales y en la estructuración de datos.\\nExperiencia en diseño de APIs REST para integrarnos con múltiples fuentes de datos.\\nExperiencia real con Angular (o frameworks similares) es un plus!\\nValoramos experiencia previa en productos SaaS o ITSM\\nNuestros beneficios incluyen oportunidades de desarrollo profesional, clases de inglés, capacitaciones técnicas internas y externas, días adicionales de vacaciones y licencia por paternidad, seguro de salud privado de primer nivel, reintegro por trabajo remoto y un bono fijo para compras relacionadas con gastronomía.\\nTenemos oficinas en Belgrano, CABA. Dependiendo de tu ubicación, el trabajo será Híbrido o Remoto.",
+    "user_notes": null,
+    "company": "invgate",
+    "work_mode": "Hybrid",
+    "title": "Software Engineer - Python/Django",
+    "salary_range": "Not specified",
+    "ranked_at": "2026-08-07T12:00:00Z",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4495272002",
+    "score": 90,
+    "gaps": [
+      "Requires previous professional experience in SaaS or ITSM (desired)"
+    ],
+    "created_at": "2026-08-07T00:43:34.198756",
+    "summary": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\\nBuscamos\\nIngenieros de Sof",
+    "source_url": "https://job-boards.greenhouse.io/invgate/jobs/4495272002",
+    "main_requirements": [],
+    "location": "Argentina",
+    "commitment": "Internship"
   }
 ]

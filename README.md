@@ -20,21 +20,21 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
                                     ▼
            [STAGE 2: PRE-PARSE HARD FILTER (Python / 0 Tokens)]
            - Filters by `title_blacklist.md`, `department_blacklist.md`, and `location_filters.json`.
-           - Displays numbered list (1 to N) of candidate jobs in chat.
-           - ⛔ MANDATORY PAUSE: Wait for explicit user selection in chat ("1, 3", "all").
                                     │
                                     ▼
            [STAGE 3: PARSING & IN-MEMORY STRUCTURING]
-           - Structures selected jobs into memory dicts (via API or `job_parser_agent`).
+           - Structures positions into memory dicts (via API or `job_parser_agent`).
                                     │
                                     ▼
-           [STAGE 4: POST-PARSE DETERMINISTIC FILTER (Python / 0 Tokens)]
+           [STAGE 4: POST-PARSE FILTER & BOARD CAPPING (Python / 0 Tokens)]
            - Filters by `blacklist_roles.md`, `blacklist_seniority.md`, and `location_filters.json`.
+           - Applies `max_jobs_per_board` limit from `profile/pipeline_config.json`.
            - If role/seniority/country fails -> Immediate discard (0 writes, 0 ranking tokens).
                                     │
                                     ▼
-           [STAGE 5: BATCH RANKING VIA LLM SUBAGENT (`job_ranker_agent`)]
-           - Splits valid jobs into chunks of size k = min(5, ceil(R / 4)).
+           [STAGE 5: BATCH RANKING & TIMER VIA LLM SUBAGENT (`job_ranker_agent`)]
+           - Splits retained jobs into chunks of size k = min(5, ceil(R / 4)).
+           - Pauses `delay_between_batches_seconds` between chunk ranking calls.
            - Each chunk is evaluated by `job_ranker_agent` in a single subagent turn.
                                     │
                                     ▼
@@ -50,21 +50,26 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
    - **Pre-Parse**: Discards unapproved job titles, departments, or countries directly from API metadata without calling LLMs.
    - **Post-Parse**: Discards jobs with incompatible seniority (`Senior`, `Lead`) or non-technical roles (`Sales`, `Recruiter`) in Python before LLM ranking.
 
-2. **In-Memory Caching & Quota Limit Prevention**:
-   - `LAST_FETCHED_JOBS_CACHE` stores full job dictionaries in Python memory.
-   - The agent transmits short selection strings (e.g. `job_items_or_selection="1, 3"`), preventing giant JSON payloads in prompts and eliminating `429 RESOURCE_EXHAUSTED` errors.
+2. **Automated Pipeline Execution & Board Capping**:
+   - Executes filtering and batch ranking automatically without requiring manual chat confirmation pauses.
+   - `max_jobs_per_board` in `profile/pipeline_config.json` limits the maximum number of jobs evaluated per query to prevent token consumption spikes.
+   - `delay_between_batches_seconds` adds a configurable timer delay between batch ranking LLM calls to prevent API rate limiting (`429`).
 
-3. **Deterministic Job Board Registry (`profile/board_urls.json`)**:
+3. **In-Memory Caching & Quota Limit Prevention**:
+   - `LAST_FETCHED_JOBS_CACHE` stores full job dictionaries in Python memory.
+   - The agent transmits short selection strings (e.g. `job_items_or_selection="todas"`), preventing giant JSON payloads in prompts.
+
+4. **Deterministic Job Board Registry (`profile/board_urls.json`)**:
    - Persistent registry of job board URLs sorted deterministically: **never analyzed first**, followed by least recently analyzed.
    - Formatted output with relative Spanish timestamps (*"Hoy (06/08/2026 a las 04:02 hs)"*, *"Nunca"*).
 
-4. **Extensive Vacancy Inspection & Direct Application Links (`get_job_details`)**:
+5. **Extensive Vacancy Inspection & Direct Application Links (`get_job_details`)**:
    - When inspecting any stored position, the agent retrieves all structured fields and explicitly provides the **direct application URL (`source_url`)** and **application instructions (`application_method`)**.
 
-5. **Status & Application Lifecycle Management**:
+6. **Status & Application Lifecycle Management**:
    - Allows classifying jobs as descalificadas (`disqualified`) or aplicadas (`applied`), deleting positions, or reverting recent actions (`revert_last_job_action`).
 
-6. ⛔ **Zero Mock Data Policy**:
+7. ⛔ **Zero Mock Data Policy**:
    - Strict prohibition against creating or persisting mock or synthetic test jobs (`test_adk_rank_1`) in `jobs.json`.
 
 ---
@@ -80,6 +85,7 @@ jobbud/
 ├── GEMINI.md                    # Architecture specification & agent directives
 ├── profile/                     # Candidate profile & deterministic filtering rules
 │   ├── candidate_profile.md     # Candidate background, skills & goals
+│   ├── pipeline_config.json     # Pipeline limits (board cap, batch timer, auto flag)
 │   ├── board_urls.json          # Persistent job board registry
 │   ├── location_filters.json    # Allowed/blocked countries and remote rules
 │   ├── title_blacklist.md       # Pre-Parse title blacklist
@@ -111,6 +117,7 @@ All candidate configuration and filtering rules are located in the [`profile/`](
 | File | Role / Type | Pipeline Stage | Description & Filtering Rules |
 | :--- | :--- | :--- | :--- |
 | **[`profile/candidate_profile.md`](file:///home/santi/jobbud/profile/candidate_profile.md)** | Professional Profile | **Stage 5 (LLM Ranking)** | Defines academic background (CS Student UBA), tech stack (Python, C++, SQL), English level (C2), and preferences. Used by `job_ranker_agent` to compute fit match score (0-100). |
+| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Pipeline Configuration | **Stages 4 & 5 (Pipeline Rules)** | Configures `max_jobs_per_board` (max jobs to rank per query), `delay_between_batches_seconds` (batch timer delay), and `auto_pipeline_execution`. |
 | **[`profile/board_urls.json`](file:///home/santi/jobbud/profile/board_urls.json)** | Job Board Registry | **Stage 1 (Data Acquisition)** | Persistent JSON store of registered job board URLs (Greenhouse, Ashby, etc.) and analysis timestamps. Managed deterministically by `src/tools/boards.py`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Pre-Parse Hard Filter** | **Stage 2 (Python / 0 Tokens)** | Blacklist terms matched against the raw job title. Omits non-target jobs like *Sales, Recruiter, HR, Director, Chief, Manager* before parsing. |
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Pre-Parse Hard Filter** | **Stage 2 (Python / 0 Tokens)** | Blacklist terms matched against API department metadata. Omits non-technical areas (e.g. *Customer Service, Marketing, Finance*). |

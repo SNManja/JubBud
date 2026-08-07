@@ -1,0 +1,39 @@
+{
+  "action_type": "mark_status",
+  "job_id": "greenhouse_invgate_4610663002",
+  "previous_job_state": {
+    "justification": "The position is an 'Internship' at a SaaS company, which perfectly aligns with the candidate's search for an entry-level/trainee role. The stack (Backend/Full Stack, interest in PHP/Agile) is broad enough for a student, and the company offers training/professional development, which is ideal for someone starting their career.",
+    "ranked_at": "2026-08-06T12:00:00Z",
+    "user_notes": null,
+    "key_technologies": [],
+    "language": "en",
+    "seniority": "Not specified",
+    "strengths": [
+      "Internship commitment fits perfectly with current student profile.",
+      "Company offers professional development, training, and mentoring.",
+      "Broad technical requirements allowing for growth in Backend/Full Stack development.",
+      "Hybrid/Remote modality matches preferences."
+    ],
+    "location": "Argentina",
+    "main_requirements": [],
+    "title": "Software Engineer - Full Stack",
+    "summary": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\\nBuscamos\\nIngenieros de Sof",
+    "department": "Engineering",
+    "source_page": "Greenhouse (invgate)",
+    "work_mode": "Hybrid",
+    "status": "ranked",
+    "source_url": "https://job-boards.greenhouse.io/invgate/jobs/4610663002",
+    "company": "invgate",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4610663002",
+    "id": "greenhouse_invgate_4610663002",
+    "created_at": "2026-08-06T04:02:57.494187",
+    "gaps": [
+      "The vacancy is framed as a Full Stack position and the description mentions typical professional requirements like code review of peers, which might suggest a need for prior commercial experience not explicitly stated as 'entry-level'."
+    ],
+    "salary_range": "Not specified",
+    "commitment": "Internship",
+    "score": 85
+  },
+  "new_status": "applied",
+  "timestamp": "2026-08-06T07:32:05.927132"
+}

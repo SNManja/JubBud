@@ -10,9 +10,38 @@ Enforces strict, 100% deterministic sequential execution:
 """
 
 import math
+import json
+import time
+from pathlib import Path
 from typing import List, Dict, Any, Tuple
 from src.tools.queries import evaluate_post_parse_filters
 from src.subagents.job_ranker.tools import read_candidate_profile, save_ranked_jobs_batch
+
+ROOT_DIR = Path(__file__).resolve().parents[3]
+PIPELINE_CONFIG_PATH = ROOT_DIR / "profile" / "pipeline_config.json"
+
+
+def load_pipeline_config() -> Dict[str, Any]:
+    """Reads configuration settings from profile/pipeline_config.json with safe fallbacks."""
+    default_config = {
+        "max_jobs_per_board": 5,
+        "delay_between_batches_seconds": 3,
+        "auto_pipeline_execution": True
+    }
+    if not PIPELINE_CONFIG_PATH.exists():
+        return default_config
+    try:
+        with open(PIPELINE_CONFIG_PATH, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+            if isinstance(cfg, dict):
+                return {
+                    "max_jobs_per_board": int(cfg.get("max_jobs_per_board", 5)),
+                    "delay_between_batches_seconds": float(cfg.get("delay_between_batches_seconds", 3)),
+                    "auto_pipeline_execution": bool(cfg.get("auto_pipeline_execution", True))
+                }
+    except Exception:
+        pass
+    return default_config
 
 
 # In-memory cache for candidate jobs returned by board fetchers
@@ -61,6 +90,10 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
     Returns:
         Dict containing total_processed, passed_count, discarded_count, ranked_jobs, and report_markdown.
     """
+    cfg = load_pipeline_config()
+    max_jobs_per_board = cfg.get("max_jobs_per_board", 5)
+    delay_between_batches = cfg.get("delay_between_batches_seconds", 3)
+
     if isinstance(selected_jobs, str):
         selected_jobs = resolve_jobs_from_selection(selected_jobs)
 
@@ -112,7 +145,7 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
     if not valid_jobs:
         discard_lines = [f"- **{j.get('title', 'Puesto')}**: {r}" for j, r in discarded_jobs]
         report = (
-            f"📋 **Resultados del Procesamiento ({len(parsed_jobs)} seleccionadas):**\n"
+            f"📋 **Resultados del Procesamiento ({len(parsed_jobs)} observadas):**\n"
             f"- 🚫 **Posiciones descartadas por filtros post-parseo:** {len(discarded_jobs)}\n"
             f"- ✅ **Posiciones válidas para rankear:** 0\n\n"
             f"**Motivos de descarte:**\n" + "\n".join(discard_lines)
@@ -125,31 +158,50 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
             "report_markdown": report
         }
 
+    # Step 2.5: Apply max_jobs_per_board cap
+    capped_jobs = []
+    if max_jobs_per_board > 0 and len(valid_jobs) > max_jobs_per_board:
+        capped_jobs = valid_jobs[max_jobs_per_board:]
+        valid_jobs = valid_jobs[:max_jobs_per_board]
+
     # Step 3: Calculate Chunk Size k
     R = len(valid_jobs)
     k = max(1, min(5, math.ceil(R / 4)))
     chunks = [valid_jobs[i:i + k] for i in range(0, R, k)]
 
-    # Step 4: Batch Ranking via JobRanker
+    # Step 4: Batch Ranking via JobRanker (with inter-batch timer delay)
     candidate_profile = read_candidate_profile()
     ranked_results = []
 
     for chunk_idx, chunk in enumerate(chunks, start=1):
+        if chunk_idx > 1 and delay_between_batches > 0:
+            time.sleep(delay_between_batches)
         ranker_output = _evaluate_batch_chunk_with_adk_ranker(chunk)
         ranked_results.append((chunk, ranker_output))
 
     # Step 6: Generate Consolidated Report
     report_lines = [
-        f"📊 **Reporte de Procesamiento Final ({len(parsed_jobs)} vacantes procesadas):**",
+        f"📊 **Reporte de Procesamiento Final ({len(parsed_jobs)} vacantes observadas):**",
         f"- 🚫 **Descartadas por filtros (roles/seniority/ubicación):** {len(discarded_jobs)}",
+    ]
+    if capped_jobs:
+        report_lines.append(f"- ⏸️ **Omitidas por superar el tope configurado por board ({max_jobs_per_board}):** {len(capped_jobs)}")
+
+    report_lines.extend([
         f"- ⭐ **Posiciones evaluadas y rankeadas con job_ranker_agent:** {len(valid_jobs)} (Lotes de {k} vacantes)",
         ""
-    ]
+    ])
 
     if discarded_jobs:
         report_lines.append("**Vacantes descartadas post-parseo:**")
         for j, r in discarded_jobs:
             report_lines.append(f"- ❌ **{j.get('title')}** en *{j.get('company')}* — *{r}*")
+        report_lines.append("")
+
+    if capped_jobs:
+        report_lines.append(f"**Vacantes omitidas por superar el límite máximo de {max_jobs_per_board} por consulta:**")
+        for j in capped_jobs:
+            report_lines.append(f"- ⏸️ **{j.get('title')}** en *{j.get('company')}*")
         report_lines.append("")
 
     report_lines.append("**Evaluaciones de Fit (job_ranker_agent):**\n")
@@ -161,6 +213,7 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
         "total_processed": len(parsed_jobs),
         "passed_count": len(valid_jobs),
         "discarded_count": len(discarded_jobs),
+        "capped_count": len(capped_jobs),
         "ranked_jobs": valid_jobs,
         "report_markdown": "\n".join(report_lines)
     }

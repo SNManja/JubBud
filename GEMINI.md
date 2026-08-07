@@ -24,22 +24,21 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
                      2. Pre-Filtro Duro Inicial (Pre-LLM Python / 0 Tokens)
                         (title_blacklist, department_blacklist, location_filters)
                         - Cargar vacantes conservadas en Caché Python (`LAST_FETCHED_JOBS_CACHE`)
-                        - Presentar listado numerado (1 a N) al usuario en Chat
-                        - ⛔ PAUSA OBLIGATORIA: Esperar Elección en Chat ("1, 3", "todas")
                                     │
                                     ▼
-                     3. Parsear Selección del Usuario en Memoria
+                     3. Estructuración en Memoria
                                     │
                                     ▼
-                     4. Filtro Determinista Post-Parseo (Python / 0 Tokens)
-                        (blacklist_roles, blacklist_seniority, location_filters)
+                     4. Filtro Determinista Post-Parseo & Capping (Python / 0 Tokens)
+                        (blacklist_roles, blacklist_seniority, location_filters, max_jobs_per_board)
                                     │
                 ┌───────────────────┴───────────────────┐
                 ▼                                       ▼
-       [Falla Filtro]                            [Pasa Filtro]
+       [Falla Filtro / Cap Excedido]            [Pasa Filtro & Cap]
                 │                                       │
-       Descartar de memoria                     5. Rankear en Lotes vía ADK `job_ranker_agent`
-       (0 tokens de rankeo, 0 escrituras)          (Chunk size: k = min(5, ceil(R/4)))
+       Descartar / Omitir                       5. Rankear en Lotes vía ADK `job_ranker_agent`
+       (0 tokens de rankeo, 0 escrituras)          - Chunk size: k = min(5, ceil(R/4))
+                                                   - Timer delay: delay_between_batches_seconds
                                                         │
                                                 6. Guardar en jobs.json
                                                 (status: "ranked")
@@ -53,7 +52,7 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 
 - **`jobbud_agent` (Master Orchestrator)**:
   - Manages conversation, user intent, workflow execution, status changes, intermediate progress reporting, and final output formatting.
-  - **Modo Selección Interactiva Obligatoria**: Cuando se analiza un tablero de empleo (ej. Greenhouse), el orquestador presenta SIEMPRE las estadísticas del procesamiento y el listado numerado (1 a $N$) de las vacantes que superaron los filtros deterministas. Solicita la selección explícita del usuario en el chat sobre cuáles posiciones rankear y delega a `execute_job_pipeline_tool` únicamente la selección elegida por el usuario. **Nunca auto-evalúa sin confirmación del usuario.**
+  - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo (ej. Greenhouse), el orquestador ejecuta directamente `execute_job_pipeline_tool("todas")` para procesar el filtrado determinista y el rankeo en lotes de forma automática. Al finalizar, presenta de manera transparente las estadísticas de vacantes observadas, descartadas por filtros, omitidas por el tope configurado (`max_jobs_per_board`), y las vacantes evaluadas con su fit score.
 
 - **`job_parser_agent`**:
   - Parses raw unparsed job postings, normalizes data, detects language ("es"/"en"), extracts mandatory seniority ("Trainee", "Junior", "Semi-Senior", "Senior", "Lead / Executive"), stable IDs (`exactas_86_26`, `linkedin_4445031526`, `greenhouse_canonical_5569916`, `manual_<hash>`), and returns structured JSON.
@@ -65,8 +64,9 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 
 - **`job_pipeline_runner` (`src/subagents/job_pipeline/runner.py`)**:
   - Executes the 6-stage deterministic pipeline in Python.
+  - Reads configuration limits (`max_jobs_per_board`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
   - Manages `LAST_FETCHED_JOBS_CACHE` to avoid passing massive JSON strings in LLM prompts, eliminating token blowups and API quota limits (`RESOURCE_EXHAUSTED`).
-  - Invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each batch chunk of size $k = \min(5, \lceil R / 4 \rceil)$.
+  - Invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each batch chunk of size $k = \min(5, \lceil R / 4 \rceil)$, pausing `delay_between_batches_seconds` between chunks.
 
 ---
 
@@ -100,10 +100,11 @@ To drastically minimize LLM token consumption, the pipeline applies a two-stage 
                                      │
                                      ▼
       ┌─────────────────────────────────────────────────────────────┐
-      │ ETAPA 2: Filtros Post-Parseo (Pre-Ranking en Python)        │
+      │ ETAPA 2: Filtros Post-Parseo y Capping (Pre-Ranking)        │
       │ 2.1 blacklist_roles.md      -> Revisa área parseada         │
       │ 2.2 blacklist_seniority.md  -> Revisa campo seniority       │
       │ 2.3 location_filters.json   -> Valida país/modalidad final  │
+      │ 2.4 pipeline_config.json    -> Aplica max_jobs_per_board    │
       └──────────────────────────────┬──────────────────────────────┘
                                      │
                              (Si supera Etapa 2)
@@ -114,8 +115,9 @@ To drastically minimize LLM token consumption, the pipeline applies a two-stage 
 
 ### Configuration Files (`profile/`)
 
-| Archivo | Rol en el Filtrado | Regla / Propósito |
+| Archivo | Rol en el Filtrado / Pipeline | Regla / Propósito |
 | :--- | :--- | :--- |
+| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | **Controlador del Pipeline** | Configura `max_jobs_per_board` (cap máximo por consulta), `delay_between_batches_seconds` (timer entre lotes) y `auto_pipeline_execution`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Filtro Duro Pre-Parseo** | Omite vacantes si el título contiene términos excluidos. |
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Filtro Duro Pre-Parseo** | Omite si los metadatos de la API incluyen departamentos no deseados. |
 | **[`profile/blacklist_roles.md`](file:///home/santi/jobbud/profile/blacklist_roles.md)** | **Filtro Post-Parseo** | Omite por área/rol parseado (ej. Sales, Recruiter, HR). |

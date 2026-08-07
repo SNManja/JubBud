@@ -73,26 +73,18 @@ If LinkedIn access is blocked or extraction fails:
 
 ---
 
-## 5.5. Job Board Analysis & Mandatory User Confirmation Workflow
+## 5.5. Job Board Analysis & Automated Pipeline Execution Workflow
 
 Whenever analyzing a job board listing (e.g., via `fetch_greenhouse_job_content` or `get_board_to_analyze`):
 
-1. **Mandatory Display of Processing Statistics & Position List**:
-   - Immediately present the statistics summary (Total observed, Filtered count, Retained count) to the user in the chat UI.
-   - Always display the numbered list (1 to $N$) of positions that passed the deterministic initial filters.
+1. **Automatic Sequential Execution**:
+   - Immediately call `execute_job_pipeline_tool(job_items_or_selection="todas")` to execute Stage 3 to 6 automatically.
+   - Do NOT pause to ask the user for manual selection, as initial deterministic filtering (roles, seniority, location) and board caps (`max_jobs_per_board` in `profile/pipeline_config.json`) handle job selection automatically without token waste.
 
-2. ⛔ **STRICT RULE — Mandatory Confirmation & Sequential Pipeline Tool Invocation**:
-   - You MUST ALWAYS ask the user for explicit confirmation/selection in the chat UI before processing or ranking.
-   - **Do NOT automatically invoke `job_ranker_agent`** or subagents manually.
-   - Pause execution and ask: *"¿Cuáles de estas posiciones deseas que evalúe y rankee? (puedes indicar números como '1, 3', 'todas', o 'ninguna')"*.
-   - Once the user replies with their selection in chat (e.g., "1, 3" or "la 2"), **you MUST ALWAYS CALL the tool `execute_job_pipeline_tool(job_items_or_selection="1, 3")`** passing the exact user selection string (e.g. `"1, 3"`, `"del 1 al 4"`, `"todas"`).
-   - Present the markdown report returned by `execute_job_pipeline_tool` to the user.
+2. **Reporting**:
+   - Present the markdown report returned by `execute_job_pipeline_tool` to the user, displaying the breakdown of total observed positions, discarded positions (filters), capped positions, and final fit evaluations.
 
 ---
-
-
-
-
 
 
 ## 5.6. Deterministic Filtering (`blacklist_roles.md`, `blacklist_seniority.md`, `location_filters.json`)
@@ -116,20 +108,18 @@ All job processing MUST follow this strict 6-stage sequence without exception:
 
 2. FILTRADO DURO INICIAL (Pre-Parse Filter in Python / 0 Tokens)
    - Apply title_blacklist.md, department_blacklist.md, location_filters.json on raw metadata.
-   - Present statistics report and numbered list (1 to N) of candidate positions to the user in chat.
-   - ⛔ MANDATORY PAUSE: Wait for explicit user selection in chat (e.g., "1, 3" or "todas").
 
-3. PARSEO (Parsing Selected Positions)
-   - Structure all N selected positions into job dictionaries in memory (or via job_parser_agent for unparsed text).
+3. PARSEO / ESTRUCTURADO (In-Memory Structuring)
+   - Structure positions into job dictionaries in memory (or via job_parser_agent for unparsed raw text).
 
-4. FILTRADO POST-PARSEO (Post-Parse Filter in Python / 0 Tokens)
+4. FILTRADO POST-PARSEO & BOARD CAPPING (Python / 0 Tokens)
    - Run evaluate_post_parse_filters(job_dict) on structured fields (role, seniority, country).
-   - If position matches blacklist_roles.md, blacklist_seniority.md, or location_filters.json, DISCARD IT immediately from memory.
-   - Retain R valid positions.
+   - Apply max_jobs_per_board limit from profile/pipeline_config.json.
+   - Retain R valid positions (up to max_jobs_per_board).
 
-5. RANKEADO EN LOTES (Batch Ranking with k = min(5, ceil(R / 4)))
-   - Calculate chunk size: k = min(5, ceil(R / 4)) (max 4-5 subagent calls total).
-   - Split R retained positions into chunks of size k.
+5. RANKEADO EN LOTES (Batch Ranking with k = min(5, ceil(R / 4)) and Inter-Batch Timer)
+   - Calculate chunk size: k = min(5, ceil(R / 4)).
+   - Pause delay_between_batches_seconds between chunk ranking calls.
    - For each chunk of k positions: Invoke job_ranker_agent ONCE to evaluate fit match against candidate_profile.md.
 
 6. GUARDADO FINAL EN jobs.json
@@ -149,12 +139,11 @@ An input containing exactly one distinct employment opportunity:
 
 ### Job Listing Workflow
 An input or tool result containing two or more distinct employment opportunities:
-1. Execute Stage 1 (Fetch) and Stage 2 (Pre-Parse Filter) and present the numbered list (1 to $N$) to the user in chat.
-2. **Wait for explicit user selection** (e.g. "1, 3").
-3. For selected positions: **Invoke `execute_job_pipeline_tool(job_items_json)`** to execute Stage 3 (Parse), Stage 4 (Post-Parse Filter), Stage 5 (Batch Rank with $k = \min(5, \lceil R / 4 \rceil)$), and Stage 6 (Save to `jobs.json`).
-4. Consolidate final response using the markdown report returned by `execute_job_pipeline_tool`:
+1. Execute Stage 1 (Fetch) and Stage 2 (Pre-Parse Filter).
+2. **Automatically invoke `execute_job_pipeline_tool("todas")`** to execute Stage 3 to 6.
+3. Consolidate final response using the markdown report returned by `execute_job_pipeline_tool`:
    - For low fits (< 75): compact 1-line format.
-   - For high fits (>= 75): full detailed format.
+   - For high fits (>= 75): full detailed format.= 75): full detailed format.
 
 
 
