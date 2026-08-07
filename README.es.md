@@ -68,13 +68,17 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
    - Registro persistente de portales de empleo ordenados determinísticamente: **nunca analizados primero**, seguidos de los analizados hace más tiempo.
    - Salida formateada con fechas relativas en español (*"Hoy (06/08/2026 a las 04:02 hs)"*, *"Nunca"*).
 
-5. **Inspección Extensa y Enlaces de Postulación Directos (`get_job_details`)**:
-   - Al consultar cualquier vacante almacenada, el agente recupera todos los campos estructurados e incluye obligatoriamente el **link directo a la oferta (`source_url`)** y el **método explícito de postulación (`application_method`)**.
+5. **Inspección Extensa y Método de Postulación en Cascada (`get_job_details`)**:
+   - Al consultar cualquier vacante almacenada, el agente recupera todos los campos estructurados, justificación del fit, fortalezas, vacíos y el **link directo a la oferta (`source_url`)** junto con el **método de postulación (`application_method`)** mediante un sistema de respaldo en 4 niveles (email de contacto, URL directa, URL en cuerpo del aviso, o reconstrucción canónica para Greenhouse, LinkedIn, Exactas y portales guardados).
 
-6. **Gestión de Estados y Deshacer (Undo)**:
+6. **Inmutabilidad del Ranker y Re-evaluación Post-Evaluación**:
+   - `job_ranker_agent` modifica únicamente campos evaluativos (`score`, `justification`, `strengths`, `gaps`, `status: "ranked"`, `ranked_at`). Los campos originales del aviso (`title`, `company`, `location`, `work_mode`, `commitment`, `raw_text`, `source_url`) son 100% inmutables.
+   - Infiere `seniority` y `years_of_experience` en vacantes donde no figuraban, y re-ejecuta `evaluate_post_parse_filters`. Si la oferta supera `max_years_experience` (ej: 5 años), es descartada automáticamente.
+
+7. **Gestión de Estados y Deshacer (Undo)**:
    - Permite clasificar empleos como descalificados (`disqualified`) o aplicados (`applied`), eliminar registros o revertir la última acción (`revert_last_job_action`).
 
-7. ⛔ **Política Cero Mock Data**:
+8. ⛔ **Política Cero Mock Data**:
    - Prohibición estricta de generar o persistir datos ficticios o de prueba (`test_adk_rank_1`) en `jobs.json`.
 
 ---
@@ -90,9 +94,9 @@ jobbud/
 ├── GEMINI.md                    # Especificación de arquitectura y reglas del agente
 ├── profile/                     # Perfil del candidato y reglas de filtrado
 │   ├── candidate_profile.md     # Perfil profesional y preferencias del usuario
-│   ├── pipeline_config.json     # Límites del pipeline (cap por board, timer de lote, auto flag)
+│   ├── pipeline_config.json     # Límites del pipeline (cap por board, timer de lote, exp máx, auto flag)
 │   ├── board_urls.json          # Registro persistente de tableros de empleo
-│   ├── location_filters.json    # Países permitidos, bloqueados y reglas remotas
+│   ├── location_filters.json    # Países permitidos, ciudades/barrios y reglas remotas
 │   ├── title_blacklist.md       # Términos excluidos en títulos (Pre-Parseo)
 │   ├── department_blacklist.md  # Áreas excluidas en metadatos (Pre-Parseo)
 │   ├── blacklist_roles.md       # Roles/áreas excluidas (Post-Parseo)
@@ -105,11 +109,11 @@ jobbud/
     │   ├── job_parser/          # Subagente extractor y estructurador de avisos
     │   ├── job_ranker/          # Subagente evaluador de compatibilidad (fit score)
     │   └── job_pipeline/        # Runner secuencial determinista (`runner.py`)
-    └── tools/                   # Colección modular de 18 herramientas
-        ├── __init__.py          # Exporta HERRAMIENTAS_BASICAS
+    └── tools/                   # Colección modular de 19 herramientas
+        ├── __init__.py          # Exporta HERRAMIENTAS_BASICAS (las 19 herramientas del sistema)
         ├── fetchers.py          # Scraping y conectores API (Greenhouse, Exactas, LinkedIn)
         ├── queries.py           # Consultas, inspecciones detalladas y filtros
-        ├── management.py        # Edición de estados, borrado, undo y runner tool
+        ├── management.py        # Edición de estados, borrado, undo y runners monotablero/multitablero
         └── boards.py            # Registro y ordenamiento determinista de tableros
 ```
 

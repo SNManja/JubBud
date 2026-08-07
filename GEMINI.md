@@ -67,7 +67,6 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 - **`job_pipeline_runner` (`src/subagents/job_pipeline/runner.py`)**:
   - Executes the 6-stage deterministic pipeline in Python.
   - Reads configuration limits (`max_jobs_per_board`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
-  - Manages `LAST_FETCHED_JOBS_CACHE` to avoid passing massive JSON strings in LLM prompts, eliminating token blowups and API quota limits (`RESOURCE_EXHAUSTED`).
   - Invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each batch chunk of size $k = \min(5, \lceil R / 4 \rceil)$, pausing `delay_between_batches_seconds` between chunks.
 
 ---
@@ -75,7 +74,7 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 ## 📐 Unified `jobs.json` Schema
 
 All job sources (APIs, web fetchers, subagents, and manual entries) standardize job objects using a single unified JSON schema:
-`id`, `created_at`, `title`, `company`, `location`, `work_mode`, `commitment`, `department`, `seniority`, `salary_range`, `key_technologies`, `main_requirements`, `summary`, `raw_text`, `language`, `source_page`, `source_url`, `application_method`, `status` ("pending_ranking", "ranked", "disqualified", "applied"), `score`, `justification`, `strengths`, `gaps`, `ranked_at`, `user_notes`.
+`id`, `created_at`, `title`, `company`, `location`, `work_mode`, `commitment`, `department`, `seniority`, `years_of_experience`, `salary_range`, `key_technologies`, `main_requirements`, `summary`, `raw_text`, `language`, `source_page`, `source_url`, `application_method`, `status` ("pending_ranking", "ranked", "disqualified", "applied"), `score`, `justification`, `strengths`, `gaps`, `ranked_at`, `user_notes`.
 
 ---
 
@@ -104,7 +103,8 @@ To drastically minimize LLM token consumption, the pipeline applies a two-stage 
       ┌─────────────────────────────────────────────────────────────┐
       │ ETAPA 2: Filtros Post-Parseo y Capping (Pre-Ranking)        │
       │ 2.1 blacklist_roles.md      -> Revisa área parseada         │
-      │ 2.2 blacklist_seniority.md  -> Revisa campo seniority       │
+      │ 2.2 blacklist_seniority.md  -> Revisa seniority y exp.      │
+      │                                (years_of_exp > max_years)   │
       │ 2.3 location_filters.json   -> Valida país/modalidad final  │
       │ 2.4 pipeline_config.json    -> Aplica max_jobs_per_board    │
       └──────────────────────────────┬──────────────────────────────┘
@@ -112,7 +112,7 @@ To drastically minimize LLM token consumption, the pipeline applies a two-stage 
                              (Si supera Etapa 2)
                                      │
                                      ▼
-                 3. Guardado en `jobs.json` + Ranker LLM
+                  3. Guardado en `jobs.json` + Ranker LLM
 ```
 
 ### Configuration Files (`profile/`)
@@ -159,10 +159,11 @@ src/tools/
 To guarantee data integrity and eliminate duplicate job entries across sessions, JobBud enforces standardized platform IDs and a 3-level deduplication strategy:
 
 ### 1. Standardized Platform ID Format Scheme (`_generate_stable_job_id`)
-* **Greenhouse**: `greenhouse_{board_token}_{job_id}` (e.g. `greenhouse_canonical_5569916`, `greenhouse_invgate_4495272002`).
-* **Exactas UBA**: `exactas_{num_part}` (e.g. `Oferta #86/26` $\rightarrow$ `exactas_86_26`).
-* **LinkedIn**: `linkedin_{numeric_id}` (extracted from job URL or text $\rightarrow$ `linkedin_4445031526`).
-* **Manual / Un-ID'd Text Fallback**: `manual_{md5(company:title)[:8]}` (e.g. `manual_bebce99c`). Re-pasting identical manual job text generates the exact same MD5 ID, preventing duplicate manual entries.
+* **Greenhouse**: `greenhouse_{board_token}_{job_id}` (e.g. `greenhouse_canonical_5569916`, `greenhouse_invgate_4495272002`). Extraído de metadatos API o de URLs tipo `job-boards.greenhouse.io/token/jobs/id`.
+* **Exactas UBA**: `exactas_{num_part}` (e.g. `Oferta #86/26` $\rightarrow$ `exactas_86_26`). Extraído de metadatos o URLs tipo `/oferta/86-26`.
+* **LinkedIn**: `linkedin_{numeric_id}` (extraído de metadatos o URLs tipo `view/4445031526`).
+* **Ashby**: `ashby_{company}_{job_id}` (extraído de metadatos o URLs tipo `ashbyhq.com/company/id`).
+* **Manual / Un-ID'd Text Fallback**: `manual_{md5(company:title)[:8]}` (e.g. `manual_bebce99c`). Si un aviso carece de ID al pasar por el ranker, se le asigna automáticamente un ID determinista según su URL o hash MD5.
 
 ### 2. 3-Level Deduplication Architecture
 1. **Level 1 — Pre-Check Deduplication (`check_existing_job`)**:
@@ -171,9 +172,16 @@ To guarantee data integrity and eliminate duplicate job entries across sessions,
 2. **Level 2 — Insertion Deduplication (`save_multiple_jobs_json`)**:
    - Maintains an in-memory set of lowercase existing IDs (`existing_ids = {str(j.get("id")).lower() for j in jobs}`).
    - Skips saving any entry whose ID already exists in `jobs.json` (`skipped_count += 1`), preventing duplicate rows.
-3. **Level 3 — Ranker Upsert (`save_ranked_jobs_batch`)**:
-   - When saving fit scores evaluated by `job_ranker_agent`, existing IDs are updated in-place (`existing_ids[jid].update(rjob)`).
-   - Updates `score`, `justification`, `strengths`, `gaps`, `status: "ranked"`, and `ranked_at` without duplicating the job entry.
+3. **Level 3 — Ranker Upsert & Immutability (`save_ranked_jobs_batch`)**:
+   - Updates `score`, `justification`, `strengths`, `gaps`, `status: "ranked"`, and `ranked_at` in-place without duplicating the job entry.
+   - **Ranker Immutability Rule**: Preserves all core source fields (`title`, `company`, `location`, `work_mode`, `commitment`, `raw_text`, `source_url`, `created_at`). Only populates `seniority` or `years_of_experience` if they were previously empty/undefined, and re-evaluates post-parse filters (`evaluate_post_parse_filters`).
+
+### 3. Cascading Application Method & Direct Link Fallback (`_extract_application_method`)
+To ensure every job has actionable application instructions, `_extract_application_method` applies a 4-level fallback:
+1. **Direct Email in Text**: Detects contact email in body text $\rightarrow$ `Enviar CV por correo a...`.
+2. **Explicit `source_url`**: Uses stored `source_url` $\rightarrow$ `Postulación web en: {source_url}`.
+3. **HTTP/HTTPS URL in Body Text**: Scans raw description text for URLs $\rightarrow$ `Postulación web en: {url}`.
+4. **Canonical URL Reconstruction**: Reconstructs direct web application links from Greenhouse (`job-boards.greenhouse.io`), LinkedIn (`linkedin.com/jobs/view`), Exactas, or registered portal URLs in `profile/board_urls.json`.
 
 ---
 

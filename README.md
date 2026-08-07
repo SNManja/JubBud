@@ -69,13 +69,17 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
    - Persistent registry of job board URLs sorted deterministically: **never analyzed first**, followed by least recently analyzed.
    - Formatted output with relative Spanish timestamps (*"Hoy (06/08/2026 a las 04:02 hs)"*, *"Nunca"*).
 
-5. **Extensive Vacancy Inspection & Direct Application Links (`get_job_details`)**:
-   - When inspecting any stored position, the agent retrieves all structured fields and explicitly provides the **direct application URL (`source_url`)** and **application instructions (`application_method`)**.
+5. **Extensive Vacancy Inspection & Cascading Direct Application Links (`get_job_details`)**:
+   - When inspecting any stored position, the agent retrieves all structured fields, fit rationale, strengths, gaps, and **direct application URLs (`source_url`) and application instructions (`application_method`)** using a robust 4-level fallback (email contact, explicit `source_url`, HTTP URLs in raw text, or canonical URL reconstruction for Greenhouse, LinkedIn, Exactas, and registered boards).
 
-6. **Status & Application Lifecycle Management**:
+6. **Ranker Field Immutability & Post-Evaluation Filtering**:
+   - `job_ranker_agent` updates only evaluation fields (`score`, `justification`, `strengths`, `gaps`, `status: "ranked"`, `ranked_at`). Core source fields (`title`, `company`, `location`, `work_mode`, `commitment`, `raw_text`, `source_url`) remain 100% immutable.
+   - Infers `seniority` and `years_of_experience` if unspecified, and re-evaluates post-parse filters (`evaluate_post_parse_filters`). Jobs requiring $> \text{max\_years\_experience}$ (e.g. 5 years) are automatically discarded.
+
+7. **Status & Application Lifecycle Management**:
    - Allows classifying jobs as descalificadas (`disqualified`) or aplicadas (`applied`), deleting positions, or reverting recent actions (`revert_last_job_action`).
 
-7. ⛔ **Zero Mock Data Policy**:
+8. ⛔ **Zero Mock Data Policy**:
    - Strict prohibition against creating or persisting mock or synthetic test jobs (`test_adk_rank_1`) in `jobs.json`.
 
 ---
@@ -91,9 +95,9 @@ jobbud/
 ├── GEMINI.md                    # Architecture specification & agent directives
 ├── profile/                     # Candidate profile & deterministic filtering rules
 │   ├── candidate_profile.md     # Candidate background, skills & goals
-│   ├── pipeline_config.json     # Pipeline limits (board cap, batch timer, auto flag)
+│   ├── pipeline_config.json     # Pipeline limits (board cap, batch timer, max years exp, auto flag)
 │   ├── board_urls.json          # Persistent job board registry
-│   ├── location_filters.json    # Allowed/blocked countries and remote rules
+│   ├── location_filters.json    # Allowed/blocked countries, cities, and remote rules
 │   ├── title_blacklist.md       # Pre-Parse title blacklist
 │   ├── department_blacklist.md  # Pre-Parse API department blacklist
 │   ├── blacklist_roles.md       # Post-Parse role/area blacklist
@@ -106,11 +110,11 @@ jobbud/
     │   ├── job_parser/          # Job parsing & structuring subagent
     │   ├── job_ranker/          # Fit match evaluation & scoring subagent
     │   └── job_pipeline/        # Deterministic sequential runner (`runner.py`)
-    └── tools/                   # Modular collection of 18 tools
-        ├── __init__.py          # Re-exports HERRAMIENTAS_BASICAS
+    └── tools/                   # Modular collection of 19 tools
+        ├── __init__.py          # Re-exports HERRAMIENTAS_BASICAS (all 19 core tools)
         ├── fetchers.py          # API connectors & web scraping (Greenhouse, Exactas, LinkedIn)
         ├── queries.py           # Job querying, detailed inspection & filters
-        ├── management.py        # Status edits, deletions, undo & pipeline tool
+        ├── management.py        # Status edits, deletions, undo & single/multi-board pipeline tools
         └── boards.py            # Job board registry management & ordering
 ```
 
