@@ -122,6 +122,13 @@ def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
 
         from src.tools.queries import evaluate_post_parse_filters
 
+        VALID_SCHEMA_KEYS = {
+            "id", "created_at", "title", "company", "location", "work_mode", "commitment",
+            "department", "seniority", "salary_range", "key_technologies", "main_requirements",
+            "summary", "raw_text", "language", "source_page", "source_url", "application_method",
+            "user_notes", "status", "ranked_at", "score", "justification", "strengths", "gaps"
+        }
+
         existing_ids = {str(j.get("id", "")).lower(): j for j in jobs}
         saved_titles = []
         discarded_titles = []
@@ -132,18 +139,45 @@ def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
                 discarded_titles.append(f"'{rjob.get('title')}' ({reason})")
                 continue
 
-            jid = str(rjob.get("id", "")).lower()
-            rjob["status"] = "ranked"
-            if not rjob.get("ranked_at"):
-                rjob["ranked_at"] = datetime.now().isoformat()
+            jid = str(rjob.get("id", "")).strip().lower()
+            if not jid or jid in ("none", "null", "undefined"):
+                continue
+
+            score_val = max(0, min(100, int(rjob.get("score", 0))))
+            just_val = str(rjob.get("justification", ""))
+            str_val = rjob.get("strengths", []) if isinstance(rjob.get("strengths"), list) else []
+            gaps_val = rjob.get("gaps", []) if isinstance(rjob.get("gaps"), list) else []
+            now_iso = datetime.now().isoformat()
 
             if jid in existing_ids:
-                existing_ids[jid].update(rjob)
+                # ONLY update ranker evaluation fields; keep source fields completely untouched
+                target = existing_ids[jid]
+                target["score"] = score_val
+                target["justification"] = just_val
+                target["strengths"] = str_val
+                target["gaps"] = gaps_val
+                target["status"] = "ranked"
+                target["ranked_at"] = now_iso
+                # Clean any non-schema attributes if present
+                for k in list(target.keys()):
+                    if k not in VALID_SCHEMA_KEYS:
+                        del target[k]
+                saved_titles.append(f"'{target.get('title')}' ({score_val}/100)")
             else:
-                jobs.append(rjob)
-                existing_ids[jid] = rjob
+                # New job being saved with ranking: sanitize to valid schema keys only
+                sanitized_job = {k: v for k, v in rjob.items() if k in VALID_SCHEMA_KEYS}
+                sanitized_job["score"] = score_val
+                sanitized_job["justification"] = just_val
+                sanitized_job["strengths"] = str_val
+                sanitized_job["gaps"] = gaps_val
+                sanitized_job["status"] = "ranked"
+                sanitized_job["ranked_at"] = now_iso
+                if not sanitized_job.get("created_at"):
+                    sanitized_job["created_at"] = now_iso
 
-            saved_titles.append(f"'{rjob.get('title')}' ({rjob.get('score')}/100)")
+                jobs.append(sanitized_job)
+                existing_ids[jid] = sanitized_job
+                saved_titles.append(f"'{sanitized_job.get('title')}' ({score_val}/100)")
 
 
         with open(JOBS_FILE_PATH, "w", encoding="utf-8") as f:
