@@ -122,16 +122,22 @@ def _parse_raw_text_with_adk_parser(raw_text: str) -> Dict[str, Any]:
                         output.append(p.text)
         return "".join(output)
 
-    try:
-        loop = asyncio.get_running_loop()
-    except RuntimeError:
-        loop = None
-
-    if loop and loop.is_running():
-        with concurrent.futures.ThreadPoolExecutor() as pool:
-            response_text = pool.submit(lambda: asyncio.run(_run())).result()
-    else:
-        response_text = asyncio.run(_run())
+    max_retries = 3
+    response_text = ""
+    for attempt in range(1, max_retries + 1):
+        try:
+            if loop and loop.is_running():
+                with concurrent.futures.ThreadPoolExecutor() as pool:
+                    response_text = pool.submit(lambda: asyncio.run(_run())).result()
+            else:
+                response_text = asyncio.run(_run())
+            break
+        except Exception as e:
+            err_str = str(e)
+            if ("429" in err_str or "RESOURCE_EXHAUSTED" in err_str) and attempt < max_retries:
+                time.sleep(15 * attempt)
+            else:
+                break
 
     if captured_args and captured_args.get("title"):
         return build_unified_job_dict(
@@ -356,11 +362,22 @@ def _evaluate_batch_chunk_with_adk_ranker(chunk: List[dict]) -> str:
     except RuntimeError:
         loop = None
 
-    if loop and loop.is_running():
-        with concurrent.futures.ThreadPoolExecutor() as pool:
-            return pool.submit(lambda: asyncio.run(_run())).result()
-    else:
-        return asyncio.run(_run())
+    max_retries = 3
+    for attempt in range(1, max_retries + 1):
+        try:
+            if loop and loop.is_running():
+                with concurrent.futures.ThreadPoolExecutor() as pool:
+                    return pool.submit(lambda: asyncio.run(_run())).result()
+            else:
+                return asyncio.run(_run())
+        except Exception as e:
+            err_str = str(e)
+            if ("429" in err_str or "RESOURCE_EXHAUSTED" in err_str) and attempt < max_retries:
+                time.sleep(15 * attempt)
+            else:
+                if attempt == max_retries:
+                    return f"⚠️ [429 Quota Warning]: Se superó el límite de cuota (15 RPM) al evaluar lote tras {max_retries} reintentos."
+                raise e
 
 
 def filter_boards_by_scope(boards: List[Dict[str, Any]], scope_str: str) -> List[Dict[str, Any]]:

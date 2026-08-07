@@ -3,10 +3,10 @@
   "max_jobs_per_board": 5,
 
   "_comment_delay_between_batches": "Pausa en segundos (timer) entre cada llamada en lote (chunk) al subagente ranker con LLM.",
-  "delay_between_batches_seconds": 3,
+  "delay_between_batches_seconds": 4,
 
   "_comment_delay_between_boards": "Pausa en segundos (timer) entre la consulta a un Job Board y el siguiente durante la ejecución multitablero.",
-  "delay_between_boards_seconds": 10,
+  "delay_between_boards_seconds": 12,
 
   "_comment_auto_pipeline_execution": "Indica si el pipeline se ejecuta de forma automática sin pedir confirmación manual al usuario.",
   "auto_pipeline_execution": true
