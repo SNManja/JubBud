@@ -129,6 +129,29 @@ def extract_seniority(title: str, text: str, seniority: Optional[str] = None) ->
     return "Not specified"
 
 
+def extract_commitment(title: str = "", text: str = "", commitment: Optional[str] = None) -> str:
+    """
+    Extracts employment commitment (Full-time, Part-time, Internship, Not specified)
+    using strict word boundaries to avoid false positives from words like 'internal' or 'international'.
+    """
+    if commitment and str(commitment).strip() and str(commitment).strip().lower() not in ("not specified", "no especificada", "unknown", ""):
+        c_clean = str(commitment).strip()
+        if c_clean.lower() == "internship":
+            full_txt = f"{title or ''} {text or ''}".lower()
+            if not re.search(r"\b(internship|interns?|pasant[ií]as?|pasante)\b", full_txt):
+                return "Full-time"
+        return c_clean
+
+    combined = f"{title or ''} {text or ''}".lower()
+
+    if re.search(r"\b(internship|interns?|pasant[ií]as?|pasante)\b", combined):
+        return "Internship"
+    if re.search(r"\b(part-time|part time|medio tiempo)\b", combined):
+        return "Part-time"
+    if re.search(r"\b(full-time|full time|tiempo completo)\b", combined):
+        return "Full-time"
+
+    return "Not specified"
 
 
 def extract_department(title: str, text: str, department: Optional[str] = None) -> str:
@@ -183,9 +206,10 @@ def build_unified_job_dict(
         job_id=job_id
     )
 
-    app_method = _extract_application_method(raw_text or summary, source_url, application_method)
-    detected_seniority = extract_seniority(title, raw_text or summary, seniority)
-    detected_department = extract_department(title, raw_text or summary, department)
+    norm_commitment = extract_commitment(title=title, text=raw_text, commitment=commitment)
+    norm_department = extract_department(title=title, text=raw_text, department=department)
+    norm_seniority = extract_seniority(title=title, text=raw_text, seniority=seniority)
+    norm_app_method = _extract_application_method(raw_text or summary, source_url, application_method)
 
     return {
         "id": assigned_id,
@@ -194,9 +218,9 @@ def build_unified_job_dict(
         "company": company.strip() if company else "Not specified",
         "location": location.strip() if location else "Not specified",
         "work_mode": work_mode.strip() if work_mode else "Not specified",
-        "commitment": commitment.strip() if commitment else "Not specified",
-        "department": detected_department,
-        "seniority": detected_seniority,
+        "commitment": norm_commitment,
+        "department": norm_department,
+        "seniority": norm_seniority,
         "salary_range": salary_range.strip() if salary_range else "Not specified",
         "key_technologies": key_technologies if isinstance(key_technologies, list) else [],
         "main_requirements": main_requirements if isinstance(main_requirements, list) else [],
@@ -205,7 +229,7 @@ def build_unified_job_dict(
         "language": language.lower().strip() if language else "en",
         "source_page": source_page.strip() if source_page else "Manual",
         "source_url": source_url,
-        "application_method": app_method,
+        "application_method": norm_app_method,
         "status": status,
         "score": None,
         "justification": None,

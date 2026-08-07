@@ -361,7 +361,8 @@ def fetch_greenhouse_job_content(url: str) -> str:
                 work_mode = "Remote" if "remote" in full_lower else ("Hybrid" if "hybrid" in full_lower or "híbrido" in full_lower else ("On-site" if "on-site" in full_lower or "onsite" in full_lower else "Not specified"))
 
 
-                commitment = "Part-time" if "part-time" in full_lower or "part time" in full_lower else ("Full-time" if "full-time" in full_lower or "full time" in full_lower else ("Internship" if "intern" in full_lower or "pasantía" in full_lower else "Not specified"))
+                from src.subagents.job_parser.tools import extract_commitment
+                commitment = extract_commitment(j_title, clean_desc, None)
 
 
                 found_techs = []
