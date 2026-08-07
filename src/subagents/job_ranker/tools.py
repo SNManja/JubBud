@@ -140,8 +140,16 @@ def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
                 continue
 
             jid = str(rjob.get("id", "")).strip().lower()
-            if not jid or jid in ("none", "null", "undefined"):
-                continue
+            if not jid or jid in ("none", "null", "undefined", ""):
+                from src.subagents.job_parser.tools import _generate_stable_job_id
+                jid = _generate_stable_job_id(
+                    title=rjob.get("title", ""),
+                    company=rjob.get("company", ""),
+                    summary=rjob.get("summary", ""),
+                    source_page=rjob.get("source_page", ""),
+                    source_url=rjob.get("source_url", "")
+                )
+                rjob["id"] = jid
 
             score_val = max(0, min(100, int(rjob.get("score", 0))))
             just_val = str(rjob.get("justification", ""))

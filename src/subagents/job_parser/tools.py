@@ -14,21 +14,50 @@ JOBS_FILE_PATH = ROOT_DIR / "jobs.json"
 
 
 def _generate_stable_job_id(
-    title: str,
-    company: str,
-    summary: str,
-    source_page: str,
-    source_url: Optional[str],
+    title: str = "",
+    company: str = "",
+    summary: str = "",
+    source_page: str = "",
+    source_url: Optional[str] = None,
     job_id: Optional[str] = None
 ) -> str:
-    """Generates a stable, deterministic job ID based on source and job details."""
-    if job_id and job_id.strip():
-        cleaned = re.sub(r'[^a-zA-Z0-9_\-]', '_', job_id.strip())
+    """Generates a stable, deterministic job ID based on source URL and job details."""
+    if job_id and str(job_id).strip() and str(job_id).strip().lower() not in ("none", "null", "undefined", ""):
+        cleaned = re.sub(r'[^a-zA-Z0-9_\-]', '_', str(job_id).strip())
         return cleaned.lower()
 
-    text_to_search = f"{title} {summary} {source_url or ''}"
+    s_url = (source_url or "").strip()
+    text_to_search = f"{title} {summary} {s_url}"
 
-    # 1. Exactas UBA format: Oferta #86/26 or 86/2026 or 86-26
+    # 1. Greenhouse from URL patterns
+    if s_url:
+        gh_match = re.search(r'(?:for=([a-zA-Z0-9_\-]+).*token=(\d+))|(?:job-boards\.greenhouse\.io/([a-zA-Z0-9_\-]+)/jobs/(\d+))|(?:greenhouse\.io/(?:embed/)?([a-zA-Z0-9_\-]+)/(?:jobs/)?(\d+))', s_url, re.IGNORECASE)
+        if gh_match:
+            groups = [g for g in gh_match.groups() if g]
+            if len(groups) >= 2:
+                return f"greenhouse_{groups[0].lower()}_{groups[1]}"
+
+        # 2. LinkedIn from URL
+        li_match = re.search(r'(?:view/|jobid[=_]|currentJobId=)(\d+)', s_url, re.IGNORECASE)
+        if li_match:
+            return f"linkedin_{li_match.group(1)}"
+        if "linkedin" in s_url.lower():
+            li_num = re.search(r'(\d{8,11})', s_url)
+            if li_num:
+                return f"linkedin_{li_num.group(1)}"
+
+        # 3. Exactas UBA from URL or text
+        exactas_url_match = re.search(r'(\d+[\/\-_]\d+)', s_url, re.IGNORECASE)
+        if exactas_url_match and ("exactas" in s_url.lower() or "exactas" in (source_page or "").lower()):
+            num_part = exactas_url_match.group(1).replace('/', '_').replace('-', '_')
+            return f"exactas_{num_part}"
+
+        # 4. Ashby from URL
+        ashby_match = re.search(r'ashbyhq\.com/([a-zA-Z0-9_\-]+)/([a-zA-Z0-9_\-]+)', s_url, re.IGNORECASE)
+        if ashby_match:
+            return f"ashby_{ashby_match.group(1).lower()}_{ashby_match.group(2).lower()}"
+
+    # Exactas match in title or summary text
     exactas_match = re.search(r'Oferta\s*#?\s*(\d+[\/\-_]\d+)', text_to_search, re.IGNORECASE)
     if exactas_match:
         num_part = exactas_match.group(1).replace('/', '_').replace('-', '_')
@@ -38,19 +67,10 @@ def _generate_stable_job_id(
     if source_page and "exactas" in source_page.lower() and exactas_match_simple:
         return f"exactas_{exactas_match_simple.group(1)}"
 
-    # 2. LinkedIn ID from URL or text
-    if source_url:
-        linkedin_match = re.search(r'(?:view/|jobid[=_]|currentJobId=)(\d+)', source_url, re.IGNORECASE)
-        if linkedin_match:
-            return f"linkedin_{linkedin_match.group(1)}"
-
-    if source_page and "linkedin" in source_page.lower() and source_url:
-        linkedin_match2 = re.search(r'(\d{9,11})', source_url)
-        if linkedin_match2:
-            return f"linkedin_{linkedin_match2.group(1)}"
-
-    # 3. Deterministic hash fallback for manual or un-ID'd postings
-    raw_key = f"{company.strip().lower()}:{title.strip().lower()}"
+    # Deterministic hash fallback for manual or un-ID'd postings
+    clean_company = company.strip().lower() if company else "unknown"
+    clean_title = title.strip().lower() if title else "job"
+    raw_key = f"{clean_company}:{clean_title}"
     hash_hex = hashlib.md5(raw_key.encode('utf-8')).hexdigest()[:8]
     prefix = "exactas" if (source_page and "exactas" in source_page.lower()) else ("linkedin" if (source_page and "linkedin" in source_page.lower()) else "manual")
     return f"{prefix}_{hash_hex}"

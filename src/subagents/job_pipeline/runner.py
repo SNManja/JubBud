@@ -229,14 +229,29 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
 
     # Step 1: Parsing / Structuring in memory
     parsed_jobs = []
+    from src.subagents.job_parser.tools import _generate_stable_job_id
+
     for job in selected_jobs:
         if isinstance(job, dict):
             if job.get("title") == "Posición de Texto Crudo" and job.get("raw_text"):
-                parsed_jobs.append(_parse_raw_text_with_adk_parser(job["raw_text"]))
+                pdict = _parse_raw_text_with_adk_parser(job["raw_text"])
             else:
-                parsed_jobs.append(job)
+                pdict = job
         elif isinstance(job, str):
-            parsed_jobs.append(_parse_raw_text_with_adk_parser(job))
+            pdict = _parse_raw_text_with_adk_parser(job)
+        else:
+            continue
+
+        if not pdict.get("id") or str(pdict.get("id")).strip().lower() in ("none", "null", "undefined", ""):
+            pdict["id"] = _generate_stable_job_id(
+                title=pdict.get("title", ""),
+                company=pdict.get("company", ""),
+                summary=pdict.get("summary", ""),
+                source_page=pdict.get("source_page", ""),
+                source_url=pdict.get("source_url", "")
+            )
+
+        parsed_jobs.append(pdict)
 
     # Step 2: Deterministic Post-Parse Filtering (Python / 0 Tokens)
     valid_jobs = []
