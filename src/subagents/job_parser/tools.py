@@ -76,11 +76,19 @@ def _generate_stable_job_id(
     return f"{prefix}_{hash_hex}"
 
 
-def _extract_application_method(text: str, source_url: Optional[str], application_method: Optional[str] = None) -> str:
-    if application_method and application_method.strip():
-        return application_method.strip()
+def _extract_application_method(
+    text: str,
+    source_url: Optional[str],
+    application_method: Optional[str] = None,
+    company: str = "",
+    job_id: str = ""
+) -> str:
+    if application_method and str(application_method).strip() and str(application_method).strip().lower() not in ("not specified", "no especificada", "none", "null", "no especificado en el aviso", ""):
+        return str(application_method).strip()
 
     full_text = text or ""
+
+    # 1. Search email contact in raw text
     email_match = re.search(r'[\w\.-]+@[\w\.-]+\.\w+', full_text)
     ref_match = re.search(r'(?:referencia|ref[:\s]*)(.*)', full_text, re.IGNORECASE)
 
@@ -89,10 +97,48 @@ def _extract_application_method(text: str, source_url: Optional[str], applicatio
         ref_text = f" (Ref: {ref_match.group(1).strip()})" if ref_match else ""
         return f"Enviar CV por correo a {email}{ref_text}"
 
-    if source_url and source_url.strip():
-        return f"Postulación web en: {source_url.strip()}"
+    # 2. Use explicit source_url
+    if source_url and str(source_url).strip() and str(source_url).strip().lower() not in ("none", "null", ""):
+        return f"Postulación web en: {str(source_url).strip()}"
 
-    return "No especificado en el aviso"
+    # 3. Search HTTP/HTTPS URL in raw text
+    url_in_text = re.search(r'https?://[^\s<>"\'`()]+', full_text)
+    if url_in_text:
+        clean_url = url_in_text.group(0).rstrip('.,;:')
+        return f"Postulación web en: {clean_url}"
+
+    # 4. Construct URL from Greenhouse/LinkedIn/Exactas IDs or company name in registered boards
+    clean_jid = str(job_id or "").strip().lower()
+    clean_comp = str(company or "").strip().lower()
+
+    if "greenhouse_" in clean_jid:
+        parts = clean_jid.split("_")
+        if len(parts) >= 3:
+            board_tok, j_num = parts[1], parts[2]
+            return f"Postulación web en: https://job-boards.greenhouse.io/{board_tok}/jobs/{j_num}"
+    elif "linkedin_" in clean_jid:
+        parts = clean_jid.split("_")
+        if len(parts) >= 2 and parts[1].isdigit():
+            return f"Postulación web en: https://www.linkedin.com/jobs/view/{parts[1]}"
+    elif "exactas_" in clean_jid:
+        parts = clean_jid.split("_")
+        if len(parts) >= 2:
+            num_p = f"{parts[1]}/{parts[2]}" if len(parts) >= 3 else parts[1]
+            return f"Postulación web en: https://empleos.exactas.uba.ar/oferta/{num_p}"
+
+    if clean_comp and clean_comp not in ("not specified", "unknown", "none", "null", ""):
+        try:
+            from src.tools.boards import _load_board_urls
+            boards = _load_board_urls()
+            for b in boards:
+                b_name = str(b.get("name", "")).lower()
+                b_id = str(b.get("id", "")).lower()
+                if clean_comp in b_name or b_name in clean_comp or clean_comp in b_id:
+                    return f"Postulación web en el portal de {b.get('name')}: {b.get('url')}"
+        except Exception:
+            pass
+
+    return "No especificado en el aviso (ver portal de la empresa)"
 
 
 def extract_years_of_experience(title: str = "", text: str = "") -> Any:
@@ -249,7 +295,13 @@ def build_unified_job_dict(
     norm_commitment = extract_commitment(title=title, text=raw_text, commitment=commitment)
     norm_department = extract_department(title=title, text=raw_text, department=department)
     norm_seniority = extract_seniority(title=title, text=raw_text, seniority=seniority, years_of_exp=norm_years_exp)
-    norm_app_method = _extract_application_method(raw_text or summary, source_url, application_method)
+    norm_app_method = _extract_application_method(text=raw_text or summary, source_url=source_url, application_method=application_method, company=company, job_id=assigned_id)
+
+    final_url = source_url.strip() if (source_url and str(source_url).strip().lower() not in ("none", "null", "")) else None
+    if not final_url and "Postulación web en: " in norm_app_method:
+        extracted_u = norm_app_method.replace("Postulación web en: ", "").strip()
+        if extracted_u.startswith("http"):
+            final_url = extracted_u
 
     return {
         "id": assigned_id,
@@ -269,7 +321,7 @@ def build_unified_job_dict(
         "raw_text": raw_text.strip() if raw_text else (summary.strip() if summary else title),
         "language": language.lower().strip() if language else "en",
         "source_page": source_page.strip() if source_page else "Manual",
-        "source_url": source_url,
+        "source_url": final_url,
         "application_method": norm_app_method,
         "status": status,
         "score": None,

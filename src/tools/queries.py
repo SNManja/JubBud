@@ -185,8 +185,16 @@ def get_job_details(identifier: str) -> str:
         if not found:
             return f"Error: No position found matching '{identifier}' in jobs.json."
 
-        app_method = found.get("application_method") or found.get("source_url") or "Link no disponible"
-        source_url = found.get("source_url") or "Link no disponible"
+        app_method = found.get("application_method") or "No especificado en el aviso (ver portal de la empresa)"
+        source_url = found.get("source_url")
+        if not source_url or not str(source_url).startswith("http"):
+            if app_method:
+                u_match = re.search(r'https?://[^\s]+', str(app_method))
+                if u_match:
+                    source_url = u_match.group(0)
+
+        link_display = f"[{source_url}]({source_url})" if (source_url and str(source_url).startswith("http")) else "No disponible en el aviso"
+
         techs = ", ".join(found.get("key_technologies", [])) or "No especificado"
         reqs = "\n  - ".join(found.get("main_requirements", [])) or "No especificados"
         strengths = ", ".join(found.get("strengths", [])) or "Ninguna registrada"
@@ -215,7 +223,7 @@ def get_job_details(identifier: str) -> str:
             f"- **Fortalezas:** {strengths}\n"
             f"- **Vacíos / Gaps:** {gaps}\n\n"
             f"📩 **CÓMO POSTULARSE Y ENLACE DIRECTO:**\n"
-            f"- 🌐 **Link Directo a la Oferta:** [{source_url}]({source_url})\n"
+            f"- 🌐 **Link Directo a la Oferta:** {link_display}\n"
             f"- 📝 **Método / Instrucciones:** {app_method}\n"
         )
 
