@@ -56,7 +56,11 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
    - `max_jobs_per_board` en `profile/pipeline_config.json` limita la cantidad máxima de empleos a evaluar por consulta evitando picos de consumo.
    - `delay_between_batches_seconds` añade una pausa configurable entre llamadas de lote al LLM para prevenir rate limits (`429`).
 
-3. **Caché de Memoria y Prevención de Quota Limits**:
+3. **IDs Estandarizadas por Plataforma y Arquitectura de Deduplicación en 3 Niveles**:
+   - **Formato Canónico de IDs**: Generación determinista de IDs por plataforma (`greenhouse_{board}_{id}`, `exactas_{num}`, `linkedin_{id}`, y hashes MD5 para entradas manuales `manual_{md5(empresa:titulo)[:8]}`).
+   - **Deduplicación en 3 Niveles**: Nivel 1 pre-verifica empleos existentes (`check_existing_job`), Nivel 2 omite inserciones duplicadas (`save_multiple_jobs_json`), y Nivel 3 realiza actualizaciones in-place (`upsert`) al guardar puntajes de rankeo (`save_ranked_jobs_batch`).
+
+4. **Caché de Memoria y Prevención de Quota Limits**:
    - `LAST_FETCHED_JOBS_CACHE` almacena en memoria Python los diccionarios completos de los portales de empleo.
    - El agente transmite únicamente cadenas cortas de selección (ej: `job_items_or_selection="todas"`), impidiendo la generación de JSONs gigantes en los prompts.
 

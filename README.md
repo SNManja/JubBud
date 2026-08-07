@@ -57,7 +57,11 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
    - `max_jobs_per_board` in `profile/pipeline_config.json` limits the maximum number of jobs evaluated per query to prevent token consumption spikes.
    - `delay_between_batches_seconds` adds a configurable timer delay between batch ranking LLM calls to prevent API rate limiting (`429`).
 
-3. **In-Memory Caching & Quota Limit Prevention**:
+3. **Standardized Platform IDs & 3-Level Deduplication Architecture**:
+   - **Canonical ID Scheme**: Enforces platform-specific IDs (`greenhouse_{board}_{id}`, `exactas_{num}`, `linkedin_{id}`, and deterministic MD5 hashes `manual_{md5(company:title)[:8]}`).
+   - **3-Level Deduplication**: Level 1 pre-checks existing jobs (`check_existing_job`), Level 2 skips duplicate batch insertions (`save_multiple_jobs_json`), and Level 3 performs atomic in-place updates/upserts during batch ranking (`save_ranked_jobs_batch`).
+
+4. **In-Memory Caching & Quota Limit Prevention**:
    - `LAST_FETCHED_JOBS_CACHE` stores full job dictionaries in Python memory.
    - The agent transmits short selection strings (e.g. `job_items_or_selection="todas"`), preventing giant JSON payloads in prompts.
 

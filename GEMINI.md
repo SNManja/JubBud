@@ -154,6 +154,29 @@ src/tools/
 
 ---
 
+## 🆔 Standardized Platform ID Scheme & 3-Level Deduplication Strategy
+
+To guarantee data integrity and eliminate duplicate job entries across sessions, JobBud enforces standardized platform IDs and a 3-level deduplication strategy:
+
+### 1. Standardized Platform ID Format Scheme (`_generate_stable_job_id`)
+* **Greenhouse**: `greenhouse_{board_token}_{job_id}` (e.g. `greenhouse_canonical_5569916`, `greenhouse_invgate_4495272002`).
+* **Exactas UBA**: `exactas_{num_part}` (e.g. `Oferta #86/26` $\rightarrow$ `exactas_86_26`).
+* **LinkedIn**: `linkedin_{numeric_id}` (extracted from job URL or text $\rightarrow$ `linkedin_4445031526`).
+* **Manual / Un-ID'd Text Fallback**: `manual_{md5(company:title)[:8]}` (e.g. `manual_bebce99c`). Re-pasting identical manual job text generates the exact same MD5 ID, preventing duplicate manual entries.
+
+### 2. 3-Level Deduplication Architecture
+1. **Level 1 — Pre-Check Deduplication (`check_existing_job`)**:
+   - Before parsing or ranking, checks `jobs.json` by ID, URL, or Title/Company string match.
+   - If `AlreadyRanked`, halts processing immediately, saving 100% of LLM evaluation tokens.
+2. **Level 2 — Insertion Deduplication (`save_multiple_jobs_json`)**:
+   - Maintains an in-memory set of lowercase existing IDs (`existing_ids = {str(j.get("id")).lower() for j in jobs}`).
+   - Skips saving any entry whose ID already exists in `jobs.json` (`skipped_count += 1`), preventing duplicate rows.
+3. **Level 3 — Ranker Upsert (`save_ranked_jobs_batch`)**:
+   - When saving fit scores evaluated by `job_ranker_agent`, existing IDs are updated in-place (`existing_ids[jid].update(rjob)`).
+   - Updates `score`, `justification`, `strengths`, `gaps`, `status: "ranked"`, and `ranked_at` without duplicating the job entry.
+
+---
+
 ## 📝 Key Features & Lifecycles
 
 1. **Deduplication & Pre-Check**:
