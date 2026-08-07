@@ -6,11 +6,17 @@
     "allow_onsite": true,
     "allow_unspecified": true
   },
-  "_comment_location_preferences": "Filtros por País y Regiones. 'allowed_countries' define los países permitidos para vacantes presenciales o híbridas, y 'allowed_remote_regions' para vacantes remotas.",
+  "_comment_location_preferences": "'allowed_countries' y 'allowed_cities' aplican a vacantes presenciales o híbridas. 'allowed_remote_regions' aplica exclusivamente a vacantes remotas.",
   "location_preferences": {
     "allow_unspecified_location": true,
     "allowed_countries": [
       "Argentina"
+    ],
+    "allowed_cities": [
+      "Buenos Aires", "CABA", "Palermo", "Escobar", "San Isidro",
+      "Vicente López", "Pilar", "Belgrano", "Parque Patricios",
+      "Puerto Madero", "Núñez", "Recoleta", "Olivos", "Martínez",
+      "Tigre", "AMBA", "GBA", "Zona Norte"
     ],
     "allowed_remote_regions": [
       "Worldwide", "Global", "LatAm", "Argentina", "EMEA", "US", "Anywhere"

@@ -561,25 +561,28 @@ def filter_job_by_location(job: dict) -> tuple[bool, str]:
         if not work_config.get("allow_onsite", True):
             return False, "Modalidad Presencial desactivada en profile/location_filters.json"
 
-    # 5. Strict Country and Remote Region matching
+    # 5. Strict Country, City, and Remote Region matching
     if not is_unspecified_location:
         allowed_countries = loc_config.get("allowed_countries", [])
+        allowed_cities = loc_config.get("allowed_cities", [])
         allowed_regions = loc_config.get("allowed_remote_regions", [])
 
         is_remote_job = "remote" in work_mode_lower or "remoto" in work_mode_lower or "remote" in location_lower or "remoto" in location_lower
 
         matched_country = any(re.search(r"\b" + re.escape(c.lower()) + r"\b", location_lower) for c in allowed_countries if c)
+        matched_city = any(re.search(r"\b" + re.escape(city.lower()) + r"\b", location_lower) for city in allowed_cities if city)
         matched_region = any(re.search(r"\b" + re.escape(r.lower()) + r"\b", location_lower) for r in allowed_regions if r)
 
         if is_remote_job:
+            # Remote jobs ONLY check allowed_remote_regions and allowed_countries
             if allowed_regions and not (matched_region or matched_country or "worldwide" in location_lower or "anywhere" in location_lower or "global" in location_lower):
                 return False, f"Ubicación Remota '{location}' fuera de las regiones permitidas en profile/location_filters.json"
         else:
-            # Hybrid, On-site, or Unspecified work mode with an explicit location name
-            if allowed_countries and not (matched_country or matched_region):
-                return False, f"País de la ubicación '{location}' no está dentro de los países permitidos en profile/location_filters.json"
+            # On-site or Hybrid jobs check allowed_countries OR allowed_cities OR allowed_regions
+            if (allowed_countries or allowed_cities) and not (matched_country or matched_city or matched_region):
+                return False, f"Ubicación Presencial/Híbrida '{location}' fuera de las ciudades/países permitidos en profile/location_filters.json"
 
-    return True, "País y modalidad permitidos según profile/location_filters.json"
+    return True, "País, ciudad y modalidad permitidos según profile/location_filters.json"
 
 
 def evaluate_post_parse_filters(job: dict) -> tuple[bool, str]:

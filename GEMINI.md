@@ -124,7 +124,7 @@ To drastically minimize LLM token consumption, the pipeline applies a two-stage 
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Filtro Duro Pre-Parseo** | Omite si los metadatos de la API incluyen departamentos no deseados. |
 | **[`profile/blacklist_roles.md`](file:///home/santi/jobbud/profile/blacklist_roles.md)** | **Filtro Post-Parseo** | Omite por área/rol parseado (ej. Sales, Recruiter, HR). |
 | **[`profile/blacklist_seniority.md`](file:///home/santi/jobbud/profile/blacklist_seniority.md)** | **Filtro Post-Parseo** | Omite si el seniority coincide con niveles no deseados (ej. Senior, Lead). |
-| **[`profile/location_filters.json`](file:///home/santi/jobbud/profile/location_filters.json)** | **Pre y Post-Parseo** | Controla países permitidos (`allowed_countries`), bloqueados (`blocked_countries`), regiones remotas (`allowed_remote_regions`) y la flag **`allow_unspecified_location`**. |
+| **[`profile/location_filters.json`](file:///home/santi/jobbud/profile/location_filters.json)** | **Pre y Post-Parseo** | Controla países permitidos (`allowed_countries`), ciudades/barrios permitidos para presencial/híbrido (`allowed_cities`), países bloqueados (`blocked_countries`), regiones remotas (`allowed_remote_regions`) y la flag **`allow_unspecified_location`**. |
 
 ---
 
