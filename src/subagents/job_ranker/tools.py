@@ -124,7 +124,7 @@ def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
 
         VALID_SCHEMA_KEYS = {
             "id", "created_at", "title", "company", "location", "work_mode", "commitment",
-            "department", "seniority", "salary_range", "key_technologies", "main_requirements",
+            "department", "seniority", "years_of_experience", "salary_range", "key_technologies", "main_requirements",
             "summary", "raw_text", "language", "source_page", "source_url", "application_method",
             "user_notes", "status", "ranked_at", "score", "justification", "strengths", "gaps"
         }
@@ -134,11 +134,6 @@ def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
         discarded_titles = []
 
         for rjob in ranked_jobs:
-            passed, reason = evaluate_post_parse_filters(rjob)
-            if not passed:
-                discarded_titles.append(f"'{rjob.get('title')}' ({reason})")
-                continue
-
             jid = str(rjob.get("id", "")).strip().lower()
             if not jid or jid in ("none", "null", "undefined", ""):
                 from src.subagents.job_parser.tools import _generate_stable_job_id
@@ -158,21 +153,43 @@ def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
             now_iso = datetime.now().isoformat()
 
             if jid in existing_ids:
-                # ONLY update ranker evaluation fields; keep source fields completely untouched
                 target = existing_ids[jid]
+                # Allow ranker to fill in seniority and years_of_experience if currently empty/undefined
+                r_sen = rjob.get("seniority")
+                r_exp = rjob.get("years_of_experience")
+
+                if r_sen and str(r_sen).strip().lower() not in ("not specified", "undefined", "none", ""):
+                    if target.get("seniority") in ("Not specified", "undefined", "", None):
+                        target["seniority"] = str(r_sen).strip()
+
+                if r_exp and str(r_exp).strip().lower() not in ("undefined", "none", "null", ""):
+                    if target.get("years_of_experience") in ("undefined", None, "", "Not specified"):
+                        target["years_of_experience"] = r_exp
+
+                # Re-evaluate post-parse filters (seniority & years_of_experience)
+                passed, reason = evaluate_post_parse_filters(target)
+                if not passed:
+                    discarded_titles.append(f"'{target.get('title')}' ({reason})")
+                    if target in jobs:
+                        jobs.remove(target)
+                    continue
+
                 target["score"] = score_val
                 target["justification"] = just_val
                 target["strengths"] = str_val
                 target["gaps"] = gaps_val
                 target["status"] = "ranked"
                 target["ranked_at"] = now_iso
-                # Clean any non-schema attributes if present
                 for k in list(target.keys()):
                     if k not in VALID_SCHEMA_KEYS:
                         del target[k]
                 saved_titles.append(f"'{target.get('title')}' ({score_val}/100)")
             else:
-                # New job being saved with ranking: sanitize to valid schema keys only
+                passed, reason = evaluate_post_parse_filters(rjob)
+                if not passed:
+                    discarded_titles.append(f"'{rjob.get('title')}' ({reason})")
+                    continue
+
                 sanitized_job = {k: v for k, v in rjob.items() if k in VALID_SCHEMA_KEYS}
                 sanitized_job["score"] = score_val
                 sanitized_job["justification"] = just_val

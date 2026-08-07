@@ -27,6 +27,7 @@ def load_pipeline_config() -> Dict[str, Any]:
         "max_jobs_per_board": 5,
         "delay_between_batches_seconds": 3,
         "delay_between_boards_seconds": 10,
+        "max_years_experience": 3,
         "auto_pipeline_execution": True
     }
     if not PIPELINE_CONFIG_PATH.exists():
@@ -39,6 +40,7 @@ def load_pipeline_config() -> Dict[str, Any]:
                     "max_jobs_per_board": int(cfg.get("max_jobs_per_board", 5)),
                     "delay_between_batches_seconds": float(cfg.get("delay_between_batches_seconds", 3)),
                     "delay_between_boards_seconds": float(cfg.get("delay_between_boards_seconds", 10)),
+                    "max_years_experience": int(cfg.get("max_years_experience", 3)),
                     "auto_pipeline_execution": bool(cfg.get("auto_pipeline_execution", True))
                 }
     except Exception:

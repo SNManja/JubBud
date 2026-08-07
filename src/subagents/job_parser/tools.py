@@ -7,7 +7,7 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Any
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
 JOBS_FILE_PATH = ROOT_DIR / "jobs.json"
@@ -95,9 +95,32 @@ def _extract_application_method(text: str, source_url: Optional[str], applicatio
     return "No especificado en el aviso"
 
 
-def extract_seniority(title: str, text: str, seniority: Optional[str] = None) -> str:
-    if seniority and seniority.strip() and seniority.strip().lower() not in ("not specified", "no especificada", "desconocida", ""):
-        return seniority.strip()
+def extract_years_of_experience(title: str = "", text: str = "") -> Any:
+    """
+    Extracts required years of experience from title and raw text.
+    Returns int (e.g. 5), range string (e.g. "3-5"), or "undefined" if not inferrable.
+    """
+    full_text = f"{title or ''}\n{text or ''}"
+
+    # 1. Range pattern: e.g. "3 to 5 years", "3-5 años", "2 - 4 years"
+    range_match = re.search(r'(\d+)\s*(?:a|to|-)\s*(\d+)\s*(?:\+|\s)*years?|años?', full_text, re.IGNORECASE)
+    if range_match:
+        min_y, max_y = range_match.group(1), range_match.group(2)
+        return f"{min_y}-{max_y}"
+
+    # 2. Minimum/Exact pattern: e.g. "minimum 5 years", "5+ years", "5 años de experiencia", "at least 3 years"
+    min_match = re.search(r'(?:minimum|mínimo|at least|al menos|\b)?\s*(\d+)\+?\s*(?:years?|años?)\s*(?:of\s*)?(?:experience|experiencia)?', full_text, re.IGNORECASE)
+    if min_match:
+        val = int(min_match.group(1))
+        if 1 <= val <= 25:
+            return val
+
+    return "undefined"
+
+
+def extract_seniority(title: str, text: str, seniority: Optional[str] = None, years_of_exp: Optional[Any] = None) -> str:
+    if seniority and str(seniority).strip() and str(seniority).strip().lower() not in ("not specified", "no especificada", "desconocida", "undefined", ""):
+        return str(seniority).strip()
 
     title_lower = (title or "").lower()
     text_lower = (text or "").lower()
@@ -126,7 +149,22 @@ def extract_seniority(title: str, text: str, seniority: Optional[str] = None) ->
     if re.search(r"\b(lead|staff|principal|architect|arquitecto|head|manager|director|vp)\b", text_lower):
         return "Lead / Executive"
 
-    return "Not specified"
+    # 3. Infer from Years of Experience if available
+    if years_of_exp and str(years_of_exp).lower() != "undefined":
+        try:
+            num = int(str(years_of_exp).split("-")[0].strip())
+            if num >= 5:
+                return "Senior"
+            elif num >= 3:
+                return "Semi-Senior"
+            elif num >= 1:
+                return "Junior"
+            elif num == 0:
+                return "Trainee"
+        except Exception:
+            pass
+
+    return "undefined"
 
 
 def extract_commitment(title: str = "", text: str = "", commitment: Optional[str] = None) -> str:
@@ -193,6 +231,7 @@ def build_unified_job_dict(
     job_id: Optional[str] = None,
     department: Optional[str] = None,
     seniority: Optional[str] = None,
+    years_of_experience: Optional[Any] = None,
     application_method: Optional[str] = None,
     status: str = "pending_ranking"
 ) -> dict:
@@ -206,9 +245,10 @@ def build_unified_job_dict(
         job_id=job_id
     )
 
+    norm_years_exp = years_of_experience if (years_of_experience and str(years_of_experience).lower() not in ("undefined", "none", "null", "")) else extract_years_of_experience(title=title, text=raw_text)
     norm_commitment = extract_commitment(title=title, text=raw_text, commitment=commitment)
     norm_department = extract_department(title=title, text=raw_text, department=department)
-    norm_seniority = extract_seniority(title=title, text=raw_text, seniority=seniority)
+    norm_seniority = extract_seniority(title=title, text=raw_text, seniority=seniority, years_of_exp=norm_years_exp)
     norm_app_method = _extract_application_method(raw_text or summary, source_url, application_method)
 
     return {
@@ -221,6 +261,7 @@ def build_unified_job_dict(
         "commitment": norm_commitment,
         "department": norm_department,
         "seniority": norm_seniority,
+        "years_of_experience": norm_years_exp,
         "salary_range": salary_range.strip() if salary_range else "Not specified",
         "key_technologies": key_technologies if isinstance(key_technologies, list) else [],
         "main_requirements": main_requirements if isinstance(main_requirements, list) else [],
