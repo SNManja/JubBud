@@ -80,6 +80,118 @@ def resolve_jobs_from_selection(selection_str: str) -> List[Dict[str, Any]]:
     return selected if selected else list(LAST_FETCHED_JOBS_CACHE)
 
 
+def _parse_raw_text_with_adk_parser(raw_text: str) -> Dict[str, Any]:
+    """
+    Invokes job_parser_agent via Google ADK InMemoryRunner to extract structured fields
+    from a raw unparsed job posting text.
+    """
+    import asyncio
+    import json
+    import concurrent.futures
+    import re
+    from google.genai import types
+    from google.adk.runners import InMemoryRunner
+    from src.subagents.job_parser.job_parser import job_parser_agent
+    from src.subagents.job_parser.tools import build_unified_job_dict
+
+    runner = InMemoryRunner(agent=job_parser_agent)
+    session = runner.session_service.create_session_sync(user_id="jobbud_user", app_name=runner.app_name)
+
+    prompt = (
+        f"Analiza la siguiente oferta de empleo y guárdala estructurada usando save_job_json:\n\n"
+        f"{raw_text}"
+    )
+
+    message = types.Content(role="user", parts=[types.Part.from_text(text=prompt)])
+    captured_args = {}
+
+    async def _run():
+        nonlocal captured_args
+        output = []
+        async for event in runner.run_async(user_id="jobbud_user", session_id=session.id, new_message=message):
+            if hasattr(event, "content") and event.content and event.content.parts:
+                for p in event.content.parts:
+                    if hasattr(p, "function_call") and p.function_call and p.function_call.name == "save_job_json":
+                        try:
+                            captured_args = dict(p.function_call.args)
+                        except Exception:
+                            pass
+                    if p.text:
+                        output.append(p.text)
+        return "".join(output)
+
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = None
+
+    if loop and loop.is_running():
+        with concurrent.futures.ThreadPoolExecutor() as pool:
+            response_text = pool.submit(lambda: asyncio.run(_run())).result()
+    else:
+        response_text = asyncio.run(_run())
+
+    if captured_args and captured_args.get("title"):
+        return build_unified_job_dict(
+            title=captured_args.get("title", "Posición de Texto Crudo"),
+            company=captured_args.get("company", "Not specified"),
+            location=captured_args.get("location", "Not specified"),
+            work_mode=captured_args.get("work_mode", "Not specified"),
+            commitment=captured_args.get("commitment", "Not specified"),
+            salary_range=captured_args.get("salary_range", "Not specified"),
+            key_technologies=captured_args.get("key_technologies", []) if isinstance(captured_args.get("key_technologies"), list) else [],
+            main_requirements=captured_args.get("main_requirements", []) if isinstance(captured_args.get("main_requirements"), list) else [],
+            summary=captured_args.get("summary", raw_text[:300]),
+            raw_text=raw_text,
+            language=captured_args.get("language", "es"),
+            source_page=captured_args.get("source_page", "Manual"),
+            source_url=captured_args.get("source_url"),
+            department=captured_args.get("department"),
+            seniority=captured_args.get("seniority"),
+            application_method=captured_args.get("application_method")
+        )
+
+    json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+    if json_match:
+        try:
+            p = json.loads(json_match.group(0))
+            return build_unified_job_dict(
+                title=p.get("title", "Posición de Texto Crudo"),
+                company=p.get("company", "Not specified"),
+                location=p.get("location", "Not specified"),
+                work_mode=p.get("work_mode", "Not specified"),
+                commitment=p.get("commitment", "Not specified"),
+                salary_range=p.get("salary_range", "Not specified"),
+                key_technologies=p.get("key_technologies", []) if isinstance(p.get("key_technologies"), list) else [],
+                main_requirements=p.get("main_requirements", []) if isinstance(p.get("main_requirements"), list) else [],
+                summary=p.get("summary", raw_text[:300]),
+                raw_text=raw_text,
+                language=p.get("language", "es"),
+                source_page=p.get("source_page", "Manual"),
+                source_url=p.get("source_url"),
+                department=p.get("department"),
+                seniority=p.get("seniority"),
+                application_method=p.get("application_method")
+            )
+        except Exception:
+            pass
+
+    return build_unified_job_dict(
+        title="Posición de Texto Crudo",
+        company="Not specified",
+        location="Not specified",
+        work_mode="Not specified",
+        commitment="Not specified",
+        salary_range="Not specified",
+        key_technologies=[],
+        main_requirements=[],
+        summary=raw_text[:300],
+        raw_text=raw_text,
+        language="es",
+        source_page="Manual"
+    )
+
+
 def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
     """
     Executes the deterministic sequential job processing pipeline over selected jobs.
@@ -111,25 +223,12 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
     parsed_jobs = []
     for job in selected_jobs:
         if isinstance(job, dict):
-            parsed_jobs.append(job)
+            if job.get("title") == "Posición de Texto Crudo" and job.get("raw_text"):
+                parsed_jobs.append(_parse_raw_text_with_adk_parser(job["raw_text"]))
+            else:
+                parsed_jobs.append(job)
         elif isinstance(job, str):
-            # For raw text, structure via helper or parser
-            from src.subagents.job_parser.tools import build_unified_job_dict
-            udict = build_unified_job_dict(
-                title="Posición de Texto Crudo",
-                company="Not specified",
-                location="Not specified",
-                work_mode="Not specified",
-                commitment="Not specified",
-                salary_range="Not specified",
-                key_technologies=[],
-                main_requirements=[],
-                summary=job[:300],
-                raw_text=job,
-                language="es",
-                source_page="Manual"
-            )
-            parsed_jobs.append(udict)
+            parsed_jobs.append(_parse_raw_text_with_adk_parser(job))
 
     # Step 2: Deterministic Post-Parse Filtering (Python / 0 Tokens)
     valid_jobs = []
