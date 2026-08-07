@@ -26,7 +26,9 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
                         - Cargar vacantes conservadas en Caché Python (`LAST_FETCHED_JOBS_CACHE`)
                                     │
                                     ▼
-                     3. Estructuración en Memoria
+                     3. Estructuración Híbrida en Memoria
+                        - API Jobs: Diccionarios estructurados directos (0 LLM tokens)
+                        - Raw Text / Links: `job_parser_agent` extrae rol, empresa y seniority con LLM
                                     │
                                     ▼
                      4. Filtro Determinista Post-Parseo & Capping (Python / 0 Tokens)

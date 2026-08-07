@@ -21,33 +21,34 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
            [ETAPA 2: FILTRADO DURO PRE-PARSEO (Python / 0 Tokens)]
            - Filtra por `title_blacklist.md`, `department_blacklist.md` y `location_filters.json`.
                                     │
-                                    ▼
-           [ETAPA 3: PARSEO & ESTRUCTURACIÓN EN MEMORIA]
-           - Estructura las posiciones en memoria (vía API o `job_parser_agent`).
-                                    │
-                                    ▼
-           [ETAPA 4: FILTRADO DETERMINISTA POST-PARSEO Y CAP POR BOARD (Python / 0 Tokens)]
-           - Filtra por `blacklist_roles.md`, `blacklist_seniority.md` y `location_filters.json`.
-           - Aplica el límite máximo `max_jobs_per_board` de `profile/pipeline_config.json`.
-           - Si falla por rol, seniority o país -> Descarte inmediato (0 escrituras, 0 tokens de rankeo).
-                                    │
-                                    ▼
-           [ETAPA 5: RANKEADO EN LOTES Y TIMER VÍA SUBAGENTE LLM (`job_ranker_agent`)]
-           - Divide las vacantes retenidas en lotes de tamaño k = min(5, ceil(R / 4)).
-           - Realiza una pausa de `delay_between_batches_seconds` entre llamadas de lote.
-           - Cada lote es evaluado por `job_ranker_agent` en una sola llamada de subagente.
-                                    │
-                                    ▼
-           [ETAPA 6: GUARDADO ATÓMICO EN `jobs.json`]
-           - Persiste en `jobs.json` únicamente las vacantes rankeadas exitosamente (`status: "ranked"`).
+                  [ETAPA 3: PARSEO HÍBRIDO & ESTRUCTURACIÓN EN MEMORIA]
+            - Vacantes de Job Boards (API): Pre-estructuradas en memoria Python (0 tokens LLM).
+            - Texto crudo / Links: Parseados dinámicamente mediante `job_parser_agent` (LLM).
+                                     │
+                                     ▼
+            [ETAPA 4: FILTRADO DETERMINISTA POST-PARSEO Y CAP POR BOARD (Python / 0 Tokens)]
+            - Filtra por `blacklist_roles.md`, `blacklist_seniority.md` y `location_filters.json`.
+            - Aplica el límite máximo `max_jobs_per_board` de `profile/pipeline_config.json`.
+            - Si falla por rol, seniority o país -> Descarte inmediato (0 escrituras, 0 tokens de rankeo).
+                                     │
+                                     ▼
+            [ETAPA 5: RANKEADO EN LOTES Y TIMER VÍA SUBAGENTE LLM (`job_ranker_agent`)]
+            - Divide las vacantes retenidas en lotes de tamaño k = min(5, ceil(R / 4)).
+            - Realiza una pausa de `delay_between_batches_seconds` entre llamadas de lote.
+            - Cada lote es evaluado por `job_ranker_agent` en una sola llamada de subagente.
+                                     │
+                                     ▼
+            [ETAPA 6: GUARDADO ATÓMICO EN `jobs.json`]
+            - Persiste en `jobs.json` únicamente las vacantes rankeadas exitosamente (`status: "ranked"`).
 ```
 
 ---
 
 ## ✨ Características Principales
 
-1. **Ahorro Extremo de Tokens (Filtros Duales Deterministas)**:
+1. **Ahorro Extremo de Tokens (Filtros Duales y Parseo Híbrido)**:
    - **Pre-Parseo**: Descarta títulos, áreas o países no permitidos directamente en los metadatos de la API sin llamar al LLM.
+   - **Parseo Híbrido en Etapa 3**: Reutiliza diccionarios pre-estructurados de las APIs a 0 tokens, y procesa de forma transparente vacantes en texto crudo mediante `job_parser_agent` para extraer campos clave (`title`, `company`, `seniority`, `key_technologies`) con LLM antes de filtrar.
    - **Post-Parseo**: Descarta puestos con seniority incompatible (`Senior`, `Lead`) o roles excluidos (`Sales`, `Recruiter`) en Python antes del rankeo.
 
 2. **Ejecución Automática del Pipeline y Límite por Board**:

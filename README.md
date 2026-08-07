@@ -22,32 +22,34 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
            - Filters by `title_blacklist.md`, `department_blacklist.md`, and `location_filters.json`.
                                     │
                                     ▼
-           [STAGE 3: PARSING & IN-MEMORY STRUCTURING]
-           - Structures positions into memory dicts (via API or `job_parser_agent`).
+            [STAGE 3: HYBRID PARSING & IN-MEMORY STRUCTURING]
+            - API Board jobs: Pre-structured in Python memory (0 LLM tokens).
+            - Unparsed raw text / links: Dynamically parsed via `job_parser_agent` (LLM).
                                     │
                                     ▼
-           [STAGE 4: POST-PARSE FILTER & BOARD CAPPING (Python / 0 Tokens)]
-           - Filters by `blacklist_roles.md`, `blacklist_seniority.md`, and `location_filters.json`.
-           - Applies `max_jobs_per_board` limit from `profile/pipeline_config.json`.
-           - If role/seniority/country fails -> Immediate discard (0 writes, 0 ranking tokens).
+            [STAGE 4: POST-PARSE FILTER & BOARD CAPPING (Python / 0 Tokens)]
+            - Filters by `blacklist_roles.md`, `blacklist_seniority.md`, and `location_filters.json`.
+            - Applies `max_jobs_per_board` limit from `profile/pipeline_config.json`.
+            - If role/seniority/country fails -> Immediate discard (0 writes, 0 ranking tokens).
                                     │
                                     ▼
-           [STAGE 5: BATCH RANKING & TIMER VIA LLM SUBAGENT (`job_ranker_agent`)]
-           - Splits retained jobs into chunks of size k = min(5, ceil(R / 4)).
-           - Pauses `delay_between_batches_seconds` between chunk ranking calls.
-           - Each chunk is evaluated by `job_ranker_agent` in a single subagent turn.
+            [STAGE 5: BATCH RANKING & TIMER VIA LLM SUBAGENT (`job_ranker_agent`)]
+            - Splits retained jobs into chunks of size k = min(5, ceil(R / 4)).
+            - Pauses `delay_between_batches_seconds` between chunk ranking calls.
+            - Each chunk is evaluated by `job_ranker_agent` in a single subagent turn.
                                     │
                                     ▼
-           [STAGE 6: ATOMIC SAVE TO `jobs.json`]
-           - Persists only successfully ranked positions in `jobs.json` (`status: "ranked"`).
+            [STAGE 6: ATOMIC SAVE TO `jobs.json`]
+            - Persists only successfully ranked positions in `jobs.json` (`status: "ranked"`).
 ```
 
 ---
 
 ## ✨ Key Features
 
-1. **Extreme Token Efficiency (Dual Deterministic Filters)**:
+1. **Extreme Token Efficiency (Dual Deterministic Filters & Hybrid Parsing)**:
    - **Pre-Parse**: Discards unapproved job titles, departments, or countries directly from API metadata without calling LLMs.
+   - **Hybrid Stage 3 Parsing**: Reuses pre-structured dicts from API fetchers at 0 tokens, while seamlessly routing raw text or unparsed job postings through `job_parser_agent` to extract structured fields (`title`, `company`, `seniority`, `key_technologies`) via LLM before filtering.
    - **Post-Parse**: Discards jobs with incompatible seniority (`Senior`, `Lead`) or non-technical roles (`Sales`, `Recruiter`) in Python before LLM ranking.
 
 2. **Automated Pipeline Execution & Board Capping**:
