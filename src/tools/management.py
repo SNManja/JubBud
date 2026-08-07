@@ -253,4 +253,30 @@ def execute_job_pipeline_tool(job_items_or_selection: str) -> str:
         return f"Error in sequential pipeline execution: {str(e)}"
 
 
+def execute_multi_board_pipeline_tool(scope: str = "unanalyzed") -> str:
+    """
+    Executes the automated multi-board sequential pipeline over registered job boards in profile/board_urls.json.
+
+    Args:
+        scope: Filtering criteria for board selection:
+               - "unanalyzed" / "nunca": Only boards never analyzed (default).
+               - "all" / "todos": All registered boards.
+               - "1d" / "dia": Boards not analyzed in the last 24 hours (or never analyzed).
+               - "1w" / "semana": Boards not analyzed in the last 7 days (or never analyzed).
+               - "1m" / "mes": Boards not analyzed in the last 30 days (or never analyzed).
+
+    Returns:
+        Formatted markdown report with multi-board stats, board timer details, and Top 5 recommendations found.
+    """
+    from src.subagents.job_pipeline.runner import run_multi_board_pipeline
+
+    try:
+        res = run_multi_board_pipeline(scope_str=scope)
+        banner = f"🌐 **[Automated Multi-Board Pipeline Executed via execute_multi_board_pipeline_tool]**\n\n"
+        return banner + res.get("report_markdown", "Multi-board pipeline execution completed.")
+    except Exception as e:
+        return f"Error in multi-board pipeline execution: {str(e)}"
+
+
+
 

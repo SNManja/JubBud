@@ -87,6 +87,26 @@ Whenever analyzing a job board listing (e.g., via `fetch_greenhouse_job_content`
 ---
 
 
+## 5.8. Multi-Board Automated Pipeline Execution (`execute_multi_board_pipeline_tool`)
+
+Whenever the user asks to analyze, check, or rank multiple registered job boards (e.g. *"analizá mis tableros"*, *"revisar mis boards no analizados este mes"*, *"ejecutar pipeline multitablero"*):
+
+1. **Invoke `execute_multi_board_pipeline_tool(scope)`**:
+   - Map user criteria to the `scope` parameter:
+     - `"unanalyzed"` / `"nunca"`: Only boards never analyzed (default).
+     - `"all"` / `"todos"`: All registered job boards.
+     - `"1d"` / `"dia"`: Boards not analyzed in the last 24 hours.
+     - `"1w"` / `"semana"`: Boards not analyzed in the last 7 days.
+     - `"1m"` / `"mes"`: Boards not analyzed in the last 30 days.
+2. **Sequential Board Processing & Inter-Board Timer**:
+   - Executes `run_multi_board_pipeline`, enforcing `delay_between_boards_seconds` (from `profile/pipeline_config.json`) between board queries to prevent API throttling.
+   - Updates `last_analyzed` timestamp for each board in `profile/board_urls.json`.
+3. **Consolidated Output Presentation**:
+   - Deliver the markdown report returned by `execute_multi_board_pipeline_tool`, highlighting total boards analyzed, total observed/discarded/capped/ranked jobs, and the **Top 5 Best Opportunities Found** across all analyzed boards.
+
+---
+
+
 ## 5.6. Deterministic Filtering (`blacklist_roles.md`, `blacklist_seniority.md`, `location_filters.json`)
 
 Before evaluating or ranking any job posting or board listing:

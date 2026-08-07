@@ -119,7 +119,7 @@ To drastically minimize LLM token consumption, the pipeline applies a two-stage 
 
 | Archivo | Rol en el Filtrado / Pipeline | Regla / Propósito |
 | :--- | :--- | :--- |
-| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | **Controlador del Pipeline** | Configura `max_jobs_per_board` (cap máximo por consulta), `delay_between_batches_seconds` (timer entre lotes) y `auto_pipeline_execution`. |
+| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | **Controlador del Pipeline** | Configura `max_jobs_per_board` (cap máximo por consulta), `delay_between_batches_seconds` (timer entre lotes), `delay_between_boards_seconds` (timer entre tableros) y `auto_pipeline_execution`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Filtro Duro Pre-Parseo** | Omite vacantes si el título contiene términos excluidos. |
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Filtro Duro Pre-Parseo** | Omite si los metadatos de la API incluyen departamentos no deseados. |
 | **[`profile/blacklist_roles.md`](file:///home/santi/jobbud/profile/blacklist_roles.md)** | **Filtro Post-Parseo** | Omite por área/rol parseado (ej. Sales, Recruiter, HR). |
@@ -130,14 +130,14 @@ To drastically minimize LLM token consumption, the pipeline applies a two-stage 
 
 ## 🛠️ Modular Tools Structure (`src/tools/`)
 
-All 18 core tools used by `jobbud_agent` are organized within the `src/tools/` package:
+All 19 core tools used by `jobbud_agent` are organized within the `src/tools/` package:
 
 ```text
 src/tools/
-├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all 18 core tools)
+├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all 19 core tools)
 ├── fetchers.py        # External web scraping & portal fetching (fetch_exactas_job_board, fetch_linkedin_job_content, fetch_greenhouse_job_content)
 ├── queries.py         # Job querying, inspection & filters (check_existing_job, get_job_raw_text, get_job_details, get_top_job_recommendations, list_jobs_by_status, filter_jobs_by_blacklist, filter_job_by_location)
-├── management.py      # Status edits, deletions, undo reversion & pipeline execution (mark_job_status, delete_job_from_json, revert_last_job_action, execute_job_pipeline_tool)
+├── management.py      # Status edits, deletions, undo reversion & pipeline execution (mark_job_status, delete_job_from_json, revert_last_job_action, execute_job_pipeline_tool, execute_multi_board_pipeline_tool)
 └── boards.py          # Job board registry & deterministic ordering (add_board_url, list_job_boards, get_board_to_analyze, delete_board_url)
 ```
 

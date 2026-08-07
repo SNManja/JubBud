@@ -22,7 +22,8 @@ from src.tools.management import (
     mark_job_status,
     delete_job_from_json,
     revert_last_job_action,
-    execute_job_pipeline_tool
+    execute_job_pipeline_tool,
+    execute_multi_board_pipeline_tool
 )
 from src.tools.boards import (
     add_board_url,
@@ -43,6 +44,7 @@ HERRAMIENTAS_BASICAS = [
     delete_job_from_json,
     revert_last_job_action,
     execute_job_pipeline_tool,
+    execute_multi_board_pipeline_tool,
     fetch_linkedin_job_content,
     fetch_exactas_job_board,
     fetch_greenhouse_job_content,

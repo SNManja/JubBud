@@ -122,7 +122,7 @@ Todos los archivos de configuración y filtrado residen en la carpeta [`profile/
 | Archivo | Tipo / Rol | Etapa de Aplicación | Descripción y Reglas de Filtrado |
 | :--- | :--- | :--- | :--- |
 | **[`profile/candidate_profile.md`](file:///home/santi/jobbud/profile/candidate_profile.md)** | Perfil Profesional | **Etapa 5 (Rankeo LLM)** | Define la formación académica (Computación UBA), experiencia laboral, stack técnico principal, nivel de inglés (C2) y expectativas. Utilizado por `job_ranker_agent` para calcular el fit score (0-100). |
-| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Configuración del Pipeline | **Etapas 4 y 5 (Reglas del Pipeline)** | Configura `max_jobs_per_board` (máximo de empleos a rankear por consulta), `delay_between_batches_seconds` (timer entre lotes) y `auto_pipeline_execution`. |
+| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Configuración del Pipeline | **Etapas 4 y 5 (Reglas del Pipeline)** | Configura `max_jobs_per_board` (máximo de empleos a rankear por consulta), `delay_between_batches_seconds` (timer entre lotes), `delay_between_boards_seconds` (timer entre tableros) y `auto_pipeline_execution`. |
 | **[`profile/board_urls.json`](file:///home/santi/jobbud/profile/board_urls.json)** | Registro de Tableros | **Etapa 1 (Obtención de Datos)** | Registro JSON persistente de las URLs de portales de empleo guardados (Greenhouse, Ashby, etc.) con sus fechas de análisis. Administrado determinísticamente por `src/tools/boards.py`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Filtro Duro Pre-Parseo** | **Etapa 2 (Python / 0 Tokens)** | Lista negra de términos en el título original del puesto. Omite directamente vacantes como *Sales, Recruiter, HR, Director, Chief, Manager* antes de parsear. |
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Filtro Duro Pre-Parseo** | **Etapa 2 (Python / 0 Tokens)** | Lista negra de departamentos/áreas presentes en los metadatos de la API del portal. Omite vacantes no técnicas (ej. *Customer Service, Marketing, Finance*). |
@@ -134,7 +134,7 @@ Todos los archivos de configuración y filtrado residen en la carpeta [`profile/
 
 ## 🛠️ Herramientas Registradas (`HERRAMIENTAS_BASICAS`)
 
-El agente `jobbud_agent` dispone de **18 herramientas modulares**:
+El agente `jobbud_agent` dispone de **19 herramientas modulares**:
 
 | Herramienta | Dominio | Propósito |
 | :--- | :--- | :--- |
@@ -149,6 +149,7 @@ El agente `jobbud_agent` dispone de **18 herramientas modulares**:
 | `delete_job_from_json` | Management | Elimina un puesto de `jobs.json`. |
 | `revert_last_job_action` | Management | Deshace el último cambio de estado o eliminación. |
 | `execute_job_pipeline_tool` | Management | Ejecuta el runner secuencial de filtrado y rankeo en lote. |
+| `execute_multi_board_pipeline_tool` | Management | Ejecuta la pipeline secuencial multitablero automática con timers inter-board y reporte Top 5. |
 | `fetch_linkedin_job_content` | Fetchers | Extrae contenido de publicaciones de LinkedIn. |
 | `fetch_exactas_job_board` | Fetchers | Extrae vacantes del portal de empleos de Exactas UBA. |
 | `fetch_greenhouse_job_content` | Fetchers | Consulta la API de portales Greenhouse. |

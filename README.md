@@ -123,7 +123,7 @@ All candidate configuration and filtering rules are located in the [`profile/`](
 | File | Role / Type | Pipeline Stage | Description & Filtering Rules |
 | :--- | :--- | :--- | :--- |
 | **[`profile/candidate_profile.md`](file:///home/santi/jobbud/profile/candidate_profile.md)** | Professional Profile | **Stage 5 (LLM Ranking)** | Defines academic background (CS Student UBA), tech stack (Python, C++, SQL), English level (C2), and preferences. Used by `job_ranker_agent` to compute fit match score (0-100). |
-| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Pipeline Configuration | **Stages 4 & 5 (Pipeline Rules)** | Configures `max_jobs_per_board` (max jobs to rank per query), `delay_between_batches_seconds` (batch timer delay), and `auto_pipeline_execution`. |
+| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Pipeline Configuration | **Stages 4 & 5 (Pipeline Rules)** | Configures `max_jobs_per_board` (max jobs to rank per query), `delay_between_batches_seconds` (batch LLM timer), `delay_between_boards_seconds` (inter-board timer), and `auto_pipeline_execution`. |
 | **[`profile/board_urls.json`](file:///home/santi/jobbud/profile/board_urls.json)** | Job Board Registry | **Stage 1 (Data Acquisition)** | Persistent JSON store of registered job board URLs (Greenhouse, Ashby, etc.) and analysis timestamps. Managed deterministically by `src/tools/boards.py`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Pre-Parse Hard Filter** | **Stage 2 (Python / 0 Tokens)** | Blacklist terms matched against the raw job title. Omits non-target jobs like *Sales, Recruiter, HR, Director, Chief, Manager* before parsing. |
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Pre-Parse Hard Filter** | **Stage 2 (Python / 0 Tokens)** | Blacklist terms matched against API department metadata. Omits non-technical areas (e.g. *Customer Service, Marketing, Finance*). |
@@ -135,7 +135,7 @@ All candidate configuration and filtering rules are located in the [`profile/`](
 
 ## 🛠️ Core Tools (`HERRAMIENTAS_BASICAS`)
 
-`jobbud_agent` is equipped with **18 modular tools**:
+`jobbud_agent` is equipped with **19 modular tools**:
 
 | Tool | Domain | Purpose |
 | :--- | :--- | :--- |
@@ -149,7 +149,8 @@ All candidate configuration and filtering rules are located in the [`profile/`](
 | `mark_job_status` | Management | Updates position status in `jobs.json`. |
 | `delete_job_from_json` | Management | Removes a job entry from `jobs.json`. |
 | `revert_last_job_action` | Management | Undoes the last status change or deletion. |
-| `execute_job_pipeline_tool` | Management | Runs the deterministic sequential filtering and batch ranking runner. |
+| `execute_job_pipeline_tool` | Management | Runs the deterministic sequential filtering and batch ranking runner for single job lists. |
+| `execute_multi_board_pipeline_tool` | Management | Runs the automated multi-board sequential pipeline with inter-board timers and Top 5 report. |
 | `fetch_linkedin_job_content` | Fetchers | Extracts content from LinkedIn job posts. |
 | `fetch_exactas_job_board` | Fetchers | Fetches job postings from Exactas UBA job board. |
 | `fetch_greenhouse_job_content` | Fetchers | Fetches job listings via Greenhouse portal API. |

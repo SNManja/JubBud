@@ -26,6 +26,7 @@ def load_pipeline_config() -> Dict[str, Any]:
     default_config = {
         "max_jobs_per_board": 5,
         "delay_between_batches_seconds": 3,
+        "delay_between_boards_seconds": 10,
         "auto_pipeline_execution": True
     }
     if not PIPELINE_CONFIG_PATH.exists():
@@ -37,6 +38,7 @@ def load_pipeline_config() -> Dict[str, Any]:
                 return {
                     "max_jobs_per_board": int(cfg.get("max_jobs_per_board", 5)),
                     "delay_between_batches_seconds": float(cfg.get("delay_between_batches_seconds", 3)),
+                    "delay_between_boards_seconds": float(cfg.get("delay_between_boards_seconds", 10)),
                     "auto_pipeline_execution": bool(cfg.get("auto_pipeline_execution", True))
                 }
     except Exception:
@@ -359,6 +361,165 @@ def _evaluate_batch_chunk_with_adk_ranker(chunk: List[dict]) -> str:
             return pool.submit(lambda: asyncio.run(_run())).result()
     else:
         return asyncio.run(_run())
+
+
+def filter_boards_by_scope(boards: List[Dict[str, Any]], scope_str: str) -> List[Dict[str, Any]]:
+    """
+    Filters a list of board objects based on scope criteria:
+    - 'unanalyzed' / 'nunca' / 'nuevos': Only boards where last_analyzed is None.
+    - 'all' / 'todos': All registered boards.
+    - '1d' / 'dia' / 'day': Never analyzed OR last_analyzed > 24 hours ago.
+    - '1w' / 'semana' / 'week': Never analyzed OR last_analyzed > 7 days ago.
+    - '1m' / 'mes' / 'month': Never analyzed OR last_analyzed > 30 days ago.
+    """
+    import re
+    from datetime import datetime, timedelta
+
+    if not boards:
+        return []
+
+    sc = scope_str.strip().lower() if scope_str else "unanalyzed"
+
+    if sc in ("unanalyzed", "nunca", "nuevos", "un-analyzed", "sin_analizar"):
+        return [b for b in boards if not b.get("last_analyzed")]
+    elif sc in ("all", "todos", "todas", "*", "completo"):
+        return list(boards)
+
+    now = datetime.now()
+
+    if any(w in sc for w in ("dia", "day", "24h", "1d")):
+        cutoff = now - timedelta(days=1)
+    elif any(w in sc for w in ("semana", "week", "7d", "1w")):
+        cutoff = now - timedelta(days=7)
+    elif any(w in sc for w in ("mes", "month", "30d", "1m")):
+        cutoff = now - timedelta(days=30)
+    else:
+        days_match = re.search(r'(\d+)', sc)
+        if days_match:
+            cutoff = now - timedelta(days=int(days_match.group(1)))
+        else:
+            return [b for b in boards if not b.get("last_analyzed")]
+
+    filtered = []
+    for b in boards:
+        last_an = b.get("last_analyzed")
+        if not last_an:
+            filtered.append(b)
+        else:
+            try:
+                dt = datetime.fromisoformat(last_an)
+                if dt <= cutoff:
+                    filtered.append(b)
+            except Exception:
+                filtered.append(b)
+
+    return filtered
+
+
+def run_multi_board_pipeline(scope_str: str = "unanalyzed") -> Dict[str, Any]:
+    """
+    Executes the automated multi-board sequential pipeline over registered job boards.
+    """
+    from src.tools.boards import _load_board_urls, _sort_boards_deterministically, get_board_to_analyze
+
+    cfg = load_pipeline_config()
+    delay_between_boards = cfg.get("delay_between_boards_seconds", 10)
+
+    all_boards = _load_board_urls()
+    if not all_boards:
+        return {
+            "boards_analyzed": 0,
+            "total_observed": 0,
+            "total_passed": 0,
+            "total_discarded": 0,
+            "total_capped": 0,
+            "top_recommendations": [],
+            "report_markdown": "No hay tableros registrados en profile/board_urls.json para analizar."
+        }
+
+    sorted_boards = _sort_boards_deterministically(all_boards)
+    target_boards = filter_boards_by_scope(sorted_boards, scope_str)
+
+    if not target_boards:
+        return {
+            "boards_analyzed": 0,
+            "total_observed": 0,
+            "total_passed": 0,
+            "total_discarded": 0,
+            "total_capped": 0,
+            "top_recommendations": [],
+            "report_markdown": f"No hay tableros que coincidan con el criterio de selección '{scope_str}' (ej. sin analizar o vencidos)."
+        }
+
+    total_observed = 0
+    total_passed = 0
+    total_discarded = 0
+    total_capped = 0
+    analyzed_board_names = []
+    all_newly_ranked_jobs = []
+
+    for idx, board in enumerate(target_boards, start=1):
+        if idx > 1 and delay_between_boards > 0:
+            time.sleep(delay_between_boards)
+
+        b_name = board.get("name", "Board")
+        b_id = board.get("id") or b_name
+        analyzed_board_names.append(b_name)
+
+        get_board_to_analyze(b_id)
+
+        pipe_res = run_job_processing_pipeline("todas")
+
+        total_observed += pipe_res.get("total_processed", 0)
+        total_passed += pipe_res.get("passed_count", 0)
+        total_discarded += pipe_res.get("discarded_count", 0)
+        total_capped += pipe_res.get("capped_count", 0)
+
+        for rj in pipe_res.get("ranked_jobs", []):
+            all_newly_ranked_jobs.append(rj)
+
+    all_newly_ranked_jobs.sort(key=lambda j: j.get("score") or 0, reverse=True)
+    top_5_jobs = all_newly_ranked_jobs[:5]
+
+    report_lines = [
+        f"🌐 **Reporte Consolidado de Procesamiento Multitablero Automático ({scope_str}):**\n",
+        f"- 🏢 **Tableros analizados ({len(analyzed_board_names)}):** {', '.join(analyzed_board_names)}",
+        f"- ⏱️ **Timer entre tableros:** {delay_between_boards} segundos",
+        f"- 🔍 **Total de vacantes observadas:** {total_observed}",
+        f"- 🚫 **Descartadas por filtros (rol/seniority/ubicación):** {total_discarded}",
+        f"- ⏸️ **Omitidas por tope configurado por board:** {total_capped}",
+        f"- ⭐ **Vacantes evaluadas y rankeadas con LLM:** {total_passed}",
+        ""
+    ]
+
+    if top_5_jobs:
+        report_lines.append("🏆 **Top 5 Mejores Oportunidades Encontradas en la Corrida:**\n")
+        for rank_idx, j in enumerate(top_5_jobs, start=1):
+            score = j.get("score", 0)
+            title = j.get("title", "Puesto")
+            company = j.get("company", "Empresa")
+            wmode = j.get("work_mode", "N/A")
+            loc = j.get("location", "N/A")
+            justification = j.get("justification", "")
+            app_method = j.get("application_method") or j.get("source_url") or "Ver ficha"
+
+            report_lines.append(f"{rank_idx}. ⭐ **{score}/100** — **{title}** en *{company}* ({wmode} - {loc})")
+            if justification:
+                brief_just = justification.split("\n")[0][:180]
+                report_lines.append(f"   - *Fit:* {brief_just}...")
+            report_lines.append(f"   - *Postulación:* {app_method}\n")
+    else:
+        report_lines.append("Ninguna posición superó el umbral de filtrado en esta corrida multitablero.")
+
+    return {
+        "boards_analyzed": len(analyzed_board_names),
+        "total_observed": total_observed,
+        "total_passed": total_passed,
+        "total_discarded": total_discarded,
+        "total_capped": total_capped,
+        "top_recommendations": top_5_jobs,
+        "report_markdown": "\n".join(report_lines)
+    }
 
 
 
