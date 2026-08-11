@@ -404,7 +404,7 @@ def fetch_greenhouse_job_content(url: str) -> str:
                     discarded_summary.append(f"- **{j_title}** (ID: {j_id}) — *{loc_reason}*")
 
         from src.subagents.job_pipeline.runner import set_last_fetched_jobs_cache
-        set_last_fetched_jobs_cache(retained_job_dicts)
+        set_last_fetched_jobs_cache(retained_job_dicts, total_raw=len(jobs), pre_discarded_summary=discarded_summary)
 
         if not retained_job_dicts:
             return (

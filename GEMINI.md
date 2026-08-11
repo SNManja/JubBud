@@ -54,7 +54,7 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 
 - **`jobbud_agent` (Master Orchestrator)**:
   - Manages conversation, user intent, workflow execution, status changes, intermediate progress reporting, and final output formatting.
-  - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo (ej. Greenhouse), el orquestador ejecuta directamente `execute_job_pipeline_tool("todas")` para procesar el filtrado determinista y el rankeo en lotes de forma automática. Al finalizar, presenta de manera transparente las estadísticas de vacantes observadas, descartadas por filtros, omitidas por el tope configurado (`max_jobs_per_board`), y las vacantes evaluadas con su fit score.
+  - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo (ej. Greenhouse), el orquestador ejecuta directamente `execute_job_pipeline_tool("todas")` para procesar el filtrado determinista y el rankeo en lotes de forma automática. Al finalizar, presenta de manera transparente el desglose exacto de vacantes obtenidas en crudo (Etapa 1), descartadas por filtro pre-parseo duro (Etapa 2), válidas post pre-parseo (Etapa 3), descartadas por filtro post-parseo (Etapa 4), omitidas por el tope configurado (`max_jobs_per_board`), evaluadas y rankeadas con LLM (Etapa 5) y guardadas en `jobs.json` (Etapa 6).
 
 - **`job_parser_agent`**:
   - Parses raw unparsed job postings, normalizes data, detects language ("es"/"en"), extracts mandatory seniority ("Trainee", "Junior", "Semi-Senior", "Senior", "Lead / Executive"), stable IDs (`exactas_86_26`, `linkedin_4445031526`, `greenhouse_canonical_5569916`, `manual_<hash>`), and returns structured JSON.

@@ -50,11 +50,26 @@ def load_pipeline_config() -> Dict[str, Any]:
 
 # In-memory cache for candidate jobs returned by board fetchers
 LAST_FETCHED_JOBS_CACHE: List[Dict[str, Any]] = []
+LAST_FETCHED_STATS_CACHE: Dict[str, Any] = {
+    "total_raw": 0,
+    "pre_discarded": 0,
+    "pre_discarded_summary": []
+}
 
-def set_last_fetched_jobs_cache(jobs: List[Dict[str, Any]]):
-    """Caches candidate jobs in memory to avoid passing huge JSON strings in LLM prompts."""
-    global LAST_FETCHED_JOBS_CACHE
+def set_last_fetched_jobs_cache(jobs: List[Dict[str, Any]], total_raw: int = 0, pre_discarded_summary: List[str] = None):
+    """Caches candidate jobs and Stage 1/2 fetch stats in memory."""
+    global LAST_FETCHED_JOBS_CACHE, LAST_FETCHED_STATS_CACHE
     LAST_FETCHED_JOBS_CACHE = list(jobs)
+    summary = list(pre_discarded_summary) if pre_discarded_summary else []
+    LAST_FETCHED_STATS_CACHE = {
+        "total_raw": total_raw if total_raw > 0 else (len(jobs) + len(summary)),
+        "pre_discarded": len(summary),
+        "pre_discarded_summary": summary
+    }
+
+def get_last_fetched_stats_cache() -> Dict[str, Any]:
+    """Returns stored Stage 1/2 acquisition & pre-filter stats."""
+    return dict(LAST_FETCHED_STATS_CACHE)
 
 def resolve_jobs_from_selection(selection_str: str) -> List[Dict[str, Any]]:
     """
@@ -123,6 +138,11 @@ def _parse_raw_text_with_adk_parser(raw_text: str) -> Dict[str, Any]:
                     if p.text:
                         output.append(p.text)
         return "".join(output)
+
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = None
 
     max_retries = 3
     response_text = ""
@@ -210,26 +230,45 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
         selected_jobs: Selection string (e.g. "1, 3") or List of job dicts.
 
     Returns:
-        Dict containing total_processed, passed_count, discarded_count, ranked_jobs, and report_markdown.
+        Dict containing exact counts across all 6 stages, ranked_jobs, and report_markdown.
     """
     cfg = load_pipeline_config()
     max_jobs_per_board = cfg.get("max_jobs_per_board", 5)
     delay_between_batches = cfg.get("delay_between_batches_seconds", 3)
 
+    stats = get_last_fetched_stats_cache()
+    is_full_selection = False
+
     if isinstance(selected_jobs, str):
+        sel_lower = selected_jobs.strip().lower()
+        if sel_lower in ("todas", "all", "todos", "*"):
+            is_full_selection = True
         selected_jobs = resolve_jobs_from_selection(selected_jobs)
 
     if not selected_jobs:
         return {
-            "total_processed": 0,
+            "total_raw": stats.get("total_raw", 0),
+            "pre_discarded_count": stats.get("pre_discarded", 0),
+            "pre_passed_count": 0,
+            "post_discarded_count": 0,
+            "capped_count": 0,
             "passed_count": 0,
-            "discarded_count": 0,
             "ranked_jobs": [],
             "report_markdown": "No valid positions were selected for processing."
         }
 
+    if is_full_selection or len(selected_jobs) == len(LAST_FETCHED_JOBS_CACHE):
+        total_raw = stats.get("total_raw") or len(selected_jobs)
+        pre_discarded_count = stats.get("pre_discarded") or 0
+        pre_discarded_summary = stats.get("pre_discarded_summary") or []
+    else:
+        pre_discarded_count = stats.get("pre_discarded") or 0
+        pre_discarded_summary = stats.get("pre_discarded_summary") or []
+        total_raw = len(selected_jobs) + pre_discarded_count
 
-    # Step 1: Parsing / Structuring in memory
+    pre_passed_count = len(selected_jobs)
+
+    # Step 1: Parsing / Structuring in memory (Stage 3)
     parsed_jobs = []
     from src.subagents.job_parser.tools import _generate_stable_job_id
 
@@ -255,7 +294,7 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
 
         parsed_jobs.append(pdict)
 
-    # Step 2: Deterministic Post-Parse Filtering (Python / 0 Tokens)
+    # Step 2: Deterministic Post-Parse Filtering (Python / 0 Tokens) (Stage 4)
     valid_jobs = []
     discarded_jobs = []
 
@@ -266,29 +305,52 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
         else:
             discarded_jobs.append((pjob, reason))
 
-    if not valid_jobs:
-        discard_lines = [f"- **{j.get('title', 'Puesto')}**: {r}" for j, r in discarded_jobs]
-        report = (
-            f"📋 **Resultados del Procesamiento ({len(parsed_jobs)} observadas):**\n"
-            f"- 🚫 **Posiciones descartadas por filtros post-parseo:** {len(discarded_jobs)}\n"
-            f"- ✅ **Posiciones válidas para rankear:** 0\n\n"
-            f"**Motivos de descarte:**\n" + "\n".join(discard_lines)
-        )
-        return {
-            "total_processed": len(parsed_jobs),
-            "passed_count": 0,
-            "discarded_count": len(discarded_jobs),
-            "ranked_jobs": [],
-            "report_markdown": report
-        }
+    post_discarded_count = len(discarded_jobs)
 
-    # Step 2.5: Apply max_jobs_per_board cap
+    # Step 2.5: Apply max_jobs_per_board cap (Stage 4 Capping)
     capped_jobs = []
     if max_jobs_per_board > 0 and len(valid_jobs) > max_jobs_per_board:
         capped_jobs = valid_jobs[max_jobs_per_board:]
         valid_jobs = valid_jobs[:max_jobs_per_board]
 
-    # Step 3: Calculate Chunk Size k
+    capped_count = len(capped_jobs)
+
+    if not valid_jobs:
+        report_lines = [
+            f"📊 **Reporte de Procesamiento de Tablero:**",
+            f"- 📥 **Vacantes obtenidas en crudo (Etapa 1):** {total_raw}",
+            f"- 🚫 **Descartadas por filtro pre-parseo duro (Etapa 2):** {pre_discarded_count}",
+            f"- 📋 **Vacantes válidas post pre-parseo (Etapa 3):** {pre_passed_count}",
+            f"- 🚫 **Descartadas por filtro post-parseo (Etapa 4):** {post_discarded_count}",
+            f"- ⏸️ **Omitidas por tope configurado por board (Etapa 4):** {capped_count}",
+            f"- ⭐ **Vacantes evaluadas y rankeadas con LLM (Etapa 5):** 0",
+            f"- 💾 **Vacantes guardadas en jobs.json (Etapa 6):** 0",
+            ""
+        ]
+        if pre_discarded_summary:
+            report_lines.append("**Filtros pre-parseo aplicados (Etapa 2):**")
+            for item in pre_discarded_summary[:5]:
+                report_lines.append(f"  {item}")
+            if len(pre_discarded_summary) > 5:
+                report_lines.append(f"  ... y {len(pre_discarded_summary) - 5} vacante(s) más.")
+            report_lines.append("")
+        if discarded_jobs:
+            report_lines.append("**Filtros post-parseo aplicados (Etapa 4):**")
+            for j, r in discarded_jobs:
+                report_lines.append(f"- ❌ **{j.get('title')}**: {r}")
+
+        return {
+            "total_raw": total_raw,
+            "pre_discarded_count": pre_discarded_count,
+            "pre_passed_count": pre_passed_count,
+            "post_discarded_count": post_discarded_count,
+            "capped_count": capped_count,
+            "passed_count": 0,
+            "ranked_jobs": [],
+            "report_markdown": "\n".join(report_lines)
+        }
+
+    # Step 3: Calculate Chunk Size k (Stage 5)
     R = len(valid_jobs)
     k = max(1, min(5, math.ceil(R / 4)))
     chunks = [valid_jobs[i:i + k] for i in range(0, R, k)]
@@ -305,19 +367,27 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
 
     # Step 6: Generate Consolidated Report
     report_lines = [
-        f"📊 **Reporte de Procesamiento Final ({len(parsed_jobs)} vacantes observadas):**",
-        f"- 🚫 **Descartadas por filtros (roles/seniority/ubicación):** {len(discarded_jobs)}",
-    ]
-    if capped_jobs:
-        report_lines.append(f"- ⏸️ **Omitidas por superar el tope configurado por board ({max_jobs_per_board}):** {len(capped_jobs)}")
-
-    report_lines.extend([
-        f"- ⭐ **Posiciones evaluadas y rankeadas con job_ranker_agent:** {len(valid_jobs)} (Lotes de {k} vacantes)",
+        f"📊 **Reporte de Procesamiento de Tablero:**",
+        f"- 📥 **Vacantes obtenidas en crudo (Etapa 1):** {total_raw}",
+        f"- 🚫 **Descartadas por filtro pre-parseo duro (Etapa 2):** {pre_discarded_count}",
+        f"- 📋 **Vacantes válidas post pre-parseo (Etapa 3):** {pre_passed_count}",
+        f"- 🚫 **Descartadas por filtro post-parseo (Etapa 4):** {post_discarded_count}",
+        f"- ⏸️ **Omitidas por tope configurado por board (Etapa 4):** {capped_count}",
+        f"- ⭐ **Vacantes evaluadas y rankeadas con LLM (Etapa 5):** {len(valid_jobs)} (Lotes de {k} vacantes)",
+        f"- 💾 **Vacantes guardadas en jobs.json (Etapa 6):** {len(valid_jobs)}",
         ""
-    ])
+    ]
+
+    if pre_discarded_summary:
+        report_lines.append("**Vacantes descartadas en pre-parseo (Etapa 2):**")
+        for item in pre_discarded_summary[:5]:
+            report_lines.append(f"  {item}")
+        if len(pre_discarded_summary) > 5:
+            report_lines.append(f"  ... y {len(pre_discarded_summary) - 5} vacante(s) más.")
+        report_lines.append("")
 
     if discarded_jobs:
-        report_lines.append("**Vacantes descartadas post-parseo:**")
+        report_lines.append("**Vacantes descartadas en post-parseo (Etapa 4):**")
         for j, r in discarded_jobs:
             report_lines.append(f"- ❌ **{j.get('title')}** en *{j.get('company')}* — *{r}*")
         report_lines.append("")
@@ -334,10 +404,12 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
         report_lines.append("\n---\n")
 
     return {
-        "total_processed": len(parsed_jobs),
+        "total_raw": total_raw,
+        "pre_discarded_count": pre_discarded_count,
+        "pre_passed_count": pre_passed_count,
+        "post_discarded_count": post_discarded_count,
+        "capped_count": capped_count,
         "passed_count": len(valid_jobs),
-        "discarded_count": len(discarded_jobs),
-        "capped_count": len(capped_jobs),
         "ranked_jobs": valid_jobs,
         "report_markdown": "\n".join(report_lines)
     }
@@ -552,10 +624,12 @@ def run_multi_board_pipeline(scope_str: str = "unanalyzed") -> Dict[str, Any]:
     if not all_boards:
         return {
             "boards_analyzed": 0,
-            "total_observed": 0,
-            "total_passed": 0,
-            "total_discarded": 0,
+            "total_raw": 0,
+            "total_pre_discarded": 0,
+            "total_pre_passed": 0,
+            "total_post_discarded": 0,
             "total_capped": 0,
+            "total_passed": 0,
             "top_recommendations": [],
             "report_markdown": "No hay tableros registrados en profile/board_urls.json para analizar."
         }
@@ -566,18 +640,23 @@ def run_multi_board_pipeline(scope_str: str = "unanalyzed") -> Dict[str, Any]:
     if not target_boards:
         return {
             "boards_analyzed": 0,
-            "total_observed": 0,
-            "total_passed": 0,
-            "total_discarded": 0,
+            "total_raw": 0,
+            "total_pre_discarded": 0,
+            "total_pre_passed": 0,
+            "total_post_discarded": 0,
             "total_capped": 0,
+            "total_passed": 0,
             "top_recommendations": [],
             "report_markdown": f"No hay tableros que coincidan con el criterio de selección '{scope_str}' (ej. sin analizar o vencidos)."
         }
 
-    total_observed = 0
-    total_passed = 0
-    total_discarded = 0
-    total_capped = 0
+    total_raw_sum = 0
+    total_pre_discarded_sum = 0
+    total_pre_passed_sum = 0
+    total_post_discarded_sum = 0
+    total_capped_sum = 0
+    total_passed_sum = 0
+
     analyzed_board_names = []
     all_newly_ranked_jobs = []
 
@@ -593,10 +672,12 @@ def run_multi_board_pipeline(scope_str: str = "unanalyzed") -> Dict[str, Any]:
 
         pipe_res = run_job_processing_pipeline("todas")
 
-        total_observed += pipe_res.get("total_processed", 0)
-        total_passed += pipe_res.get("passed_count", 0)
-        total_discarded += pipe_res.get("discarded_count", 0)
-        total_capped += pipe_res.get("capped_count", 0)
+        total_raw_sum += pipe_res.get("total_raw", 0)
+        total_pre_discarded_sum += pipe_res.get("pre_discarded_count", 0)
+        total_pre_passed_sum += pipe_res.get("pre_passed_count", 0)
+        total_post_discarded_sum += pipe_res.get("post_discarded_count", 0)
+        total_capped_sum += pipe_res.get("capped_count", 0)
+        total_passed_sum += pipe_res.get("passed_count", 0)
 
         for rj in pipe_res.get("ranked_jobs", []):
             all_newly_ranked_jobs.append(rj)
@@ -608,10 +689,13 @@ def run_multi_board_pipeline(scope_str: str = "unanalyzed") -> Dict[str, Any]:
         f"🌐 **Reporte Consolidado de Procesamiento Multitablero Automático ({scope_str}):**\n",
         f"- 🏢 **Tableros analizados ({len(analyzed_board_names)}):** {', '.join(analyzed_board_names)}",
         f"- ⏱️ **Timer entre tableros:** {delay_between_boards} segundos",
-        f"- 🔍 **Total de vacantes observadas:** {total_observed}",
-        f"- 🚫 **Descartadas por filtros (rol/seniority/ubicación):** {total_discarded}",
-        f"- ⏸️ **Omitidas por tope configurado por board:** {total_capped}",
-        f"- ⭐ **Vacantes evaluadas y rankeadas con LLM:** {total_passed}",
+        f"- 📥 **Total de vacantes obtenidas en crudo (Etapa 1):** {total_raw_sum}",
+        f"- 🚫 **Total descartadas por filtro pre-parseo duro (Etapa 2):** {total_pre_discarded_sum}",
+        f"- 📋 **Total vacantes válidas post pre-parseo (Etapa 3):** {total_pre_passed_sum}",
+        f"- 🚫 **Total descartadas por filtro post-parseo (Etapa 4):** {total_post_discarded_sum}",
+        f"- ⏸️ **Total omitidas por tope configurado por board (Etapa 4):** {total_capped_sum}",
+        f"- ⭐ **Total vacantes evaluadas y rankeadas con LLM (Etapa 5):** {total_passed_sum}",
+        f"- 💾 **Total vacantes guardadas en jobs.json (Etapa 6):** {total_passed_sum}",
         ""
     ]
 
@@ -636,13 +720,12 @@ def run_multi_board_pipeline(scope_str: str = "unanalyzed") -> Dict[str, Any]:
 
     return {
         "boards_analyzed": len(analyzed_board_names),
-        "total_observed": total_observed,
-        "total_passed": total_passed,
-        "total_discarded": total_discarded,
-        "total_capped": total_capped,
+        "total_raw": total_raw_sum,
+        "total_pre_discarded": total_pre_discarded_sum,
+        "total_pre_passed": total_pre_passed_sum,
+        "total_post_discarded": total_post_discarded_sum,
+        "total_capped": total_capped_sum,
+        "total_passed": total_passed_sum,
         "top_recommendations": top_5_jobs,
         "report_markdown": "\n".join(report_lines)
     }
-
-
-
