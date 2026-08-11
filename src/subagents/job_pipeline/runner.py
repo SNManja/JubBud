@@ -365,6 +365,25 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
         ranker_output = _evaluate_batch_chunk_with_adk_ranker(chunk)
         ranked_results.append((chunk, ranker_output))
 
+    # Step 5: Reload fully updated job objects from jobs.json (hydrating score, justification, strengths, gaps)
+    from src.subagents.job_ranker.tools import JOBS_FILE_PATH
+    if JOBS_FILE_PATH.exists():
+        try:
+            with open(JOBS_FILE_PATH, "r", encoding="utf-8") as f:
+                all_stored = json.load(f)
+            stored_by_id = {str(j.get("id")).lower(): j for j in all_stored if isinstance(j, dict) and j.get("id")}
+
+            hydrated_jobs = []
+            for vj in valid_jobs:
+                v_id = str(vj.get("id", "")).lower()
+                if v_id in stored_by_id and stored_by_id[v_id].get("status") == "ranked":
+                    hydrated_jobs.append(stored_by_id[v_id])
+                else:
+                    hydrated_jobs.append(vj)
+            valid_jobs = hydrated_jobs
+        except Exception:
+            pass
+
     # Step 6: Generate Consolidated Report
     report_lines = [
         f"📊 **Reporte de Procesamiento de Tablero:**",
