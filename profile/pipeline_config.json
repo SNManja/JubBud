@@ -1,12 +1,12 @@
 {
   "_comment_max_jobs_per_board": "Límite máximo de vacantes que se envían a rankear con LLM por cada consulta a un Job Board.",
-  "max_jobs_per_board": 10,
+  "max_jobs_per_board": 5,
 
   "_comment_delay_between_batches": "Pausa en segundos (timer) entre cada llamada en lote (chunk) al subagente ranker con LLM.",
-  "delay_between_batches_seconds": 2,
+  "delay_between_batches_seconds": 5,
 
   "_comment_delay_between_boards": "Pausa en segundos (timer) entre la consulta a un Job Board y el siguiente durante la ejecución multitablero.",
-  "delay_between_boards_seconds": 30,
+  "delay_between_boards_seconds": 15,
 
   "_comment_max_years_experience": "Límite máximo de años de experiencia requeridos para considerar viable una vacante (ej. 3 años max).",
   "max_years_experience": 3,

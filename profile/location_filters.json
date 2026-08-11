@@ -16,7 +16,7 @@
       "Buenos Aires", "CABA", "Palermo", "Escobar", "San Isidro",
       "Vicente López", "Pilar", "Belgrano", "Parque Patricios",
       "Puerto Madero", "Núñez", "Recoleta", "Olivos", "Martínez",
-      "Tigre", "AMBA", "GBA", "Zona Norte"
+      "Tigre", "AMBA", "GBA", "Zona Norte", "Zona Oeste", "Zona Sur"
     ],
     "allowed_remote_regions": [
       "Worldwide", "Global", "LatAm", "Argentina", "EMEA", "US", "Anywhere"
