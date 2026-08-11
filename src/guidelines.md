@@ -89,7 +89,7 @@ Whenever analyzing a job board listing (e.g., via `fetch_greenhouse_job_content`
 
 ## 5.8. Multi-Board Automated Pipeline Execution (`execute_multi_board_pipeline_tool`)
 
-Whenever the user asks to analyze, check, or rank multiple registered job boards (e.g. *"analizá mis tableros"*, *"revisar mis boards no analizados este mes"*, *"ejecutar pipeline multitablero"*):
+Whenever the user asks to analyze, check, or rank multiple registered job boards (e.g. *"analizá mis tableros"*, *"revisar mis boards no analizados este mes"*, *"analizá del 1 al 5"*, *"analizá los tableros 1, 2, 6 y 8"*):
 
 1. **Invoke `execute_multi_board_pipeline_tool(scope)`**:
    - Map user criteria to the `scope` parameter:
@@ -98,6 +98,8 @@ Whenever the user asks to analyze, check, or rank multiple registered job boards
      - `"1d"` / `"dia"`: Boards not analyzed in the last 24 hours.
      - `"1w"` / `"semana"`: Boards not analyzed in the last 7 days.
      - `"1m"` / `"mes"`: Boards not analyzed in the last 30 days.
+     - **Interpret Rango o Lista de Índices de Tableros**: Si el usuario especifica índices o rangos del listado de tableros (ej. *"analizá los tableros 1,2,6,8"*, *"analizá del 1 al 5"*, *"1-5"*, *"1, 3, 5 a 7"*), pasa esa misma cadena en `scope` (ej. `scope="1, 2, 6, 8"` o `scope="del 1 al 5"`).
+     - **Interpretar Pedido de Fecha/Tiempo Flexible**: Si el usuario especifica un punto en el tiempo desde el cual analizar (ej. *"desde el 1 de agosto"*, *"desde hace 3 días"*, *"desde el 2026-08-01 en adelante"*, *"hace 12 horas"*), interpreta el pedido y conviértelo a un formato de fecha ISO 8601 (`YYYY-MM-DD` o `YYYY-MM-DDTHH:MM:SS`) o formato relativo (`3d`, `12h`, `2w`) coincidente con el sistema de timestamps `last_analyzed` de los tableros y pásalo como argumento en `scope`.
 2. **Sequential Board Processing & Inter-Board Timer**:
    - Executes `run_multi_board_pipeline`, enforcing `delay_between_boards_seconds` (from `profile/pipeline_config.json`) between board queries to prevent API throttling.
    - Updates `last_analyzed` timestamp for each board in `profile/board_urls.json`.
@@ -221,8 +223,10 @@ The user can register, inspect, and analyze job board URLs via conversational co
 
 
 3. **Analyze Board**:
-   - Trigger: User says *"analizá el board 1"*, *"analizar board AppsFlyer"*.
-   - Tool: Invoke `get_board_to_analyze(identifier)` with the number (e.g. "1"), name, or ID.
+   - Trigger: User says *"analizá el board 1"*, *"analizá los tableros 1, 2, 6, 8"*, *"analizá del 1 al 5"*, *"analizar board AppsFlyer"*.
+   - Tool:
+     - For a single board: Invoke `get_board_to_analyze(identifier)` with the number (e.g. "1"), name, or ID.
+     - For multiple boards or ranges: Invoke `execute_multi_board_pipeline_tool(scope)` with the selection string (e.g. `scope="1, 2, 6, 8"` or `scope="del 1 al 5"`).
    - Follow the **Job Board Analysis & Mandatory User Confirmation Workflow** (Section 5.5).
 
 4. **Delete Board**:

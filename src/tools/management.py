@@ -261,9 +261,10 @@ def execute_multi_board_pipeline_tool(scope: str = "unanalyzed") -> str:
         scope: Filtering criteria for board selection:
                - "unanalyzed" / "nunca": Only boards never analyzed (default).
                - "all" / "todos": All registered boards.
-               - "1d" / "dia": Boards not analyzed in the last 24 hours (or never analyzed).
-               - "1w" / "semana": Boards not analyzed in the last 7 days (or never analyzed).
-               - "1m" / "mes": Boards not analyzed in the last 30 days (or never analyzed).
+               - Board indices / ranges: "1, 2, 6, 8", "del 1 al 5", "1-5", "1, 3, 5-7" (1-indexed from list_job_boards).
+               - "1d" / "dia", "1w" / "semana", "1m" / "mes", "12h", "3d", "2w": Relative timeframes.
+               - ISO Date / Timestamp (e.g. "2026-08-01" or "2026-08-01T12:00:00"): Boards not analyzed since cutoff date.
+               - Directional prefixes ("desde:2026-08-01", "after:2026-08-01", "hasta:2026-08-01"): Filter boards analyzed after/before date.
 
     Returns:
         Formatted markdown report with multi-board stats, board timer details, and Top 5 recommendations found.
