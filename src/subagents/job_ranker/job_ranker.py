@@ -8,7 +8,7 @@ persists the score via update_job_ranking_json, and generates a formatted respon
 from pathlib import Path
 from google.adk.agents import Agent
 from src.config import DEFAULT_MODEL
-from src.subagents.job_ranker.tools import read_candidate_profile, update_job_ranking_json, save_ranked_jobs_batch
+from src.subagents.job_ranker.tools import read_candidate_profile, read_ranking_policy, update_job_ranking_json, save_ranked_jobs_batch
 
 GUIDELINES_PATH = Path(__file__).parent / "guidelines.md"
 with open(GUIDELINES_PATH, "r", encoding="utf-8") as f:
@@ -19,10 +19,10 @@ job_ranker_agent = Agent(
     model=DEFAULT_MODEL,
     description=(
         "Expert subagent for evaluating fit match and ranking job positions (0 to 100) "
-        "against the candidate's professional profile (profile/candidate_profile.md). "
+        "against the candidate's professional profile (profile/candidate_profile.md) and candidate ranking policy (profile/ranking_policy.md). "
         "Use this agent whenever evaluating, rating, or ranking job positions."
     ),
     instruction=job_ranker_instruction,
-    tools=[read_candidate_profile, update_job_ranking_json, save_ranked_jobs_batch]
+    tools=[read_candidate_profile, read_ranking_policy, update_job_ranking_json, save_ranked_jobs_batch]
 )
 

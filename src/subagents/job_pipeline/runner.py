@@ -350,23 +350,65 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
             "report_markdown": "\n".join(report_lines)
         }
 
-    # Step 3: Calculate Chunk Size k (Stage 5)
-    R = len(valid_jobs)
-    k = max(1, min(5, math.ceil(R / 4)))
-    chunks = [valid_jobs[i:i + k] for i in range(0, R, k)]
+    # Step 2.8: Pre-rank deduplication against existing jobs.json (Invariant: jobs in jobs.json were already analyzed)
+    from src.subagents.job_ranker.tools import JOBS_FILE_PATH, set_ranking_batch_cache, clear_ranking_batch_cache
 
-    # Step 4: Batch Ranking via JobRanker (with inter-batch timer delay)
+    existing_ids = set()
+    if JOBS_FILE_PATH.exists():
+        try:
+            with open(JOBS_FILE_PATH, "r", encoding="utf-8") as f:
+                all_stored = json.load(f)
+                if isinstance(all_stored, list):
+                    existing_ids = {str(j.get("id")).lower() for j in all_stored if isinstance(j, dict) and j.get("id")}
+        except Exception:
+            pass
+
+    unranked_valid_jobs = [j for j in valid_jobs if str(j.get("id", "")).lower() not in existing_ids]
+
+    if not unranked_valid_jobs:
+        report_lines = [
+            f"📊 **Reporte de Procesamiento de Tablero:**",
+            f"- 📥 **Vacantes obtenidas en crudo (Etapa 1):** {total_raw}",
+            f"- 🚫 **Descartadas por filtro pre-parseo duro (Etapa 2):** {pre_discarded_count}",
+            f"- 📋 **Vacantes válidas post pre-parseo (Etapa 3):** {pre_passed_count}",
+            f"- 🚫 **Descartadas por filtro post-parseo (Etapa 4):** {post_discarded_count}",
+            f"- ⏸️ **Omitidas por tope configurado por board (Etapa 4):** {capped_count}",
+            f"- ℹ️ **Vacantes omitidas (ya analizadas en jobs.json):** {len(valid_jobs)}",
+            f"- ⭐ **Nuevas vacantes rankeadas con LLM (Etapa 5):** 0",
+            f"- 💾 **Vacantes actualizadas/guardadas en jobs.json (Etapa 6):** 0",
+            ""
+        ]
+        return {
+            "total_raw": total_raw,
+            "pre_discarded_count": pre_discarded_count,
+            "pre_passed_count": pre_passed_count,
+            "post_discarded_count": post_discarded_count,
+            "capped_count": capped_count,
+            "passed_count": 0,
+            "ranked_jobs": [],
+            "report_markdown": "\n".join(report_lines)
+        }
+
+    # Step 3: Calculate Chunk Size k (Stage 5)
+    R = len(unranked_valid_jobs)
+    k = max(1, min(5, math.ceil(R / 4)))
+    chunks = [unranked_valid_jobs[i:i + k] for i in range(0, R, k)]
+
+    # Step 4: Batch Ranking via JobRanker (with transient batch cache lifecycle and inter-batch timer delay)
     candidate_profile = read_candidate_profile()
     ranked_results = []
 
     for chunk_idx, chunk in enumerate(chunks, start=1):
         if chunk_idx > 1 and delay_between_batches > 0:
             time.sleep(delay_between_batches)
-        ranker_output = _evaluate_batch_chunk_with_adk_ranker(chunk)
-        ranked_results.append((chunk, ranker_output))
+        try:
+            set_ranking_batch_cache(chunk)
+            ranker_output = _evaluate_batch_chunk_with_adk_ranker(chunk)
+            ranked_results.append((chunk, ranker_output))
+        finally:
+            clear_ranking_batch_cache()
 
-    # Step 5: Reload fully updated job objects from jobs.json (hydrating score, justification, strengths, gaps)
-    from src.subagents.job_ranker.tools import JOBS_FILE_PATH
+    # Step 5: Reload fully updated job objects from jobs.json
     if JOBS_FILE_PATH.exists():
         try:
             with open(JOBS_FILE_PATH, "r", encoding="utf-8") as f:
@@ -374,7 +416,7 @@ def run_job_processing_pipeline(selected_jobs: Any) -> Dict[str, Any]:
             stored_by_id = {str(j.get("id")).lower(): j for j in all_stored if isinstance(j, dict) and j.get("id")}
 
             hydrated_jobs = []
-            for vj in valid_jobs:
+            for vj in unranked_valid_jobs:
                 v_id = str(vj.get("id", "")).lower()
                 if v_id in stored_by_id and stored_by_id[v_id].get("status") == "ranked":
                     hydrated_jobs.append(stored_by_id[v_id])

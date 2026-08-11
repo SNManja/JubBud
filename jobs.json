@@ -1,162 +1,211 @@
 [
   {
-    "gaps": [
-      "El perfil del candidato es de Desarrollador Junior enfocado en programación, mientras que esta posición requiere experiencia específica en diseño de materiales pedagógicos (Social Studies) y currícula.",
-      "La posición requiere experiencia previa como autor de contenido educativo (Assessment Item Specialist), algo inexistente en el perfil técnico del candidato."
-    ],
-    "created_at": "2026-08-07T04:56:41.270526",
-    "justification": "Esta vacante es para un rol de especialista en evaluación de contenidos pedagógicos de Ciencias Sociales, una posición ajena al área de Ingeniería de Software/Desarrollo en la que el candidato tiene su formación y proyectos. No existe afinidad técnica.",
+    "id": "greenhouse_devrev_5220510004",
+    "created_at": "2026-08-11T07:19:31.189780",
+    "title": "Forward Deploy Engineer (AI Platform)",
+    "company": "devrev",
+    "location": "Buenos Aires, Argentina",
+    "work_mode": "Not specified",
     "commitment": "Not specified",
-    "id": "greenhouse_newsela_7859662",
-    "location": "Remote - US",
-    "raw_text": "Why You'll Love This Role:\\nAs an Assessment Item Specialist for Social Studies, you will play a key role in expanding the Newsela Item Bank, ensuring students have access to high-quality, inquiry-based assessments. You will leverage your Social Studies expertise to create rigorous, standards-aligned content and evaluate primary and secondary sources that help educators deliver data-informed instruction. This role offers a collaborative, remote environment where your commitment to historical thinking and evidence-based analysis directly supports academic success in classrooms nationwide. You will enjoy the flexibility of a freelance contract while contributing to a platform that is a staple in K-12 digital learning.\\nWhat You'll Be Doing:\\nCreate original, standards-aligned Social Studies assessment items, tasks, and stimuli that are precisely mapped to state-specific standards and the C3 Framework.\\nSelect and curate high-quality primary and secondary sources, including maps, charts, and historical documents, that meet specific grade-level complexity and inquiry requirements.\\nTransfer and format existing Social Studies assessments and items from district and state sources directly into the Formative platform.\\nProduce and configure technology-enhanced items (TEIs) within the platform, ensuring accurate metadata tagging and flawless technical functionality.\\nConduct systematic quality assurance reviews of Social Studies content to ensure all items are unbiased, culturally responsive, and meet strict editorial standards.\\nValidate content alignment and cognitive rigor by accurately evaluating the Depth of Knowledge (DOK) for every assessment item.\\nProvide expert platform feedback and recommendations regarding content tools and item bank features to continuously improve development workflows.\\nAbout You:\\nYou are a professional assessment author with at least one year of direct experience writing and reviewing Social Studies assessment items on a commercial scale, such as for a reputable EdTech company, testing vendor, or educational publisher.\\nYou are an assessment methodology expert who possesses a comprehensive understanding of educational assessment design, including formative, common, and summative assessments.\\nYou are a standards and framework specialist with deep familiarity with state-specific social studies standards and the C3 Framework, along with a proven ability to apply strict standards alignment principles.\\nYou demonstrate a mastery of rigor and Depth of Knowledge (DOK), allowing you to accurately classify and create items that meet specific cognitive rigor requirements, particularly in evaluating historical evidence and civic reasoning.\\nYou are skilled in technical item production, bringing prior experience authoring technology-enhanced items (TEIs) and comfortably navigating digital assessment platforms.\\nYou exhibit editorial excellence through a thorough grasp of established style guides and best practices, including critical quality control elements such as fairness, bias, and accessibility.\\nYou are a reliable content producer with a proven track record of delivering high-quality work under tight deadlines with meticulous attention to detail.\\nLegally authorized to work in the US.\\nWhy you’ll love working at Newsela:\\nWork From Home:\\nWe are a fully remote company!\\nMake A Difference:\\nNo matter your role or department, the work you do each day helps share the future of education and improves the lives of students and teachers.\\nAbout Newsela:\\nNewsela is a leading education technology company dedicated to meaningful classroom learning for every student. We deliver integrated, AI-powered solutions designed to unlock student engagement, empower teachers, and drive meaningful learning outcomes. Our suite of products supports knowledge and skill development, writing practice, daily instruction, assessment, and data-informed decision-making across K–12 classrooms. Grounded in learning science research, Newsela’s solutions integrate content, assessment, and analytics to help educators track progress, understand student outcomes, and deliver high-impact instruction that supports every learner.\\n#LI-Remote\",,ranked_at:",
-    "department": "Freelance",
-    "key_technologies": [],
-    "language": "en",
-    "application_method": "Postulación web en: https://job-boards.greenhouse.io/newsela/jobs/7859662",
-    "company": "newsela",
-    "main_requirements": [],
-    "score": 0,
-    "strengths": [],
-    "status": "ranked",
-    "ranked_at": "2026-08-07T04:56:52.698027"
-  },
-  {
-    "title": "Bilingual Application Support Analyst",
-    "summary": "InvGate is a fast growing SaaS company that develops products for IT management and service automation, used by clients in over 60 countries in industries such as banking, e-commerce, education and technology.\\nTo support our continuous growth, we are looking for a\\nBilingual Application Support Analy",
-    "gaps": [
-      "Requires 5+ years of professional experience, which exceeds the candidate's current profile as a student/entry-level developer.",
-      "The role is for a specialized Database Engineer, whereas the candidate is looking for Junior/Trainee Software Developer roles."
-    ],
-    "justification": "This is a mismatch due to the seniority level required (5+ years of experience) and the specialized nature of the role (DBA), which does not align with the candidate's target of Junior/Entry-level software development positions.",
-    "work_mode": "Remote",
-    "location": "Argentina",
-    "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4456847002",
-    "seniority": "Junior",
-    "commitment": "Not specified",
-    "ranked_at": "2026-08-07T05:00:23.989804",
-    "raw_text": "InvGate is a fast growing SaaS company that develops products for IT management and service automation, used by clients in over 60 countries in industries such as banking, e-commerce, education and technology.\\nTo support our continuous growth, we are looking for a\\nBilingual Application Support Analyst\\nto join our team. This is a client-facing role focused on ensuring our partners and customers get the most out of our platform by solving complex functional and technical challenges.\\nSome of the role´s responsibilities include:\\nAdvanced Troubleshooting:\\nAct as the primary technical point of contact for external clients, diagnosing and resolving complex application issues.\\nTechnical Consulting:\\nGuide clients on best practices for platform integration, workflow optimization, and advanced feature usage.\\nCross-functional Collaboration:\\nWork closely with the Development and Customer Success teams to resolve our clients' requests and improve the product.\\nDo not hesitate to apply if you:\\nAre fluent in\\nEnglish and Spanish\\n.\\nEnjoy working with clients and providing top-level support.\\nHave\\n2+ years of experience\\nsupporting SaaS or complex enterprise applications for external users.\\nHave strong communication and troubleshooting skills.\\nEnjoy digging into\\napplication logic and logs\\nto find the \\\"why\\\" behind an issue.\\nHave a passion for\\nlearning new technologies\\nand products quickly, adapting to a high-speed, ever-evolving technical landscape.\\nIt´s a big plus if you have experience with\\nDirectory Services:\\nKnowledge of Active Directory and LDAP for user authentication and management.\\nEnvironments:\\nFamiliarity with Windows and Linux operating systems and experience working within virtualized environments.\\nWeb Servers & Networking:\\nAdministration of Apache and a solid understanding of network connectivity and protocols.\\nAPIs:\\nFamiliarity with RESTful APIs and tools like\\nInsomnia, Postman, or cURL\\nto test endpoints, analyze responses, and diagnose integration issues.\\nDatabases:\\nAbility to write and execute\\nSQL queries\\nto perform data analysis required for the troubleshooting process.\\nWe offer real opportunities for professional development, fully covered English classes, technical training both in-house and at educational centers, top-tier health insurance, a fixed amount for purchases in the food sector, reimbursement for remote work, and extended vacation and paternity leave.\\nOur office is located in Belgrano, CABA. This position is\\nHybrid\\nfor those residing in the AMBA region, requiring office attendance at least twice a week.",
-    "id": "greenhouse_invgate_4456847002",
-    "company": "invgate",
-    "source_page": "Greenhouse (invgate)",
-    "years_of_experience": 2,
-    "language": "en",
-    "status": "ranked",
-    "created_at": "2026-08-07T05:00:01.167902",
-    "source_url": "https://job-boards.greenhouse.io/invgate/jobs/4456847002",
-    "key_technologies": [
-      "SQL",
-      "Linux"
-    ],
-    "department": "Technical assistance and Support",
-    "main_requirements": [],
+    "department": "Engineering - Applied AI Engineering",
+    "seniority": "undefined",
+    "years_of_experience": "undefined",
     "salary_range": "Not specified",
-    "user_notes": null,
-    "score": 25,
-    "strengths": [
-      "Familiarity with PostgreSQL (candidate's stack).",
-      "Awareness of cloud environments (AWS)."
-    ]
-  },
-  {
-    "created_at": "2026-08-07T05:02:29.124289",
-    "department": "Information Technology",
-    "raw_text": "Junior Data Engineer\\nA bit about us:\\nWe’re on a mission to change the tire industry — how it’s delivered and how it’s experienced.  A pioneer in the automotive e-commerce industry, we take pride in our extensive selection of top-name brands and budget-friendly options, ensuring our customers find the perfect tire to suit their needs. As a part of our growing and dynamic team, you'll contribute to our commitment to exceptional service, innovation, and customer satisfaction. Embrace the opportunity to be a driving force behind one of the fastest growing e-commerce companies in the US and apply now!\\nA bit more about this role:\\nIn this role, you will support the automation, development, maintenance, and optimization of our data pipelines and infrastructure. You’ll work closely with senior data engineers to process, clean, and transform large datasets, ensuring data integrity and availability for analytics and business decision-making. This position offers hands-on experience with cloud platforms, SQL databases, and ETL processes, providing a strong foundation for growth in data engineering. You will also collaborate with cross-functional teams to understand data needs and contribute to improving data workflows. As part of the team, you’ll have the opportunity to learn best practices in data modeling, automation, and performance tuning while working in a dynamic and fast-paced environment. This position will also spend some time to support our inhouse IT admin team to maintain the company's IT-hardware/software.\\nYou will work in an entrepreneurial environment where we are constantly looking to learn what our customers need and to develop better ways to serve them.\\nEligibility Requirements\\nVery good command of the English language (written and verbal)\\nFinished\\nuniversity degree – in computer science or an engineering field\\nAvailability to work full USA hour shift (EST, CST, MST, or PST)\\nAt least 1-2 years of relevant private sector work experience (fulltime)  in the field of IT or data science actively using python and PowerBI\\nProfessional experience working with Python including common libraries like scipy, pandas, scikit-learn etc. (just python coding classes do not count)\\nMust not have had any disciplinary actions regarding attendance, conduct and/or performance in the past 90 days, and must not be approaching such action.\\nResponsibilities will include:\\nDevelop and maintain Python scripts and applications for data processing, analysis, and automation.\\nDesign, develop, and maintain Power BI dashboards and reports to deliver actionable insights to stakeholders.\\nReviewing data for accuracy, completeness and consistency\\nOrganizing and maintaining electronic records for a company’s databases\\nAnalyzing data in order to identify trends and opportunities for improvement\\nAssisting in creating reports and proposals to present findings to management\\nAddress technical issues and provide IT support to ensure smooth business operations\\nSupport IT management team\\nSetup of  notebooks/servers\\nRepair and maintenance of computer equipment\\nSupport the Microsoft user management\\nDesign and ownership of security controls and risks including logins and passwords\\nAttributes to success:\\nProven success in building relationships and trust\\nComfortable working in a dynamic environment\\nThe ability to pivot based on priority shifts\\nThe ability to comprehend and apply on-the-job training. This training may include learning the company’s specific computer programs and procedures.\\nDesired skills & experience:\\nProven experience with Python or other scripting languages – SQL and PowerBI is a plus\\nHigh speed Wi-Fi connection\\nBe able to work 8 hour shifts (i.e. PST)\\nYou’re a great team member with a can-do attitude; you’re self- reflective\\nPlease submit resume in English.\",",
-    "justification": "",
-    "location": "Argentina, Remote",
     "key_technologies": [
       "Python",
+      "JavaScript",
+      "TypeScript",
+      "Go",
       "SQL"
     ],
-    "company": "tireseasycom",
+    "main_requirements": [],
+    "summary": "About DevRev\nAt DevRev, we're building the future of work with\nComputer\n– your AI teammate. Unlike traditional tools,\nComputer\nunifies all your data sources, tools, and workflows into a single AI-ready platform, giving employees real-time insights, proactive suggestions, and powerful agentic actions",
+    "raw_text": "About DevRev\nAt DevRev, we're building the future of work with\nComputer\n– your AI teammate. Unlike traditional tools,\nComputer\nunifies all your data sources, tools, and workflows into a single AI-ready platform, giving employees real-time insights, proactive suggestions, and powerful agentic actions. It extends your existing software with AI-native apps and agents that work alongside your teams and customers – updating workflows, coordinating across teams, and eliminating repetitive work. We call this Team Intelligence: human-AI collaboration that breaks down silos, brings people back together, and frees you to solve bigger problems. Backed by Khosla Ventures and Mayfield with $150M+ raised, DevRev is trusted by global companies across industries.\nForward Deployed Engineer\nThe Applied AI Engineering team ensures our customers get the optimal experience from DevRev. As customers go through their DevRev journey, they may identify need(s) for integration with existing enterprise systems/services, workflow/process automation or customization/enhancement of the DevRev platform capabilities to achieve their business objectives. Our team works with customers to understand requirements and design, develop, and implement solutions to meet customer goals.\nYour mission is to systematically help customers find value with DevRev by developing a thorough understanding of their needs, owning the coordination between internal and external stakeholders, and engineering the solution to get the job done. You are a product expert and will use your application development, and AI/ML skills to ensure our customers get the most out of the DevRev platform.\nJob Description\nAs an Applied AI engineer at DevRev, you will work closely with our pre- and post-sales Customer Experience team by developing solutions over the core platform via applications written in TypeScript, JavaScript, Python etc. You will be expected to employ your creativity and expertise to ideate and shape how AI, analytics and workflows are used in customers' processes.\nObjectives of this role will include:\nDesign, develop and implement integrations, automations and customizations to integrate DevRev with customers’ tech stack and workflows, and ensure successful customer engagements.\nUtilize AI in novel ways to solve customer problems, including Generative AI techniques like prompt engineering for foundation large language models (LLMs) to enable great AI agent experience.\nConduct data analysis, writing SQL queries, and building dashboards to share insights and drive decision-making.\nBe proactive in communicating and keeping constant feedback loops to all key stakeholders including Customers, Engineering, Product, Customer Success & Support, Revenue, Marketing etc.\nLearn new tools and guide customers through critical workflows, e.g. integration with code repositories.\nIdeal Candidate Qualifications:\nSoftware engineering degree or equivalent educational or professional experience.\nHands-on coding experience using TypeScript/JavaScript, Python, APIs, Webhooks, and SQL.\nFamiliarity with Generative AI technologies including models like GPT-4, prompt engineering and fine-tuning.\nKnowledge of vector databases and data embeddings.\nOutstanding communication (written and verbal in English).\nResult-oriented work style, ability to get things done and a learning mindset.\nAn endless passion for challenging work that requires high energy, full engagement and a self-founded need for high performance.\nDevRev is an",
     "language": "en",
-    "commitment": "Not specified",
-    "application_method": "Postulación web en: https://job-boards.greenhouse.io/tireseasycom/jobs/5249913008",
-    "main_requirements": [],
-    "id": "greenhouse_tireseasycom_5249913008",
-    "gaps": [],
-    "score": 45,
+    "source_page": "Greenhouse (devrev)",
+    "source_url": "https://job-boards.greenhouse.io/devrev/jobs/5220510004",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/devrev/jobs/5220510004",
+    "status": "ranked",
+    "score": 72,
+    "justification": "The position is an entry-level/equivalent 'Forward Deployed Engineer' role requiring Python, TypeScript/JavaScript, and SQL, for which the candidate has strong project experience (Batchpix, JobBud). While the posting lists 'Software engineering degree or equivalent educational or professional experience' (which the candidate satisfies as an advanced CS student) and states no mandatory years of professional experience, it also mentions familiarity with GenAI technologies, vector databases, and embeddings, which represent secondary/learnable gaps for this candidate. Overall, it represents a solid possible fit for an advanced CS student with strong relevant project experience.",
     "strengths": [
-      "Matches the core Python and SQL technical stack requirement.",
-      "English proficiency (C2) meets the high language requirements of the role.",
-      "Remote working modality aligns with preferences."
+      "The role accepts Python, JavaScript, TypeScript, and SQL, which directly match the candidate's core stack (Node.js/TypeScript backend, Python scripting, PostgreSQL).",
+      "The posting accepts equivalent educational experience ('Software engineering degree or equivalent'), matching the candidate's status as an advanced CS student in UBA Exactas.",
+      "The posting does not state a mandatory professional years of experience requirement."
     ],
-    "status": "ranked",
-    "ranked_at": "2026-08-07T05:02:41.439045",
-    "seniority": "Junior",
-    "years_of_experience": "1-2"
-  },
-  {
-    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
-    "department": "Engineering",
-    "main_requirements": [],
-    "raw_text": "About Backblaze\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on building durable, scalable systems with a strong emphasis on developer experience and operational efficiency.\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\nSoftware Engineer, AI\nto join our team!\nWhat You’ll Do:\nUse AI-assisted development tools, including Claude Code, to accelerate implementation while validating correctness, security, and performance.\nDesign and build server-side APIs that authenticate users, accept and manage backups, handle large-scale data operations, and prepare restored data for customers across our global user base.\nCollaborate with Product, QA, and Support teams to ensure both backend features reflect real customer workflows and usage patterns.\nBuild and maintain support tooling to help diagnose and resolve customer issues at scale.\nEnsure all code and open source assets meet high standards for testing, documentation, reproducibility, and developer usability.\nTools and Technologies\nAI coding agents such as Claude Code, Cursor, Codex, and Antigravity\nLanguages: Java\nBackblaze B2 SDKs and REST APIs\nOpen source AI frameworks and tooling (e.g. LangChain, LlamaIndex, vector databases)\nSQL and NoSQL backend development (experience with large-scale distributed databases a plus)\nGitHub, pytest, CI/CD pipelines\nLarge-scale server infrastructure (Linux, cross-platform awareness)\nThe Right Fit:\n2+ years of backend software engineering experience, ideally on systems that serve millions of users across multiple platforms.\nProficiency in Java.\nPractical understanding of AI workflows — data ingestion, preprocessing, inference, and agent-based orchestration.\nExperience building or working with large-scale APIs and distributed storage or data systems.\nProduction-quality coding habits: rigorous testing, clear documentation, and attention to security and performance.\nCustomer-focused mindset — you think about the developer and end-user experience in everything you build.\nStrong written communication skills; you can explain technical decisions clearly to both engineers and non-engineers.\nGood attitude, cross-functional collaboration skills, and a genuine desire to work in a fast-paced environment with evolving requirements.\nBonus Points For:\nExperience building or evaluating AI agents and multi-step tool-use systems.\nExperience with Cassandra or other large-scale NoSQL systems.\nFamiliarity with ReactJS or front-end frameworks.\nPrior work with vector databases or embedding pipelines.\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\nWe are proud to be an\",",
-    "id": "greenhouse_backblaze_5207236008",
-    "ranked_at": "2026-08-07T05:06:18.538562",
-    "key_technologies": [
-      "Java",
-      "SQL",
-      "Linux"
-    ],
-    "language": "en",
-    "created_at": "2026-08-07T05:06:09.642564",
-    "justification": "",
-    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5207236008",
-    "company": "backblaze",
-    "gaps": [],
-    "commitment": "Not specified",
-    "score": 45,
-    "strengths": [
-      "Interés en AI y automatización (coincide con proyectos del candidato).",
-      "Entorno remoto (deseable para el candidato).",
-      "Uso de Linux y Git/CI/CD."
-    ],
-    "status": "ranked",
-    "seniority": "Junior",
-    "years_of_experience": 2
-  },
-  {
-    "commitment": "Not specified",
-    "main_requirements": [],
-    "score": 40,
-    "key_technologies": [
-      "Java",
-      "SQL",
-      "Linux"
-    ],
-    "seniority": "Junior",
-    "raw_text": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on building durable, scalable systems with a strong emphasis on developer experience and operational efficiency.\\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\\nSoftware Engineer, AI\\nto join our team!\\nWhat You’ll Do:\\nUse AI-assisted development tools, including Claude Code, to accelerate implementation while validating correctness, security, and performance.\\nDesign and build server-side APIs that authenticate users, accept and manage backups, handle large-scale data operations, and prepare restored data for customers across our global user base.\\nCollaborate with Product, QA, and Support teams to ensure both backend features reflect real customer workflows and usage patterns.\\nBuild and maintain support tooling to help diagnose and resolve customer issues at scale.\\nEnsure all code and open source assets meet high standards for testing, documentation, reproducibility, and developer usability.\\nTools and Technologies\\nAI coding agents such as Claude Code, Cursor, Codex, and Antigravity\\nLanguages: Java\\nBackblaze B2 SDKs and REST APIs\\nOpen source AI frameworks and tooling (e.g. LangChain, LlamaIndex, vector databases)\\nSQL and NoSQL backend development (experience with large-scale distributed databases a plus)\\nGitHub, pytest, CI/CD pipelines\\nLarge-scale server infrastructure (Linux, cross-platform awareness)\\nThe Right Fit:\\n2+ years of backend software engineering experience, ideally on systems that serve millions of users across multiple platforms.\\nProficiency in Java.\\nPractical understanding of AI workflows — data ingestion, preprocessing, inference, and agent-based orchestration.\\nExperience building or working with large-scale APIs and distributed storage or data systems.\\nProduction-quality coding habits: rigorous testing, clear documentation, and attention to security and performance.\\nCustomer-focused mindset — you think about the developer and end-user experience in everything you build.\\nStrong written communication skills; you can explain technical decisions clearly to both engineers and non-engineers.\\nGood attitude, cross-functional collaboration skills, and a genuine desire to work in a fast-paced environment with evolving requirements.\\nBonus Points For:\\nExperience building or evaluating AI agents and multi-step tool-use systems.\\nExperience with Cassandra or other large-scale NoSQL systems.\\nFamiliarity with ReactJS or front-end frameworks.\\nPrior work with vector databases or embedding pipelines.\\nWhy Backblaze:\\nBuild open source software used by developers worldwide.\\nWork at the intersection of AI, data, and cloud storage.\\nCollaborate with experienced engineering, product, and QA teams.\\nCompetitive compensation and benefits.\\nRemote-first culture supporting work-life balance.\\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\\nWe are proud to be an\",,salary_range:",
-    "summary": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui\",title:",
-    "ranked_at": "2026-08-07T05:06:31.426884",
-    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
-    "status": "ranked",
-    "id": "greenhouse_backblaze_5213907008",
     "gaps": [
-      "Requires 2+ years of professional backend software engineering experience.",
-      "Focuses on senior-level responsibilities like large-scale distributed systems and customer-facing support tooling at scale."
+      {
+        "text": "The posting requests familiarity with Generative AI technologies (GPT-4, fine-tuning) and vector databases/embeddings, which are not demonstrated in the candidate's profile."
+      }
     ],
-    "created_at": "2026-08-07T05:06:09.649246",
-    "justification": "The candidate is a junior student without prior professional experience, while the role explicitly requires 2+ years of professional experience in large-scale systems and AI-assisted backend development.",
-    "language": "en",
-    "work_mode": "Remote",
-    "user_notes": null,
-    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5213907008",
-    "years_of_experience": 2,
-    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5213907008",
-    "strengths": [
-      "Remote modality matches preferences.",
-      "Interest in AI tooling and Python-based orchestration aligns with candidate's current project work."
-    ],
-    "department": "Engineering",
-    "source_page": "Greenhouse (backblaze)",
-    "company": "backblaze"
+    "ranked_at": "2026-08-11T07:19:39.242938",
+    "user_notes": null
   },
   {
+    "id": "greenhouse_invgate_4456847002",
+    "created_at": "2026-08-11T07:19:59.326824",
+    "title": "Bilingual Application Support Analyst",
+    "company": "invgate",
+    "location": "Argentina",
     "work_mode": "Remote",
-    "title": "Software Engineer, AI",
+    "commitment": "Not specified",
+    "department": "Technical assistance and Support",
+    "seniority": "Junior",
+    "years_of_experience": 2,
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "SQL",
+      "Linux"
+    ],
     "main_requirements": [],
-    "raw_text": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on building durable, scalable systems with a strong emphasis on developer experience and operational efficiency.\\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\\nSoftware Engineer, AI\\nto join our team!\\nWhat You’ll Do:\\nUse AI-assisted development tools, including Claude Code, to accelerate implementation while validating correctness, security, and performance.\\nDesign and build server-side APIs that authenticate users, accept and manage backups, handle large-scale data operations, and prepare restored data for customers across our global user base.\\nCollaborate with Product, QA, and Support teams to ensure both backend features reflect real customer workflows and usage patterns.\\nBuild and maintain support tooling to help diagnose and resolve customer issues at scale.\\nEnsure all code and open source assets meet high standards for testing, documentation, reproducibility, and developer usability.\\nTools and Technologies\\nAI coding agents such as Claude Code, Cursor, Codex, and Antigravity\\nLanguages: Python, TypeScript, Go, JavaScript, Java (and other languages common in the open source ecosystem)\\nBackblaze B2 SDKs and REST APIs\\nOpen source AI frameworks and tooling (e.g. LangChain, LlamaIndex, vector databases)\\nSQL and NoSQL backend development (experience with large-scale distributed databases a plus)\\nGitHub, pytest, CI/CD pipelines\\nLarge-scale server infrastructure (Linux, cross-platform awareness)\\nThe Right Fit:\\n2+ years of backend software engineering experience, ideally on systems that serve millions of users across multiple platforms.\\nProficiency in one or more backend languages (Java, Python, TypeScript, or similar); comfortable picking up new languages as needed.\\nPractical understanding of AI workflows — data ingestion, preprocessing, inference, and agent-based orchestration.\\nExperience building or working with large-scale APIs and distributed storage or data systems.\\nProduction-quality coding habits: rigorous testing, clear documentation, and attention to security and performance.\\nCustomer-focused mindset — you think about the developer and end-user experience in everything you build.\\nStrong written communication skills; you can explain technical decisions clearly to both engineers and non-engineers.\\nGood attitude, cross-functional collaboration skills, and a genuine desire to work in a fast-paced environment with evolving requirements.\\nBonus Points For:\\nExperience building or evaluating AI agents and multi-step tool-use systems.\\nExperience with Cassandra or other large-scale NoSQL systems.\\nFamiliarity with ReactJS or front-end frameworks.\\nPrior work with vector databases or embedding pipelines.\\nWhy Backblaze:\\nBuild open source software used by developers worldwide.\\nWork at the intersection of AI, data, and cloud storage.\\nCollaborate with experienced engineering, product, and QA teams.\\nCompetitive compensation and benefits.\\nRemote-first culture supporting work-life balance.\\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\\nWe are proud to be an\",\n    score: 45,\n    seniority:",
-    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5207230008",
+    "summary": "InvGate is a fast growing SaaS company that develops products for IT management and service automation, used by clients in over 60 countries in industries such as banking, e-commerce, education and technology.\nTo support our continuous growth, we are looking for a\nBilingual Application Support Analy",
+    "raw_text": "InvGate is a fast growing SaaS company that develops products for IT management and service automation, used by clients in over 60 countries in industries such as banking, e-commerce, education and technology.\nTo support our continuous growth, we are looking for a\nBilingual Application Support Analyst\nto join our team. This is a client-facing role focused on ensuring our partners and customers get the most out of our platform by solving complex functional and technical challenges.\nSome of the role´s responsibilities include:\nAdvanced Troubleshooting:\nAct as the primary technical point of contact for external clients, diagnosing and resolving complex application issues.\nTechnical Consulting:\nGuide clients on best practices for platform integration, workflow optimization, and advanced feature usage.\nCross-functional Collaboration:\nWork closely with the Development and Customer Success teams to resolve our clients' requests and improve the product.\nDo not hesitate to apply if you:\nAre fluent in\nEnglish and Spanish\n.\nEnjoy working with clients and providing top-level support.\nHave\n2+ years of experience\nsupporting SaaS or complex enterprise applications for external users.\nHave strong communication and troubleshooting skills.\nEnjoy digging into\napplication logic and logs\nto find the \"why\" behind an issue.\nHave a passion for\nlearning new technologies\nand products quickly, adapting to a high-speed, ever-evolving technical landscape.\nIt´s a big plus if you have experience with\nDirectory Services:\nKnowledge of Active Directory and LDAP for user authentication and management.\nEnvironments:\nFamiliarity with Windows and Linux operating systems and experience working within virtualized environments.\nWeb Servers & Networking:\nAdministration of Apache and a solid understanding of network connectivity and protocols.\nAPIs:\nFamiliarity with RESTful APIs and tools like\nInsomnia, Postman, or cURL\nto test endpoints, analyze responses, and diagnose integration issues.\nDatabases:\nAbility to write and execute\nSQL queries\nto perform data analysis required for the troubleshooting process.\nWe offer real opportunities for professional development, fully covered English classes, technical training both in-house and at educational centers, top-tier health insurance, a fixed amount for purchases in the food sector, reimbursement for remote work, and extended vacation and paternity leave.\nOur office is located in Belgrano, CABA. This position is\nHybrid\nfor those residing in the AMBA region, requiring office attendance at least twice a week.",
+    "language": "en",
+    "source_page": "Greenhouse (invgate)",
+    "source_url": "https://job-boards.greenhouse.io/invgate/jobs/4456847002",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4456847002",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The role is junior level and remote/hybrid in Argentina, and the candidate profile matches basic technical skills like SQL, Linux familiarity, and strong self-learning/troubleshooting potential. However, the posting explicitly requires '2+ years of experience supporting SaaS or complex enterprise applications for external users'. According to the ranking policy, when 2+ professional years of experience are explicitly required as a mandatory condition for a 0-YOE candidate, the score must not exceed 39. Despite the candidate's strong general technical background, this explicit professional experience requirement acts as a major barrier.",
+    "strengths": [
+      "The posting requests SQL and Linux familiarity, and the candidate profile includes practical exposure to SQL, databases (PostgreSQL/SQL), and Linux/systems fundamentals.",
+      "The position is an entry-level / junior bilingual role located in Argentina, aligning with the candidate's location and regional profile.",
+      "The candidate demonstrates strong autonomous learning and problem-solving skills suitable for technical support and troubleshooting environments."
+    ],
+    "gaps": [
+      "The posting explicitly requires 2+ years of experience supporting SaaS or complex enterprise applications for external users; the candidate has 0 formal professional YOE.",
+      "Preferred experience with Directory Services (Active Directory, LDAP), Apache, and Windows/Linux enterprise administration is not fully demonstrated in the profile."
+    ],
+    "ranked_at": "2026-08-11T07:20:08.090351",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_invgate_4495272002",
+    "created_at": "2026-08-11T07:19:59.360293",
+    "title": "Software Engineer - Python/Django",
+    "company": "invgate",
+    "location": "Argentina",
+    "work_mode": "Hybrid",
+    "commitment": "Not specified",
+    "department": "Engineering",
+    "seniority": "undefined",
+    "years_of_experience": "undefined",
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "Python",
+      "Angular"
+    ],
+    "main_requirements": [],
+    "summary": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\nBuscamos\nIngenieros de Sof",
+    "raw_text": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\nBuscamos\nIngenieros de Software Full Stack\npara\nInvGate Assets Management\n, es un producto que permite a nuestros clientes manejar su inventario informático, conocer su infraestructura, explorarla utilizando inteligencia artificial, analizar el impacto de los cambios en la misma, comprender sus aplicaciones de negocio y las relaciones entre los elementos de su infraestructura, asegurar cumplimiento de políticas de seguridad informática, entre otras funcionalidades.\n¿Qué buscamos?\nSólidos conocimientos de\nPython\ny\nDjango\nConocimientos en bases de datos relacionales y en la estructuración de datos.\nExperiencia en diseño de APIs REST para integrarnos con múltiples fuentes de datos.\nExperiencia real con Angular (o frameworks similares) es un plus!\nValoramos experiencia previa en productos SaaS o ITSM\nNuestros beneficios incluyen oportunidades de desarrollo profesional, clases de inglés, capacitaciones técnicas internas y externas, días adicionales de vacaciones y licencia por paternidad, seguro de salud privado de primer nivel, reintegro por trabajo remoto y un bono fijo para compras relacionadas con gastronomía.\nTenemos oficinas en Belgrano, CABA. Dependiendo de tu ubicación, el trabajo será Híbrido o Remoto.",
+    "language": "en",
+    "source_page": "Greenhouse (invgate)",
+    "source_url": "https://job-boards.greenhouse.io/invgate/jobs/4495272002",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4495272002",
+    "status": "ranked",
+    "score": 82,
+    "justification": "El puesto es para Software Engineer - Python/Django en Argentina (modalidad Híbrida). La vacante no especifica un requisito mínimo de años de experiencia profesional (YOE), lo cual se alinea perfectamente con el perfil junior/entry-level de Santiago Manjarín. El candidato cuenta con sólidos conocimientos de Python y bases de datos relacionales/SQL, además de encontrarse cursando la Licenciatura en Ciencias de la Computación en UBA. Aunque se valora experiencia previa en SaaS/ITSM y se menciona Angular como plus, las tecnologías principales requeridas (Python y bases de datos/APIs) tienen buena correlación con la evidencia del candidato y no existe ninguna barrera mandatoria de experiencia o seniority. Por lo tanto, se otorga una puntuación de 82 (Good Fit).",
+    "strengths": [
+      "La vacante no establece un requisito mínimo de años de experiencia profesional (YOE), lo cual es ideal para el perfil entry-level del candidato.",
+      "El puesto requiere sólidos conocimientos de Python y bases de datos relacionales, tecnologías con las que el candidato cuenta a través de proyectos personales y académicos como JobBud y desarrollo de backend.",
+      "El candidato es estudiante avanzado de Ciencias de la Computación en UBA, alineándose con una formación sólida en fundamentos y desarrollo de software."
+    ],
+    "gaps": [
+      "El puesto valora experiencia previa en productos SaaS o ITSM, la cual no está demostrada en el perfil del candidato.",
+      "El puesto menciona opcionalmente experiencia real con Angular o frameworks similares como un plus, y el candidato tiene experiencia complementaria en frontend con React/Tailwind pero no menciona Angular."
+    ],
+    "ranked_at": "2026-08-11T07:20:49.870233",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_backblaze_5213907008",
+    "created_at": "2026-08-11T07:21:09.115247",
+    "title": "Software Engineer, AI",
+    "company": "backblaze",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "years_of_experience": 2,
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "Java",
+      "SQL",
+      "Linux"
+    ],
+    "main_requirements": [],
+    "summary": "About Backblaze\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
+    "raw_text": "About Backblaze\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on building durable, scalable systems with a strong emphasis on developer experience and operational efficiency.\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\nSoftware Engineer, AI\nto join our team!\nWhat You’ll Do:\nUse AI-assisted development tools, including Claude Code, to accelerate implementation while validating correctness, security, and performance.\nDesign and build server-side APIs that authenticate users, accept and manage backups, handle large-scale data operations, and prepare restored data for customers across our global user base.\nCollaborate with Product, QA, and Support teams to ensure both backend features reflect real customer workflows and usage patterns.\nBuild and maintain support tooling to help diagnose and resolve customer issues at scale.\nEnsure all code and open source assets meet high standards for testing, documentation, reproducibility, and developer usability.\nTools and Technologies\nAI coding agents such as Claude Code, Cursor, Codex, and Antigravity\nLanguages: Java\nBackblaze B2 SDKs and REST APIs\nOpen source AI frameworks and tooling (e.g. LangChain, LlamaIndex, vector databases)\nSQL and NoSQL backend development (experience with large-scale distributed databases a plus)\nGitHub, pytest, CI/CD pipelines\nLarge-scale server infrastructure (Linux, cross-platform awareness)\nThe Right Fit:\n2+ years of backend software engineering experience, ideally on systems that serve millions of users across multiple platforms.\nProficiency in Java.\nPractical understanding of AI workflows — data ingestion, preprocessing, inference, and agent-based orchestration.\nExperience building or working with large-scale APIs and distributed storage or data systems.\nProduction-quality coding habits: rigorous testing, clear documentation, and attention to security and performance.\nCustomer-focused mindset — you think about the developer and end-user experience in everything you build.\nStrong written communication skills; you can explain technical decisions clearly to both engineers and non-engineers.\nGood attitude, cross-functional collaboration skills, and a genuine desire to work in a fast-paced environment with evolving requirements.\nBonus Points For:\nExperience building or evaluating AI agents and multi-step tool-use systems.\nExperience with Cassandra or other large-scale NoSQL systems.\nFamiliarity with ReactJS or front-end frameworks.\nPrior work with vector databases or embedding pipelines.\nWhy Backblaze:\nBuild open source software used by developers worldwide.\nWork at the intersection of AI, data, and cloud storage.\nCollaborate with experienced engineering, product, and QA teams.\nCompetitive compensation and benefits.\nRemote-first culture supporting work-life balance.\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\nWe are proud to be an\nTo understand more about the data we collect and process as part of your application, please view our\nBackblaze Employee Privacy Notice.\n#LATAM",
+    "language": "en",
+    "source_page": "Greenhouse (backblaze)",
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5213907008",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5213907008",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The candidate is an advanced CS student with 0 formal professional YOE and practical project experience in Python, JavaScript/TypeScript, and Node.js. However, Backblaze explicitly requires 2+ years of backend software engineering experience and proficiency in Java, with no Java or professional experience demonstrated in the candidate profile. Under ranking policy, when 2+ professional YOE are explicitly required, the fit score must not exceed 39.",
+    "strengths": [
+      "The posting is remote-friendly for Latin America (Remote - Argentina), aligning with the candidate's location.",
+      "The posting covers backend systems, APIs, and modern AI/LLM tooling, which aligns with the candidate's interest in backend development and AI/LLM applications."
+    ],
+    "gaps": [
+      "The posting explicitly requires 2+ years of backend software engineering experience, whereas the candidate has 0 formal professional YOE.",
+      "The role requires proficiency in Java, which is not demonstrated in the candidate's profile."
+    ],
+    "ranked_at": "2026-08-11T07:21:17.663520",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_backblaze_5207236008",
+    "created_at": "2026-08-11T07:21:09.120353",
+    "title": "Software Engineer, AI",
+    "company": "backblaze",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "years_of_experience": 2,
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "Java",
+      "SQL",
+      "Linux"
+    ],
+    "main_requirements": [],
+    "summary": "About Backblaze\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
+    "raw_text": "About Backblaze\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on building durable, scalable systems with a strong emphasis on developer experience and operational efficiency.\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\nSoftware Engineer, AI\nto join our team!\nWhat You’ll Do:\nUse AI-assisted development tools, including Claude Code, to accelerate implementation while validating correctness, security, and performance.\nDesign and build server-side APIs that authenticate users, accept and manage backups, handle large-scale data operations, and prepare restored data for customers across our global user base.\nCollaborate with Product, QA, and Support teams to ensure both backend features reflect real customer workflows and usage patterns.\nBuild and maintain support tooling to help diagnose and resolve customer issues at scale.\nEnsure all code and open source assets meet high standards for testing, documentation, reproducibility, and developer usability.\nTools and Technologies\nAI coding agents such as Claude Code, Cursor, Codex, and Antigravity\nLanguages: Java\nBackblaze B2 SDKs and REST APIs\nOpen source AI frameworks and tooling (e.g. LangChain, LlamaIndex, vector databases)\nSQL and NoSQL backend development (experience with large-scale distributed databases a plus)\nGitHub, pytest, CI/CD pipelines\nLarge-scale server infrastructure (Linux, cross-platform awareness)\nThe Right Fit:\n2+ years of backend software engineering experience, ideally on systems that serve millions of users across multiple platforms.\nProficiency in Java.\nPractical understanding of AI workflows — data ingestion, preprocessing, inference, and agent-based orchestration.\nExperience building or working with large-scale APIs and distributed storage or data systems.\nProduction-quality coding habits: rigorous testing, clear documentation, and attention to security and performance.\nCustomer-focused mindset — you think about the developer and end-user experience in everything you build.\nStrong written communication skills; you can explain technical decisions clearly to both engineers and non-engineers.\nGood attitude, cross-functional collaboration skills, and a genuine desire to work in a fast-paced environment with evolving requirements.\nBonus Points For:\nExperience building or evaluating AI agents and multi-step tool-use systems.\nExperience with Cassandra or other large-scale NoSQL systems.\nFamiliarity with ReactJS or front-end frameworks.\nPrior work with vector databases or embedding pipelines.\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\nWe are proud to be an\nTo understand more about the data we collect and process as part of your application, please view our\nBackblaze Employee Privacy Notice.\n#LATAM",
+    "language": "en",
+    "source_page": "Greenhouse (backblaze)",
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5207236008",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5207236008",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The candidate is an advanced CS student with 0 formal professional YOE, whereas the posting explicitly mandates 2+ years of backend software engineering experience and proficiency in Java. According to the ranking policy, when a position explicitly requires 2+ years of professional experience as a mandatory condition, the fit score must not exceed 39. Despite the remote LATAM location and the candidate's strong self-taught project profile (Python, Node.js, TypeScript, SQL), the mandatory 2+ YOE and Java requirements present absolute barriers under this policy.",
+    "strengths": [
+      "The location matches the remote LATAM option (Argentina).",
+      "The candidate has general backend and database (SQL) familiarity through personal projects, aligning with the broader backend domain."
+    ],
+    "gaps": [
+      "The posting explicitly requires 2+ years of backend software engineering experience, which exceeds the candidate's 0 professional YOE.",
+      "The posting requires proficiency in Java, which is not demonstrated in the candidate profile.",
+      "The posting expects practical understanding of AI workflows and experience with distributed storage or data systems at scale, which are beyond the candidate's current project scope."
+    ],
+    "ranked_at": "2026-08-11T07:21:36.615464",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_backblaze_5207230008",
+    "created_at": "2026-08-11T07:21:09.125978",
+    "title": "Software Engineer, AI",
+    "company": "backblaze",
+    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "years_of_experience": 2,
+    "salary_range": "Not specified",
     "key_technologies": [
       "Python",
       "JavaScript",
@@ -166,167 +215,25 @@
       "SQL",
       "Linux"
     ],
-    "status": "ranked",
-    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5207230008",
-    "strengths": [
-      "Strong technical overlap with languages (Python, TypeScript) and tools mentioned (SQL, CI/CD, Linux).",
-      "Interest in AI agents and backend development aligns with the candidate's recent project experience."
-    ],
-    "ranked_at": "2026-08-07T05:06:48.323824",
-    "years_of_experience": 2,
-    "company": "backblaze",
-    "created_at": "2026-08-07T05:06:09.654534",
-    "justification": "The role is a good technical match, but it explicitly requires 2+ years of backend software engineering experience, which does not align with the candidate's profile (student without professional experience). Therefore, it is a mismatch based on the experience requirement.",
-    "language": "en",
-    "commitment": "Not specified",
-    "user_notes": null,
-    "summary": "About Backblaze\\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
-    "location": "Remote - Argentina; Remote - Colombia ; Remote - Costa Rica ; Remote - Mexico",
-    "gaps": [
-      "Requires 2+ years of professional backend software engineering experience, which exceeds the candidate's current profile as a student without professional experience."
-    ],
-    "department": "Engineering",
-    "id": "greenhouse_backblaze_5207230008",
-    "source_page": "Greenhouse (backblaze)",
-    "score": 0
-  },
-  {
-    "gaps": [
-      "Requires 2+ years of professional QA experience (profile is Entry Level/Junior)",
-      "Role is focused on QA, while profile is focused on Software Development/Engineering"
-    ],
-    "company": "testlio",
-    "work_mode": "Remote",
-    "id": "greenhouse_testlio_6979353",
-    "location": "Global",
-    "score": 40,
-    "justification": "The position requires 2+ years of professional experience as a QA analyst, which contradicts the candidate's profile as a Junior/Trainee with no previous professional experience. Also, the role is heavily focused on QA/Testing, which differs from the candidate's development focus.",
-    "strengths": [
-      "Remote work modality matches preference",
-      "Familiarity with Agile and API concepts aligns with candidate's backend interests"
-    ],
-    "source_url": "https://job-boards.greenhouse.io/testlio/jobs/6979353",
-    "source_page": "Greenhouse (testlio)",
-    "summary": "About Testlio\\nTestlio’s fully managed crowdsourced testing platform, powered by our proprietary intelligence technology – LeoAI Engine\\nTM\\n, integrates expert, on-demand testers directly into your release process. Ship faster and more confidently with global coverage across 600,000+ devices, 800+ pay",
-    "user_notes": null,
-    "created_at": "2026-08-07T05:09:34.704662",
-    "salary_range": "Not specified",
-    "commitment": "Part-time",
-    "application_method": "Postulación web en: https://job-boards.greenhouse.io/testlio/jobs/6979353",
-    "raw_text": "About Testlio\\nTestlio’s fully managed crowdsourced testing platform, powered by our proprietary intelligence technology – LeoAI Engine\\nTM\\n, integrates expert, on-demand testers directly into your release process. Ship faster and more confidently with global coverage across 600,000+ devices, 800+ payment methods, 150+ countries, and 100+ languages. To learn more, visit\\nwww.testlio.com\\n.\\nThis job post is to keep in touch for future contract roles with Testlio. If you would like to freelance test with us you can learn more and sign up\\nhere\\n.\\nAbout this job post:\\nThis job post is for\\nfuture opportunities\\n. If there isn’t an active opening that fits your skill set or location, you can still express interest in future roles with Testlio. Our Talent Acquisition team will keep your information on file and reach out if a suitable opportunity becomes available.\\nTypical Project Details:\\nProject Focus\\n: You will be a Software Quality Assurance Analyst following Agile methodologies, mostly focused on API testing.\\nProject Duration\\n: Contracts can be temporary, ranging from 6 months to 1 year, or ongoing. Many temporary projects extend beyond their initial term, and some evolve into ongoing contractor opportunities.\\nLocation\\n: This job ad is open to candidates in select countries who are comfortable working in a fully remote setup. Countries we are considering consist of Argentina, Brazil, Canada, the Czech Republic, Estonia, India, Ireland, Mexico, Poland, Portugal, Romania, Spain, Ukraine, the United Kingdom, or the United States.\\nSchedule\\n: Opportunities are available for both part-time and full-time contracts. Working hours generally follow day or afternoon schedules based on your regional time zone.\\nTimezone\\n: While we support flexible work, most roles align with standard daytime hours in their region (e.g., 9 AM–6 PM). For instance, this may mean Central Standard Time (CST) in the Americas or Central European Time (CET) in EMEA. Please ensure your availability aligns with your region’s core hours.\\nRequired Devices\\n: You must have access to an Android or iOS mobile device for testing.\\nInternet Connection\\n: A reliable, high-speed internet connection is required for testing and team communications. Mobile hotspots and other unstable or limited connections are not suitable.\\nWhat Your Day Looks Like\\nDesign and execute smoke, scripted, and exploratory test cases on mobile, web and desktop.\\nConduct functional, localization, regression, and payments testing to ensure software meets quality standards.\\nReport, reproduce, and track issues found during testing.\\nDocument and share test results, including bugs and potential risks.\\nAnalyze test results, logs, and related data to identify patterns, trends, and areas for improvement.\\nCollaborate with developers, product managers, and other stakeholders to align on goals, timelines, and deliverables.\\nCommunicate test progress, issues, and risks clearly and proactively with stakeholders.\\nGenerate test reports that provide actionable insights.\\nDesign and execute API tests using tools like Postman, SoapUI, or similar.\\nCreate, maintain, and review test cases and test suites aligned with business priorities and industry best practices.\\nDesign and optimize effective test data.\\nEnsure the test library remains relevant by refactoring, updating, and deprecating tests as needed.\\nDevelop and maintain a deep understanding of the systems under test.\\nStay up to date with trends and advancements in software testing tools and methodologies.\\nWhat You’ll Need to Succeed\\nTechnical Skills:\\nProven experience (2+ years) as a QA Analyst or similar role, with a strong understanding of software testing principles, methodologies, and tools (such as JIRA, Bugzilla, TestRail, Xray or similar.)\\nExperience with mobile and web applications, frontend and backend testing (including API testing.)\\nProficiency in identifying and documenting software bugs and issues.\\nAbility to solve technical tasks required during testing - such as test data generation, log capturing and basic analysis, working with browser developer tools, network logs analyzers, etc.\\nExperience in working in agile teams in a remote environment - proven track record of communication and collaboration with different stakeholders such as Scrum Masters, Product Owners and others.\\nGood knowledge of SDLC, CI/CD, and DevOps, as well as an understanding of test automation principles in effective SDLC.\\nHuman Skills:\\nEffective English communication and interpersonal skills, with the ability to collaborate and work effectively in a team environment.\\nDrive to learn quickly and continuously expand knowledge.\\nComfortable with a frequently changing environment and able to adapt fast.\\nExcellent analytical and problem-solving skills.\\nStrong attention to detail and the ability to prioritize and manage multiple tasks.\\nWhat is the Consideration Process\\nWhenever a new opportunity arises, the Talent Acquisition team will review applicants and reach out to begin learning more. If you are a potential match, the recruiter will reach out to give you more details about the role and begin your application process\\nDiversity and Inclusion\\nTestlio is an equal-opportunity employer deeply committed to creating an inclusive environment for people of all backgrounds and identities. We are female-founded, and 46% of our team members identify as women. See the\\nDEI section\\nof our website for more information.\\n#LI-DNI\",",
-    "key_technologies": [],
-    "status": "ranked",
     "main_requirements": [],
+    "summary": "About Backblaze\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on bui",
+    "raw_text": "About Backblaze\nBackblaze provides reliable, high-availability cloud storage trusted by consumers, SMBs, enterprises, and developers in over 150 countries. Backblaze B2 Cloud Storage supports data-intensive workloads including backup, media, analytics, and modern AI pipelines. Our teams focus on building durable, scalable systems with a strong emphasis on developer experience and operational efficiency.\nBut while there is a lot to celebrate in our past, there is almost as much opportunity ahead of us. We’re seeking a\nSoftware Engineer, AI\nto join our team!\nWhat You’ll Do:\nUse AI-assisted development tools, including Claude Code, to accelerate implementation while validating correctness, security, and performance.\nDesign and build server-side APIs that authenticate users, accept and manage backups, handle large-scale data operations, and prepare restored data for customers across our global user base.\nCollaborate with Product, QA, and Support teams to ensure both backend features reflect real customer workflows and usage patterns.\nBuild and maintain support tooling to help diagnose and resolve customer issues at scale.\nEnsure all code and open source assets meet high standards for testing, documentation, reproducibility, and developer usability.\nTools and Technologies\nAI coding agents such as Claude Code, Cursor, Codex, and Antigravity\nLanguages: Python, TypeScript, Go, JavaScript, Java (and other languages common in the open source ecosystem)\nBackblaze B2 SDKs and REST APIs\nOpen source AI frameworks and tooling (e.g. LangChain, LlamaIndex, vector databases)\nSQL and NoSQL backend development (experience with large-scale distributed databases a plus)\nGitHub, pytest, CI/CD pipelines\nLarge-scale server infrastructure (Linux, cross-platform awareness)\nThe Right Fit:\n2+ years of backend software engineering experience, ideally on systems that serve millions of users across multiple platforms.\nProficiency in one or more backend languages (Java, Python, TypeScript, or similar); comfortable picking up new languages as needed.\nPractical understanding of AI workflows — data ingestion, preprocessing, inference, and agent-based orchestration.\nExperience building or working with large-scale APIs and distributed storage or data systems.\nProduction-quality coding habits: rigorous testing, clear documentation, and attention to security and performance.\nCustomer-focused mindset — you think about the developer and end-user experience in everything you build.\nStrong written communication skills; you can explain technical decisions clearly to both engineers and non-engineers.\nGood attitude, cross-functional collaboration skills, and a genuine desire to work in a fast-paced environment with evolving requirements.\nBonus Points For:\nExperience building or evaluating AI agents and multi-step tool-use systems.\nExperience with Cassandra or other large-scale NoSQL systems.\nFamiliarity with ReactJS or front-end frameworks.\nPrior work with vector databases or embedding pipelines.\nWhy Backblaze:\nBuild open source software used by developers worldwide.\nWork at the intersection of AI, data, and cloud storage.\nCollaborate with experienced engineering, product, and QA teams.\nCompetitive compensation and benefits.\nRemote-first culture supporting work-life balance.\nAt this point, we hope you're feeling excited about the job description you're reading. Even if you don't meet every requirement, we still encourage you to apply. Learning, developing, and growing are key parts of our culture. We're eager to meet people who believe in our mission and can contribute to our team in various ways. We want people to feel comfortable expressing their true selves and to come, stay, and do their best work here.\nAt Backblaze, we value being fair and good to our customers, partners, and employees. That’s why diversity, equity, and inclusion are at the core of our values. We are committed to fostering a workforce where all employees feel a sense of belonging regardless of race, ethnicity, nationality, gender, sexual orientation, age, religion, socio-economic status, ability, veteran status, and education. We believe that our dedication to cultivating a diverse workspace not only allows us to better serve our customers in over 175 countries but further reinforces our commitment to doing the right thing.\nWe are proud to be an\nTo understand more about the data we collect and process as part of your application, please view our\nBackblaze Employee Privacy Notice.\n#LATAM",
     "language": "en",
-    "department": "Delivery",
-    "title": "QA Analyst (Future Roles)",
-    "ranked_at": "2026-08-07T05:09:44.654235",
-    "seniority": "Junior",
-    "years_of_experience": 1
-  },
-  {
-    "strengths": [
-      "Fully remote",
-      "Assessment/Specialist focus aligns with a student profile looking for flexible project work"
-    ],
-    "raw_text": "Project Based Freelance Contributor - Assessment Item Specialist, Social Studies (Remote, US)",
-    "title": "Project Based Freelance Contributor - Assessment Item Specialist, Social Studies",
-    "score": 55,
+    "source_page": "Greenhouse (backblaze)",
+    "source_url": "https://job-boards.greenhouse.io/backblaze/jobs/5207230008",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/backblaze/jobs/5207230008",
     "status": "ranked",
-    "work_mode": "Remote (US)",
-    "justification": "This is a freelance/contributor role. While flexible, it lacks the mentorship structure needed for a junior profile. It is a good backup but not a core engineering fit.",
-    "company": "newsela",
-    "location": "Remote - US",
-    "gaps": [
-      "Seniority requirements not explicit but implies more autonomy than an entry-level role",
-      "No mention of mentorship/junior support"
-    ],
-    "id": "manual_2229597c",
-    "ranked_at": "2026-08-07T05:12:41.910790",
-    "created_at": "2026-08-07T05:12:41.910790",
-    "application_method": "Postulación web en el portal de Newsela: https://boards-api.greenhouse.io/v1/boards/newsela/jobs?content=true"
-  },
-  {
-    "justification": "This is an application support role, not a development role. It doesn't align with the candidate's core interest in software development engineering.",
-    "gaps": [
-      "Requires bilingual support experience, which is more service-oriented than the technical development role the candidate is seeking."
-    ],
-    "raw_text": "Bilingual Application Support Analyst",
-    "status": "ranked",
-    "score": 40,
-    "title": "Bilingual Application Support Analyst",
+    "score": 35,
+    "justification": "The candidate has strong technical alignment with several required technologies (Python, TypeScript, JavaScript, SQL, Linux) and relevant backend/API project experience (JobBud, Batchpix). However, the posting explicitly mandates '2+ years of backend software engineering experience'. According to the ranking policy for an entry-level candidate with 0 professional YOE, when 2+ years of professional experience are explicitly required as a mandatory condition, the fit score MUST NOT exceed 39.",
     "strengths": [
-      "Remote in Argentina",
-      "Requires English fluency (candidate is C2)"
+      "The candidate has concrete projects using Python, TypeScript, and SQL, matching core backend languages requested in the posting.",
+      "The candidate is an advanced Computer Science student at UBA, aligning with the posting's appreciation for technical fundamentals and computer science education in the open source ecosystem."
     ],
-    "location": "Remote - Argentina",
-    "work_mode": "Remote",
-    "company": "invgate",
-    "id": "manual_6ec45830",
-    "ranked_at": "2026-08-07T05:12:41.912392",
-    "created_at": "2026-08-07T05:12:41.912392",
-    "application_method": "Postulación web en el portal de InvGate: https://boards-api.greenhouse.io/v1/boards/invgate/jobs?content=true"
-  },
-  {
-    "strengths": [
-      "Company location matches preference"
-    ],
-    "raw_text": "DBA",
-    "justification": "Database Administration roles typically require significant professional experience, which does not match the candidate's entry-level profile.",
-    "work_mode": "Hybrid",
     "gaps": [
-      "Requires professional experience as a DBA, which is usually not a junior role. Missing direct SQL administration experience."
+      "The posting explicitly requires 2+ years of backend software engineering experience, which the candidate profile does not demonstrate (0 formal professional YOE).",
+      "The posting expects experience with large-scale distributed systems, which is not demonstrated in the candidate profile."
     ],
-    "title": "DBA",
-    "score": 30,
-    "company": "invgate",
-    "status": "ranked",
-    "location": "Argentina",
-    "id": "manual_a4c3bf21",
-    "ranked_at": "2026-08-07T05:12:41.913868",
-    "created_at": "2026-08-07T05:12:41.913868",
-    "application_method": "Postulación web en el portal de InvGate: https://boards-api.greenhouse.io/v1/boards/invgate/jobs?content=true"
-  },
-  {
-    "company": "invgate",
-    "raw_text": "Software Engineer - Full Stack",
-    "gaps": [
-      "Full stack roles usually imply more professional experience than a junior/student can offer."
-    ],
-    "status": "ranked",
-    "title": "Software Engineer - Full Stack",
-    "work_mode": "Hybrid",
-    "strengths": [
-      "Matches core interests (Node.js/TS, DBs)",
-      "Company location matches preference"
-    ],
-    "score": 65,
-    "location": "Hybrid - Argentina",
-    "justification": "While technical, a 'Full Stack' title without explicitly stating 'Junior' or 'Trainee' often implies a level of professional experience higher than an entry-level candidate.",
-    "id": "manual_829d0355",
-    "ranked_at": "2026-08-07T05:12:41.915164",
-    "created_at": "2026-08-07T05:12:41.915164",
-    "application_method": "Postulación web en el portal de InvGate: https://boards-api.greenhouse.io/v1/boards/invgate/jobs?content=true"
-  },
-  {
-    "work_mode": "Hybrid",
-    "strengths": [
-      "Relevant language/framework match (Python)",
-      "Company location matches preference"
-    ],
-    "status": "ranked",
-    "raw_text": "Software Engineer - Python/Django",
-    "gaps": [
-      "Requires professional Python/Django background. Candidate has Python/LLM experience but not professional Django."
-    ],
-    "location": "Hybrid - Argentina",
-    "company": "invgate",
-    "title": "Software Engineer - Python/Django",
-    "justification": "Similar to the full-stack role, this requires professional experience. It's a decent match if it were a junior role, but as stated, it implies more seniority.",
-    "score": 65,
-    "id": "manual_360237ee",
-    "ranked_at": "2026-08-07T05:12:41.916489",
-    "created_at": "2026-08-07T05:12:41.916489",
-    "application_method": "Postulación web en el portal de InvGate: https://boards-api.greenhouse.io/v1/boards/invgate/jobs?content=true"
+    "ranked_at": "2026-08-11T07:21:48.969527",
+    "user_notes": null
   }
 ]

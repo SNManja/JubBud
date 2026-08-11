@@ -5,11 +5,34 @@ Tools specific to the JobRanker subagent.
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
 PROFILE_FILE_PATH = ROOT_DIR / "profile" / "candidate_profile.md"
+POLICY_FILE_PATH = ROOT_DIR / "profile" / "ranking_policy.md"
 JOBS_FILE_PATH = ROOT_DIR / "jobs.json"
+
+
+def read_ranking_policy() -> str:
+    """
+    Reads and returns the content of the configurable ranking policy (profile/ranking_policy.md).
+
+    Returns:
+        Markdown content of the ranking policy.
+    """
+    try:
+        if not POLICY_FILE_PATH.exists():
+            return "Error: ranking_policy.md file not found in profile/ directory."
+
+        with open(POLICY_FILE_PATH, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+
+        if not content:
+            return "Warning: Ranking policy file ranking_policy.md is empty."
+
+        return content
+    except Exception as e:
+        return f"Error reading ranking policy: {str(e)}"
 
 
 def read_candidate_profile() -> str:
@@ -34,8 +57,6 @@ def read_candidate_profile() -> str:
         return f"Error reading candidate profile: {str(e)}"
 
 
-
-
 def update_job_ranking_json(
     job_id: str,
     score: int,
@@ -44,11 +65,11 @@ def update_job_ranking_json(
     gaps: List[str]
 ) -> str:
     """
-    Updates a job position in jobs.json with its fit score (0-100), justification,
-    strengths, and gaps.
+    Updates an existing job position in jobs.json with its fit score (0-100), justification,
+    strengths, and gaps. Requires an explicit job_id.
 
     Args:
-        job_id: Unique job identifier in jobs.json (or "latest" / "ultimo").
+        job_id: Explicit unique job identifier in jobs.json.
         score: Integer score from 0 to 100 representing fit level.
         justification: Concise explanation of why this score was awarded.
         strengths: List of strong matching points.
@@ -58,163 +79,170 @@ def update_job_ranking_json(
         Confirmation message of the update.
     """
     try:
+        clean_id = str(job_id).strip().lower() if job_id else ""
+        if not clean_id or clean_id in ("none", "null", "undefined"):
+            return "Error: An explicit job_id is required."
+
         if not JOBS_FILE_PATH.exists():
-            return "Error: jobs.json file does not exist."
+            return "Error: jobs.json file not found."
 
-        with open(JOBS_FILE_PATH, "r", encoding="utf-8") as f:
-            jobs = json.load(f)
-
-        if not isinstance(jobs, list) or len(jobs) == 0:
-            return "Error: jobs.json is empty. Position must be saved first."
+        try:
+            with open(JOBS_FILE_PATH, "r", encoding="utf-8") as f:
+                jobs = json.load(f)
+                if not isinstance(jobs, list):
+                    return "Error: jobs.json exists but is not a valid JSON list."
+        except Exception as e:
+            return f"Error reading jobs.json (file may be corrupted): {str(e)}"
 
         target_job = None
-        if job_id and job_id.lower() not in ["latest", "ultimo"]:
-            for job in jobs:
-                if job.get("id") == job_id:
-                    target_job = job
-                    break
+        for j in jobs:
+            if str(j.get("id", "")).strip().lower() == clean_id:
+                target_job = j
+                break
 
-        if target_job is None:
-            target_job = jobs[-1]
+        if not target_job:
+            return f"Error: Job with ID '{job_id}' not found in jobs.json."
 
-        target_job["score"] = max(0, min(100, int(score)))
-        target_job["justification"] = justification
-        target_job["strengths"] = strengths
-        target_job["gaps"] = gaps
+        if score is None:
+            return "Error: Score parameter is required."
+
+        try:
+            score_val = int(score)
+        except (TypeError, ValueError):
+            return f"Error: Score '{score}' is not a valid integer."
+
+        if not (0 <= score_val <= 100):
+            return f"Error: Score {score_val} is outside 0-100."
+
+        target_job["score"] = score_val
+        target_job["justification"] = str(justification)
+        target_job["strengths"] = list(strengths) if isinstance(strengths, list) else []
+        target_job["gaps"] = list(gaps) if isinstance(gaps, list) else []
         target_job["status"] = "ranked"
         target_job["ranked_at"] = datetime.now().isoformat()
 
         with open(JOBS_FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(jobs, f, ensure_ascii=False, indent=2)
 
-        return (
-            f"Success: Position '{target_job.get('title')}' (ID: {target_job.get('id')}) "
-            f"updated with a score of {target_job['score']}/100 and status 'ranked'."
-        )
+        return f"Success: Job '{target_job.get('title')}' updated with score {score_val}/100 and status 'ranked'."
 
     except Exception as e:
-        return f"Error updating ranking in jobs.json: {str(e)}"
+        return f"Error updating job ranking in jobs.json: {str(e)}"
+
+
+_RANKING_BATCH_CACHE: dict[str, dict] = {}
+
+
+def set_ranking_batch_cache(chunk: List[dict]):
+    """Sets the transient in-memory batch cache of complete unranked jobs for the active ranking chunk."""
+    global _RANKING_BATCH_CACHE
+    _RANKING_BATCH_CACHE = {str(j.get("id", "")).strip().lower(): dict(j) for j in chunk if isinstance(j, dict) and j.get("id")}
+
+
+def clear_ranking_batch_cache():
+    """Clears the transient in-memory batch cache after ranking chunk completes."""
+    global _RANKING_BATCH_CACHE
+    _RANKING_BATCH_CACHE.clear()
 
 
 def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
     """
-    Saves a batch of fully evaluated and ranked job dictionaries to jobs.json in one atomic operation.
+    Merges LLM evaluation results with complete jobs in active batch cache and persists to jobs.json.
 
     Args:
-        ranked_jobs: List of job dictionaries, each containing complete schema fields plus score, justification, strengths, gaps.
+        ranked_jobs: List of job dicts returned by the LLM ranker containing score, justification, strengths, gaps.
 
     Returns:
-        Confirmation message summarizing saved positions.
+        Confirmation message summarizing saved jobs and any persistence errors.
     """
-    if not ranked_jobs:
-        return "Error: No ranked jobs provided to save."
+    if not ranked_jobs or not isinstance(ranked_jobs, list):
+        return "Error: No ranked jobs provided to update."
 
     try:
         jobs = []
         if JOBS_FILE_PATH.exists():
-            with open(JOBS_FILE_PATH, "r", encoding="utf-8") as f:
-                try:
+            try:
+                with open(JOBS_FILE_PATH, "r", encoding="utf-8") as f:
                     jobs = json.load(f)
                     if not isinstance(jobs, list):
-                        jobs = []
-                except Exception:
-                    jobs = []
+                        return "Error: jobs.json exists but is not a valid JSON list."
+            except Exception as e:
+                return f"Error reading jobs.json (file may be corrupted): {str(e)}"
 
-        from src.tools.queries import evaluate_post_parse_filters
-
-        VALID_SCHEMA_KEYS = {
-            "id", "created_at", "title", "company", "location", "work_mode", "commitment",
-            "department", "seniority", "years_of_experience", "salary_range", "key_technologies", "main_requirements",
-            "summary", "raw_text", "language", "source_page", "source_url", "application_method",
-            "user_notes", "status", "ranked_at", "score", "justification", "strengths", "gaps"
-        }
-
-        existing_ids = {str(j.get("id", "")).lower(): j for j in jobs}
-        saved_titles = []
-        discarded_titles = []
+        existing_ids = {str(j.get("id", "")).strip().lower() for j in jobs if j.get("id")}
+        updated_titles = []
+        errors = []
 
         for rjob in ranked_jobs:
-            jid = str(rjob.get("id", "")).strip().lower()
-            if not jid or jid in ("none", "null", "undefined", ""):
-                from src.subagents.job_parser.tools import _generate_stable_job_id
-                jid = _generate_stable_job_id(
-                    title=rjob.get("title", ""),
-                    company=rjob.get("company", ""),
-                    summary=rjob.get("summary", ""),
-                    source_page=rjob.get("source_page", ""),
-                    source_url=rjob.get("source_url", "")
-                )
-                rjob["id"] = jid
+            raw_id = rjob.get("id")
+            jid = str(raw_id).strip().lower() if raw_id else ""
+            if not jid or jid in ("none", "null", "undefined"):
+                errors.append("Ranking persistence error: ranked job is missing a valid ID.")
+                continue
 
-            score_val = max(0, min(100, int(rjob.get("score", 0))))
+            if jid not in _RANKING_BATCH_CACHE:
+                errors.append(f"Ranking persistence error: ranking result '{jid}' does not belong to the active ranking batch.")
+                continue
+
+            if jid in existing_ids:
+                errors.append(f"Ranking persistence error: position '{jid}' already exists in jobs.json and cannot be re-persisted by automatic batch ranking.")
+                continue
+
+            score_raw = rjob.get("score")
+            if score_raw is None:
+                errors.append(f"Ranking persistence error: result '{jid}' is missing score.")
+                continue
+
+            try:
+                score_val = int(score_raw)
+            except (TypeError, ValueError):
+                errors.append(f"Ranking persistence error: result '{jid}' has an invalid score '{score_raw}'.")
+                continue
+
+            if not (0 <= score_val <= 100):
+                errors.append(f"Ranking persistence error: result '{jid}' has score {score_val} outside 0-100.")
+                continue
+
             just_val = str(rjob.get("justification", ""))
             str_val = rjob.get("strengths", []) if isinstance(rjob.get("strengths"), list) else []
             gaps_val = rjob.get("gaps", []) if isinstance(rjob.get("gaps"), list) else []
             now_iso = datetime.now().isoformat()
 
-            if jid in existing_ids:
-                target = existing_ids[jid]
-                # Allow ranker to fill in seniority and years_of_experience if currently empty/undefined
-                r_sen = rjob.get("seniority")
-                r_exp = rjob.get("years_of_experience")
+            original_job = dict(_RANKING_BATCH_CACHE[jid])
+            original_job["score"] = score_val
+            original_job["justification"] = just_val
+            original_job["strengths"] = str_val
+            original_job["gaps"] = gaps_val
+            original_job["status"] = "ranked"
+            original_job["ranked_at"] = now_iso
 
-                if r_sen and str(r_sen).strip().lower() not in ("not specified", "undefined", "none", ""):
-                    if target.get("seniority") in ("Not specified", "undefined", "", None):
-                        target["seniority"] = str(r_sen).strip()
+            jobs.append(original_job)
+            existing_ids.add(jid)
 
-                if r_exp and str(r_exp).strip().lower() not in ("undefined", "none", "null", ""):
-                    if target.get("years_of_experience") in ("undefined", None, "", "Not specified"):
-                        target["years_of_experience"] = r_exp
-
-                # Re-evaluate post-parse filters (seniority & years_of_experience)
-                passed, reason = evaluate_post_parse_filters(target)
-                if not passed:
-                    discarded_titles.append(f"'{target.get('title')}' ({reason})")
-                    if target in jobs:
-                        jobs.remove(target)
-                    continue
-
-                target["score"] = score_val
-                target["justification"] = just_val
-                target["strengths"] = str_val
-                target["gaps"] = gaps_val
-                target["status"] = "ranked"
-                target["ranked_at"] = now_iso
-                for k in list(target.keys()):
-                    if k not in VALID_SCHEMA_KEYS:
-                        del target[k]
-                saved_titles.append(f"'{target.get('title')}' ({score_val}/100)")
-            else:
-                passed, reason = evaluate_post_parse_filters(rjob)
-                if not passed:
-                    discarded_titles.append(f"'{rjob.get('title')}' ({reason})")
-                    continue
-
-                sanitized_job = {k: v for k, v in rjob.items() if k in VALID_SCHEMA_KEYS}
-                sanitized_job["score"] = score_val
-                sanitized_job["justification"] = just_val
-                sanitized_job["strengths"] = str_val
-                sanitized_job["gaps"] = gaps_val
-                sanitized_job["status"] = "ranked"
-                sanitized_job["ranked_at"] = now_iso
-                if not sanitized_job.get("created_at"):
-                    sanitized_job["created_at"] = now_iso
-
-                jobs.append(sanitized_job)
-                existing_ids[jid] = sanitized_job
-                saved_titles.append(f"'{sanitized_job.get('title')}' ({score_val}/100)")
-
+            updated_titles.append(f"'{original_job.get('title')}' ({score_val}/100)")
 
         with open(JOBS_FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(jobs, f, ensure_ascii=False, indent=2)
 
-        return f"Success: Saved {len(saved_titles)} ranked position(s) to jobs.json: {', '.join(saved_titles)}."
+        total_attempted = len(ranked_jobs)
+        num_updated = len(updated_titles)
+        num_errors = len(errors)
+
+        if num_updated == 0 and num_errors > 0:
+            return f"Error: Failed to update any of the {total_attempted} position(s). Errors: {'; '.join(errors)}"
+        elif num_errors > 0:
+            return (
+                f"Partial success: Updated {num_updated}/{total_attempted} ranked position(s) in jobs.json: "
+                f"{', '.join(updated_titles)}. Errors: {'; '.join(errors)}"
+            )
+        else:
+            return f"Success: Updated {num_updated} ranked position(s) in jobs.json: {', '.join(updated_titles)}."
 
     except Exception as e:
-        return f"Error saving ranked batch to jobs.json: {str(e)}"
+        return f"Error updating ranked batch in jobs.json: {str(e)}"
 
 
 # Aliases for backwards compatibility
 leer_perfil_candidato = read_candidate_profile
+leer_politica_ranking = read_ranking_policy
 actualizar_ranking_json = update_job_ranking_json
-

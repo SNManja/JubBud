@@ -337,13 +337,13 @@ def build_unified_job_dict(
 
 def save_multiple_jobs_json(job_dicts: List[dict]) -> dict:
     """
-    Saves a list of standardized job dictionaries to jobs.json in batch with deduplication.
+    Saves a list of standardized job dictionaries to jobs.json in batch with deduplication and upsert.
 
     Returns:
-        Dict with saved_count, skipped_count, and list of saved job IDs.
+        Dict with saved_count, updated_count, and list of saved job IDs.
     """
     if not job_dicts:
-        return {"saved_count": 0, "skipped_count": 0, "saved_jobs": []}
+        return {"saved_count": 0, "updated_count": 0, "saved_jobs": []}
 
     try:
         if JOBS_FILE_PATH.exists():
@@ -357,17 +357,36 @@ def save_multiple_jobs_json(job_dicts: List[dict]) -> dict:
         else:
             jobs = []
 
-        existing_ids = {str(j.get("id", "")).lower() for j in jobs}
+        existing_ids = {str(j.get("id", "")).lower(): j for j in jobs if j.get("id")}
         saved_jobs = []
-        skipped_count = 0
+        updated_count = 0
 
         for jdict in job_dicts:
             jid = str(jdict.get("id", "")).lower()
+            if not jid or jid in ("none", "null", "undefined", ""):
+                continue
+
             if jid in existing_ids:
-                skipped_count += 1
+                # Upsert existing job without destroying user metadata (e.g. user_notes, status, score, justification)
+                target = existing_ids[jid]
+                for key in (
+                    "title", "company", "location", "work_mode", "commitment", "department",
+                    "seniority", "years_of_experience", "salary_range", "key_technologies",
+                    "main_requirements", "summary", "raw_text", "language", "source_page",
+                    "source_url", "application_method"
+                ):
+                    val = jdict.get(key)
+                    if val is not None and val != "" and val != "Not specified" and val != "undefined":
+                        target[key] = val
+
+                if not target.get("status") or target.get("status") in ("undefined", "null", "none", ""):
+                    target["status"] = jdict.get("status", "new")
+                updated_count += 1
             else:
+                if not jdict.get("status"):
+                    jdict["status"] = "new"
                 jobs.append(jdict)
-                existing_ids.add(jid)
+                existing_ids[jid] = jdict
                 saved_jobs.append(jdict)
 
         with open(JOBS_FILE_PATH, "w", encoding="utf-8") as f:
@@ -375,11 +394,11 @@ def save_multiple_jobs_json(job_dicts: List[dict]) -> dict:
 
         return {
             "saved_count": len(saved_jobs),
-            "skipped_count": skipped_count,
+            "updated_count": updated_count,
             "saved_jobs": saved_jobs
         }
     except Exception as e:
-        return {"error": str(e), "saved_count": 0, "skipped_count": 0, "saved_jobs": []}
+        return {"error": str(e), "saved_count": 0, "updated_count": 0, "saved_jobs": []}
 
 
 def save_job_json(

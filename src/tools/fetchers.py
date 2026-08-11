@@ -388,7 +388,7 @@ def fetch_greenhouse_job_content(url: str) -> str:
                     source_page=f"Greenhouse ({board_token})",
                     source_url=j_url,
                     job_id=f"greenhouse_{board_token}_{j_id}",
-                    status="pending_ranking"
+                    status="new"
                 )
 
 

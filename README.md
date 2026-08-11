@@ -26,23 +26,24 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
             - API Board jobs: Pre-structured in Python memory (0 LLM tokens).
             - Unparsed raw text / links: Dynamically parsed via `job_parser_agent` (LLM).
                                     │
-                                    ▼
-            [STAGE 4: POST-PARSE FILTER & BOARD CAPPING (Python / 0 Tokens)]
-            - Filters by `blacklist_roles.md`, `blacklist_seniority.md`, and `location_filters.json`.
-            - Applies `max_jobs_per_board` limit from `profile/pipeline_config.json`.
-            - If role/seniority/country fails -> Immediate discard (0 writes, 0 ranking tokens).
-                                    │
-                                    ▼
-            [STAGE 5: BATCH RANKING & TIMER VIA LLM SUBAGENT (`job_ranker_agent`)]
-            - Splits retained jobs into chunks of size k = min(5, ceil(R / 4)).
-            - Pauses `delay_between_batches_seconds` between chunk ranking calls.
-            - Each chunk is evaluated by `job_ranker_agent` in a single subagent turn.
-                                    │
-                                    ▼
-             [STAGE 6: ATOMIC SAVE TO `jobs.json`, RE-EVALUATION & RE-HYDRATION]
-             - `save_ranked_jobs_batch` persists ranked positions in `jobs.json` (`status: "ranked"`).
-             - Re-evaluates `evaluate_post_parse_filters` if LLM filled missing seniority or experience (discards if failing).
-             - `run_job_processing_pipeline` re-hydrates in-memory job objects with real scores and justifications from `jobs.json`.
+                        [STAGE 4: POST-PARSE FILTER, BOARD CAPPING & INVARIANT DEDUPE (Python / 0 Tokens)]
+             - Filters by `blacklist_roles.md`, `blacklist_seniority.md`, and `location_filters.json`.
+             - Applies `max_jobs_per_board` limit from `profile/pipeline_config.json`.
+             - Pre-Rank Invariant Dedupe: If `job.id` already exists in `jobs.json` -> Omitted automatically (0 LLM tokens).
+                                     │
+                                     ▼
+             [STAGE 5: BATCH RANKING & TIMER VIA LLM SUBAGENT (`job_ranker_agent`)]
+             - Registers transient `set_ranking_batch_cache(chunk)` in Python memory.
+             - Splits retained unranked jobs into chunks of size k = min(5, ceil(R / 4)).
+             - Pauses `delay_between_batches_seconds` between chunk ranking calls.
+             - Each chunk is evaluated by `job_ranker_agent` in a single subagent turn.
+             - Clears `clear_ranking_batch_cache()` in `finally` block post-chunk.
+                                     │
+                                     ▼
+              [STAGE 6: DETERMINISTIC MERGE & SAVE TO `jobs.json`]
+              - `save_ranked_jobs_batch` merges 100% complete job from active batch cache with LLM evaluation fields (`score`, `justification`, `strengths`, `gaps`, `status: "ranked"`).
+              - Rejects IDs not in active batch cache or IDs that already exist in `jobs.json` as defense-in-depth.
+              - `run_job_processing_pipeline` re-hydrates in-memory job objects with real scores and justifications from `jobs.json`.
 ```
 
 ---
@@ -59,9 +60,10 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
    - `max_jobs_per_board` in `profile/pipeline_config.json` limits the maximum number of jobs evaluated per query to prevent token consumption spikes.
    - `delay_between_batches_seconds` adds a configurable timer delay between batch ranking LLM calls to prevent API rate limiting (`429`).
 
-3. **Standardized Platform IDs & 3-Level Deduplication Architecture**:
+3. **Standardized Platform IDs & Invariant Deduplication Architecture**:
    - **Canonical ID Scheme**: Enforces platform-specific IDs (`greenhouse_{board}_{id}`, `exactas_{num}`, `linkedin_{id}`, and deterministic MD5 hashes `manual_{md5(company:title)[:8]}`).
-   - **3-Level Deduplication**: Level 1 pre-checks existing jobs (`check_existing_job`), Level 2 skips duplicate batch insertions (`save_multiple_jobs_json`), and Level 3 performs atomic in-place updates/upserts during batch ranking (`save_ranked_jobs_batch`).
+   - **Invariant Deduplication**: Jobs present in `jobs.json` are recognized as previously analyzed and skipped automatically from automatic batch ranking (0 LLM tokens).
+   - **Dual Ranking Tools**: `save_ranked_jobs_batch` handles automatic batch pipeline merging & persistence; `update_job_ranking_json` handles manual single-job updates requiring explicit `job_id`.
 
 4. **In-Memory Caching & Quota Limit Prevention**:
    - `LAST_FETCHED_JOBS_CACHE` stores full job dictionaries in Python memory.
@@ -74,9 +76,8 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
 5. **Extensive Vacancy Inspection & Cascading Direct Application Links (`get_job_details`)**:
    - When inspecting any stored position, the agent retrieves all structured fields, fit rationale, strengths, gaps, and **direct application URLs (`source_url`) and application instructions (`application_method`)** using a robust 4-level fallback (email contact, explicit `source_url`, HTTP URLs in raw text, or canonical URL reconstruction for Greenhouse, LinkedIn, Exactas, and registered boards).
 
-6. **Ranker Field Immutability & Post-Evaluation Filtering**:
-   - `job_ranker_agent` updates only evaluation fields (`score`, `justification`, `strengths`, `gaps`, `status: "ranked"`, `ranked_at`). Core source fields (`title`, `company`, `location`, `work_mode`, `commitment`, `raw_text`, `source_url`) remain 100% immutable.
-   - Infers `seniority` and `years_of_experience` if unspecified, and re-evaluates post-parse filters (`evaluate_post_parse_filters`). Jobs requiring more than `max_years_experience` (e.g. 5 years) are automatically discarded.
+6. **Ranker Field Immutability & Deterministic Merge**:
+   - `job_ranker_agent` evaluates fit score (0-100), justification, strengths, and gaps. Core source fields (`title`, `company`, `location`, `work_mode`, `commitment`, `raw_text`, `source_url`) are preserved from original extraction via deterministic Python merge in `save_ranked_jobs_batch`.
 
 7. **Status & Application Lifecycle Management**:
    - Allows classifying jobs as descalificadas (`disqualified`) or aplicadas (`applied`), deleting positions, or reverting recent actions (`revert_last_job_action`).
@@ -97,6 +98,7 @@ jobbud/
 ├── GEMINI.md                    # Architecture specification & agent directives
 ├── profile/                     # Candidate profile & deterministic filtering rules
 │   ├── candidate_profile.md     # Candidate background, skills & goals
+│   ├── ranking_policy.md        # User rule hierarchy, scoring policy & visibility directives
 │   ├── pipeline_config.json     # Pipeline limits (board cap, batch timer, max years exp, auto flag)
 │   ├── board_urls.json          # Persistent job board registry
 │   ├── location_filters.json    # Allowed/blocked countries, cities, and remote rules
@@ -122,6 +124,44 @@ jobbud/
 
 ---
 
+## 👤 How to Adapt JobBud to Your Candidate Profile (`profile/`)
+
+> **JobBud’s core architecture is 100% generic.** You **NEVER** need to edit Python source code (`src/`), agent guidelines (`guidelines.md`), or pipeline logic to adapt JobBud to a new candidate.
+> 
+> **To adapt JobBud to your own profile, you only modify the files inside the [`profile/`](file:///home/santi/jobbud/profile/) folder.**
+
+The diagram below illustrates how each file in `profile/` alters the 6-stage pipeline:
+
+```text
+Job Boards (profile/board_urls.json)
+        │
+        ▼  [Stage 1: Fetching]
+Title & Department Blacklists (title_blacklist.md, department_blacklist.md, location_filters.json)
+        │
+        ▼  [Stage 2: Pre-Parse Hard Filter (0 Tokens)]
+Job Parser Subagent
+        │
+        ▼  [Stage 3: LLM Parsing & Structuring]
+Role, Seniority & Experience Limits (blacklist_roles.md, blacklist_seniority.md, pipeline_config.json)
+        │
+        ▼  [Stage 4: Post-Parse Hard Filter (0 Tokens)]
+Candidate Profile & Ranking Policy (candidate_profile.md, ranking_policy.md)
+        │
+        ▼  [Stage 5: LLM Ranking & Fit Evaluation (0-100 Score)]
+Evaluated Jobs Saved to jobs.json
+```
+
+### Breakdown by Pipeline Stage:
+
+| Pipeline Stage | `profile/` File(s) Used | How It Alters the Pipeline Process |
+| :--- | :--- | :--- |
+| **Stage 1 (Data Acquisition)** | **[`profile/board_urls.json`](file:///home/santi/jobbud/profile/board_urls.json)** | Specifies the target job board URLs (Greenhouse, Ashby, LinkedIn, etc.) that JobBud fetches postings from. |
+| **Stage 2 (Pre-Parse Filter)** | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)**<br>**[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)**<br>**[`profile/location_filters.json`](file:///home/santi/jobbud/profile/location_filters.json)** | Deterministic Python filter matching raw titles, API department metadata, and location rules. Rejects non-target jobs early with **0 LLM token cost**. |
+| **Stage 4 (Post-Parse Filter)** | **[`profile/blacklist_roles.md`](file:///home/santi/jobbud/profile/blacklist_roles.md)**<br>**[`profile/blacklist_seniority.md`](file:///home/santi/jobbud/profile/blacklist_seniority.md)**<br>**[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Deterministic Python filter matching extracted fields. Rejects forbidden roles, incompatible seniorities, or jobs exceeding `max_years_experience`. |
+| **Stage 5 (LLM Ranking)** | **[`profile/candidate_profile.md`](file:///home/santi/jobbud/profile/candidate_profile.md)**<br>**[`profile/ranking_policy.md`](file:///home/santi/jobbud/profile/ranking_policy.md)** | `job_ranker_agent` reads **candidate background** and **candidate scoring directives** dynamically to calculate exact fit score (0-100), justification, strengths, and gaps. |
+
+---
+
 ## ⚙️ Profile Configuration & Filters (`profile/`)
 
 All candidate configuration and filtering rules are located in the [`profile/`](file:///home/santi/jobbud/profile/) directory:
@@ -129,6 +169,7 @@ All candidate configuration and filtering rules are located in the [`profile/`](
 | File | Role / Type | Pipeline Stage | Description & Filtering Rules |
 | :--- | :--- | :--- | :--- |
 | **[`profile/candidate_profile.md`](file:///home/santi/jobbud/profile/candidate_profile.md)** | Professional Profile | **Stage 5 (LLM Ranking)** | Defines academic background (CS Student UBA), tech stack (Python, C++, SQL), English level (C2), and preferences. Used by `job_ranker_agent` to compute fit match score (0-100). |
+| **[`profile/ranking_policy.md`](file:///home/santi/jobbud/profile/ranking_policy.md)** | User Ranking Policy | **Stage 5 (LLM Ranking)** | Defines user-selected rule hierarchy (Level 1-8), scoring vs recall separation policy, decision questions, and strengths/gaps formatting rules. |
 | **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | Pipeline Configuration | **Stages 4 & 5 (Pipeline Rules)** | Configures `max_jobs_per_board` (max jobs to rank per query), `delay_between_batches_seconds` (batch LLM timer), `delay_between_boards_seconds` (inter-board timer), `max_years_experience` (max allowed required experience years, e.g. 3), and `auto_pipeline_execution`. |
 | **[`profile/board_urls.json`](file:///home/santi/jobbud/profile/board_urls.json)** | Job Board Registry | **Stage 1 (Data Acquisition)** | Persistent JSON store of registered job board URLs (Greenhouse, Ashby, etc.) and analysis timestamps. Managed deterministically by `src/tools/boards.py`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Pre-Parse Hard Filter** | **Stage 2 (Python / 0 Tokens)** | Blacklist terms matched against the raw job title. Omits non-target jobs like *Sales, Recruiter, HR, Director, Chief, Manager* before parsing. |

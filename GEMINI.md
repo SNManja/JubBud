@@ -32,23 +32,26 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
                         - Raw Text / Links: `job_parser_agent` extrae rol, empresa y seniority con LLM
                                     │
                                     ▼
-                     4. Filtro Determinista Post-Parseo & Capping (Python / 0 Tokens)
+                     4. Filtro Determinista Post-Parseo, Capping & Dedupe por Invariante
                         (blacklist_roles, blacklist_seniority, location_filters, max_jobs_per_board)
+                        - Dedupe: Si job.id ya existe en jobs.json -> Omitir de rankeo (0 LLM tokens)
                                     │
                 ┌───────────────────┴───────────────────┐
                 ▼                                       ▼
-       [Falla Filtro / Cap Excedido]            [Pasa Filtro & Cap]
+       [Falla Filtro / Cap / Ya en jobs.json]   [Vacante Nueva & Pasa Filtro]
                 │                                       │
        Descartar / Omitir                       5. Rankear en Lotes vía ADK `job_ranker_agent`
-       (0 tokens de rankeo, 0 escrituras)          - Chunk size: k = min(5, ceil(R/4))
-                                                   - Timer delay: delay_between_batches_seconds
+       (0 tokens de rankeo, 0 escrituras)          - Registra `set_ranking_batch_cache(chunk)`
+                                                   - Chunk size: k = min(5, ceil(R/4))
+                                                   - Pausa entre lotes: delay_between_batches_seconds
+                                                   - Clears `clear_ranking_batch_cache()` en `finally`
                                                         │
                                                         ▼
-                                                6. Guardar en jobs.json + Re-Evaluación & Re-Hidratación
-                                                   - `save_ranked_jobs_batch` re-evalúa post-parseo si LLM
-                                                     completó seniority/experiencia (descarte si falla).
-                                                   - `run_job_processing_pipeline` re-hidrata objetos en memoria
-                                                     con score, justificación, fortalezas y vacíos reales de jobs.json.
+                                                6. Merge Determinista & Persistencia en jobs.json
+                                                   - `save_ranked_jobs_batch` hace merge de vacante completa
+                                                     de memoria + evaluación del ranker (score, justification, strengths, gaps).
+                                                   - Valida que el ID pertenezca al cache activo y NO exista aún en jobs.json.
+                                                   - Persiste registro 100% completo en `jobs.json`.
                                                         │
                                                         ▼
                                                 Entregar Respuesta
@@ -60,20 +63,21 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 
 - **`jobbud_agent` (Master Orchestrator)**:
   - Manages conversation, user intent, workflow execution, status changes, intermediate progress reporting, and final output formatting.
-  - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo (ej. Greenhouse), el orquestador ejecuta directamente `execute_job_pipeline_tool("todas")` para procesar el filtrado determinista y el rankeo en lotes de forma automática. Al finalizar, presenta de manera transparente el desglose exacto de vacantes obtenidas en crudo (Etapa 1), descartadas por filtro pre-parseo duro (Etapa 2), válidas post pre-parseo (Etapa 3), descartadas por filtro post-parseo (Etapa 4), omitidas por el tope configurado (`max_jobs_per_board`), evaluadas y rankeadas con LLM (Etapa 5) y guardadas en `jobs.json` (Etapa 6).
+  - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo (ej. Greenhouse), el orquestador ejecuta directamente `execute_job_pipeline_tool("todas")` para procesar el filtrado determinista y el rankeo en lotes de forma automática. Al finalizar, presenta de manera transparente el desglose exacto de vacantes obtenidas en crudo (Etapa 1), descartadas por filtro pre-parseo duro (Etapa 2), válidas post pre-parseo (Etapa 3), descartadas por filtro post-parseo (Etapa 4), omitidas por deduplicación previa en `jobs.json` o tope configurado (`max_jobs_per_board`), evaluadas y rankeadas con LLM (Etapa 5) y guardadas en `jobs.json` (Etapa 6).
 
 - **`job_parser_agent`**:
   - Parses raw unparsed job postings, normalizes data, detects language ("es"/"en"), extracts mandatory seniority ("Trainee", "Junior", "Semi-Senior", "Senior", "Lead / Executive"), stable IDs (`exactas_86_26`, `linkedin_4445031526`, `greenhouse_canonical_5569916`, `manual_<hash>`), and returns structured JSON.
   - **Boundary**: Never reads candidate profile or ranks jobs. Returns control back to `jobbud_agent` immediately.
 
 - **`job_ranker_agent`**:
-  - Reads `profile/candidate_profile.md` via `read_candidate_profile`, evaluates fit score (0–100) using LLM reasoning, updates `jobs.json` via `save_ranked_jobs_batch`, and generates detailed fit rationale.
-  - **Boundary**: Exclusively handles fit scoring against the candidate profile.
+  - Reads candidate profile (`profile/candidate_profile.md`) via `read_candidate_profile` and ranking policy (`profile/ranking_policy.md`) via `read_ranking_policy`, evaluates fit score (0–100) using LLM reasoning, persists batch results via `save_ranked_jobs_batch` (or `update_job_ranking_json` for manual single jobs), and generates detailed fit rationale.
+  - **Boundary**: Exclusively handles fit scoring and rationale against candidate profile and ranking policy.
 
 - **`job_pipeline_runner` (`src/subagents/job_pipeline/runner.py`)**:
   - Executes the 6-stage deterministic pipeline in Python.
   - Reads configuration limits (`max_jobs_per_board`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
-  - Invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each batch chunk of size k = min(5, ceil(R / 4)), pausing `delay_between_batches_seconds` between chunks.
+  - Filters out already-analyzed jobs (`jid in jobs.json`) before calling LLM ranker.
+  - Controls transient batch cache lifecycle (`set_ranking_batch_cache` / `clear_ranking_batch_cache`) and invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each chunk of size k = min(5, ceil(R / 4)).
   - Re-hydrates in-memory job dictionaries from `jobs.json` post-ranking before returning results.
 
 ---
@@ -81,7 +85,7 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 ## 📐 Unified `jobs.json` Schema
 
 All job sources (APIs, web fetchers, subagents, and manual entries) standardize job objects using a single unified JSON schema:
-`id`, `created_at`, `title`, `company`, `location`, `work_mode`, `commitment`, `department`, `seniority`, `years_of_experience`, `salary_range`, `key_technologies`, `main_requirements`, `summary`, `raw_text`, `language`, `source_page`, `source_url`, `application_method`, `status` ("pending_ranking", "ranked", "disqualified", "applied"), `score`, `justification`, `strengths`, `gaps`, `ranked_at`, `user_notes`.
+`id`, `created_at`, `title`, `company`, `location`, `work_mode`, `commitment`, `department`, `seniority`, `years_of_experience`, `salary_range`, `key_technologies`, `main_requirements`, `summary`, `raw_text`, `language`, `source_page`, `source_url`, `application_method`, `status` ("new", "ranked", "disqualified", "applied"), `score`, `justification`, `strengths`, `gaps`, `ranked_at`, `user_notes`.
 
 ---
 
