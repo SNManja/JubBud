@@ -74,7 +74,7 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
 
 6. **Ranker Field Immutability & Post-Evaluation Filtering**:
    - `job_ranker_agent` updates only evaluation fields (`score`, `justification`, `strengths`, `gaps`, `status: "ranked"`, `ranked_at`). Core source fields (`title`, `company`, `location`, `work_mode`, `commitment`, `raw_text`, `source_url`) remain 100% immutable.
-   - Infers `seniority` and `years_of_experience` if unspecified, and re-evaluates post-parse filters (`evaluate_post_parse_filters`). Jobs requiring $> \text{max\_years\_experience}$ (e.g. 5 years) are automatically discarded.
+   - Infers `seniority` and `years_of_experience` if unspecified, and re-evaluates post-parse filters (`evaluate_post_parse_filters`). Jobs requiring more than `max_years_experience` (e.g. 5 years) are automatically discarded.
 
 7. **Status & Application Lifecycle Management**:
    - Allows classifying jobs as descalificadas (`disqualified`) or aplicadas (`applied`), deleting positions, or reverting recent actions (`revert_last_job_action`).

@@ -67,7 +67,7 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 - **`job_pipeline_runner` (`src/subagents/job_pipeline/runner.py`)**:
   - Executes the 6-stage deterministic pipeline in Python.
   - Reads configuration limits (`max_jobs_per_board`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
-  - Invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each batch chunk of size $k = \min(5, \lceil R / 4 \rceil)$, pausing `delay_between_batches_seconds` between chunks.
+  - Invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each batch chunk of size k = min(5, ceil(R / 4)), pausing `delay_between_batches_seconds` between chunks.
 
 ---
 
@@ -160,7 +160,7 @@ To guarantee data integrity and eliminate duplicate job entries across sessions,
 
 ### 1. Standardized Platform ID Format Scheme (`_generate_stable_job_id`)
 * **Greenhouse**: `greenhouse_{board_token}_{job_id}` (e.g. `greenhouse_canonical_5569916`, `greenhouse_invgate_4495272002`). Extraído de metadatos API o de URLs tipo `job-boards.greenhouse.io/token/jobs/id`.
-* **Exactas UBA**: `exactas_{num_part}` (e.g. `Oferta #86/26` $\rightarrow$ `exactas_86_26`). Extraído de metadatos o URLs tipo `/oferta/86-26`.
+* **Exactas UBA**: `exactas_{num_part}` (e.g. `Oferta #86/26` → `exactas_86_26`). Extraído de metadatos o URLs tipo `/oferta/86-26`.
 * **LinkedIn**: `linkedin_{numeric_id}` (extraído de metadatos o URLs tipo `view/4445031526`).
 * **Ashby**: `ashby_{company}_{job_id}` (extraído de metadatos o URLs tipo `ashbyhq.com/company/id`).
 * **Manual / Un-ID'd Text Fallback**: `manual_{md5(company:title)[:8]}` (e.g. `manual_bebce99c`). Si un aviso carece de ID al pasar por el ranker, se le asigna automáticamente un ID determinista según su URL o hash MD5.
