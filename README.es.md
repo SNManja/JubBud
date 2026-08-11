@@ -38,8 +38,10 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
             - Cada lote es evaluado por `job_ranker_agent` en una sola llamada de subagente.
                                      │
                                      ▼
-            [ETAPA 6: GUARDADO ATÓMICO EN `jobs.json`]
-            - Persiste en `jobs.json` únicamente las vacantes rankeadas exitosamente (`status: "ranked"`).
+             [ETAPA 6: GUARDADO ATÓMICO EN `jobs.json`, RE-EVALUACIÓN Y RE-HIDRATACIÓN]
+             - `save_ranked_jobs_batch` persiste vacantes en `jobs.json` (`status: "ranked"`).
+             - Re-evalúa `evaluate_post_parse_filters` si el LLM completó seniority o experiencia (descala si falla).
+             - `run_job_processing_pipeline` re-hidrata los objetos en memoria con puntajes y justificaciones reales de `jobs.json`.
 ```
 
 ---

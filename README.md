@@ -39,8 +39,10 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
             - Each chunk is evaluated by `job_ranker_agent` in a single subagent turn.
                                     │
                                     ▼
-            [STAGE 6: ATOMIC SAVE TO `jobs.json`]
-            - Persists only successfully ranked positions in `jobs.json` (`status: "ranked"`).
+             [STAGE 6: ATOMIC SAVE TO `jobs.json`, RE-EVALUATION & RE-HYDRATION]
+             - `save_ranked_jobs_batch` persists ranked positions in `jobs.json` (`status: "ranked"`).
+             - Re-evaluates `evaluate_post_parse_filters` if LLM filled missing seniority or experience (discards if failing).
+             - `run_job_processing_pipeline` re-hydrates in-memory job objects with real scores and justifications from `jobs.json`.
 ```
 
 ---

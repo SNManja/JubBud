@@ -23,6 +23,7 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
                                     ▼
                      2. Pre-Filtro Duro Inicial (Pre-LLM Python / 0 Tokens)
                         (title_blacklist, department_blacklist, location_filters)
+                        - Registrar vacantes obtenidas en crudo (total_raw) y pre-descartadas
                         - Cargar vacantes conservadas en Caché Python (`LAST_FETCHED_JOBS_CACHE`)
                                     │
                                     ▼
@@ -42,9 +43,14 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
        (0 tokens de rankeo, 0 escrituras)          - Chunk size: k = min(5, ceil(R/4))
                                                    - Timer delay: delay_between_batches_seconds
                                                         │
-                                                6. Guardar en jobs.json
-                                                (status: "ranked")
+                                                        ▼
+                                                6. Guardar en jobs.json + Re-Evaluación & Re-Hidratación
+                                                   - `save_ranked_jobs_batch` re-evalúa post-parseo si LLM
+                                                     completó seniority/experiencia (descarte si falla).
+                                                   - `run_job_processing_pipeline` re-hidrata objetos en memoria
+                                                     con score, justificación, fortalezas y vacíos reales de jobs.json.
                                                         │
+                                                        ▼
                                                 Entregar Respuesta
 ```
 
@@ -68,6 +74,7 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
   - Executes the 6-stage deterministic pipeline in Python.
   - Reads configuration limits (`max_jobs_per_board`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
   - Invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each batch chunk of size k = min(5, ceil(R / 4)), pausing `delay_between_batches_seconds` between chunks.
+  - Re-hydrates in-memory job dictionaries from `jobs.json` post-ranking before returning results.
 
 ---
 
@@ -78,35 +85,25 @@ All job sources (APIs, web fetchers, subagents, and manual entries) standardize 
 
 ---
 
-## 🚫 Dual Deterministic Filters (Zero Token Waste)
+## 🚫 Dual Deterministic Filters (Zero Token Waste) & Post-Rank Re-evaluation
 
-To drastically minimize LLM token consumption, the pipeline applies a two-stage deterministic Python filtering process (0 tokens spent on discarded jobs):
+To drastically minimize LLM token consumption, the pipeline applies a multi-stage deterministic Python filtering process (0 tokens spent on discarded jobs):
 
 ```text
                   Aviso de Empleo / Portal API / Texto Crudo
                                      │
                                      ▼
       ┌─────────────────────────────────────────────────────────────┐
-      │ ETAPA 1: Filtros Duros Pre-Parseo (Pre-LLM en Python)       │
-      │ 1.1 title_blacklist.md      -> Revisa título directo        │
-      │ 1.2 department_blacklist.md -> Revisa metadatos de área     │
-      │ 1.3 location_filters.json   -> Revisa país en metadatos    │
+      │ ETAPA 1: Obtención de Datos en Crudo (API / Scraping)       │
+      │ Registra total_raw (ej. 50 vacantes)                        │
       └──────────────────────────────┬──────────────────────────────┘
-                                     │
-                             (Si supera Etapa 1)
-                                     │
-                                     ▼
-                    2. Estructuración del Puesto
-        (Por API directa en Python O por `job_parser_agent`)
                                      │
                                      ▼
       ┌─────────────────────────────────────────────────────────────┐
-      │ ETAPA 2: Filtros Post-Parseo y Capping (Pre-Ranking)        │
-      │ 2.1 blacklist_roles.md      -> Revisa área parseada         │
-      │ 2.2 blacklist_seniority.md  -> Revisa seniority y exp.      │
-      │                                (years_of_exp > max_years)   │
-      │ 2.3 location_filters.json   -> Valida país/modalidad final  │
-      │ 2.4 pipeline_config.json    -> Aplica max_jobs_per_board    │
+      │ ETAPA 2: Filtros Duros Pre-Parseo (Pre-LLM en Python)       │
+      │ 2.1 title_blacklist.md      -> Revisa título directo        │
+      │ 2.2 department_blacklist.md -> Revisa metadatos de área     │
+      │ 2.3 location_filters.json   -> Revisa país en metadatos    │
       └──────────────────────────────┬──────────────────────────────┘
                                      │
                              (Si supera Etapa 2)
