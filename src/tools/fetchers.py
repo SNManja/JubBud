@@ -7,10 +7,9 @@ from src.tools.queries import load_blacklist_terms
 
 
 def compress_job_text(text: str) -> str:
-
     """
-    Strips non-essential boilerplate sections (EEO, corporate descriptions, legal footers)
-    to save prompt tokens while preserving all core job requirements, responsibilities, and technologies.
+    Strips non-essential legal footers (EEO disclaimers, privacy notices)
+    while preserving 100% of job requirements, responsibilities, benefits, and technologies.
     """
     if not text or len(text) < 300:
         return text
@@ -19,15 +18,12 @@ def compress_job_text(text: str) -> str:
         r"(?i)equal opportunity employer.*",
         r"(?i)we are an equal opportunity employer.*",
         r"(?i)applicant privacy notice.*",
-        r"(?i)california consumer privacy.*",
-        r"(?i)about canonical.*",
-        r"(?i)about appsflyer.*",
-        r"(?i)what we offer.*"
+        r"(?i)california consumer privacy.*"
     ]
 
     cleaned = text
     for pattern in sections_to_drop:
-        cleaned = re.sub(pattern, "", cleaned, flags=re.DOTALL)
+        cleaned = re.sub(pattern, "", cleaned)
 
     lines = [l.strip() for l in cleaned.split("\n") if l.strip()]
     res = "\n".join(lines)

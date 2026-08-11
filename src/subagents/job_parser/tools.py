@@ -149,13 +149,13 @@ def extract_years_of_experience(title: str = "", text: str = "") -> Any:
     full_text = f"{title or ''}\n{text or ''}"
 
     # 1. Range pattern: e.g. "3 to 5 years", "3-5 años", "2 - 4 years"
-    range_match = re.search(r'(\d+)\s*(?:a|to|-)\s*(\d+)\s*(?:\+|\s)*years?|años?', full_text, re.IGNORECASE)
+    range_match = re.search(r'(\d+)\s*(?:a|to|-)\s*(\d+)\s*(?:\+|\s)*(?:years?|años?)', full_text, re.IGNORECASE)
     if range_match:
         min_y, max_y = range_match.group(1), range_match.group(2)
         return f"{min_y}-{max_y}"
 
     # 2. Minimum/Exact pattern: e.g. "minimum 5 years", "5+ years", "5 años de experiencia", "at least 3 years"
-    min_match = re.search(r'(?:minimum|mínimo|at least|al menos|\b)?\s*(\d+)\+?\s*(?:years?|años?)\s*(?:of\s*)?(?:experience|experiencia)?', full_text, re.IGNORECASE)
+    min_match = re.search(r'(?:minimum|mínimo|at least|al menos|experiencia)?\s*\(?\s*(\d+)\+?\s*(?:years?|años?)\b', full_text, re.IGNORECASE)
     if min_match:
         val = int(min_match.group(1))
         if 1 <= val <= 25:
