@@ -1,6 +1,6 @@
 {
   "_comment_max_jobs_per_board": "Límite máximo de vacantes que se envían a rankear con LLM por cada consulta a un Job Board.",
-  "max_jobs_per_board": 5,
+  "max_jobs_per_board": null,
 
   "_comment_delay_between_batches": "Pausa en segundos (timer) entre cada llamada en lote (chunk) al subagente ranker con LLM.",
   "delay_between_batches_seconds": 5,

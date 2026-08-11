@@ -25,10 +25,10 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
             - Vacantes de Job Boards (API): Pre-estructuradas en memoria Python (0 tokens LLM).
             - Texto crudo / Links: Parseados dinámicamente mediante `job_parser_agent` (LLM).
                                      │
-               [ETAPA 4: FILTRADO POST-PARSEO, CAP POR BOARD Y DEDUPE POR INVARIANTE (Python / 0 Tokens)]
+               [ETAPA 4: FILTRADO POST-PARSEO, DEDUPE POR INVARIANTE Y CAP OPCIONAL (Python / 0 Tokens)]
              - Filtra por `blacklist_roles.md`, `blacklist_seniority.md` y `location_filters.json`.
-             - Aplica el límite máximo `max_jobs_per_board` de `profile/pipeline_config.json`.
-             - Dedupe por Invariante: Si `job.id` ya existe en `jobs.json` -> Omitido automáticamente (0 tokens LLM).
+             - Dedupe por Invariante: Si `job.id` ya existe en `jobs.json` -> Omitido automáticamente antes del capping (0 tokens LLM).
+             - Capping Opcional: Si `max_jobs_per_board` está configurado (por defecto `null`), limita solo sobre vacantes nuevas.
                                       │
                                       ▼
              [ETAPA 5: RANKEADO EN LOTES Y TIMER VÍA SUBAGENTE LLM (`job_ranker_agent`)]

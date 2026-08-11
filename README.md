@@ -26,10 +26,10 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
             - API Board jobs: Pre-structured in Python memory (0 LLM tokens).
             - Unparsed raw text / links: Dynamically parsed via `job_parser_agent` (LLM).
                                     │
-                        [STAGE 4: POST-PARSE FILTER, BOARD CAPPING & INVARIANT DEDUPE (Python / 0 Tokens)]
+                        [STAGE 4: POST-PARSE FILTER, INVARIANT DEDUPE & OPTIONAL CAPPING (Python / 0 Tokens)]
              - Filters by `blacklist_roles.md`, `blacklist_seniority.md`, and `location_filters.json`.
-             - Applies `max_jobs_per_board` limit from `profile/pipeline_config.json`.
-             - Pre-Rank Invariant Dedupe: If `job.id` already exists in `jobs.json` -> Omitted automatically (0 LLM tokens).
+             - Pre-Rank Invariant Dedupe: If `job.id` already exists in `jobs.json` -> Omitted automatically before capping (0 LLM tokens).
+             - Optional Board Capping: If `max_jobs_per_board` is configured (defaults to `null`), limits only new unranked jobs.
                                      │
                                      ▼
              [STAGE 5: BATCH RANKING & TIMER VIA LLM SUBAGENT (`job_ranker_agent`)]

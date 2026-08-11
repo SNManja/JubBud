@@ -32,13 +32,16 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
                         - Raw Text / Links: `job_parser_agent` extrae rol, empresa y seniority con LLM
                                     │
                                     ▼
-                     4. Filtro Determinista Post-Parseo, Capping & Dedupe por Invariante
+                     4. Filtro Determinista Post-Parseo, Dedupe por Invariante & Cap Opcional
                         (blacklist_roles, blacklist_seniority, location_filters, max_jobs_per_board)
-                        - Dedupe: Si job.id ya existe en jobs.json -> Omitir de rankeo (0 LLM tokens)
+                        - Post-Parse: Descarta roles/seniority prohibidos en Python.
+                        - Dedupe por Invariante: Omite vacantes ya existentes en jobs.json (0 LLM tokens).
+                        - Cap Opcional: Si max_jobs_per_board está activo, limita solo sobre vacantes nuevas.
+                        - Integridad: Si jobs.json está corrupto/inválido, aborta de inmediato por seguridad.
                                     │
                 ┌───────────────────┴───────────────────┐
                 ▼                                       ▼
-       [Falla Filtro / Cap / Ya en jobs.json]   [Vacante Nueva & Pasa Filtro]
+       [Falla Filtro / Ya en jobs.json / Capped]  [Vacante Nueva & Pasa Filtro]
                 │                                       │
        Descartar / Omitir                       5. Rankear en Lotes vía ADK `job_ranker_agent`
        (0 tokens de rankeo, 0 escrituras)          - Registra `set_ranking_batch_cache(chunk)`
@@ -75,8 +78,10 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
 
 - **`job_pipeline_runner` (`src/subagents/job_pipeline/runner.py`)**:
   - Executes the 6-stage deterministic pipeline in Python.
-  - Reads configuration limits (`max_jobs_per_board`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
-  - Filters out already-analyzed jobs (`jid in jobs.json`) before calling LLM ranker.
+  - Reads configuration limits (`max_jobs_per_board` defaulting to `None`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
+  - Performs deduplication before optional capping, ensuring jobs in `jobs.json` do not consume capping slots.
+  - Aborts immediately if `jobs.json` exists but is corrupted or not a valid JSON list.
+  - Exposes 8 explicit telemetry fields (`total_raw`, `pre_discarded_count`, `post_discarded_count`, `deduped_count`, `capped_count`, `sent_to_ranker_count`, `successfully_ranked_count`, `ranking_errors_count`) across all return paths.
   - Controls transient batch cache lifecycle (`set_ranking_batch_cache` / `clear_ranking_batch_cache`) and invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each chunk of size k = min(5, ceil(R / 4)).
   - Re-hydrates in-memory job dictionaries from `jobs.json` post-ranking before returning results.
 
