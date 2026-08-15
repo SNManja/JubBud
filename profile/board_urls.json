@@ -193,7 +193,7 @@
     "name": "Silver (Ashby)",
     "url": "https://jobs.ashbyhq.com/silver",
     "source_type": "ashby",
-    "last_analyzed": null,
+    "last_analyzed": "2026-08-15T09:22:52.040727",
     "created_at": "2026-08-15T09:09:43.126305",
     "notes": "Tablero general de Silver en Ashby HQ"
   },
@@ -202,8 +202,62 @@
     "name": "Canals (Ashby)",
     "url": "https://jobs.ashbyhq.com/canals",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:17:47.225198",
+    "last_analyzed": "2026-08-15T09:36:05.832461",
     "created_at": "2026-08-15T09:11:19.683127",
     "notes": "Tablero oficial de Canals en Ashby HQ"
+  },
+  {
+    "id": "board_nexusxyz",
+    "name": "Nexus.xyz",
+    "url": "https://jobs.ashbyhq.com/nexus.xyz",
+    "source_type": "ashby",
+    "last_analyzed": "2026-08-15T09:27:47.880031",
+    "created_at": "2026-08-15T09:27:34.780783",
+    "notes": "Tablero Ashby añadido por el usuario"
+  },
+  {
+    "id": "board_chainlinklabs",
+    "name": "Chainlink Labs",
+    "url": "https://jobs.ashbyhq.com/chainlink-labs",
+    "source_type": "ashby",
+    "last_analyzed": "2026-08-15T09:35:34.722481",
+    "created_at": "2026-08-15T09:27:34.781738",
+    "notes": "Tablero Ashby añadido por el usuario"
+  },
+  {
+    "id": "board_scalearmycareers",
+    "name": "Scale Army Careers",
+    "url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers",
+    "source_type": "ashby",
+    "last_analyzed": "2026-08-15T09:29:03.853178",
+    "created_at": "2026-08-15T09:27:34.782687",
+    "notes": "Tablero Ashby añadido por el usuario"
+  },
+  {
+    "id": "board_xbowcareers",
+    "name": "Xbow Careers",
+    "url": "https://jobs.ashbyhq.com/xbowcareers",
+    "source_type": "ashby",
+    "last_analyzed": "2026-08-15T09:30:17.990637",
+    "created_at": "2026-08-15T09:27:34.784642",
+    "notes": "Tablero Ashby añadido por el usuario"
+  },
+  {
+    "id": "board_ramp",
+    "name": "Ramp",
+    "url": "https://jobs.ashbyhq.com/ramp",
+    "source_type": "ashby",
+    "last_analyzed": "2026-08-15T09:30:36.121437",
+    "created_at": "2026-08-15T09:27:34.785549",
+    "notes": "Tablero Ashby añadido por el usuario"
+  },
+  {
+    "id": "board_qdranttech",
+    "name": "Qdrant.tech",
+    "url": "https://jobs.ashbyhq.com/qdrant.tech",
+    "source_type": "ashby",
+    "last_analyzed": "2026-08-15T09:31:40.011575",
+    "created_at": "2026-08-15T09:27:34.786549",
+    "notes": "Tablero Ashby añadido por el usuario"
   }
 ]

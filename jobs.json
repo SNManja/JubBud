@@ -640,5 +640,521 @@
     ],
     "ranked_at": "2026-08-15T09:17:54.971593",
     "user_notes": null
+  },
+  {
+    "id": "ashby_silver_0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8",
+    "created_at": "2026-08-15T09:22:52.365581",
+    "title": "Ramp - Software Engineer",
+    "company": "silver",
+    "location": "Remote; Argentina",
+    "work_mode": "Not specified",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$120K - $200K",
+    "key_technologies": [
+      "Python",
+      "TypeScript",
+      "Go",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "ABOUT RAMP\nRamp https://ramp.com is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $100B in annualized spend flows in and out of 50,000+ companies: authorizing payments, flagging risk, categorizing spend,",
+    "raw_text": "ABOUT RAMP\nRamp https://ramp.com is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $100B in annualized spend flows in and out of 50,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books.\nThe problems are high-stakes, data-dense, and unforgiving.\nWe hire people with high agency and high urgency. We look for slope over intercept. We care less about where you trained and more about what you’ve built. At Ramp, everyone is a builder who owns problems end to end and makes consequential decisions that shape the outcome.\nThe median Ramp customer saves 5% and grows revenue 16% in their first year – far in excess of businesses operating without Ramp. We believe every ambitious company deserves the same.\nIf you want to build systems that directly shape how companies move and manage billions, Ramp is the place to do it.\nABOUT THE ROLE\nThe team owns the core experience that helps finance teams control, automate, and optimize company spend. We build the engine that powers Ramp’s card and expense workflows—from card issuance and spend limits to approvals, policy enforcement, and real-time insights.\nOur systems handle billions of dollars in transactions and integrate deeply with Ramp’s AI platform, financial infrastructure, and partner ecosystems (banks, ERPs, HRIS).\nAs a backend engineer on this team, you’ll work across product surfaces that are central to Ramp’s success: cards, approvals, spend controls, and automation intelligence.\nWHAT YOU’LL DO\n- Design, build, and scale backend systems that power spend controls, approval workflows, and card transactions at massive scale\n- Collaborate cross-functionally with product, design, and data to deliver intelligent, user-first experiences for finance teams\n- Integrate with Ramp’s internal AI platform to automate spend policy enforcement and anomaly detection\n- Own complex projects end-to-end — from architecture to deployment and observability\n- Partner with the Product Platform and Integrations teams to ensure reliability, scalability, and data consistency across financial systems\n- Continuously improve Ramp’s transaction and policy infrastructure for performance, accuracy, and resilience\nWHAT WE’RE LOOKING FOR\n- Software engineering experience (backend or fullstack with a backend focus)\n- Strong fundamentals in backend systems and API design — experience with Python, Go, or TypeScript is ideal\n- Familiarity with PostgreSQL, AWS, and modern observability tooling\n- Product sense: ability to balance technical quality with speed and user value\n- Collaborative, thoughtful communicator who thrives in high-ownership environments\nNICE TO HAVE\n- Fintech or payments experience (cards, reconciliation, transaction processing)\n- Exposure to AI- or rule-based automation systems\n- Experience integrating with ERP or accounting systems\n- Familiarity with security, risk, or compliance-driven domains\n- Experience building reliable distributed systems that process large volumes of financial or transactional data",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8/application",
+    "status": "ranked",
+    "score": 72,
+    "justification": "The position is for a Software Engineer at Ramp (via silver) focusing on backend systems, APIs, and spend control infrastructure, with key technologies including Python, TypeScript, Go, PostgreSQL, and AWS. The posting does not explicitly mandate a specific number of professional years of experience or a completed degree, noting instead 'Software engineering experience (backend or fullstack with a backend focus)'. According to the ranking policy, when no strict YOE minimum is stated, we evaluate based on skills, education, and projects without applying a mandatory 2+ YOE cap. The candidate brings strong alignment with Python, TypeScript, PostgreSQL, and backend development through substantial personal projects (e.g., JobBud, Batchpix), as well as ongoing CS education at UBA Exactas. However, the candidate lacks formal professional software engineering experience. Therefore, this represents a possible/good entry fit depending on how strictly the hiring team evaluates commercial background, yielding a moderate-to-good fit score of 72.",
+    "strengths": [
+      {
+        "text": "The role seeks strong fundamentals in backend systems and API design, with Python, TypeScript, and PostgreSQL listed as key technologies; the candidate has concrete project experience using Python, TypeScript, Node.js, and PostgreSQL."
+      },
+      {
+        "text": "The posting values product sense and problem-solving without strict degree requirements, while the candidate is an advanced Computer Science student at UBA with strong foundational knowledge and autonomous project delivery (e.g., Batchpix, JobBud)."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The posting requests software engineering experience (backend or fullstack with backend focus), but the candidate has 0 formal professional years of experience (YOE)."
+      },
+      {
+        "text": "Familiarity with AWS and modern observability tooling is listed as a requirement/familiarity point, which the candidate only has in a limited/personal server context without professional production scope."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:23:09.832275",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_nexus_xyz_1155bf9e-3098-4f00-a691-f8df52b65ceb",
+    "created_at": "2026-08-15T09:27:48.127502",
+    "title": "Systems Engineer (Contract, LATAM)",
+    "company": "nexus.xyz",
+    "location": "LATAM",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "Go",
+      "Rust"
+    ],
+    "main_requirements": [],
+    "summary": "About Nexus\nNexus is the engine for verifiable finance — a blockchain designed to natively embed the world’s financial system into one compounding system. Built to support every major financial market on a single global exchange, Nexus unifies infrastructure that has historically been fragmented acr",
+    "raw_text": "About Nexus\nNexus is the engine for verifiable finance — a blockchain designed to natively embed the world’s financial system into one compounding system. Built to support every major financial market on a single global exchange, Nexus unifies infrastructure that has historically been fragmented across chains and intermediaries.\nHeadquartered in San Francisco with a growing presence in Buenos Aires, Nexus is proud to be a cross-continental team of engineers, cryptographers, and market builders. We’re investing deeply in the Latin American ecosystem — and always looking for world-class talent to join us.\nNexus is backed by leading investors, including Pantera, Lightspeed, Dragonfly, Faction, Blockchain Builders Fund, Alliance, and SVA, and works with more than 100 partners across the global finance and blockchain stack.\nLOCATION: REMOTE\nTYPE: CONTRACT\nDURATION: 12 MONTHS WITH POTENTIAL FOR EXTENSION\nTHE ROLE\nWE’RE HIRING SR SYSTEMS ENGINEERS IN LATIN AMERICA TO WORK AT THE CORE OF NEXUS’S EXECUTION STACK — CONTRIBUTING TO THE RUNTIME BEHIND OUR LAYER 1 PROTOCOL AND THE HIGH-PERFORMANCE ENGINE THAT POWERS DECENTRALIZED TRADING.\nThis is not a typical backend role. You will work on performance-critical systems where microseconds matter, building execution paths that may evolve into core protocol primitives. Your work will directly shape how orders are processed, state transitions are computed, and performance guarantees are achieved across the network.\nWhether you're a strong mid-level engineer looking to grow into system ownership, or a senior/principal engineer eager to architect high-throughput distributed systems, this role offers the opportunity to build software that runs at the heart of a global execution layer.\nYou’ll collaborate closely with protocol, cryptography, and product teams in San Francisco while contributing remotely from Argentina.\nWhat You’ll Do\n- Design and implement high-performance components in Rust, C++, or Go for Nexus’s DEX engine and protocol runtime.\n- Build low-latency pipelines for order execution, event propagation, and state updates.\n- Optimize concurrency, scheduling, memory layout, and I/O paths for determinism and throughput.\n- Contribute to the evolution of execution abstractions that may be enshrined at the protocol layer.\n- Work with protocol engineers to ensure safety, composability, and consensus compatibility.\n- Investigate and resolve performance bottlenecks using profiling, tracing, and benchmarking techniques.\n- Help define standards for reliability, correctness, and high-assurance distributed execution.\n- For senior/principal candidates: Drive system design decisions, shape execution architecture, and mentor others in performance engineering.\nWhat We’re Looking For\n- Strong experience with Rust, C++, Go, or other systems programming languages.\n- Understanding of high-performance or distributed systems (e.g., low-latency engines, runtimes, databases, OS-level concurrency).\n- Ability to think in terms of execution flows, concurrency models, resource lifecycles, and system invariants.\n- Practical experience profiling CPU, memory, and synchronization overhead.\n- Comfort working close to runtime constraints where performance, determinism, and resilience are critical.\n- Excellent communication skills in Business English (spoken and written).\nLevels We're Hiring\n- Junior 1–3 years - Solid foundations, eagerness to grow, guided ownership\n- Senior 5+ years - System design leadership, cross-team impact, mentorship\nBonus Points For\n- Experience building matching engines, databases, compilers, blockchain runtimes, or HPC systems.\n- Familiarity with lock-free concurrency, zero-copy data structures, or cache-aware design.\n- Exposure to protocol engineering, consensus systems, or transaction ordering.\n- Background in correctness-focused engineering (e.g., formal verification, static analysis).\n- Open-source contributions to systems-level projects.\nWhy Join Us\n- Build the execution backbone of a Layer 1 blockchain and next-generation DEX engine.\n- Work on systems where your optimizations translate directly into global performance gains.\n- Grow from mid-level contributor to system owner — or drive execution architecture as a senior/principal.\n- Shape primitives designed to last — correct, performant, and potentially enshrined at the protocol level.\n- Join a high-performance engineering culture where ambition and deep technical work are expected.",
+    "language": "en",
+    "source_page": "Ashby (nexus.xyz)",
+    "source_url": "https://jobs.ashbyhq.com/nexus.xyz/1155bf9e-3098-4f00-a691-f8df52b65ceb",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/nexus.xyz/1155bf9e-3098-4f00-a691-f8df52b65ceb/application",
+    "status": "ranked",
+    "score": 45,
+    "justification": "The candidate is an advanced CS student with strong fundamentals and personal projects (including C++ and systems projects), which aligns with the technical domain of systems engineering. However, the posting specifies hiring at the Junior level (1–3 years with solid foundations) or Senior level (5+ years). Under the ranking policy, a junior level requiring 1–3 years of professional experience combined with 0 professional YOE typically places the score in the 40–59 range (Weak Fit / Possible Fit depending on evidence). Although the candidate has personal project experience in C++ and systems, professional low-latency systems engineering experience is absent, representing a core gap for a blockchain execution layer role. Therefore, a fit score of 45 is awarded.",
+    "strengths": [
+      "The role accepts Rust, C++, or Go; the candidate has academic and personal project experience in C++ and systems (e.g., custom memory/multithreading/processing in Batchpix and an educational x86 kernel).",
+      "The candidate has a strong foundation in Computer Science from UBA Exactas (algorithms, operating systems, systems architecture).",
+      "The position is remote in LATAM (Argentina), which matches the candidate's location and work mode preferences."
+    ],
+    "gaps": [
+      {
+        "item": "The posting explicitly requires 1–3 years for Junior level (or 5+ for Senior). The candidate has 0 formal professional years of experience."
+      },
+      {
+        "item": "The role requires strong systems-level programming experience in Go, Rust, or C++ for performance-critical blockchain/trading engines, whereas the candidate's C++ and systems experience is academic/personal (e.g., Batchpix, educational x86 kernel) rather than professional low-latency systems experience."
+      },
+      {
+        "item": "The posting expects practical experience profiling CPU, memory, and synchronization overhead in production systems."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:27:52.462516",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_nexus_xyz_e6877f82-5d71-4a52-a131-c09dd7b148dd",
+    "created_at": "2026-08-15T09:27:48.131222",
+    "title": "Backend Engineer (Contract - LATAM)",
+    "company": "nexus.xyz",
+    "location": "LATAM",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "Python",
+      "Node.js",
+      "Node",
+      "Go",
+      "Rust",
+      "PostgreSQL",
+      "Docker",
+      "Kubernetes",
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "About Nexus\nNexus is the engine for verifiable finance — a blockchain designed to natively embed the world’s financial system into one compounding system. Built to support every major financial market on a single global exchange, Nexus unifies infrastructure that has historically been fragmented acr",
+    "raw_text": "About Nexus\nNexus is the engine for verifiable finance — a blockchain designed to natively embed the world’s financial system into one compounding system. Built to support every major financial market on a single global exchange, Nexus unifies infrastructure that has historically been fragmented across chains and intermediaries.\nHeadquartered in San Francisco with a growing presence in Buenos Aires, Nexus is proud to be a cross-continental team of engineers, cryptographers, and market builders. We’re investing deeply in the Latin American ecosystem — and always looking for world-class talent to join us.\nNexus is backed by leading investors, including Pantera, Lightspeed, Dragonfly, Faction, Blockchain Builders Fund, Alliance, and SVA, and works with more than 100 partners across the global finance and blockchain stack.\nLocation: Remote (Argentina)\nType: Contract\nDuration: 12 months with potential for extension\nTHE ROLE\nThe Role\nWe're expanding our backend engineering team in Latin America to build the infrastructure behind Nexus's Layer 1 and its native DEX. We're hiring Backend Engineers at multiple levels — from junior to senior — so if you build reliable, high-performance systems and care about the intersection of finance and decentralized infrastructure, we want to hear from you.\nYou'll collaborate with protocol, product, and frontend teams in San Francisco while contributing remotely from Latam\nWhat You'll Do\n- Design and build backend services in Node.js and Rust for Nexus's Layer 1 and DEX.\n- Develop APIs and data pipelines for trading, liquidity, and on-chain verification.\n- Build and maintain blockchain infrastructure components (RPC endpoints, explorers, dev tools).\n- Write clean, well-tested, production-grade code that supports verifiable financial applications.\n- Contribute to architecture discussions and technical decisions based on your level of experience.\nWhat We're Looking For\n- Experience building backend systems in a production environment.\n- Proficiency in one or more of: Node.js, Rust, Go, or Python.\n- Experience with relational databases (PostgreSQL or similar) and API design.\n- A track record of shipping reliable software and improving the systems you work on.\n- Excellent communication skills in Business English (spoken & written).\nLevels We're Hiring\n- Junior 1–3 years - Solid foundations, eagerness to grow, guided ownership\n- Senior 5+ years - System design leadership, cross-team impact, mentorship\nBonus Points For\n- Experience in financial systems (exchanges, payments, clearing, or settlement).\n- Familiarity with blockchain architectures, smart contracts, or consensus protocols.\n- DevOps experience (Docker, Kubernetes, Terraform, AWS).\n- Web3 or DeFi protocol development experience.\nWHY JOIN US\n- Build the backend systems powering the Layer 1 for Verifiable Finance.\n- Collaborate with experts across blockchain, AI, and financial infrastructure.\n- Shape the foundation for a verifiable, transparent, global trading system.\n- Thrive in a fast-moving, high-impact engineering environment.",
+    "language": "en",
+    "source_page": "Ashby (nexus.xyz)",
+    "source_url": "https://jobs.ashbyhq.com/nexus.xyz/e6877f82-5d71-4a52-a131-c09dd7b148dd",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/nexus.xyz/e6877f82-5d71-4a52-a131-c09dd7b148dd/application",
+    "status": "ranked",
+    "score": 60,
+    "justification": "The posting is for a Backend Engineer (Contract - LATAM) at nexus.xyz, hiring at multiple levels including Junior (1-3 years: solid foundations, eagerness to grow, guided ownership). The candidate is an advanced CS student with 0 formal professional YOE, making the lower bound of the junior level (1 year) a partial mismatch, though the posting explicitly mentions 'junior' and 'eagerness to grow/guided ownership'. The candidate has strong technical overlap with Python, Node.js, and relational databases (PostgreSQL), which are listed among the key proficiencies. However, the role also requires or involves Rust and blockchain/DeFi infrastructure components where the candidate has no direct professional experience. Following the ranking policy for approximately 1 YOE / junior roles where 1-3 years is indicated, and combining the good technical stack overlap (Python/Node/PostgreSQL) with the lack of professional YOE and Rust experience, a score of 60 falls squarely into the 'Possible Fit' band, reflecting a plausible entry-level / junior match worth manual review.",
+    "strengths": [
+      "The posting explicitly hires at the Junior level ('1–3 years - Solid foundations, eagerness to grow, guided ownership') and accepts Remote (Argentina/LATAM) candidates.",
+      "The candidate has concrete project experience with Node.js, Python, and PostgreSQL, which directly match the required proficiencies in Node.js, Python, and relational databases."
+    ],
+    "gaps": [
+      "The posting explicitly lists 2+ years of professional experience as part of the junior tier criteria (Junior 1-3 years: Solid foundations, eagerness to grow, guided ownership), whereas the candidate has 0 formal professional YOE.",
+      "The role involves building backend services in Rust for Layer 1 and DEX, which is not demonstrated in the candidate profile."
+    ],
+    "ranked_at": "2026-08-15T09:28:27.927136",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_e34e165a-81fa-40d2-bd8a-4a56246617ec",
+    "created_at": "2026-08-15T09:29:04.357918",
+    "title": "Full-Stack Developer",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Technology & Product - NY State MLS",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$4K per month",
+    "key_technologies": [
+      "JavaScript",
+      "React",
+      "SQL",
+      "AWS",
+      "Linux"
+    ],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a technology-driven organization focused on buildi",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a technology-driven organization focused on building reliable, scalable, and user-friendly web applications that support business growth and exceptional user experiences. They operate in a collaborative environment where engineering, product, and design teams work closely together to transform ideas into impactful solutions. As they continue to expand their platform capabilities, they are seeking a Full Stack Developer who can take ownership of features across the full stack while contributing to technical excellence, performance optimization, and long-term scalability.\nRole Overview\nThe Full Stack Developer will be responsible for building, maintaining, and optimizing reliable, user-friendly web applications across the full stack, with a strong emphasis on backend development. The Full Stack Developer will work closely with designers and product teams to transform ideas into real features while leveraging modern tools to improve workflows, code quality, and execution efficiency. This role is ideal for someone who thrives in a collaborative environment, can independently manage projects, and consistently delivers clean, scalable, and maintainable code.\nLocation\nFully Remote | 9 AM - 5PM EST\nKey Responsibilities\nBackend Development\n- Build, maintain, and improve backend services using PHP and Laravel.\n- Design and optimize MySQL/MariaDB databases, including writing efficient SQL queries.\n- Develop backend features following MVC best practices, RESTful patterns, and scalable architecture principles.\n- Work within Linux environments, including server commands, shell scripts, cron jobs, and deployment tasks.\nFrontend Development\n- Build responsive user interfaces using JavaScript, Svelte, React, jQuery, HTML, and CSS.\n- Convert Figma designs into clean and functional user interfaces.\n- Enhance interactivity and maintain legacy frontend components when required.\nCode Quality & Collaboration\n- Write clean, maintainable, and well-documented code across the full stack.\n- Participate in code reviews using Git and GitHub.\n- Support version control best practices and collaborative development workflows.\n- Debug, troubleshoot, and optimize performance issues across frontend and backend systems.\n- Monitor and improve application performance to ensure smooth user experiences.\nQualifications Experience\n- 3+ years of experience in full-stack development or web development.\n- Strong proficiency with PHP, JavaScript, HTML, CSS, MySQL, and Linux servers.\n- Experience building and maintaining backend services using Laravel.\n- Experience designing and optimizing MySQL/MariaDB databases and SQL queries.\n- Experience working with REST APIs and MVC architecture.\n- Experience using Git and GitHub for version control and collaborative development.\n- Experience building responsive user interfaces from Figma design files.\n- Experience debugging, troubleshooting, and optimizing application performance.\n- Experience working within Linux environments, including server administration and deployment-related tasks.\n- Experience with Svelte and jQuery is preferred.\n- Experience with AWS, including services such as EC2, RDS, and S3, is a plus.\n- Experience with CI/CD pipelines or automated testing is a plus.\nQualifications Skills\n- Strong understanding of scalable architecture principles and backend development best practices.\n- Ability to write clean, maintainable, and well-documented code.\n- Strong performance optimization and troubleshooting capabilities.\n- Strong problem-solving and critical-thinking skills.\n- Ability to manage projects and features independently from development through deployment.\n- Ability to collaborate effectively with product, design, and engineering stakeholders.\n- Strong ownership mindset with the ability to manage features end-to-end.\n- Comfortable working in fast-paced environments with changing priorities.\n- Passion for continuous learning, process improvement, and knowledge sharing.\n- Strong awareness of UI/UX principles and user experience considerations.\nWhat Success Looks Like\n- High-quality backend features are delivered efficiently, securely, and at scale.\n- Product features are successfully launched through effective collaboration with designers and product teams.\n- Clean, maintainable, and well-reviewed code is consistently delivered.\n- Applications demonstrate strong performance through optimized queries, fast page loads, and stable infrastructure.\n- Modern tools and workflows are leveraged to improve development efficiency and output quality.\nOpportunity\nThis is an opportunity to join a high-impact engineering team where your contributions directly influence product development and user experience. The Full Stack Developer will have ownership of meaningful components across the technology stack while working closely with cross-functional teams to deliver scalable, high-quality solutions. This role offers the flexibility of remote work, significant technical ownership, and the opportunity to contribute to engineering best practices while helping shape the future direction of the platform.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/e34e165a-81fa-40d2-bd8a-4a56246617ec",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/e34e165a-81fa-40d2-bd8a-4a56246617ec/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "La vacante requiere explícitamente 3+ años de experiencia profesional en desarrollo full-stack/web, además de dominio sólido de PHP y Laravel, tecnologías que no forman parte del perfil del candidato (quien cuenta con 0 años de experiencia profesional). Según la política de ranking, un requisito explícito de 2+ años de experiencia profesional limita estrictamente el fit_score a un máximo de 39, a pesar de que hay cierta superposición en JavaScript/SQL/Linux a nivel personal.",
+    "strengths": [
+      "The posting allows remote candidates based in LATAM/Argentina with U.S. time zone availability, matching the candidate's geographic context.",
+      "The candidate has personal project experience with JavaScript, React, SQL, and Linux environments which intersect with secondary stack elements."
+    ],
+    "gaps": [
+      "The posting explicitly requires 3+ years of experience in full-stack development or web development; the candidate has 0 professional YOE.",
+      "The posting mandates strong proficiency with PHP and Laravel; the candidate profile does not demonstrate PHP or Laravel.",
+      "The posting requires experience building responsive user interfaces from Figma design files and working extensively with Linux servers/deployment tasks in a professional setting."
+    ],
+    "ranked_at": "2026-08-15T09:29:16.941308",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_2152077c-5ded-4254-8162-abf961ac4614",
+    "created_at": "2026-08-15T09:29:04.368106",
+    "title": "Product & Design",
+    "company": "Scale%20Army%20Careers",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Technology & Product",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nWe are always looking for talented Product Designers, UI/UX Desi",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nWe are always looking for talented Product Designers, UI/UX Designers, and Designers to join our growing network. This is not a specific job application but rather a pipeline for future opportunities. As part of our network, you’ll be considered for various roles with our clients. If you have experience in product design, UI/UX, or design in any capacity, we want to keep you in mind for upcoming roles.\nWhether you specialize in user experience, interface design, or product development, we believe in building long-term professional relationships that benefit both you and the clients we serve. We are looking for self-motivated, creative individuals who are passionate about creating intuitive designs that enhance user experiences.\nFeel free to explore other job openings on our job board https://jobs.ashbyhq.com/Scale%20Army%20Careers as well!\nKey Responsibilities:\n- Product Design: Develop user-centered design solutions that address client goals and provide an intuitive experience for users.\n- UI/UX Design: Create wireframes, prototypes, and high-fidelity designs that align with product requirements and enhance user satisfaction.\n- Collaboration: Work closely with product managers, engineers, and other stakeholders to bring designs to life.\n- Research & Testing: Conduct user research and usability testing to ensure designs meet the needs of the end user.\n- Branding & Aesthetics: Ensure consistency across design elements and align with brand guidelines for a cohesive visual identity.\n- Iterative Design: Continuously improve designs based on user feedback and data-driven insights.\nWhy Apply?\nIf you’re looking to be part of a talent pool for future Product Design, UI/UX, or Design roles, apply today! Even if we don’t have an immediate role for you, we’d love to keep in touch for when new opportunities arise. Be sure to check out other roles on our job board as well!\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/2152077c-5ded-4254-8162-abf961ac4614",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/2152077c-5ded-4254-8162-abf961ac4614/application",
+    "status": "ranked",
+    "score": 20,
+    "justification": "La posición está orientada puramente a Product Design y UI/UX Design, un dominio que el perfil del candidato rechaza explícitamente (\"no busca roles puramente comerciales, ventas, recruiting, HR, marketing o diseño/UI-UX\"). No hay alineación con el perfil técnico de desarrollo de software del candidato. Por lo tanto, se asigna un puntaje bajo de fit acorde a un dominio no compatible.",
+    "strengths": [
+      "The candidate is based in Argentina and meets the geographic and remote availability criteria for LATAM."
+    ],
+    "gaps": [
+      "The position focuses on Product Design, UI/UX Design, wireframing, and user research, whereas the candidate's profile is strictly focused on software engineering and backend development.",
+      "The candidate's profile explicitly states they do not seek roles focused on design/UI-UX."
+    ],
+    "ranked_at": "2026-08-15T09:29:16.941321",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_2032e4c3-fb67-424f-9f9a-0ee4f0527ee3",
+    "created_at": "2026-08-15T09:29:04.383480",
+    "title": "Magento Web Developer",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Technology & Product - Migali Industries",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$2.5K per month",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a growing e-commerce and distribution company spec",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a growing e-commerce and distribution company specializing in commercial equipment, serving both B2B and direct-to-consumer markets. They are actively investing in enhancing their digital presence and improving the online purchasing experience to better serve customers and drive continued growth.\nLOCATION\nFully remote | 9 AM - 5 PM EST\nROLE OVERVIEW\nThe Magento Web Developer will be responsible for the ongoing management, optimization, and visual improvement of the company’s Magento (Adobe Commerce) website. This is a hands-on role focused on continuous updates, UX/UI enhancements, and maintaining a high-performing e-commerce experience that supports conversion and usability.\nKEY RESPONSIBILITIES\nWebsite Management & Updates\n- Manage and update the Magento website on a daily basis\n- Upload and maintain product listings, descriptions, and visual content\n- Ensure site content is accurate, up-to-date, and aligned with business needs\nUX/UI & Design Improvements\n- Improve website layout, navigation flow, and overall user experience\n- Optimize product pages and landing pages to increase conversion rates\n- Identify and implement design enhancements that improve usability and performance\nDesign Execution\n- Create and edit visual assets such as banners and product visuals\n- Maintain consistency by working within existing brand guidelines\n- Collaborate with internal teams to execute design ideas\nCollaboration with Development Team\n- Work alongside developers on technical implementations\n- Execute light front-end changes independently when possible\n- Leverage tools, including AI-assisted tools, to improve efficiency\nPerformance & Optimization\n- Identify opportunities to improve site performance and user journey\n- Support ongoing conversion rate optimization (CRO) initiatives\nQUALIFICATIONS\nExperience\n- 2–5+ years of experience working with Magento (Adobe Commerce)\n- Experience managing and updating e-commerce websites on an ongoing basis\n- Experience in UX/UI design for e-commerce\nSkills\n- Strong understanding of e-commerce best practices\n- Proficiency in design tools such as Photoshop, Figma, or similar\n- Basic understanding of HTML/CSS (nice to have)\n- Familiarity with AI tools such as Claude or similar (nice to have)\n- Strong attention to detail with a focus on design and usability\n- Ability to work independently and take initiative\n- Strong problem-solving skills and ability to iterate quickly\n- Comfortable working in a fast-paced, evolving environment\nWHAT SUCCESS LOOKS LIKE\n- Consistent, high-quality website updates delivered without bottlenecks\n- Improved navigation, usability, and overall site design\n- Increased conversion rates and enhanced user experience\n- Strong collaboration with internal teams and developers\nOPPORTUNITY\nThis is an opportunity to take ownership of a core revenue-driving asset, the company’s website, and directly influence performance and user experience. You will play a key role in optimizing the digital experience while working in a collaborative, growth-focused environment.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/2032e4c3-fb67-424f-9f9a-0ee4f0527ee3",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/2032e4c3-fb67-424f-9f9a-0ee4f0527ee3/application",
+    "status": "ranked",
+    "score": 30,
+    "justification": "La vacante requiere explícitamente entre 2 y 5+ años de experiencia trabajando con Magento (Adobe Commerce), además de un enfoque principal en gestión diaria de e-commerce y diseño UX/UI. Dado que el candidato tiene 0 años de experiencia profesional y su perfil técnico está orientado al desarrollo backend, sistemas y software general (rechazando además roles enfocados en diseño/UI-UX), se aplica la política de experiencia (cap estricto en 39 por requerir 2+ años de experiencia profesional obligatorios) y la incompatibilidad de dominio funcional. Se califica con 30.",
+    "strengths": [
+      "The position is remote and open to candidates based in Argentina (LATAM), matching the candidate's location."
+    ],
+    "gaps": [
+      "The posting explicitly requires 2–5+ years of experience working with Magento (Adobe Commerce); the candidate has 0 professional YOE and no demonstrated Magento experience.",
+      "The role heavily emphasizes e-commerce daily operations, content management, and UX/UI design improvements, which depart from the candidate's core backend and software engineering interest."
+    ],
+    "ranked_at": "2026-08-15T09:29:16.941325",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_1a9876c8-b351-4a81-9fca-81d7526d28c7",
+    "created_at": "2026-08-15T09:29:04.487167",
+    "title": "Flight Operations Coordinator",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Operations - Ventura Air Services",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$1.5K – $2.5K per month",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a growing private aviation company committed to de",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a growing private aviation company committed to delivering safe, efficient, and exceptional flight operations. As the company continues expanding its operations, they are seeking a Flight Operations Coordinator to support the day-to-day execution of private aircraft operations by coordinating logistics, communicating with key stakeholders, and ensuring every flight operates smoothly within a fast-paced Part 135 environment.\nROLE OVERVIEW\nThe Flight Operations Coordinator will be responsible for coordinating daily flight logistics between pilots, passengers, Fixed Base Operators (FBOs), maintenance providers, brokers, hotels, ground transportation vendors, and internal teams. The Flight Operations Coordinator will support operational planning, vendor management, customer communication, documentation, and flight coordination while ensuring accurate, timely, and efficient execution of every flight. This role is ideal for someone with private aviation experience who thrives in fast-paced operational environments and enjoys solving logistical challenges while delivering exceptional customer service.\nLOCATION\nFully Remote | 9:00 AM - 5:00 PM EST\nKEY RESPONSIBILITIES\nFLIGHT COORDINATION & OPERATIONAL SUPPORT\n- Coordinate daily flight logistics with pilots, passengers, brokers, FBOs, ground transportation providers, hotels, and maintenance vendors.\n- Communicate flight schedules, operational updates, and itinerary changes to all stakeholders.\n- Support the Operations team in managing day-of-flight logistics.\n- Monitor operational timelines and proactively identify scheduling conflicts or disruptions.\nVENDOR MANAGEMENT\n- Coordinate hotels, rental vehicles, fuel providers, catering, and other operational vendors.\n- Assist with maintaining preferred vendor relationships and pricing.\n- Verify pilot expense reports and supporting documentation for accuracy and compliance.\n- Monitor vendor performance and escalate service issues when necessary.\nCUSTOMER & BROKER COMMUNICATION\n- Serve as the primary point of contact for brokers, passengers, pilots, and vendors throughout the flight coordination process.\n- Provide timely updates regarding delays, itinerary changes, and operational adjustments.\n- Deliver exceptional customer service in time-sensitive situations.\nDOCUMENTATION & OPERATIONAL COMPLIANCE\n- Maintain accurate flight records and operational documentation.\n- Ensure operational information is properly recorded within internal systems.\n- Support administrative tasks that contribute to efficient daily flight operations.\nTEAM COLLABORATION\n- Collaborate closely with Operations, Maintenance, Dispatch, and Executive Leadership.\n- Support process improvements that enhance operational efficiency and customer experience.\n- Contribute to a collaborative and solutions-oriented team environment.\nQUALIFICATIONS\nEXPERIENCE\n- 2–5 years of experience coordinating private aviation or Part 135 flight operations.\n- Prior experience supporting business aviation flight departments is required.\n- Experience coordinating with pilots, FBOs, maintenance providers, brokers, and third-party vendors.\n- Familiarity with FAA regulations and private aviation operational procedures is highly preferred.\n- Experience managing multiple flight operations simultaneously.\nSKILLS\n- Exceptional organizational and multitasking abilities.\n- Strong verbal and written communication skills.\n- Ability to prioritize multiple flights and competing operational demands.\n- Experience using flight operations or scheduling software.\n- Proficiency with Microsoft Office Suite.\n- Strong operational documentation and recordkeeping skills.\n- Excellent customer service and relationship management skills.\n- Strong problem-solving abilities and attention to detail.\n- Ability to remain calm under pressure in time-sensitive environments.\n- Professional, proactive, and highly accountable.\nWHAT SUCCESS LOOKS LIKE\n- Flight operations are coordinated accurately, efficiently, and with minimal disruption.\n- Pilots, passengers, brokers, and vendors consistently receive timely and professional communication.\n- Vendor relationships are effectively managed, resulting in reliable operational support.\n- Flight documentation, expense reporting, and operational records remain accurate and organized.\n- Internal teams rely on the Flight Operations Coordinator as a dependable operational partner.\n- Operational processes continue to improve through proactive communication and collaboration.\nOPPORTUNITY\nThis is an exciting opportunity to join a growing private aviation company where operational excellence is essential to every flight. As the Flight Operations Coordinator, you'll play a critical role in coordinating aircraft operations, supporting internal teams, and delivering an exceptional experience for passengers, pilots, and business partners while building a long-term career within the aviation industry.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/1a9876c8-b351-4a81-9fca-81d7526d28c7",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/1a9876c8-b351-4a81-9fca-81d7526d28c7/application",
+    "status": "ranked",
+    "score": 25,
+    "justification": "The candidate has 0 formal professional YOE and a technical/CS academic background, whereas this role explicitly requires 2–5 years of professional experience in private aviation and Part 135 flight operations. According to the ranking policy, a mandatory requirement of 2+ professional years of experience caps the fit score at 39 or below.",
+    "strengths": [
+      {
+        "text": "The candidate profile demonstrates strong problem-solving skills and self-directed learning capabilities applicable to complex operational environments."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The posting explicitly requires 2–5 years of experience coordinating private aviation or Part 135 flight operations."
+      },
+      {
+        "text": "Prior professional experience supporting business aviation flight departments is required."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:30:00.054277",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_abf88096-ca6d-4789-8589-a2d9e228ccb8",
+    "created_at": "2026-08-15T09:29:04.493564",
+    "title": "Maintenance Ops Coordinator",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Operations - Ventura Air Services",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$1.8K – $2.4K per month",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a growing private aviation company committed to ma",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a growing private aviation company committed to maintaining the highest standards of safety, reliability, and operational excellence. As the organization continues to expand, they are seeking a Maintenance Ops Coordinator to coordinate aircraft maintenance activities, ensure regulatory compliance, and maximize fleet availability through proactive maintenance planning and vendor coordination.\nROLE OVERVIEW\nThe Maintenance Ops Coordinator will be responsible for planning, coordinating, and tracking aircraft maintenance activities to ensure fleet reliability, regulatory compliance, and operational readiness. The Maintenance Ops Coordinator will collaborate closely with Maintenance, Flight Operations, vendors, and leadership to manage maintenance schedules, coordinate inspections and repair events, maintain maintenance records, and minimize aircraft downtime. This role is ideal for someone with experience supporting Part 135 or Part 91 operations who thrives in a fast-paced environment where organization, communication, and attention to detail are essential.\nLOCATION\nFully Remote | 9:00 AM - 5:00 PM EST\nKEY RESPONSIBILITIES\nMAINTENANCE PLANNING & SCHEDULING\n- Develop and maintain maintenance schedules based on aircraft utilization, flight hours, calendar intervals, and regulatory requirements.\n- Monitor upcoming inspections, maintenance events, and component replacement schedules to ensure continued airworthiness.\n- Coordinate scheduled maintenance activities to minimize aircraft downtime and operational disruption.\n- Build and manage detailed maintenance work packages for planned maintenance events.\nVENDOR & MAINTENANCE COORDINATION\n- Coordinate directly with maintenance facilities, repair stations, OEMs, and third-party vendors.\n- Obtain and evaluate maintenance estimates, repair proposals, and completion timelines.\n- Monitor maintenance progress and communicate status updates to internal stakeholders.\n- Escalate delays and work collaboratively with vendors to maintain maintenance schedules.\nRECORDS & REGULATORY COMPLIANCE\n- Maintain accurate aircraft maintenance records and supporting documentation.\n- Ensure compliance with FAA regulations, manufacturer recommendations, and company maintenance programs.\n- Verify maintenance records, logbook entries, and airworthiness documentation.\n- Support aircraft audits and regulatory inspections.\nOPERATIONAL SUPPORT\n- Partner with Flight Operations to coordinate aircraft availability and maintenance scheduling.\n- Track aircraft downtime and communicate operational impacts to internal teams.\n- Analyze maintenance trends and identify opportunities to improve fleet reliability and maintenance planning.\nQUALIFICATIONS\nEXPERIENCE\n- 3–5 years of experience in aircraft maintenance planning, maintenance control, or maintenance coordination.\n- Previous experience supporting Part 135 or Part 91 flight operations is strongly preferred.\n- Experience managing aircraft maintenance records, inspections, and regulatory compliance.\n- Familiarity with FAA maintenance regulations and aircraft documentation requirements.\n- Experience coordinating with maintenance vendors, repair stations, and OEMs.\nSKILLS\n- Strong organizational and project management skills.\n- Excellent attention to detail and documentation accuracy.\n- Ability to manage multiple aircraft maintenance events simultaneously.\n- Proficiency with Microsoft Office Suite.\n- Experience using aircraft maintenance tracking software such as CAMP, Corridor, Traxxall, or similar platforms.\n- Strong communication and stakeholder coordination skills.\n- Excellent analytical and problem-solving abilities.\n- Ability to prioritize competing maintenance activities while maintaining regulatory compliance.\n- Proactive and highly organized with exceptional follow-through.\nWHAT SUCCESS LOOKS LIKE\n- Aircraft maintenance events are planned and executed efficiently with minimal operational disruption.\n- Maintenance records remain accurate, complete, and audit-ready.\n- Aircraft consistently meet FAA regulatory compliance and airworthiness requirements.\n- Vendor relationships contribute to timely maintenance completion and reduced aircraft downtime.\n- Flight Operations and leadership receive accurate maintenance forecasts and proactive communication regarding aircraft availability.\n- Continuous improvements enhance maintenance planning, fleet reliability, and operational efficiency.\nOPPORTUNITY\nThis is an exciting opportunity to join a growing private aviation company where you'll play a critical role in ensuring fleet reliability, regulatory compliance, and operational readiness. As the Maintenance Ops Coordinator, you'll work closely with Maintenance, Flight Operations, vendors, and executive leadership while helping build scalable maintenance planning processes that support the company's continued growth.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/abf88096-ca6d-4789-8589-a2d9e228ccb8",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/abf88096-ca6d-4789-8589-a2d9e228ccb8/application",
+    "status": "ranked",
+    "score": 25,
+    "justification": "The candidate has 0 professional YOE and an academic background in computer science, whereas this role requires 3–5 years of specialized professional experience in aircraft maintenance planning and Part 135/91 operations. In accordance with the ranking policy, a mandatory 2+ professional YOE requirement caps the score at 39 or below.",
+    "strengths": [
+      {
+        "text": "The candidate demonstrates strong attention to detail and analytical skills through academic and project work."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The posting explicitly requires 3–5 years of experience in aircraft maintenance planning, maintenance control, or maintenance coordination."
+      },
+      {
+        "text": "Previous experience supporting Part 135 or Part 91 flight operations is required."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:30:00.054290",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_96151893-6617-49cd-b087-0c9a3bd1b182",
+    "created_at": "2026-08-15T09:29:04.556843",
+    "title": "Full Stack Developer (Python/JS)",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Technology & Product - Best and Basic",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$2.4K – $3.7K per month",
+    "key_technologies": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "Node",
+      "React",
+      "Vue",
+      "SQL",
+      "PostgreSQL"
+    ],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nAs a .NET/C# Software Developer, you will help build and evolve",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nAs a .NET/C# Software Developer, you will help build and evolve the platform while delivering meaningful customer-facing features. This is a hands-on role focused on shipping high-quality production code, improving system reliability, and contributing to the modernization of established legacy systems.\nA critical focus of this position is working with .NET/C# legacy systems. The ideal candidate is comfortable maintaining and extending older, established codebases while balancing development speed, code quality, scalability, and long-term maintainability.\nLOCATION\nFully Remote | 9:00 AM - 5:00 PM PST\nQUALIFICATIONS\nExperience\n- 3–6 years of software engineering experience.\n- Experience building and shipping production systems.\n- Hands-on experience maintaining and extending established  legacy systems.\n- Experience working with SQL Server as a primary database.\n- Experience developing and supporting customer-facing software features.\n- Experience debugging production systems and resolving technical issues.\nSKILLS\n- Demonstrates strong .NET and C# development capabilities, particularly when maintaining, debugging, and extending older, established codebases.\n- Has strong SQL Server experience and can work effectively with the database within production software environments.\n- Demonstrates strong debugging and problem-solving abilities when working with legacy systems and production issues.\n- Can build production-quality software across frontend and backend systems while balancing speed, reliability, scalability, and maintainability.\n- Is comfortable contributing to system design and architecture with guidance while identifying opportunities to improve performance and system health.\n- Can take ownership of features or services throughout the development lifecycle, from implementation through production.\n- Uses AI development tools such as Copilot, Cursor, Claude, ChatGPT, or similar platforms to improve productivity and development workflows.\n- Communicates progress clearly and contributes effectively to code reviews and established engineering standards.\nNICE TO HAVE\n- Experience with JavaScript or TypeScript, particularly Vue/Nuxt, React/Next, or Node.js.\n- Experience working within e-commerce environments such as Shopify, BigCommerce, or Magento, including exposure to order logic and tracking events.\n- Knowledge of logistics or shipping concepts such as dimensional sizing, customs, and duties.\n- Experience working with fulfillment systems or processes.\n- Experience with PostgreSQL or MySQL.\nMINDSET & ATTRIBUTES\n- Ownership-driven and pragmatic.\n- Comfortable working across both modern and legacy systems.\n- Focused on delivering reliable, real-world impact.\n- Strong problem solver who can operate effectively within established systems.\n- Focused on quality while maintaining practical delivery speed.\nWHAT SUCCESS LOOKS LIKE\n- High-quality customer-facing features are delivered consistently.\n- Key services or components are independently owned.\n- System stability improves and bugs are reduced.\n- Meaningful contributions are made toward modernizing legacy systems.\n- Performance, scalability, reliability, and overall system health continue to improve.\nOPPORTUNITY\nThis role provides the opportunity to make a direct impact on an established software platform by delivering customer-facing features, improving reliability, and contributing to the modernization of legacy systems. You will work hands-on across the platform while taking increasing ownership of features, services, and technical improvements.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/96151893-6617-49cd-b087-0c9a3bd1b182",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/96151893-6617-49cd-b087-0c9a3bd1b182/application",
+    "status": "ranked",
+    "score": 30,
+    "justification": "Although the candidate has backend and systems project experience, this role explicitly requires 3–6 years of software engineering experience and hands-on production work with .NET/C# legacy systems and SQL Server. With 0 formal professional YOE and missing the core .NET stack requirements, the mandatory 2+ YOE requirement applies a strict score cap of 39 or below per the ranking policy.",
+    "strengths": [
+      {
+        "text": "The candidate has project experience in backend development, databases (PostgreSQL/MongoDB), and version control, showing basic alignment with software engineering workflows."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The posting explicitly requires 3–6 years of software engineering experience and hands-on experience maintaining and extending established legacy systems in .NET/C#."
+      },
+      {
+        "text": "The candidate profile does not demonstrate professional experience with .NET/C# or SQL Server enterprise environments."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:30:00.054295",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_ramp_f564dcf9-9390-4a3f-896f-8047a5086040",
+    "created_at": "2026-08-15T09:30:36.592244",
+    "title": "Mobile Engineer, Android",
+    "company": "ramp",
+    "location": "New York, NY (HQ); Remote (Canada); San Francisco, CA; Remote (US)",
+    "work_mode": "Hybrid",
+    "commitment": "Full-time",
+    "department": "Engineering - Mobile",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$189K - $330K",
+    "key_technologies": [
+      "Python",
+      "TypeScript",
+      "React",
+      "SQL"
+    ],
+    "main_requirements": [],
+    "summary": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books",
+    "raw_text": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books.\nThe problems are high-stakes, data-dense, and unforgiving.\nWe hire people with high agency and high urgency. We look for slope over intercept. We care less about where you trained and more about what you’ve built. At Ramp, everyone is a builder who owns problems end to end and makes consequential decisions that shape the outcome.\nThe median Ramp customer saves 5% and grows revenue 16% in their first year – far in excess of businesses operating without Ramp. We believe every ambitious company deserves the same.\nIf you want to build systems that directly shape how companies move and manage billions, Ramp is the place to do it.\nABOUT THE ROLE\nAs an Android Engineer at Ramp, you’ll enhance our successful and rapidly growing mobile app. You will improve the core platform that thousands of businesses rely on while also building the future of automated finance by integrating AI and intelligent agents into the mobile experience. This is a chance to grow your skills on a proven product and define the next generation of fintech.\nCheck out our Engineering Blog https://engineering.ramp.com/ for more on our tech stack, mission and values!\nWHAT YOU’LL DO\n- Design, build, and launch new products to Ramp’s Android app\n- Help establish engineering processes, tools, and systems that allow us to scale the code base and productivity\n- Conduct code reviews and set engineering standards\n- Work with Product and Design to identify key features that will make the app successful\n- Work alongside Product and other cross-functional teams to understand customer feedback and continuously improve our product\nWHAT YOU NEED\n- Minimum 1 year of experience in mobile development\n- Proficiency in Kotlin and Compose for Android development\n- Experience launching at least one mobile app and/or several features that reached a large number of users\n- Desire to work in a fast-paced environment, continuously grow, and master your craft\n- Strong understanding of mobile design patterns and best practices\nNICE TO HAVES\n- Experience with web apps (React, TypeScript)\n- Experience with backend technologies (Python, Flask, SQL, OpenAPI)\n- Experience with our mobile stack in addition to Kotlin and Compose: MVVM, coroutines, flows, gradle, OpenAPI & Buildkite\n- Experience managing apps in the Google Play Console\nBENEFITS AVAILABLE TO ALL FULL-TIME RAMP EMPLOYEES (GLOBAL)\n- Flexible PTO\n- Centralized home-office equipment ordering\n- Health and wellness stipend\n- Budget for intra-office travel\n- Weekly coffee stipend\nUNITED STATES\n- 100% medical, dental & vision insurance coverage for you, with partial coverage for dependents\n- One Medical annual membership\n- 401(k), including employer match on contributions made while employed by Ramp\n- Fertility HRA (up to $10,000 per year)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay\n- Pet insurance\n- In-office perks: lunch, snacks, drinks, and more\n- Relocation expense coverage to NYC or SF (if needed)\nCANADA\n- Group medical, dental, and vision coverage through Sun Life\n- Life, AD&D, and disability coverage\n- Fertility drug coverage (up to $4,000 lifetime)\n- Group Retirement Plan with employer match (RRSP + DPSP)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay, with additional time available at reduced pay\n- Employee Assistance Program and virtual care through Lumino Health\nUNITED KINGDOM\n- Private medical insurance through Freedom Elite\n- Virtual GP and at-home care via eMed x Livi\n- Workplace pension through Penfold, with salary sacrifice option\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay with additional time available at reduced pay\nREFERRAL INSTRUCTIONS\nIf you are being referred for the role, please contact that person to apply on your behalf.\nOTHER NOTICES\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nBeware of recruiting scams: Ramp will only contact you through official @Ramp.com http://Ramp.com email addresses and will never ask for payment or sensitive personal information during the hiring process.\nRamp",
+    "language": "en",
+    "source_page": "Ashby (ramp)",
+    "source_url": "https://jobs.ashbyhq.com/ramp/f564dcf9-9390-4a3f-896f-8047a5086040",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/ramp/f564dcf9-9390-4a3f-896f-8047a5086040/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The candidate is an advanced CS student with 0 formal professional years of experience, whereas this role explicitly requires a minimum of 1 year of experience in mobile development. Additionally, the core stack (Kotlin and Compose for Android) is not demonstrated in the candidate profile, whose stack centers around Python, TypeScript/Node.js, C/C++, and SQL. Although the posting lists some nice-to-haves related to web and backend (React, TypeScript, Python, SQL), the primary focus of the role is Android mobile engineering and the 1-year experience requirement constitutes a mandatory barrier for a 0-YOE candidate under the current ranking policy.",
+    "strengths": [
+      {
+        "text": "The posting lists nice-to-have exposure to web and backend technologies such as Python, TypeScript, and SQL, which align with skills present in the candidate's profile."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The candidate has 0 formal professional YOE, whereas the posting requires a minimum of 1 year of experience in mobile development."
+      },
+      {
+        "text": "The role is specifically for Android development (Kotlin and Compose), while the candidate's primary profile focuses on backend, systems, Python, TypeScript, and C/C++, without demonstrating mobile or Kotlin/Compose development experience."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:30:47.944320",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_ramp_4859cd5e-f2a9-44d7-81f7-8bfc0e62369f",
+    "created_at": "2026-08-15T09:30:36.604071",
+    "title": "Mobile Engineer, iOS",
+    "company": "ramp",
+    "location": "New York, NY (HQ); Remote (Canada); San Francisco, CA; Remote (US)",
+    "work_mode": "Hybrid",
+    "commitment": "Full-time",
+    "department": "Engineering - Software Engineering - Industry",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$189K - $330K",
+    "key_technologies": [
+      "Python",
+      "TypeScript",
+      "React",
+      "SQL"
+    ],
+    "main_requirements": [],
+    "summary": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books",
+    "raw_text": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books.\nThe problems are high-stakes, data-dense, and unforgiving.\nWe hire people with high agency and high urgency. We look for slope over intercept. We care less about where you trained and more about what you’ve built. At Ramp, everyone is a builder who owns problems end to end and makes consequential decisions that shape the outcome.\nThe median Ramp customer saves 5% and grows revenue 16% in their first year – far in excess of businesses operating without Ramp. We believe every ambitious company deserves the same.\nIf you want to build systems that directly shape how companies move and manage billions, Ramp is the place to do it.\nABOUT THE ROLE\nAs an iOS Engineer at Ramp, you’ll enhance our successful and rapidly growing mobile app. You will improve the core platform that thousands of businesses rely on while also building the future of automated finance by integrating AI and intelligent agents into the mobile experience. This is a chance to grow your skills on a proven product and define the next generation of fintech.\nCheck out our Engineering Blog https://engineering.ramp.com/ for more on our tech stack, mission, and values!\nWHAT YOU’LL DO\n- Design, build, and launch new products to Ramp’s iOS app.\n- Help establish engineering processes, tools, and systems that allow us to scale the code base and productivity.\n- Conduct code reviews and set engineering standards.\n- Work with Product and Design to identify key features that will make the app successful.\n- Work alongside Product and other cross-functional teams to understand customer feedback and continuously improve our product.\nWHAT YOU NEED\n- Minimum 1 year of experience in mobile development.\n- Proficiency in Swift and SwiftUI for iOS development.\n- Experience launching at least one mobile app and/or several features that reached a large number of users.\n- Desire to work in a fast-paced environment, continuously grow, and master your craft.\n- Strong understanding of mobile design patterns and best practices.\nNICE TO HAVES\n- Experience with web apps (React, TypeScript).\n- Experience with backend technologies (Python, Flask, SQL, OpenAPI).\n- Experience with our mobile stack in addition to Swift and SwiftUI: Swift Concurrency, The Composable Architecture, Bazel, OpenAPI & Buildkite\n- Experience managing apps with App Store Connect\nBENEFITS AVAILABLE TO ALL FULL-TIME RAMP EMPLOYEES (GLOBAL)\n- Flexible PTO\n- Centralized home-office equipment ordering\n- Health and wellness stipend\n- Budget for intra-office travel\n- Weekly coffee stipend\nUNITED STATES\n- 100% medical, dental & vision insurance coverage for you, with partial coverage for dependents\n- One Medical annual membership\n- 401(k), including employer match on contributions made while employed by Ramp\n- Fertility HRA (up to $10,000 per year)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay\n- Pet insurance\n- In-office perks: lunch, snacks, drinks, and more\n- Relocation expense coverage to NYC or SF (if needed)\nCANADA\n- Group medical, dental, and vision coverage through Sun Life\n- Life, AD&D, and disability coverage\n- Fertility drug coverage (up to $4,000 lifetime)\n- Group Retirement Plan with employer match (RRSP + DPSP)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay, with additional time available at reduced pay\n- Employee Assistance Program and virtual care through Lumino Health\nUNITED KINGDOM\n- Private medical insurance through Freedom Elite\n- Virtual GP and at-home care via eMed x Livi\n- Workplace pension through Penfold, with salary sacrifice option\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay with additional time available at reduced pay\nREFERRAL INSTRUCTIONS\nIf you are being referred for the role, please contact that person to apply on your behalf.\nOTHER NOTICES\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nBeware of recruiting scams: Ramp will only contact you through official @Ramp.com http://Ramp.com email addresses and will never ask for payment or sensitive personal information during the hiring process.\nRamp",
+    "language": "en",
+    "source_page": "Ashby (ramp)",
+    "source_url": "https://jobs.ashbyhq.com/ramp/4859cd5e-f2a9-44d7-81f7-8bfc0e62369f",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/ramp/4859cd5e-f2a9-44d7-81f7-8bfc0e62369f/application",
+    "status": "ranked",
+    "score": 38,
+    "justification": "The position is for an iOS Engineer at Ramp, which explicitly mandates a minimum of 1 year of experience in mobile development, proficiency in Swift/SwiftUI, and experience launching a mobile app or features reaching many users. The candidate is an advanced CS student with 0 professional YOE and no demonstrated experience in mobile development, Swift, or SwiftUI. Although the candidate has general software engineering skills in TypeScript, Python, and React (listed as nice-to-haves), the core technical requirements and mandatory mobile experience represent major gaps, resulting in a low fit score according to ranking policy guidelines for missing mandatory experience and core stack.",
+    "strengths": [
+      "The candidate profile demonstrates familiarity with some nice-to-have secondary technologies mentioned in the posting, specifically TypeScript, React, Python, and SQL, through personal and academic projects."
+    ],
+    "gaps": [
+      "The posting explicitly requires a minimum of 1 year of experience in mobile development, which the candidate does not have (0 professional YOE).",
+      "The posting requires proficiency in Swift and SwiftUI for iOS development, technologies not demonstrated in the candidate profile.",
+      "The posting requires experience launching at least one mobile app and/or several features that reached a large number of users, which is not present in the candidate profile."
+    ],
+    "ranked_at": "2026-08-15T09:31:03.491498",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_ramp_95f450a1-0d38-4d58-9aac-9d7e655adc36",
+    "created_at": "2026-08-15T09:30:36.695075",
+    "title": "Security Engineer, Privacy",
+    "company": "ramp",
+    "location": "New York, NY (HQ); San Francisco, CA; Remote (US)",
+    "work_mode": "Hybrid",
+    "commitment": "Full-time",
+    "department": "Engineering - Backend",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$184.8K - $374.9K",
+    "key_technologies": [
+      "Python",
+      "React",
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books",
+    "raw_text": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books.\nThe problems are high-stakes, data-dense, and unforgiving.\nWe hire people with high agency and high urgency. We look for slope over intercept. We care less about where you trained and more about what you’ve built. At Ramp, everyone is a builder who owns problems end to end and makes consequential decisions that shape the outcome.\nThe median Ramp customer saves 5% and grows revenue 16% in their first year – far in excess of businesses operating without Ramp. We believe every ambitious company deserves the same.\nIf you want to build systems that directly shape how companies move and manage billions, Ramp is the place to do it.\nAs Ramp’s founding Privacy engineer, you will build a privacy program that powers Ramp’s growth while earning trust from customers and prospects.\nWhat You’ll Do\n- Build privacy-focused application primitives and integrate them into our existing products\n- Partner with other engineering teams to design and deploy solutions which are inherently privacy-centric and secure\n- Improve, implement, and deploy data retention and anonymization strategies across our environment\n- Track shifting legal standards (alongside with Ramp’s Privacy Counsel) and update Ramp systems and processes to match\nWhat You Need\n- Minimum of 4 years of experience building software\n- Minimum of 2 years of experienced focused on platform, privacy, and/or security\n- Desire to work in a fast-paced environment, continuously grow, and master your craft\n- Ability to turn business and product ideas into engineering solutions\nNice-to-Haves\n- Working knowledge of data-protection legal requirements\n- Experience with Python (Flask), React, and AWS (ECS, as well as other core services)\nBENEFITS AVAILABLE TO ALL FULL-TIME RAMP EMPLOYEES (GLOBAL)\n- Flexible PTO\n- Centralized home-office equipment ordering\n- Health and wellness stipend\n- Budget for intra-office travel\n- Weekly coffee stipend\nUNITED STATES\n- 100% medical, dental & vision insurance coverage for you, with partial coverage for dependents\n- One Medical annual membership\n- 401(k), including employer match on contributions made while employed by Ramp\n- Fertility HRA (up to $10,000 per year)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay\n- Pet insurance\n- In-office perks: lunch, snacks, drinks, and more\n- Relocation expense coverage to NYC or SF (if needed)\nCANADA\n- Group medical, dental, and vision coverage through Sun Life\n- Life, AD&D, and disability coverage\n- Fertility drug coverage (up to $4,000 lifetime)\n- Group Retirement Plan with employer match (RRSP + DPSP)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay, with additional time available at reduced pay\n- Employee Assistance Program and virtual care through Lumino Health\nUNITED KINGDOM\n- Private medical insurance through Freedom Elite\n- Virtual GP and at-home care via eMed x Livi\n- Workplace pension through Penfold, with salary sacrifice option\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay with additional time available at reduced pay\nREFERRAL INSTRUCTIONS\nIf you are being referred for the role, please contact that person to apply on your behalf.\nOTHER NOTICES\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nBeware of recruiting scams: Ramp will only contact you through official @Ramp.com http://Ramp.com email addresses and will never ask for payment or sensitive personal information during the hiring process.\nRamp",
+    "language": "en",
+    "source_page": "Ashby (ramp)",
+    "source_url": "https://jobs.ashbyhq.com/ramp/95f450a1-0d38-4d58-9aac-9d7e655adc36",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/ramp/95f450a1-0d38-4d58-9aac-9d7e655adc36/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "La vacante requiere un mínimo de 4 años de experiencia construyendo software y al menos 2 años enfocados en platform, privacy y/o seguridad. El perfil del candidato es de nivel junior / entry level (0 años de experiencia profesional formal), lo cual constituye una barrera explícita según la política de ranking (requiere 2+ años profesionales obligatorios, limitando el puntaje a <= 39). A pesar de que se listan tecnologías afines como Python y React en nice-to-haves, la exigencia de experiencia profesional en seguridad/privacidad excede significativamente el nivel actual del candidato.",
+    "strengths": [
+      "El candidato cuenta con proyectos académicos y personales utilizando Python y desarrollo backend, tecnologías mencionadas en los nice-to-haves del puesto.",
+      "El candidato es estudiante avanzado de Ciencias de la Computación, alineándose con la formación técnica valorada."
+    ],
+    "gaps": [
+      "The posting explicitly requires a minimum of 4 years of experience building software.",
+      "The posting explicitly requires a minimum of 2 years of experience focused on platform, privacy, and/or security."
+    ],
+    "ranked_at": "2026-08-15T09:31:23.503157",
+    "user_notes": null
+  },
+  {
+    "id": "chainlink_software_engineer_i_ccip",
+    "title": "Software Engineer I, CCIP",
+    "company": "Chainlink Labs",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "raw_text": "Chainlink Labs\nSoftware Engineer I, CCIP\nLocation\nCharlotte; Argentina; Belgium; Brazil; Canada; Colombia; Greece; Ireland; Las Vegas; Mexico; Netherlands; Phoenix; Poland; Portugal; Spain; Tampa; United Kingdom\nEmployment Type\nFull time\nLocation Type\nRemote\nDepartment\nEngineering\nOverview\nAbout Chainlink\nChainlink is the industry-standard oracle platform bringing the capital markets onchain and powering the majority of decentralized finance (DeFi).\nAbout The Role\nThe CCIP Protocol team is hiring a Software Engineer to design and maintain the services that coordinate fast, fault-tolerant cross-chain transactions under adversarial conditions.\nRequirements\nDemonstrated backend engineering experience using Go, Rust, or TypeScript.\nExperience delivering software within crypto projects or remote-first engineering organizations.\nProven ability to design distributed systems with security and reliability as foundational engineering principles.\nBuilt or maintained backend systems that operate in production with a focus on resiliency and operational excellence.\nPreferred Requirements\nDemonstrated knowledge of DeFi protocols and the broader decentralized application ecosystem.\nExperience deploying or operating services using cloud infrastructure and tooling such as containerized workloads and public cloud platforms.\nApply for this Job: https://jobs.ashbyhq.com/chainlink-labs/8485e325-111f-4370-b3c6-0ed95872144f",
+    "score": 45,
+    "justification": "The role is an entry-level 'Software Engineer I' position and is remote in Argentina, which matches the candidate's geographic preference and seniority level. However, the posting requires production-grade backend experience in distributed systems, crypto projects, and Go/Rust/TypeScript, which exceeds the candidate's current academic and project-based background (0 professional YOE). Therefore, it is evaluated as a Weak/Possible Fit with a score of 45.",
+    "strengths": [
+      "The role is explicitly junior ('Software Engineer I'), matching the candidate's target seniority.",
+      "The location is Remote in Argentina, matching the candidate's geographic requirements.",
+      "The posting accepts TypeScript, aligning with the candidate's project experience in Node.js/TypeScript."
+    ],
+    "gaps": [
+      "The posting requires backend engineering experience using Go, Rust, or TypeScript (candidate has Node.js/TypeScript project experience, but no professional Go/Rust or advanced TypeScript backend production experience).",
+      "The posting requires production-grade experience designing and maintaining distributed systems under adversarial conditions.",
+      "The posting requests experience delivering software within crypto projects or remote-first engineering organizations."
+    ],
+    "status": "ranked",
+    "ranked_at": "2026-08-15T09:38:40.744313"
   }
 ]
