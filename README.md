@@ -11,79 +11,98 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
 ## 🏛️ System Architecture (6 Master Stages)
 
 ```text
-                     Job Posting / Link / Portal API Query
+                     User Input / Link / Portal Query
                                     │
                                     ▼
-           [STAGE 1: DATA ACQUISITION (API / Web Scraping)]
-           - Fetches API (e.g. Greenhouse) or receives raw text.
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 1. Unified Ingestion Layer (`src/fetchers/`)                │
+       │ - greenhouse.py: API -> List[JobDict] (0 LLM tokens)        │
+       │ - exactas.py: Scrapes UBA -> calls job_parser_agent         │
+       │ - linkedin.py: Fetches HTML -> calls job_parser_agent       │
+       │ - manual.py: Ingests raw text -> calls job_parser_agent     │
+       │ -> Output Contract: Standardized List[JobDict]              │
+       └────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
-           [STAGE 2: PRE-PARSE HARD FILTER (Python / 0 Tokens)]
-           - Filters by `title_blacklist.md`, `department_blacklist.md`, and `location_filters.json`.
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 2. Pre-Filtro Duro Inicial (Pre-LLM Python / 0 Tokens)      │
+       │ (title_blacklist, department_blacklist, location_filters)   │
+       │ - Record raw positions (total_raw) and discarded count      │
+       │ - Cache retained jobs in memory (`LAST_FETCHED_JOBS_CACHE`) │
+       └────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
-            [STAGE 3: HYBRID PARSING & IN-MEMORY STRUCTURING]
-            - API Board jobs: Pre-structured in Python memory (0 LLM tokens).
-            - Unparsed raw text / links: Dynamically parsed via `job_parser_agent` (LLM).
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 3. In-Memory Structured Normalization                       │
+       │ - Confirms normalized JobDicts in memory with stable IDs    │
+       └────────────────────────────┬────────────────────────────────┘
                                     │
-                        [STAGE 4: POST-PARSE FILTER, INVARIANT DEDUPE & OPTIONAL CAPPING (Python / 0 Tokens)]
-             - Filters by `blacklist_roles.md`, `blacklist_seniority.md`, and `location_filters.json`.
-             - Pre-Rank Invariant Dedupe: If `job.id` already exists in `jobs.json` -> Omitted automatically before capping (0 LLM tokens).
-             - Optional Board Capping: If `max_jobs_per_board` is configured (defaults to `null`), limits only new unranked jobs.
-                                     │
-                                     ▼
-             [STAGE 5: BATCH RANKING & TIMER VIA LLM SUBAGENT (`job_ranker_agent`)]
-             - Registers transient `set_ranking_batch_cache(chunk)` in Python memory.
-             - Splits retained unranked jobs into chunks of size k = min(5, ceil(R / 4)).
-             - Pauses `delay_between_batches_seconds` between chunk ranking calls.
-             - Each chunk is evaluated by `job_ranker_agent` in a single subagent turn.
-             - Clears `clear_ranking_batch_cache()` in `finally` block post-chunk.
-                                     │
-                                     ▼
-              [STAGE 6: DETERMINISTIC MERGE & SAVE TO `jobs.json`]
-              - `save_ranked_jobs_batch` merges 100% complete job from active batch cache with LLM evaluation fields (`score`, `justification`, `strengths`, `gaps`, `status: "ranked"`).
-              - Rejects IDs not in active batch cache or IDs that already exist in `jobs.json` as defense-in-depth.
-              - `run_job_processing_pipeline` re-hydrates in-memory job objects with real scores and justifications from `jobs.json`.
+                                    ▼
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 4. Post-Parse Filter, Invariant Dedupe & Board Cap          │
+       │ (blacklist_roles, blacklist_seniority, location, max_years) │
+       │ - Post-Parse: Discards forbidden roles & seniority levels.  │
+       │ - Semantic YOE Filter: Drops if numeric YOE > max_years.    │
+       │ - Dedupe: Skips jobs already in jobs.json (0 LLM tokens).   │
+       │ - Optional Cap: max_jobs_per_board limits new positions.    │
+       └────────────────────────────┬────────────────────────────────┘
+                                    │
+                ┌───────────────────┴───────────────────┐
+                ▼                                       ▼
+       [Filter Fail / In jobs.json / Capped]     [New Vacancy & Passes Filters]
+                │                                       │
+       Discard / Skip                           5. Batch Ranking via ADK `job_ranker_agent`
+       (0 ranking tokens, 0 writes)                - Sets `set_ranking_batch_cache(chunk)`
+                                                   - Chunk size: k = min(5, ceil(R/4))
+                                                   - Delay between batches: delay_between_batches_seconds
+                                                   - Clears `clear_ranking_batch_cache()` in `finally`
+                                                        │
+                                                        ▼
+                                                6. Deterministic Merge & Save to jobs.json
+                                                   - `save_ranked_jobs_batch` merges memory JobDict
+                                                     with ranker evaluation (score, justification, strengths, gaps).
+                                                   - Validates ID belongs to active batch and is new.
+                                                   - Persists complete record to `jobs.json`.
+                                                        │
+                                                        ▼
+                                                Deliver Markdown Report
 ```
 
 ---
 
 ## ✨ Key Features
 
-1. **Extreme Token Efficiency (Dual Deterministic Filters & Hybrid Parsing)**:
-   - **Pre-Parse**: Discards unapproved job titles, departments, or countries directly from API metadata without calling LLMs.
-   - **Hybrid Stage 3 Parsing**: Reuses pre-structured dicts from API fetchers at 0 tokens, while seamlessly routing raw text or unparsed job postings through `job_parser_agent` to extract structured fields (`title`, `company`, `seniority`, `key_technologies`) via LLM before filtering.
-   - **Post-Parse**: Discards jobs with incompatible seniority (`Senior`, `Lead`) or non-technical roles (`Sales`, `Recruiter`) in Python before LLM ranking.
+1. **Unified Ingestion Layer (`src/fetchers/`)**:
+   - Encapsulates portal-specific logic into dedicated modules (`greenhouse.py`, `exactas.py`, `linkedin.py`, `manual.py`).
+   - Every fetcher enforces a standardized output contract returning a `List[JobDict]`, ensuring all downstream stages receive clean, uniform data.
+   - Fetchers are the **sole callers** of `job_parser_agent`.
 
-2. **Automated Pipeline Execution & Board Capping**:
-   - Executes filtering and batch ranking automatically without requiring manual chat confirmation pauses.
-   - `max_jobs_per_board` in `profile/pipeline_config.json` limits the maximum number of jobs evaluated per query to prevent token consumption spikes.
-   - `delay_between_batches_seconds` adds a configurable timer delay between batch ranking LLM calls to prevent API rate limiting (`429`).
+2. **Dual Deterministic Filters & Zero Token Waste**:
+   - **Stage 2 Pre-Parse Filter**: Discards unapproved job titles, departments, or non-target locations directly from raw API metadata with **0 LLM tokens**.
+   - **Stage 4 Post-Parse Filter**: Discards incompatible seniority (`Senior`, `Lead`), excluded roles (`Sales`, `Recruiter`), and positions exceeding `max_years_experience` in Python before ranking.
 
-3. **Standardized Platform IDs & Invariant Deduplication Architecture**:
-   - **Canonical ID Scheme**: Enforces platform-specific IDs (`greenhouse_{board}_{id}`, `exactas_{num}`, `linkedin_{id}`, and deterministic MD5 hashes `manual_{md5(company:title)[:8]}`).
-   - **Invariant Deduplication**: Jobs present in `jobs.json` are recognized as previously analyzed and skipped automatically from automatic batch ranking (0 LLM tokens).
-   - **Dual Ranking Tools**: `save_ranked_jobs_batch` handles automatic batch pipeline merging & persistence; `update_job_ranking_json` handles manual single-job updates requiring explicit `job_id`.
+3. **Semantic Experience & Seniority Extraction (No Regex False Positives)**:
+   - Years of required experience (`years_of_experience`) and seniority level are extracted semantically by `job_parser_agent` using natural language understanding, eliminating fragile regex heuristics that confuse company history/tenure with job requirements.
+   - The Stage 4 filter only drops positions when an explicit numeric value exceeds `max_years_experience`.
 
-4. **In-Memory Caching & Quota Limit Prevention**:
-   - `LAST_FETCHED_JOBS_CACHE` stores full job dictionaries in Python memory.
-   - The agent transmits short selection strings (e.g. `job_items_or_selection="todas"`), preventing giant JSON payloads in prompts.
+4. **Modular Sequential Pipeline Architecture (`src/subagents/job_pipeline/`)**:
+   - Decomposed into single-responsibility submodules: `single_pipeline.py`, `multi_pipeline.py`, `adk_clients.py`, `config.py`, `state.py`, `scope_parser.py`, and `reporter.py`.
+   - Propagates 8 explicit telemetry metrics across all runs: `total_raw`, `pre_discarded_count`, `post_discarded_count`, `deduped_count`, `capped_count`, `sent_to_ranker_count`, `successfully_ranked_count`, and `ranking_errors_count`.
 
-4. **Deterministic Job Board Registry (`profile/board_urls.json`)**:
-   - Persistent registry of job board URLs sorted deterministically: **never analyzed first**, followed by least recently analyzed.
-   - Formatted output with relative Spanish timestamps (*"Hoy (06/08/2026 a las 04:02 hs)"*, *"Nunca"*).
+5. **Automated Pipeline Execution & Batch Throttling**:
+   - Automatically executes filtering and batch ranking without requiring chat confirmation pauses.
+   - `max_jobs_per_board` in `profile/pipeline_config.json` limits maximum positions per query.
+   - `delay_between_batches_seconds` and `delay_between_boards_seconds` enforce configurable pauses to prevent API rate limits (`429`).
 
-5. **Extensive Vacancy Inspection & Cascading Direct Application Links (`get_job_details`)**:
-   - When inspecting any stored position, the agent retrieves all structured fields, fit rationale, strengths, gaps, and **direct application URLs (`source_url`) and application instructions (`application_method`)** using a robust 4-level fallback (email contact, explicit `source_url`, HTTP URLs in raw text, or canonical URL reconstruction for Greenhouse, LinkedIn, Exactas, and registered boards).
+6. **Standardized Platform IDs & Invariant Deduplication**:
+   - **Canonical ID Scheme**: Deterministic IDs (`greenhouse_{board}_{id}`, `exactas_{num}`, `linkedin_{id}`, and MD5 hashes `manual_{md5(company:title)[:8]}`).
+   - **Invariant Deduplication**: Existing positions in `jobs.json` are skipped automatically before ranking slots are consumed.
 
-6. **Ranker Field Immutability & Deterministic Merge**:
-   - `job_ranker_agent` evaluates fit score (0-100), justification, strengths, and gaps. Core source fields (`title`, `company`, `location`, `work_mode`, `commitment`, `raw_text`, `source_url`) are preserved from original extraction via deterministic Python merge in `save_ranked_jobs_batch`.
-
-7. **Status & Application Lifecycle Management**:
-   - Allows classifying jobs as descalificadas (`disqualified`) or aplicadas (`applied`), deleting positions, or reverting recent actions (`revert_last_job_action`).
+7. **Extensive Vacancy Inspection & Cascading Direct Application Links (`get_job_details`)**:
+   - Retrieves full structured job data, fit rationale, strengths, gaps, and **direct application URLs (`source_url`) and application instructions (`application_method`)** using a robust 4-level fallback.
 
 8. ⛔ **Zero Mock Data Policy**:
-   - Strict prohibition against creating or persisting mock or synthetic test jobs (`test_adk_rank_1`) in `jobs.json`.
+   - Strict prohibition against creating or persisting synthetic or test jobs (`test_adk_rank_1`) in `jobs.json`.
 
 ---
 
@@ -107,18 +126,39 @@ jobbud/
 │   ├── blacklist_roles.md       # Post-Parse role/area blacklist
 │   └── blacklist_seniority.md   # Post-Parse seniority blacklist
 └── src/
-    ├── agent.py                 # Main `jobbud_agent` instance (Google ADK Agent)
+    ├── agent.py                 # Main `jobbud_agent` instance (Google ADK Agent with 19 tools, 0 subagents)
     ├── config.py                # Environment variable loader (.env)
     ├── guidelines.md            # System prompt & conversational guidelines
+    ├── fetchers/                # Unified Ingestion Layer returning List[JobDict]
+    │   ├── __init__.py          # Exposes fetcher functions and agent tools
+    │   ├── base.py              # Text compression & technology extractor
+    │   ├── greenhouse.py        # Greenhouse REST API connector (0 LLM tokens)
+    │   ├── exactas.py           # Exactas UBA CS scraper + parser integration
+    │   ├── linkedin.py          # LinkedIn job extractor + parser integration
+    │   └── manual.py            # Raw text normalizer + parser integration
     ├── subagents/
-    │   ├── job_parser/          # Job parsing & structuring subagent
-    │   ├── job_ranker/          # Fit match evaluation & scoring subagent
-    │   └── job_pipeline/        # Deterministic sequential runner (`runner.py`)
-    └── tools/                   # Modular collection of 19 tools
+    │   ├── job_parser/          # Job parsing & structuring subagent (programmatic worker)
+    │   │   ├── job_parser.py    # ADK Agent definition
+    │   │   ├── guidelines.md    # Extraction schema guidelines (incl. commitment & YOE)
+    │   │   └── tools.py         # ID generator, application method & unified JobDict builder
+    │   ├── job_ranker/          # Fit match evaluation & scoring subagent (batch worker)
+    │   │   ├── job_ranker.py    # ADK Agent definition
+    │   │   ├── guidelines.md    # Ranking criteria & guidelines
+    │   │   └── tools.py         # Evaluation tools, profile & policy readers, batch persistence
+    │   └── job_pipeline/        # Modular deterministic sequential pipeline
+    │       ├── __init__.py      # Re-exports pipeline entrypoints
+    │       ├── runner.py        # Backward-compatible facade
+    │       ├── single_pipeline.py # 6-stage sequential single board/selection runner
+    │       ├── multi_pipeline.py  # Multi-board orchestrator & timer delays
+    │       ├── adk_clients.py   # ADK InMemoryRunner bridge & 429 quota backoff
+    │       ├── config.py        # Pipeline config parser
+    │       ├── state.py         # Cache & selection parser
+    │       ├── scope_parser.py  # Scope, relative time & index filtering
+    │       └── reporter.py      # Telemetry & multi-board report formatter
+    └── tools/                   # Modular collection of 19 core tools
         ├── __init__.py          # Re-exports HERRAMIENTAS_BASICAS (all 19 core tools)
-        ├── fetchers.py          # API connectors & web scraping (Greenhouse, Exactas, LinkedIn)
-        ├── queries.py           # Job querying, detailed inspection & filters
-        ├── management.py        # Status edits, deletions, undo & single/multi-board pipeline tools
+        ├── queries.py           # Job querying, inspection & deterministic filters
+        ├── management.py        # Status edits, deletions, undo & pipeline tools
         └── boards.py            # Job board registry management & ordering
 ```
 
