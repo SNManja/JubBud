@@ -194,5 +194,451 @@
     "gaps": [],
     "ranked_at": null,
     "user_notes": null
+  },
+  {
+    "id": "ashby_silver_55d10c7c-00c0-41e2-acf5-68a23ada8050",
+    "created_at": "2026-08-15T09:06:56.292270",
+    "title": "Opportunity in Tech company - Mobile Engineer",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Hybrid",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$126K",
+    "key_technologies": [
+      "Golang"
+    ],
+    "main_requirements": [],
+    "summary": "About the role:\nThis opportunity gives you the chance to develop, maintain, and distribute our mobile apps, which are our core product, interacting with a deep tech problem directly in the application. We are looking for long-term players, professionals who are looking to grow and evolve with us ove",
+    "raw_text": "About the role:\nThis opportunity gives you the chance to develop, maintain, and distribute our mobile apps, which are our core product, interacting with a deep tech problem directly in the application. We are looking for long-term players, professionals who are looking to grow and evolve with us over time. Additionally, individuals who have worked at product-focused companies tend to stand out, since they usually bring a deep understanding of building and scaling solutions with the end user in mind. Lastly, experience in start-up environments is highly regarded, as it often reflects adaptability, initiative, and the ability to thrive in dynamic, fast-paced settings.\nWhat you’ll do:\n- Collaborate with product, design, and other engineers for new features.\n- Design and implement key functionality in the apps.\n- Develop tooling to improve our development practices.\n- Participate in code reviews to raise the quality of our code and our product.\n- Own your code in production.\n- Work with our CX team when users are having trouble with the app.\nWhat you’ll bring or Qualifications:\n- Expertise in mobile SDKs and application development, including common design patterns.\n- Our team possesses cross-team collaboration skills, and we are highly cross-functional, bringing everyone to the table to address our problems.\n- A beginner’s mindset, always striving to understand.\n- Own and solve problems.\n- Willing and able to work on open problems.\n- Being open to solving whatever needs to be solved.\nOur Tech Stack\n- iOS: Swift, UIKit, RxSwift, Golang.\n- Android: Kotlin, RxJava, Golang\nInterview Process\n- Silver Screening Interview.\n- Silver Technical Interview.\n- Client Screening Interview.\n- TakeHome Challenge.\n- DeepDive Interview\n- Behavioral Interview.",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/55d10c7c-00c0-41e2-acf5-68a23ada8050",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/55d10c7c-00c0-41e2-acf5-68a23ada8050/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "La vacante solicita desarrollo, mantenimiento y distribución de aplicaciones móviles (iOS con Swift, UIKit, RxSwift o Android con Kotlin, RxJava) utilizando Golang. El perfil del candidato (Santiago Manjarín) abarca backend (Node.js, TypeScript, Python), C/C++ y bases de datos, pero no cuenta con experiencia ni proyectos demostrados en desarrollo móvil (iOS/Android, Swift, Kotlin o frameworks móviles). Al no haber requisitos formales de YOE o seniority, no aplica un tope duro de YOE, pero la brecha técnica en el stack principal (móvil) es total, situándolo como un ajuste débil.",
+    "strengths": [
+      {
+        "text": "La vacante busca profesionales en Argentina en formato híbrido con buen manejo de inglés y flexibilidad general, lo cual coincide con la ubicación y disponibilidad del candidato."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "La vacante no especifica requisitos formales de experiencia o seniority, pero está orientada a desarrollo móvil (iOS/Android) con Golang, tecnologías y stack específico (Swift, Kotlin, SDKs móviles) no demostrados en el perfil del candidato."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:07:28.888795",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_0dae1154-c185-4981-a97a-cb02f4dd2473",
+    "created_at": "2026-08-15T09:06:56.293667",
+    "title": "Coperniq (YC W23) - Full Stack Engineer (Node/React)",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "years_of_experience": null,
+    "salary_range": "$60K - $90K",
+    "key_technologies": [
+      "TypeScript",
+      "Node.js",
+      "Node",
+      "React",
+      "PostgreSQL",
+      "Docker",
+      "Kubernetes",
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "COPERNIQ https://www.coperniq.io\nABOUT US\nCoperniq is on a mission to revolutionize the renewable energy industry with cutting-edge software solutions. As a Y Combinator-backed startup, funded by Initialized Capital, we’re building the infrastructure for clean energy contractors to succeed. We’re lo",
+    "raw_text": "COPERNIQ https://www.coperniq.io\nABOUT US\nCoperniq is on a mission to revolutionize the renewable energy industry with cutting-edge software solutions. As a Y Combinator-backed startup, funded by Initialized Capital, we’re building the infrastructure for clean energy contractors to succeed. We’re looking for top-tier talent to scale with us.\nROLE OVERVIEW\nWe’re looking for a Senior Full Stack Engineer to lead the development and scaling of our platform. As a key member of our small, dynamic team, you’ll collaborate across functions to deliver a seamless and powerful experience for our users. This role requires deep expertise in both frontend and backend technologies, as well as a passion for building robust, scalable systems. If you thrive in fast-paced environments and are excited about making a significant impact in renewable energy, we want to hear from you.\nWhat You’ll Do:\n- Design, develop, and maintain scalable and secure full-stack solutions.\n- Build and enhance web applications, ensuring a seamless user experience.\n- Collaborate closely with product, design, and QA teams to align on requirements and deliver high-quality features.\n- Define and implement best practices for software development and deployment.\n- Optimize application performance and scalability for growing user demands.\n- Mentor junior engineers and contribute to a culture of technical excellence.\n- Take ownership of technical decisions and contribute to the product roadmap.\nWhat We’re Looking For:\n- Bachelor’s degree in Computer Science, or a related field, with a deep understanding of software engineering principles.\n- 7+ years of full-stack development experience, with a balanced skill set across frontend and backend. We are looking for profiles that are not purely frontend or backend — typically a 60/40 split in real project work in either direction.\n- Proficient in our tech stack: AWS, React, GraphQL, TypeScript, Node.js, NestJS, MikroORM, PostgreSQL; experience with GitLab for CI/CD, Docker, and Kubernetes.\n- Demonstrated experience in designing user interactions on websites, writing server-side API calls, and integrating front-end and back-end aspects of an application.\n- Strong problem-solving skills, with a track record of working effectively in a dynamic environment.\n- Excellent English skills and the ability to work as part of a team.\n- Experience in leading projects, from conception to implementation to feedback integration.\nNice to Have:\n- Experience in the renewable energy or SaaS industry.\n- Knowledge of geolocation technologies and real-time data integration.\n- Familiarity with SOC II compliance and secure development practices.\n- Implementing voice agents\n- Implementing docs/images editing/annotating with AI\nWhat We Offer:\n- A flexible work environment with opportunities for remote work.\n- The chance to shape the future of clean energy.\n- A collaborative, high-performance team culture.\nInterview Process\n- Silver Recruiter Screen\n- Silver Technical Screen\n- Behavioral Screen\n- System Design Screen\n- CEO Final Round",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/0dae1154-c185-4981-a97a-cb02f4dd2473",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/0dae1154-c185-4981-a97a-cb02f4dd2473/application",
+    "status": "ranked",
+    "score": 30,
+    "justification": "La política de ranking establece que si una vacante requiere explícitamente 2 o más años de experiencia profesional como condición obligatoria (en este caso 7+ años), el puntaje no debe exceder de 39, independientemente de que el mensaje del empleador fomente postularse sin cumplir todos los requisitos. Aunque el candidato cuenta con habilidades en Node.js, TypeScript y PostgreSQL, la exigencia de 7+ años de experiencia profesional representa una barrera insalvable para un perfil junior/trainee sin experiencia formal.",
+    "strengths": [
+      {
+        "text": "El candidato posee proyectos académicos y personales utilizando TypeScript, Node.js y PostgreSQL, los cuales solapan parcialmente con parte del stack tecnológico secundario de la vacante."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "La vacante requiere explícitamente 7+ años de experiencia en desarrollo full-stack. El candidato cuenta con 0 años de experiencia profesional formal."
+      },
+      {
+        "text": "Se requiere dominio profundo de un stack específico complejo (AWS, React, GraphQL, TypeScript, Node.js, NestJS, MikroORM, PostgreSQL, Docker, Kubernetes, GitLab CI/CD). El candidato tiene experiencia académica y proyectos personales en Node/TypeScript/PostgreSQL/Docker, pero carece de los 7+ años de trayectoria profesional exigidos."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:07:28.888821",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_72971322-0ac8-468b-b8f1-2612d78b7769",
+    "created_at": "2026-08-15T09:06:56.294204",
+    "title": "Technical Interviewer - Pay-per-Interview",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Silver.dev",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$60 once",
+    "key_technologies": [
+      "Python",
+      "JavaScript",
+      "React"
+    ],
+    "main_requirements": [],
+    "summary": "ABOUT SILVER.DEV\nSilver.dev is a talent agency focused on connecting Startups with talent in Argentina and Uruguay.\nWe advocate for quality and craftsmanship, and we provide technical screening for companies in our portfolio. Our pass rate is low - we filter most candidates we interview and wish to",
+    "raw_text": "ABOUT SILVER.DEV\nSilver.dev is a talent agency focused on connecting Startups with talent in Argentina and Uruguay.\nWe advocate for quality and craftsmanship, and we provide technical screening for companies in our portfolio. Our pass rate is low - we filter most candidates we interview and wish to keep the bar high to satisfy our promise to clients of providing low-volume high-quality candidates.\nWHAT WE ARE LOOKING FOR\nWe are looking for technical interviews that take up 45-minute coding sessions with candidates for our most demanding positions.\nWe want technical interviewers who pass the interview they give, as well as provide feedback to candidates.\nYou will be using Coderbyte and Ashby to assess candidates in our pool, and possibly more opportunities.\nREQUIREMENTS\n- 3 years of experience or more in a Product Startup or equivalent experience\n- Experience passing Live coding interviews at companies\n- Fluent in a popular language (javascript, python, ruby, etc) for Backend Challenges\n- Fluent in Frontend and React for Frontend Challenges\nINTERVIEW PROCESS\n- Silver.dev Technical Interview + Screening (1hr)",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/72971322-0ac8-468b-b8f1-2612d78b7769",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/72971322-0ac8-468b-b8f1-2612d78b7769/application",
+    "status": "ranked",
+    "score": 25,
+    "justification": "La posición de 'Technical Interviewer' requiere explícitamente 3+ años de experiencia profesional en start-ups de producto y experiencia conduciendo o aprobando entrevistas técnicas en vivo. El candidato es un perfil junior / trainee (estudiante avanzado de Computación con proyectos personales) que no cumple con los años mínimos de experiencia profesional requeridos ni con la trayectoria en evaluación técnica de otros candidatos, aplicándose el tope correspondiente por barrera de experiencia.",
+    "strengths": [
+      {
+        "text": "La vacante se ubica en Argentina en modalidad remota y contempla lenguajes generales (Python, JavaScript) con los cuales el candidato tiene familiaridad a través de sus proyectos personales y académicos."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "La vacante requiere 3 o más años de experiencia en una startup de producto u experiencia equivalente, además de experiencia previa pasando entrevistas de código en vivo. El candidato es un estudiante avanzado sin experiencia profesional formal previa."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:07:28.888833",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_b35ced58-0a04-4a93-854c-80b717e7ec53",
+    "created_at": "2026-08-15T09:06:56.296881",
+    "title": "Opportunity in Tech Company - Backend Engineer",
+    "company": "silver",
+    "location": "Buenos Aires",
+    "work_mode": "Hybrid",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$126K",
+    "key_technologies": [
+      "Java",
+      "Kubernetes"
+    ],
+    "main_requirements": [],
+    "summary": "About the role:\nThis opportunity gives you the chance to develop and maintain our backend services, solving deep tech problems for our users. We are looking for long-term players, people who own a keen product sense.\nWhat you’ll do:\n- Design and implement new functionalities required by our mobile a",
+    "raw_text": "About the role:\nThis opportunity gives you the chance to develop and maintain our backend services, solving deep tech problems for our users. We are looking for long-term players, people who own a keen product sense.\nWhat you’ll do:\n- Design and implement new functionalities required by our mobile applications, collaborating with product, mobile, platform, and other backend engineers.\n- Improve existing systems as needed by fixing bugs, improving resource usage, and making them scale.\n- Deliver code to production and features to users frequently and incrementally.\n- Develop tooling to improve our development practices.\n- Participate in code reviews to raise the quality of our code and our product.\n- Own your code in production.\n- Work with our CX team when users are having trouble with the app.\nWhat you’ll bring or Qualifications:\n- Experience with running distributed systems in production.\n- Cross-team collaboration skills, our team is highly cross-functional, and our problems bring everyone to the table.\n- A beginner’s mindset, always striving to understand.\n- Own and solve problems.\n- Willing and able to work on open issues.\n- Being open to solving whatever needs to be solved.\nTech Stack:\n- We develop with Java 17.\n- Our production environment is based on Kubernetes, using Honeycomb, Grafana, and Sentry for observability.\n- A CI/CD pipeline for automated merges and deployments.\nInterview Process\n- Silver Screening Interview.\n- Silver Technical Interview.\n- Client Screening Interview.\n- TakeHome Challenge.\n- System Design Interview\n- Behavioral Interview.",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/b35ced58-0a04-4a93-854c-80b717e7ec53",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/b35ced58-0a04-4a93-854c-80b717e7ec53/application",
+    "status": "ranked",
+    "score": 45,
+    "justification": "The role is a backend engineering position requiring Java 17 and production distributed systems experience. The posting does not state a professional years of experience (YOE) requirement, which avoids mandatory YOE penalty caps. However, the candidate profile lacks Java and production distributed systems experience, placing this as a weak/possible fit due to core stack mismatch. Score awarded is 45.",
+    "strengths": [
+      "The role is a backend engineering position without an explicit professional YOE requirement, aligning with the candidate's entry-level status.",
+      "The posting involves backend development and architecture tasks where foundational CS knowledge is relevant."
+    ],
+    "gaps": [
+      "The posting requires Java 17 and running distributed systems in production; the candidate profile does not demonstrate professional Java or production distributed systems experience.",
+      "The posting requires experience with Honeycomb, Grafana, and Sentry for observability, which are not demonstrated in the candidate profile."
+    ],
+    "ranked_at": "2026-08-15T09:08:01.965725",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_18cb5a3e-dd56-4d21-9528-7c573b1104d9",
+    "created_at": "2026-08-15T09:06:56.302046",
+    "title": "Securitize - Fullstack Developer",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$48K - $68.4K",
+    "key_technologies": [
+      "Python",
+      "TypeScript",
+      "React",
+      "Kubernetes",
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "Who is Securitize https://securitize.io\nSecuritize, the leader in tokenizing real-world assets with $3.7B+ AUM (as of May 5, 2025), is bringing the world on-chain through tokenized funds in partnership with top-tier asset managers, such as Apollo, BlackRock, Hamilton Lane, KKR, and others. Securitiz",
+    "raw_text": "Who is Securitize https://securitize.io\nSecuritize, the leader in tokenizing real-world assets with $3.7B+ AUM (as of May 5, 2025), is bringing the world on-chain through tokenized funds in partnership with top-tier asset managers, such as Apollo, BlackRock, Hamilton Lane, KKR, and others. Securitize, through its subsidiaries, is a SEC-registered broker-dealer, digital transfer agent, fund administrator, and operator of a SEC-regulated Alternative Trading System (ATS).\nSecuritize is a global, fully remote team consisting of top talent from the blockchain and financial services industries. Having raised $170M overall to date, we are backed by some of the largest names in finance and technology, including BlackRock, Morgan Stanley, Blockchain Capital, MUFG, Sumitomo Mitsui Trust Bank, Sony Finance, Banco Santander, Coinbase, among others. Securitize has also been recognized as a 2025 Forbes Top 50 Fintech https://www.forbes.com/lists/fintech50/ company.\nBefore applying, we encourage you to visit us to learn more:\nWebsite http://www.securitize.io/ | X/Twitter http://www.x.com/Securitize | LinkedIn https://www.linkedin.com/company/securitize\nABOUT THE ROLE:\nWe’re looking for a full-stack developer to join one of our core product teams.\nOur product teams are responsible for building and maintaining the systems and APIs that power Securitize’s platform — from tokenization and investor management to data integrations and operational tools. You’ll collaborate with a distributed group of engineers to design and implement scalable, microservices-based infrastructure, robust API layers, and modern user interfaces that deliver a seamless experience for our customers.\nAs our products handle sensitive financial operations and potentially billions of dollars in transactions, reliability, correctness, and extensibility are essential. You’ll be expected to build solutions that are secure, testable, and efficient — while balancing flexibility and delivery timelines.\nKEY RESPONSIBILITIES:\nAs a full-stack developer, you’ll own end-to-end feature delivery, implementing both backend services and frontend components. You should have a strong sense of how your work fits into the broader system architecture and be comfortable designing solutions that integrate smoothly with other parts of the platform.\nKNOWLEDGE:\n- Extensive NodeJS and Python development experience (typescript experience a plus).\n- Extensive experience with databases (both relational and non relational).\n- Work Experience in React.\n- Basic working knowledge of blockchain - a plus\n- Security - Experience with implementation of highly secure systems - a plus.\n- AWS and Kubernetes (K8s) experience – a plus.\nQUALIFICATIONS:\n- Minimum of 5 years of professional development experience.\n- Experience in implementing complex front-end systems interacting with sophisticated back-ends (including micro services, routing, state management, authentication, performance, and others).\n- Understanding of UI – you should understand intuitively what makes sense in a UI of a system and be concerned about each component being pixel perfect.\n- Self-reliance; being able to come up with solutions to problems without super-detailed instructions.\n- While experience is not required, interest in the fintech and blockchain worlds is a must.\n- Eye for detail and an ability to fill in the blanks in product requirements.\nWHY JOIN US?\nBecome a part of our rapidly expanding organization and enjoy a supportive and rewarding work environment:\nBENEFITS:\n- Unlimited Paid Time Off (PTO) – Promoting a healthy work-life balance.\n- Equity Grant Opportunities – Share in the success and future growth of the company.\n- Remote Work Flexibility – Work from anywhere while staying connected with a dynamic and collaborative team.\nTHE SELECTION PROCESS\n- Silver.dev http://Silver.dev Recruiter Screen\n- Silver.dev http://Silver.dev Live Coding Screen\n- Client Technical Interview\n- Client Live Coding\n- Final Interview",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/18cb5a3e-dd56-4d21-9528-7c573b1104d9",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/18cb5a3e-dd56-4d21-9528-7c573b1104d9/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The posting explicitly requires a minimum of 5 years of professional development experience. According to the ranking policy, when a posting mandates 2+ years of professional experience (here 5 years) for a 0-YOE candidate, the score MUST NOT exceed 39. Despite the candidate having project experience in Python and TypeScript/React, the mandatory professional experience barrier caps the score at 35.",
+    "strengths": [
+      "The role involves full-stack development using Python and TypeScript/React, which aligns with technologies used in the candidate's personal projects (Batchpix, JobBud)."
+    ],
+    "gaps": [
+      "The posting explicitly requires a minimum of 5 years of professional development experience, whereas the candidate has 0 formal professional YOE.",
+      "The posting expects extensive Node.js, Python, and relational/non-relational database experience in professional settings."
+    ],
+    "ranked_at": "2026-08-15T09:08:01.965734",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_e8a2b44c-3046-44b5-8106-a04024528564",
+    "created_at": "2026-08-15T09:06:56.313080",
+    "title": "Metabase - Success Engineer",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$66K - $100K",
+    "key_technologies": [
+      "SQL",
+      "Docker",
+      "AWS",
+      "GCP"
+    ],
+    "main_requirements": [],
+    "summary": "Metabase https://www.metabase.com is the easiest way for people to get insights from their data, from tiny startups who get up and running quickly to major corporations with tens of thousands of users. That's why people love us https://www.metabase.com/love.\nWe bring data tools with the elegance and",
+    "raw_text": "Metabase https://www.metabase.com is the easiest way for people to get insights from their data, from tiny startups who get up and running quickly to major corporations with tens of thousands of users. That's why people love us https://www.metabase.com/love.\nWe bring data tools with the elegance and simplicity of consumer products to the crufty world of enterprise business intelligence. We provide an opinionated open source starting point for how companies should measure, analyze and share their data, which is used by tens of thousands of companies.\nMetabase is looking for a customer-focused, highly technical Success Engineer to join our growing global team. We are looking for someone who loves data, enjoys helping others, and is excited to work for a startup to help our customers get the most out of Metabase.\nOur customers are software engineers, data engineers, and data analysts, and they appreciate getting help and advice from experts just like them.\nWhat you’ll do\n- Talk to our users to understand their goals and challenges\n- Help customers design and optimize their Metabase implementation\n- Guide customers how to get data from all the various places it lives, transform it into useful shapes, and convert their questions into actual queries that can be executed.\n- Solve complex problems and troubleshoot customer issues\n- Collaborate with our technical communicators to create educational materials for our customers\n- Serve as the voice of the customer to our product and engineering teams and help drive product development\nAbout you\n- Enjoy helping people and solving their problems\n- Strong technical background with 3+ years of experience writing production code, administering systems, and/or managing databases\n- Strong database and SQL skills\nAn expert in at least two:\n1. Designing and developing web applications.\n2. Managing infrastructure (Docker, AWS/GCP/etc, or similar)\n3. Managing databases\nNice to have\n- Experience with Metabase or other BI tools\n- Experience working for an open source product\n- Fluency in multiple languages (this is helpful as our users are worldwide)\nInterview Process\n- Silver Recruiter Screening.\n- Silver Technical Interview (Live coding)\n- Client Screening Interview\n- 3 x 1 Success team Interview\n- Takehome Challenge and Review.\nWhy join us?\n- We operate as a fully remote, async team. Work where and when you’re most productive - we trust you to get your work done. Meetings are rare, efficient, and your time is respected.\n- Every week brings new complex challenges and opportunities to learn. If you thrive on solving complex problems and enjoy continuous learning, you'll find this role exciting and engaging.\n- You’ll contribute to a tool that empowers users to unlock insights in their data without relying on a data team.\nWe're a global team (50% outside the US), fully distributed (from Thailand to California), who get things done asynchronously, with plenty of uninterrupted time, supporting each other to do the best work of our careers. We offer flexibility (define your own schedule and work from wherever you want), autonomy, and an environment that fosters growth, learning, and development. We're relentlessly user-focused and believe in building long-term value, not short-term hacks. And we raised a $30M Series B to take our approach to the next level for years to come.",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/e8a2b44c-3046-44b5-8106-a04024528564",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/e8a2b44c-3046-44b5-8106-a04024528564/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The posting explicitly requires 3+ years of experience writing production code, administering systems, and/or managing databases. Under the ranking policy, a mandatory 2+ YOE requirement for a 0-YOE candidate caps the score at 39. Despite the candidate having strong database/SQL knowledge and Docker/Linux familiarity from personal projects and studies, the professional experience barrier applies, resulting in a score of 35.",
+    "strengths": [
+      "The candidate has strong database and SQL skills along with familiarity with Docker and infrastructure basics, relevant to technical support and success engineering.",
+      "The role values database and SQL knowledge, matching academic and project experience."
+    ],
+    "gaps": [
+      "The posting explicitly requires 3+ years of experience writing production code, administering systems, and/or managing databases, whereas the candidate has 0 formal professional YOE."
+    ],
+    "ranked_at": "2026-08-15T09:08:01.965739",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_e14a139d-1103-433d-aa20-8a95fab63fe6",
+    "created_at": "2026-08-15T09:06:56.321166",
+    "title": "ShareCare - Backend Engineer (Python)",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$60K - $80K",
+    "key_technologies": [
+      "Python",
+      "SQL",
+      "PostgreSQL"
+    ],
+    "main_requirements": [],
+    "summary": "SHARECARE https://www.sharecare.com\nFULL-STACK DEVELOPER PYTHON\nDescription\nWe are seeking an experienced backend Python developer with expertise in building and extending our API on Django Rest Framework. Your primary responsibility will be to develop and maintain new modules for consumer and inter",
+    "raw_text": "SHARECARE https://www.sharecare.com\nFULL-STACK DEVELOPER PYTHON\nDescription\nWe are seeking an experienced backend Python developer with expertise in building and extending our API on Django Rest Framework. Your primary responsibility will be to develop and maintain new modules for consumer and internal facing applications. In addition, you will need to coordinate with the rest of the team working on different layers of the applications. A commitment to collaborative problem-solving, sophisticated design, and quality product is essential.\nRequirements\n- At least 4 years of practical experience in building web applications\n- Strong proficiency with Python, Django Rest Framework\n- Excellent command over Data structure and Algorithms\n- Must demonstrated efficient use of AI tools in development\n- Proficient in working with SQL and NoSQL database solutions such as PostgreSQL\n- Previous experience with popular libraries such as mock, pytest\n- Proficiency in the English language, both written and verbal, sufficient for success in a remote and largely asynchronous work environment.\n- Proficient using code versioning tools such as Git\n- Proficient working with dockerized applications\nResponsibilities\n- Develop and maintain existing legacy or new applications\n- Ensure the best possible performance, quality, and responsiveness of applications.\n- Analyzing requirements and designing new functionality.\n- Identify bottlenecks and bugs, and devise solutions to mitigate and address these issues.\n- Leverage AI tools into their workflow to maintain efficiency\nSelection Process\n- Recruiter Screen\n- Live Coding Interview\n- Client Screening Interview\n- Client Technical Interview",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/e14a139d-1103-433d-aa20-8a95fab63fe6",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/e14a139d-1103-433d-aa20-8a95fab63fe6/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The position requires at least 4 years of practical experience in building web applications and specific tool proficiency like pytest, which conflicts with the candidate's entry-level status (0 professional YOE). Although the candidate has Python and SQL experience through projects, the mandatory 4+ YOE requirement acts as a major experience barrier under the ranking policy.",
+    "strengths": [
+      {
+        "text": "The posting requires Python and PostgreSQL/SQL, which aligns with the candidate's practical project experience in Python and PostgreSQL."
+      },
+      {
+        "text": "The candidate is an advanced CS student in UBA Exactas, aligning with strong theoretical and algorithmic foundations."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The posting explicitly requires at least 4 years of practical experience in building web applications, whereas the candidate has 0 professional years of experience."
+      },
+      {
+        "text": "Requires proficiency in mock and pytest (not explicitly demonstrated in the candidate profile)."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:08:28.749182",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_48e6f9de-0c2a-4f52-b362-b978e57bddb2",
+    "created_at": "2026-08-15T09:06:56.335909",
+    "title": "Wonderful - Forward Deployed Engineer",
+    "company": "silver",
+    "location": "Argentina / Hybrid",
+    "work_mode": "Hybrid",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "Forward Deployed Engineer (FDE)\nABOUT Wonderful\nWonderful https://www.wonderful.ai enables enterprises to build, test, deploy, and monitor AI agents for their most complex needs, serving customers and employees seamlessly across voice, chat, email, and back-office systems in any language or cultural",
+    "raw_text": "Forward Deployed Engineer (FDE)\nABOUT Wonderful\nWonderful https://www.wonderful.ai enables enterprises to build, test, deploy, and monitor AI agents for their most complex needs, serving customers and employees seamlessly across voice, chat, email, and back-office systems in any language or cultural context.\nROLE OVERVIEW\nAs a Forward Deployed Engineer (FDE) at Wonderful, you’ll solve high-impact, real-world problems alongside enterprise customers and own work from first principles through production outcomes.\nYou’ll work directly with customers to understand critical workflows, design AI-driven solutions, and deploy agents that operate reliably in production. You’ll own projects end-to-end from problem definition and system design to launch and iteration - and be accountable for real business impact.\nThis is a hands on-generalist role for engineers who enjoy navigating ambiguity, learning quickly, and working across systems while partnering with enterprises as they become AI-driven organizations.\nWHAT YOU’LL DO\n- Partner with customers to understand operational challenges and success criteria\n- Translate open-ended problems into clear technical designs and implementations\n- Build AI agents that integrate with customer systems and perform real tasks\n- Own deployments, including reliability, performance, and continuous improvement\n- Test with real data, measure outcomes, and iterate based on results\n- Collaborate with Product & Engineering to ship high-quality solutions\n- Contribute to tools, documentation, and best practices that scale customer delivery\nWHAT WE’RE LOOKING FOR\n- 5+ years of experience in software engineering or technical problem-solving roles\n- Strong fundamentals in software design, system thinking\n- Experience working across systems, integrations, and data flows\n- Comfort working directly with customers and owning ambiguous problems\n- Clear communication skills and a strong ownership mindset\n- Curiosity and interest in building AI-powered systems that work in practice\nNICE TO HAVE\n- Experience in forward-deployed, solutions engineering, or customer-facing roles\n- Exposure to AI agents, automation, or conversational systems\n- Experience operating and improving production systems",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/48e6f9de-0c2a-4f52-b362-b978e57bddb2",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/48e6f9de-0c2a-4f52-b362-b978e57bddb2/application",
+    "status": "ranked",
+    "score": 30,
+    "justification": "The role explicitly requires 5+ years of experience in software engineering or technical problem-solving roles. Per the ranking policy, a mandatory 2+ professional YOE requirement caps the score at a maximum of 39 for this 0-YOE candidate. Despite the candidate's strong problem-solving skills and project autonomy, the explicit professional experience requirement is a barrier.",
+    "strengths": [
+      {
+        "text": "The role values strong system thinking, problem-solving, and generalist execution, which align with the candidate's project autonomy and background in computer science fundamentals."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The posting explicitly requires 5+ years of experience in software engineering or technical problem-solving roles, which exceeds the candidate's 0 professional YOE."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:08:28.749192",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_676d00fe-5635-4e00-b4f7-9dc23fe65375",
+    "created_at": "2026-08-15T09:06:56.348551",
+    "title": "Fullstack Product Engineer (Python/Angular)",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$60K - $90K",
+    "key_technologies": [
+      "Python",
+      "TypeScript",
+      "Angular",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "Full-Stack Product Engineer\nBuild across the stack · Own features end-to-end · Ship continuously\nThe Role\nWe’re looking for a Full-Stack Product Engineer who loves building products — not just writing code. You’ll own features end-to-end: understanding customer problems, designing solutions, and shi",
+    "raw_text": "Full-Stack Product Engineer\nBuild across the stack · Own features end-to-end · Ship continuously\nThe Role\nWe’re looking for a Full-Stack Product Engineer who loves building products — not just writing code. You’ll own features end-to-end: understanding customer problems, designing solutions, and shipping them to production. You’ll collaborate across the company while helping shape both the product and the engineering behind it.\nWe move quickly, ship continuously, and value engineers with strong product intuition as much as technical excellence.\nWhat You’ll Do\n- Help move products from idea to the hands of customers, contributing across problem definition, design, and delivery.\n- Collaborate with stakeholders and teammates to understand needs and turn them into shipped features.\n- Make product and technical decisions independently, with the autonomy and judgment to move without waiting for sign-off at every turn.\n- Build across the entire stack — frontend, backend, and infrastructure.\nShip early, learn quickly, and iterate based on real customer feedback.\nOur Tech Stack\n- Frontend: Angular, TypeScript\n- Backend: Django, Python, PostgreSQL\n- Infrastructure: AWS, Terraform\n- We care far more about strong engineering fundamentals, product thinking, and a willingness to learn than experience with a particular framework.\nHow We Use AI\nAI is part of how we build, not what we build.\nWe use modern AI tools to accelerate development, improve quality, and automate repetitive work so engineers can focus on solving meaningful problems. We embrace experimentation, but engineering judgment always comes first.\nWe continuously improve how we build software through design reviews, code walkthroughs, knowledge sharing, and experimenting with the latest developer tools.\nWhat We’re Looking For\n• Strong full-stack engineering skills.\n• A product mindset and customer-first thinking.\n• Ownership and the ability to work independently.\n• Curiosity and a willingness to learn.\n• Clear communication and collaboration.\n• Pragmatic engineering judgment.\nOur Values\nIdeas Over Titles — The best ideas win, regardless of where they come from. We value intellectual honesty and healthy debate over hierarchy.\nBetter Over Perfect — We believe in shipping, learning, and continuously improving instead of waiting for perfect solutions.\nCourage Over Comfort — We challenge assumptions, give candid feedback, and do what’s right for our customers and teammates — even when it’s uncomfortable.",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/676d00fe-5635-4e00-b4f7-9dc23fe65375",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/676d00fe-5635-4e00-b4f7-9dc23fe65375/application",
+    "status": "ranked",
+    "score": 55,
+    "justification": "The position is a Full-Stack Product Engineer role requiring strong full-stack skills, product mindset, and independent execution. While the posting does not explicitly state a rigid professional YOE minimum, full-stack product engineering roles typically expect professional experience. The candidate demonstrates strong project work in Python, TypeScript, and SQL/PostgreSQL, but lacks professional experience and familiarity with Angular or AWS. It represents a possible-to-weak fit requiring manual review.",
+    "strengths": [
+      {
+        "text": "The tech stack includes Python and TypeScript, matching the candidate's practical project experience."
+      },
+      {
+        "text": "The employer values strong engineering fundamentals, product thinking, and a willingness to learn over specific framework experience, which matches the candidate's strong CS foundation and autonomous project background."
+      }
+    ],
+    "gaps": [
+      {
+        "text": "The role expects full-stack independence and product engineering execution in a fast-paced environment, while the candidate lacks professional software engineering experience."
+      },
+      {
+        "text": "Uses Angular and AWS/Terraform in the stack; the candidate has general backend/frontend projects (React, Python, Node) but lacks direct Angular or AWS professional experience."
+      }
+    ],
+    "ranked_at": "2026-08-15T09:08:28.749195",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_f276bab3-7bcf-460c-a918-1af1b418bfa9",
+    "created_at": "2026-08-15T09:06:56.366423",
+    "title": "Greenhouse - Software Engineer, Data Experience",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$43 per hour",
+    "key_technologies": [
+      "TypeScript",
+      "Go",
+      "React"
+    ],
+    "main_requirements": [],
+    "summary": "SOFTWARE ENGINEER, DATA EXPERIENCE\nArgentina\nOur mission https://www.greenhouse.com/mission at Greenhouse https://www.greenhouse.com is to make hiring work for everyone – so we go to great lengths to hire great people because we believe that they’re the foundation of our success. At Greenhouse, you’",
+    "raw_text": "SOFTWARE ENGINEER, DATA EXPERIENCE\nArgentina\nOur mission https://www.greenhouse.com/mission at Greenhouse https://www.greenhouse.com is to make hiring work for everyone – so we go to great lengths to hire great people because we believe that they’re the foundation of our success. At Greenhouse, you’ll join a team that collaborates purposefully, fosters inclusivity, and communicates with transparency and accountability so we can achieve our mission.\nWHO WILL LOVE THIS JOB\n- A Product-Minded Engineer – You don't just write code; you understand the end-user experience and can make thoughtful, directionally correct technical decisions aligned with product vision.\n- A Data-Experience Builder – You are energized by crafting crisp, responsive, data-rich applications and internal tools using modern TypeScript and frontend/backend patterns.\n- A Pragmatic Innovator – You actively leverage AI-assisted development (such as agentic coding workflows) to streamline your day-to-day work, increase throughput, and spend more time solving high-leverage problems.\n- A Quality Champion – You care deeply about engineering standards, strong automated test coverage, and building durable software that stands the test of time.\nWHAT YOU’LL DO\n- Implement net-new functionality into the core Analytics platform to drive strategic company priorities.\n- Maintain and optimize existing Analytics products, ensuring high availability, performance, and UI responsiveness.\n- Partner daily with Data Experience engineers, Product Managers, Product Designers, and members of the Data Platform team to take features from ideation to production.\n- Write robust automated tests, contribute to code reviews, and help raise the technical baseline across the codebase.\n- Work fluently with agentic coding assistants and modern AI developer tools to ship features faster and improve developer ergonomics.\nYOU SHOULD HAVE\n- 5+ years of experience shipping production-grade TypeScript and React applications.\n- 1+ years of hands-on experience building data-rich applications or dashboards where performance, UI responsiveness, and state management matter.\n- Experience with Duckdb, a plus\n- Proven track record of delivering clean, maintainable code backed by high levels of automated test coverage.\n- Comfort and proficiency using AI-assisted/agentic coding tools in your daily development workflow.\n- Excellent communication and cross-functional collaboration skills in a remote, distributed environment.\nWHO WE ARE\nAt Greenhouse, we live by our mission through using our own product https://www.greenhouse.com/interviewing-at-greenhouse to help us hire the right person for the job, every time. We’re committed to designing and responsibly using AI tools to transform how we work while keeping people at the center. We are a remote-first company and have shared office spaces in New York City and Ireland, and optional co-working spaces that give us flexibility to do our best work anywhere. We take an active role in our growth through a performance review program that’s committed to providing actionable feedback, and a bonus structure that rewards great performance. We believe that bringing together a variety of perspectives makes us a stronger company – and we nurture leaders who create an inclusive culture and invest into employee resource groups that celebrate our differences and life experiences. We’re proud to have built an award-winning culture https://www.greenhouse.com/awards that’s been recognized as Fortune’s Best Places to Work and Inc.’s Best Workplaces multiple years in a row.\n--\nJoin us to do the best work of your career, solving meaningful problems with remarkable teams.\nThis is an independent contractor engagement in Argentina. Deel will serve as Contractor of Record and will contract with and pay the independent contractor. The independent contractor will provide services to Greenhouse on a non-exclusive basis, may provide services to other clients, and will be responsible for determining the manner and means of performing the services, subject to the applicable statement of work and agreed deliverables. This engagement is not an employment relationship with Greenhouse. No employment relationship, social benefits, or labor entitlements under Argentine Law 20,744 are created by this engagement. .\nThrough this arrangement, Deel is hiring an independent contractor to provide services to the Data Experience team at Greenhouse.\nThe Data Experience team is critical to delivering net-new functionality to our Analytics platform, supporting our existing suite of products, and elevating the overall technical quality of our application stack.\nThis role will support the development and maintenance of the Company’s web-based applications as part of an approximately 12-month engagement. In this role, you will focus on high-quality feature execution and technical reliability across the application stack for the Company\nThis is a collaborative, execution-focused, non-exclusive engagement. Services will include design, development, and delivery of platform infrastructure as scoped with the Data Experience team.\nCONTRACT & LOCATION DETAILS\n- Contract duration: Approximately 12 months, with potential for extension based on business needs\n- Engagement type: A non-exclusive contract role engaged through a Contractor of Record (COR) via Deel in Argentina\n- Location: Argentina (remote)\n- Working model: Collaboration with a distributed, US & Canada-based team, with reasonable availability for coordination during core Greenhouse working hours",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/f276bab3-7bcf-460c-a918-1af1b418bfa9",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/f276bab3-7bcf-460c-a918-1af1b418bfa9/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The role requires 5+ years of experience shipping production-grade TypeScript and React applications, which exceeds the candidate's professional experience (0 formal professional YOE). According to the ranking policy, when a posting explicitly requires 2+ years of professional experience as a mandatory condition, the fit score must not exceed 39. Despite the candidate having project-level experience with TypeScript, React, and Node.js, the mandatory 5+ YOE requirement creates a significant barrier.",
+    "strengths": [
+      "The candidate has project-level experience with TypeScript and React, aligning with the core technologies mentioned in the posting.",
+      "The candidate is comfortable using AI-assisted/agentic coding tools in their daily workflow, which is mentioned as a plus/preference in the posting."
+    ],
+    "gaps": [
+      "The posting explicitly requires 5+ years of experience shipping production-grade TypeScript and React applications (candidate has 0 formal professional years of experience).",
+      "The posting explicitly requires 1+ years of hands-on experience building data-rich applications or dashboards professionally."
+    ],
+    "ranked_at": "2026-08-15T09:08:49.493755",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_canals_06a7ec78-d84f-4035-9799-747524dbdc49",
+    "created_at": "2026-08-15T09:17:47.445858",
+    "title": "Junior Software Engineer",
+    "company": "canals",
+    "location": "Colombia; Argentina; Brazil",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Junior",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "Python",
+      "Node",
+      "Go"
+    ],
+    "main_requirements": [],
+    "summary": "ABOUT CANALS\nCanals builds software for wholesale distributors, helping them operate more efficiently through automation and AI.\nOur customers are the companies responsible for moving the materials that power the real economy; electrical supplies, plumbing products, roofing materials, HVAC equipment",
+    "raw_text": "ABOUT CANALS\nCanals builds software for wholesale distributors, helping them operate more efficiently through automation and AI.\nOur customers are the companies responsible for moving the materials that power the real economy; electrical supplies, plumbing products, roofing materials, HVAC equipment, and more. Every day, thousands of people rely on Canals to help process orders, manage purchasing, handle accounts payable, and streamline critical business workflows.\nWe're a profitable, rapidly growing company with a team of roughly 100 people distributed across North and South America. We care deeply about building great products, hiring exceptional people, and creating an environment where talented individuals can do the best work of their careers.\nTHE ROLE\nOur customer base is growing fast, and we’re looking for a Junior Software Engineer eager to learn and grow with us. You’ll work alongside experienced engineers building scalable, high-performance systems that solve real-world problems in logistics and automation.\nThis is a great opportunity to gain exposure to modern engineering practices, real customers, and a product that delivers measurable business impact.\nWHAT YOU’LL DO\n- Work closely with senior engineers to design, build, and maintain backend systems that power our platform.\n- Contribute to feature development, bug fixes, and performance improvements.\n- Participate in code reviews, testing, and documentation to ensure quality and maintainability.\n- Collaborate with product and design teams to bring ideas from concept to production.\n- Learn new tools and technologies, and grow into greater ownership over time.\nWHAT YOU'LL BRING\n- Typically, 0–2 years of professional experience as a software engineer (internships or projects count!).\n- Solid programming fundamentals and familiarity with at least one backend language (Go, Python, Node, etc.).\n- Curiosity and a desire to understand how complex systems fit together.\n- Eagerness to learn from others and contribute to a collaborative, high-performing team.\n- Strong communication and problem-solving skills.\n- Interest in startups, AI, or logistics a plus.\nWHY JOIN CANALS\nWe're building software that solves real problems for an industry that keeps the world running. Our customers rely on our platform every day to operate their businesses.\nWe've found strong product-market fit and continue to grow quickly, creating opportunities for people who want to have a meaningful impact on the trajectory of a company.\nWe believe great people build great companies. That's why we invest heavily in hiring, development, and creating an environment where talented individuals can do the best work of their careers.\nYou'll work alongside ambitious, thoughtful teammates who care deeply about what they do, challenge each other directly, and have a lot of fun along the way.\nWe value ownership, transparency, and continuous improvement. Good ideas can come from anywhere, and people are trusted to make things happen.\nWe're remote-first, flexible, and distributed across North and South America, bringing together talented people from a wide range of backgrounds and experiences.\nCanals.ai is an",
+    "language": "en",
+    "source_page": "Ashby (canals)",
+    "source_url": "https://jobs.ashbyhq.com/canals/06a7ec78-d84f-4035-9799-747524dbdc49",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/canals/06a7ec78-d84f-4035-9799-747524dbdc49/application",
+    "status": "ranked",
+    "score": 82,
+    "justification": "La vacante es de nivel Junior Software Engineer orientada a perfiles con 0-2 años de experiencia profesional (incluyendo proyectos o pasantías), encuadrando perfectamente en la seniority del candidato. El stack tecnológico incluye Python, Node y Go, donde el candidato demuestra experiencia práctica sólida en Python y Node.js a través de sus proyectos personales y académicos, además de estar cursando Ciencias de la Computación. La ubicación remota en LATAM (Argentina) es compatible. El único detalle menor es que el candidato cuenta con proyectos propios y académicos avanzados pero sin experiencia laboral previa en relación de dependencia, aunque el propio texto de la oferta aclara que los proyectos cuentan. fit_score: 82.",
+    "strengths": [
+      "El rol busca un Junior Software Engineer con 0-2 años de experiencia (explicitando que los proyectos cuentan), lo cual se alinea con el perfil del candidato.",
+      "La vacante requiere familiaridad con lenguajes backend como Python o Node, tecnologías en las que el candidato cuenta con proyectos prácticos (como JobBud y Batchpix).",
+      "La modalidad remota desde Argentina es totalmente compatible con la ubicación y disponibilidad del candidato."
+    ],
+    "gaps": [
+      "El perfil del candidato indica 0 años de experiencia profesional formal (aunque menciona que pasantías y proyectos cuentan, la posición pide típicamente de 0 a 2 años y el candidato es Junior/Trainee sin experiencia previa en empresa formal)."
+    ],
+    "ranked_at": "2026-08-15T09:17:54.971593",
+    "user_notes": null
   }
 ]

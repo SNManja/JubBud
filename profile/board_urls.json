@@ -187,5 +187,23 @@
     "last_analyzed": "2026-08-15T08:15:44.478302",
     "created_at": "2026-08-10T23:22:43.931635",
     "notes": ""
+  },
+  {
+    "id": "board_silverashby",
+    "name": "Silver (Ashby)",
+    "url": "https://jobs.ashbyhq.com/silver",
+    "source_type": "ashby",
+    "last_analyzed": null,
+    "created_at": "2026-08-15T09:09:43.126305",
+    "notes": "Tablero general de Silver en Ashby HQ"
+  },
+  {
+    "id": "board_canalsashby",
+    "name": "Canals (Ashby)",
+    "url": "https://jobs.ashbyhq.com/canals",
+    "source_type": "ashby",
+    "last_analyzed": "2026-08-15T09:17:47.225198",
+    "created_at": "2026-08-15T09:11:19.683127",
+    "notes": "Tablero oficial de Canals en Ashby HQ"
   }
 ]

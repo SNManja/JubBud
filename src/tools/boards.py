@@ -211,6 +211,10 @@ def get_board_to_analyze(identifier: str) -> str:
         from src.fetchers import fetch_greenhouse_job_content
         fetch_res = fetch_greenhouse_job_content(url)
         return f"🔍 **Analizando Tablero '{selected_board.get('name')}'** (Último análisis actualizado a {now_str[:16].replace('T', ' ')}):\n\n{fetch_res}"
+    elif stype == "ashby" or "ashby" in url.lower():
+        from src.fetchers import fetch_ashby_job_content
+        fetch_res = fetch_ashby_job_content(url)
+        return f"🔍 **Analizando Tablero '{selected_board.get('name')}'** (Último análisis actualizado a {now_str[:16].replace('T', ' ')}):\n\n{fetch_res}"
     else:
         return f"Board URL resolved: {url}. Please analyze position details."
 
