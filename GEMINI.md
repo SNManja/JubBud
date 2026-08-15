@@ -21,6 +21,7 @@ JobBud operates as a **modular orchestration system with unified fetcher ingesti
        ┌─────────────────────────────────────────────────────────────┐
        │ 1. Unified Ingestion Layer (`src/fetchers/`)                │
        │ - greenhouse.py: API -> List[JobDict] (0 LLM tokens)        │
+       │ - ashby.py: API -> List[JobDict] (0 LLM tokens)             │
        │ - exactas.py: Scrapes UBA -> calls job_parser_agent         │
        │ - linkedin.py: Fetches HTML -> calls job_parser_agent       │
        │ - manual.py: Ingests raw text -> calls job_parser_agent     │
@@ -78,12 +79,13 @@ JobBud operates as a **modular orchestration system with unified fetcher ingesti
 
 - **`jobbud_agent` (Master Conversational Orchestrator)**:
   - Manages conversation, user intent, workflow execution, status changes, and final output formatting.
-  - Interacts **exclusively through its 19 tools (`HERRAMIENTAS_BASICAS`)** with 0 direct subagents in `sub_agents`.
+  - Interacts **exclusively through its 20 tools (`HERRAMIENTAS_BASICAS`)** with 0 direct subagents in `sub_agents`.
   - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo o vacante, ejecuta `execute_job_pipeline_tool` o `execute_multi_board_pipeline_tool` para procesar el filtrado determinista y el rankeo en lotes de forma automática.
 
 - **Unified Ingestion Layer (`src/fetchers/`)**:
   - Encapsulates portal-specific scraping and API fetching into dedicated single-responsibility modules:
     - [greenhouse.py](file:///home/santi/jobbud/src/fetchers/greenhouse.py): Direct mapping to `List[JobDict]` (0 tokens LLM).
+    - [ashby.py](file:///home/santi/jobbud/src/fetchers/ashby.py): Direct mapping to `List[JobDict]` via Ashby Public API (0 tokens LLM).
     - [exactas.py](file:///home/santi/jobbud/src/fetchers/exactas.py): Scrapes FCEyN UBA and invokes `job_parser_agent`.
     - [linkedin.py](file:///home/santi/jobbud/src/fetchers/linkedin.py): Fetches LinkedIn HTML and invokes `job_parser_agent`.
     - [manual.py](file:///home/santi/jobbud/src/fetchers/manual.py): Normalizes user chat input via `job_parser_agent`.
@@ -138,11 +140,11 @@ To drastically minimize LLM token consumption, the pipeline applies a multi-stag
 
 ## 🛠️ Modular Tools Structure (`src/tools/`)
 
-All 19 core tools used by `jobbud_agent` are organized within the `src/tools/` package:
+All 20 core tools used by `jobbud_agent` are organized within the `src/tools/` package:
 
 ```text
 src/tools/
-├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all 19 core tools from fetchers, queries, management, boards)
+├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all 20 core tools from fetchers, queries, management, boards)
 ├── queries.py         # Job querying, inspection & filters (check_existing_job, get_job_raw_text, get_job_details, get_top_job_recommendations, list_jobs_by_status, filter_jobs_by_blacklist, filter_job_by_location)
 ├── management.py      # Status edits, deletions, undo reversion & pipeline execution (mark_job_status, delete_job_from_json, revert_last_job_action, execute_job_pipeline_tool, execute_multi_board_pipeline_tool)
 └── boards.py          # Job board registry & deterministic ordering (add_board_url, list_job_boards, get_board_to_analyze, delete_board_url)

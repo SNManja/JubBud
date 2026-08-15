@@ -17,6 +17,7 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
        ┌─────────────────────────────────────────────────────────────┐
        │ 1. Capa de Ingesta Unificada (`src/fetchers/`)              │
        │ - greenhouse.py: API -> List[JobDict] (0 tokens LLM)        │
+       │ - ashby.py: API -> List[JobDict] (0 tokens LLM)             │
        │ - exactas.py: Scrapes UBA -> llama a job_parser_agent       │
        │ - linkedin.py: Obtiene HTML -> llama a job_parser_agent     │
        │ - manual.py: Ingesta texto crudo -> llama a job_parser_agent│
@@ -73,7 +74,7 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
 ## ✨ Características Principales
 
 1. **Capa de Ingesta Unificada (`src/fetchers/`)**:
-   - Encapsula la lógica de obtención por portal en módulos especializados (`greenhouse.py`, `exactas.py`, `linkedin.py`, `manual.py`).
+   - Encapsula la lógica de obtención por portal en módulos especializados (`greenhouse.py`, `ashby.py`, `exactas.py`, `linkedin.py`, `manual.py`).
    - Todos los fetchers cumplen un contrato estándar devolviendo `List[JobDict]`, garantizando que todas las etapas posteriores reciban datos homogéneos.
    - Los fetchers son los **únicos que invocan** a `job_parser_agent`.
 
@@ -95,7 +96,7 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
    - `delay_between_batches_seconds` y `delay_between_boards_seconds` aplican pausas configurables para prevenir bloqueos de cuota (`429`).
 
 6. **IDs Canónicas y Deduplicación por Invariante**:
-   - **Esquema de IDs**: IDs estables (`greenhouse_{board}_{id}`, `exactas_{num}`, `linkedin_{id}` y hashes MD5 `manual_{md5(empresa:titulo)[:8]}`).
+   - **Esquema de IDs**: IDs estables (`greenhouse_{board}_{id}`, `ashby_{company}_{id}`, `exactas_{num}`, `linkedin_{id}` y hashes MD5 `manual_{md5(empresa:titulo)[:8]}`).
    - **Deduplicación por Invariante**: Vacantes ya guardadas en `jobs.json` son omitidas automáticamente antes de consumir slots de rankeo.
 
 7. **Inspección Exhaustiva y Métodos de Postulación (`get_job_details`)**:
@@ -126,13 +127,14 @@ jobbud/
 │   ├── blacklist_roles.md       # Roles/áreas excluidas (Post-Parseo)
 │   └── blacklist_seniority.md   # Seniorities excluidos (Post-Parseo)
 └── src/
-    ├── agent.py                 # Instancia principal de `jobbud_agent` (Google ADK Agent con 19 tools, 0 subagents)
+    ├── agent.py                 # Instancia principal de `jobbud_agent` (Google ADK Agent con 20 tools, 0 subagents)
     ├── config.py                # Carga centralizada de variables de entorno (.env)
     ├── guidelines.md            # Instrucciones del sistema y directivas conversacionales
     ├── fetchers/                # Capa de Ingesta Unificada que retorna List[JobDict]
     │   ├── __init__.py          # Exporta funciones de fetcher y herramientas del agente
     │   ├── base.py              # Compresión de texto y extractor de tecnologías
     │   ├── greenhouse.py        # Conector API REST de Greenhouse (0 tokens LLM)
+    │   ├── ashby.py             # Conector API REST de Ashby HQ (0 tokens LLM)
     │   ├── exactas.py           # Scraper FCEyN UBA + integración con parser
     │   ├── linkedin.py          # Extractor de avisos de LinkedIn + integración con parser
     │   └── manual.py            # Normalizador de texto crudo + integración con parser
@@ -155,8 +157,8 @@ jobbud/
     │       ├── state.py         # Manejo de caché y selector de índices
     │       ├── scope_parser.py  # Parser de scopes, fechas relativas e índices
     │       └── reporter.py      # Formateador de telemetría y reportes Markdown
-    └── tools/                   # Colección modular de 19 herramientas
-        ├── __init__.py          # Exporta HERRAMIENTAS_BASICAS (las 19 herramientas)
+    └── tools/                   # Colección modular de 20 herramientas
+        ├── __init__.py          # Exporta HERRAMIENTAS_BASICAS (las 20 herramientas)
         ├── queries.py           # Consultas, inspecciones detalladas y filtros deterministas
         ├── management.py        # Edición de estados, borrado, undo y herramientas de pipeline
         └── boards.py            # Registro y ordenamiento determinista de tableros
@@ -222,7 +224,7 @@ Todos los archivos de configuración y filtrado residen en la carpeta [`profile/
 
 ## 🛠️ Herramientas Registradas (`HERRAMIENTAS_BASICAS`)
 
-El agente `jobbud_agent` dispone de **19 herramientas modulares**:
+El agente `jobbud_agent` dispone de **20 herramientas modulares**:
 
 | Herramienta | Dominio | Propósito |
 | :--- | :--- | :--- |
@@ -241,6 +243,7 @@ El agente `jobbud_agent` dispone de **19 herramientas modulares**:
 | `fetch_linkedin_job_content` | Fetchers | Extrae contenido de publicaciones de LinkedIn. |
 | `fetch_exactas_job_board` | Fetchers | Extrae vacantes del portal de empleos de Exactas UBA. |
 | `fetch_greenhouse_job_content` | Fetchers | Consulta la API de portales Greenhouse. |
+| `fetch_ashby_job_content` | Fetchers | Obtiene vacantes vía API pública de Ashby HQ. |
 | `add_board_url` | Boards | Registra una nueva URL de tablero de empleo. |
 | `list_job_boards` | Boards | Lista tableros ordenados de más antiguo a más reciente. |
 | `get_board_to_analyze` | Boards | Resuelve y analiza un tablero por su número o nombre. |

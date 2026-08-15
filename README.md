@@ -17,6 +17,7 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
        ┌─────────────────────────────────────────────────────────────┐
        │ 1. Unified Ingestion Layer (`src/fetchers/`)                │
        │ - greenhouse.py: API -> List[JobDict] (0 LLM tokens)        │
+       │ - ashby.py: API -> List[JobDict] (0 LLM tokens)             │
        │ - exactas.py: Scrapes UBA -> calls job_parser_agent         │
        │ - linkedin.py: Fetches HTML -> calls job_parser_agent       │
        │ - manual.py: Ingests raw text -> calls job_parser_agent     │
@@ -73,7 +74,7 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
 ## ✨ Key Features
 
 1. **Unified Ingestion Layer (`src/fetchers/`)**:
-   - Encapsulates portal-specific logic into dedicated modules (`greenhouse.py`, `exactas.py`, `linkedin.py`, `manual.py`).
+   - Encapsulates portal-specific logic into dedicated modules (`greenhouse.py`, `ashby.py`, `exactas.py`, `linkedin.py`, `manual.py`).
    - Every fetcher enforces a standardized output contract returning a `List[JobDict]`, ensuring all downstream stages receive clean, uniform data.
    - Fetchers are the **sole callers** of `job_parser_agent`.
 
@@ -95,7 +96,7 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
    - `delay_between_batches_seconds` and `delay_between_boards_seconds` enforce configurable pauses to prevent API rate limits (`429`).
 
 6. **Standardized Platform IDs & Invariant Deduplication**:
-   - **Canonical ID Scheme**: Deterministic IDs (`greenhouse_{board}_{id}`, `exactas_{num}`, `linkedin_{id}`, and MD5 hashes `manual_{md5(company:title)[:8]}`).
+   - **Canonical ID Scheme**: Deterministic IDs (`greenhouse_{board}_{id}`, `ashby_{company}_{id}`, `exactas_{num}`, `linkedin_{id}`, and MD5 hashes `manual_{md5(company:title)[:8]}`).
    - **Invariant Deduplication**: Existing positions in `jobs.json` are skipped automatically before ranking slots are consumed.
 
 7. **Extensive Vacancy Inspection & Cascading Direct Application Links (`get_job_details`)**:
@@ -126,13 +127,14 @@ jobbud/
 │   ├── blacklist_roles.md       # Post-Parse role/area blacklist
 │   └── blacklist_seniority.md   # Post-Parse seniority blacklist
 └── src/
-    ├── agent.py                 # Main `jobbud_agent` instance (Google ADK Agent with 19 tools, 0 subagents)
+    ├── agent.py                 # Main `jobbud_agent` instance (Google ADK Agent with 20 tools, 0 subagents)
     ├── config.py                # Environment variable loader (.env)
     ├── guidelines.md            # System prompt & conversational guidelines
     ├── fetchers/                # Unified Ingestion Layer returning List[JobDict]
     │   ├── __init__.py          # Exposes fetcher functions and agent tools
     │   ├── base.py              # Text compression & technology extractor
     │   ├── greenhouse.py        # Greenhouse REST API connector (0 LLM tokens)
+    │   ├── ashby.py             # Ashby Public API connector (0 LLM tokens)
     │   ├── exactas.py           # Exactas UBA CS scraper + parser integration
     │   ├── linkedin.py          # LinkedIn job extractor + parser integration
     │   └── manual.py            # Raw text normalizer + parser integration
@@ -155,8 +157,8 @@ jobbud/
     │       ├── state.py         # Cache & selection parser
     │       ├── scope_parser.py  # Scope, relative time & index filtering
     │       └── reporter.py      # Telemetry & multi-board report formatter
-    └── tools/                   # Modular collection of 19 core tools
-        ├── __init__.py          # Re-exports HERRAMIENTAS_BASICAS (all 19 core tools)
+    └── tools/                   # Modular collection of 20 core tools
+        ├── __init__.py          # Re-exports HERRAMIENTAS_BASICAS (all 20 core tools)
         ├── queries.py           # Job querying, inspection & deterministic filters
         ├── management.py        # Status edits, deletions, undo & pipeline tools
         └── boards.py            # Job board registry management & ordering
@@ -222,7 +224,7 @@ All candidate configuration and filtering rules are located in the [`profile/`](
 
 ## 🛠️ Core Tools (`HERRAMIENTAS_BASICAS`)
 
-`jobbud_agent` is equipped with **19 modular tools**:
+`jobbud_agent` is equipped with **20 modular tools**:
 
 | Tool | Domain | Purpose |
 | :--- | :--- | :--- |
@@ -241,6 +243,7 @@ All candidate configuration and filtering rules are located in the [`profile/`](
 | `fetch_linkedin_job_content` | Fetchers | Extracts content from LinkedIn job posts. |
 | `fetch_exactas_job_board` | Fetchers | Fetches job postings from Exactas UBA job board. |
 | `fetch_greenhouse_job_content` | Fetchers | Fetches job listings via Greenhouse portal API. |
+| `fetch_ashby_job_content` | Fetchers | Fetches job listings via Ashby Public API. |
 | `add_board_url` | Boards | Registers a new job board URL in `profile/board_urls.json`. |
 | `list_job_boards` | Boards | Lists registered job boards sorted oldest to newest. |
 | `get_board_to_analyze` | Boards | Resolves and fetches a job board by index number or name. |
