@@ -208,7 +208,7 @@ def get_board_to_analyze(identifier: str) -> str:
     stype = selected_board.get("source_type", "greenhouse")
 
     if stype == "greenhouse" or "greenhouse" in url.lower():
-        from src.tools.fetchers import fetch_greenhouse_job_content
+        from src.fetchers import fetch_greenhouse_job_content
         fetch_res = fetch_greenhouse_job_content(url)
         return f"🔍 **Analizando Tablero '{selected_board.get('name')}'** (Último análisis actualizado a {now_str[:16].replace('T', ' ')}):\n\n{fetch_res}"
     else:

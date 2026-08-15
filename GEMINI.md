@@ -12,32 +12,44 @@ The project is built on **Google ADK (Agent Development Kit)** and maintains mod
 
 ## 🏛️ Current Architecture & Control Flow
 
-JobBud operates as a **master-orchestrated subagent system with a deterministic sequential pipeline runner** centered around `jobbud_agent`:
+JobBud operates as a **modular orchestration system with unified fetcher ingestion, programmatic subagent execution, and a deterministic sequential pipeline runner**:
 
 ```text
                      User Input / Link / Portal Query
                                     │
                                     ▼
-                     1. Obtención de Datos (Fetch API / Text)
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 1. Unified Ingestion Layer (`src/fetchers/`)                │
+       │ - greenhouse.py: API -> List[JobDict] (0 LLM tokens)        │
+       │ - exactas.py: Scrapes UBA -> calls job_parser_agent         │
+       │ - linkedin.py: Fetches HTML -> calls job_parser_agent       │
+       │ - manual.py: Ingests raw text -> calls job_parser_agent     │
+       │ -> Output Contract: Standardized List[JobDict]              │
+       └────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
-                     2. Pre-Filtro Duro Inicial (Pre-LLM Python / 0 Tokens)
-                        (title_blacklist, department_blacklist, location_filters)
-                        - Registrar vacantes obtenidas en crudo (total_raw) y pre-descartadas
-                        - Cargar vacantes conservadas en Caché Python (`LAST_FETCHED_JOBS_CACHE`)
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 2. Pre-Filtro Duro Inicial (Pre-LLM Python / 0 Tokens)      │
+       │ (title_blacklist, department_blacklist, location_filters)   │
+       │ - Registrar vacantes obtenidas en crudo (total_raw) y descartadas │
+       │ - Cargar vacantes conservadas en Caché (`LAST_FETCHED_JOBS_CACHE`)│
+       └────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
-                     3. Estructuración Híbrida en Memoria
-                        - API Jobs: Diccionarios estructurados directos (0 LLM tokens)
-                        - Raw Text / Links: `job_parser_agent` extrae rol, empresa y seniority con LLM
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 3. Normalización Estructurada en Memoria                     │
+       │ - Confirma JobDicts normalizados en memoria con IDs estables │
+       └────────────────────────────┬────────────────────────────────┘
                                     │
                                     ▼
-                     4. Filtro Determinista Post-Parseo, Dedupe por Invariante & Cap Opcional
-                        (blacklist_roles, blacklist_seniority, location_filters, max_jobs_per_board)
-                        - Post-Parse: Descarta roles/seniority prohibidos en Python.
-                        - Dedupe por Invariante: Omite vacantes ya existentes en jobs.json (0 LLM tokens).
-                        - Cap Opcional: Si max_jobs_per_board está activo, limita solo sobre vacantes nuevas.
-                        - Integridad: Si jobs.json está corrupto/inválido, aborta de inmediato por seguridad.
+       ┌─────────────────────────────────────────────────────────────┐
+       │ 4. Filtro Post-Parseo, Dedupe por Invariante & Board Cap    │
+       │ (blacklist_roles, blacklist_seniority, location, max_years) │
+       │ - Post-Parse: Descarta roles/seniority prohibidos en Python.│
+       │ - Semantic YOE Filter: Compara si numérico YOE > max_years. │
+       │ - Dedupe: Omite vacantes ya existentes en jobs.json (0 tokens)│
+       │ - Cap Opcional: max_jobs_per_board limita vacantes nuevas.  │
+       └────────────────────────────┬────────────────────────────────┘
                                     │
                 ┌───────────────────┴───────────────────┐
                 ▼                                       ▼
@@ -57,69 +69,59 @@ JobBud operates as a **master-orchestrated subagent system with a deterministic 
                                                    - Persiste registro 100% completo en `jobs.json`.
                                                         │
                                                         ▼
-                                                Entregar Respuesta
+                                                Entregar Respuesta Markdown
 ```
 
 ---
 
 ### Subagent Responsibilities & Boundaries
 
-- **`jobbud_agent` (Master Orchestrator)**:
-  - Manages conversation, user intent, workflow execution, status changes, intermediate progress reporting, and final output formatting.
-  - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo (ej. Greenhouse), el orquestador ejecuta directamente `execute_job_pipeline_tool("todas")` para procesar el filtrado determinista y el rankeo en lotes de forma automática. Al finalizar, presenta de manera transparente el desglose exacto de vacantes obtenidas en crudo (Etapa 1), descartadas por filtro pre-parseo duro (Etapa 2), válidas post pre-parseo (Etapa 3), descartadas por filtro post-parseo (Etapa 4), omitidas por deduplicación previa en `jobs.json` o tope configurado (`max_jobs_per_board`), evaluadas y rankeadas con LLM (Etapa 5) y guardadas en `jobs.json` (Etapa 6).
+- **`jobbud_agent` (Master Conversational Orchestrator)**:
+  - Manages conversation, user intent, workflow execution, status changes, and final output formatting.
+  - Interacts **exclusively through its 19 tools (`HERRAMIENTAS_BASICAS`)** with 0 direct subagents in `sub_agents`.
+  - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo o vacante, ejecuta `execute_job_pipeline_tool` o `execute_multi_board_pipeline_tool` para procesar el filtrado determinista y el rankeo en lotes de forma automática.
+
+- **Unified Ingestion Layer (`src/fetchers/`)**:
+  - Encapsulates portal-specific scraping and API fetching into dedicated single-responsibility modules:
+    - [greenhouse.py](file:///home/santi/jobbud/src/fetchers/greenhouse.py): Direct mapping to `List[JobDict]` (0 tokens LLM).
+    - [exactas.py](file:///home/santi/jobbud/src/fetchers/exactas.py): Scrapes FCEyN UBA and invokes `job_parser_agent`.
+    - [linkedin.py](file:///home/santi/jobbud/src/fetchers/linkedin.py): Fetches LinkedIn HTML and invokes `job_parser_agent`.
+    - [manual.py](file:///home/santi/jobbud/src/fetchers/manual.py): Normalizes user chat input via `job_parser_agent`.
+  - **Boundary**: Fetchers are the **sole callers** of `job_parser_agent`. They always return `List[JobDict]` matching the Greenhouse standard.
 
 - **`job_parser_agent`**:
-  - Parses raw unparsed job postings, normalizes data, detects language ("es"/"en"), extracts mandatory seniority ("Trainee", "Junior", "Semi-Senior", "Senior", "Lead / Executive"), stable IDs (`exactas_86_26`, `linkedin_4445031526`, `greenhouse_canonical_5569916`, `manual_<hash>`), and returns structured JSON.
-  - **Boundary**: Never reads candidate profile or ranks jobs. Returns control back to `jobbud_agent` immediately.
+  - Parses raw unparsed job postings, normalizes data, detects language ("es"/"en"), extracts mandatory seniority ("Trainee", "Junior", "Semi-Senior", "Senior", "Lead / Executive"), commitment, and semantic `years_of_experience`.
+  - **Boundary**: Exclusively called programmatically by `src/fetchers/`. Never reads candidate profile or ranks jobs.
 
 - **`job_ranker_agent`**:
-  - Reads candidate profile (`profile/candidate_profile.md`) via `read_candidate_profile` and ranking policy (`profile/ranking_policy.md`) via `read_ranking_policy`, evaluates fit score (0–100) using LLM reasoning, persists batch results via `save_ranked_jobs_batch` (or `update_job_ranking_json` for manual single jobs), and generates detailed fit rationale.
-  - **Boundary**: Exclusively handles fit scoring and rationale against candidate profile and ranking policy.
+  - Reads candidate profile (`profile/candidate_profile.md`) via `read_candidate_profile` and ranking policy (`profile/ranking_policy.md`) via `read_ranking_policy`, evaluates fit score (0–100) using LLM reasoning, and generates detailed fit rationale.
+  - **Boundary**: Exclusively called programmatically in batches by `single_pipeline.py`.
 
-- **`job_pipeline_runner` (`src/subagents/job_pipeline/runner.py`)**:
-  - Executes the 6-stage deterministic pipeline in Python.
-  - Reads configuration limits (`max_jobs_per_board` defaulting to `None`, `delay_between_batches_seconds`, `auto_pipeline_execution`) from [`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json).
-  - Performs deduplication before optional capping, ensuring jobs in `jobs.json` do not consume capping slots.
-  - Aborts immediately if `jobs.json` exists but is corrupted or not a valid JSON list.
-  - Exposes 8 explicit telemetry fields (`total_raw`, `pre_discarded_count`, `post_discarded_count`, `deduped_count`, `capped_count`, `sent_to_ranker_count`, `successfully_ranked_count`, `ranking_errors_count`) across all return paths.
-  - Controls transient batch cache lifecycle (`set_ranking_batch_cache` / `clear_ranking_batch_cache`) and invokes `job_ranker_agent` natively via Google ADK `InMemoryRunner` for each chunk of size k = min(5, ceil(R / 4)).
-  - Re-hydrates in-memory job dictionaries from `jobs.json` post-ranking before returning results.
+- **Modular `job_pipeline` Architecture (`src/subagents/job_pipeline/`)**:
+  - [single_pipeline.py](file:///home/santi/jobbud/src/subagents/job_pipeline/single_pipeline.py): Executes the 6-stage sequential pipeline on `List[JobDict]`.
+  - [multi_pipeline.py](file:///home/santi/jobbud/src/subagents/job_pipeline/multi_pipeline.py): Iterates through registered boards with inter-board timers.
+  - [adk_clients.py](file:///home/santi/jobbud/src/subagents/job_pipeline/adk_clients.py): Sync/async runner bridges for ADK `InMemoryRunner`, ThreadPoolExecutor for nested loops, and exponential backoff on HTTP 429 quota errors.
+  - [config.py](file:///home/santi/jobbud/src/subagents/job_pipeline/config.py): Caches and parses `pipeline_config.json`.
+  - [state.py](file:///home/santi/jobbud/src/subagents/job_pipeline/state.py): Manages `LAST_FETCHED_JOBS_CACHE` and selection strings (`"1, 2"`, `"del 1 al 4"`).
+  - [scope_parser.py](file:///home/santi/jobbud/src/subagents/job_pipeline/scope_parser.py): Deterministic board filtering by dates and indices.
+  - [reporter.py](file:///home/santi/jobbud/src/subagents/job_pipeline/reporter.py): Formats 6-stage telemetry and multi-board summary Markdown.
+  - [runner.py](file:///home/santi/jobbud/src/subagents/job_pipeline/runner.py): Clean facade preserving backward compatibility for legacy imports.
 
 ---
 
 ## 📐 Unified `jobs.json` Schema
 
-All job sources (APIs, web fetchers, subagents, and manual entries) standardize job objects using a single unified JSON schema:
+All job sources standardize job objects using a single unified JSON schema matching Greenhouse positions:
 `id`, `created_at`, `title`, `company`, `location`, `work_mode`, `commitment`, `department`, `seniority`, `years_of_experience`, `salary_range`, `key_technologies`, `main_requirements`, `summary`, `raw_text`, `language`, `source_page`, `source_url`, `application_method`, `status` ("new", "ranked", "disqualified", "applied"), `score`, `justification`, `strengths`, `gaps`, `ranked_at`, `user_notes`.
 
 ---
 
-## 🚫 Dual Deterministic Filters (Zero Token Waste) & Post-Rank Re-evaluation
+## 🚫 Dual Deterministic Filters (Zero Token Waste) & Semantic Experience Filter
 
 To drastically minimize LLM token consumption, the pipeline applies a multi-stage deterministic Python filtering process (0 tokens spent on discarded jobs):
 
-```text
-                  Aviso de Empleo / Portal API / Texto Crudo
-                                     │
-                                     ▼
-      ┌─────────────────────────────────────────────────────────────┐
-      │ ETAPA 1: Obtención de Datos en Crudo (API / Scraping)       │
-      │ Registra total_raw (ej. 50 vacantes)                        │
-      └──────────────────────────────┬──────────────────────────────┘
-                                     │
-                                     ▼
-      ┌─────────────────────────────────────────────────────────────┐
-      │ ETAPA 2: Filtros Duros Pre-Parseo (Pre-LLM en Python)       │
-      │ 2.1 title_blacklist.md      -> Revisa título directo        │
-      │ 2.2 department_blacklist.md -> Revisa metadatos de área     │
-      │ 2.3 location_filters.json   -> Revisa país en metadatos    │
-      └──────────────────────────────┬──────────────────────────────┘
-                                     │
-                             (Si supera Etapa 2)
-                                     │
-                                     ▼
-                  3. Guardado en `jobs.json` + Ranker LLM
-```
+- **No Regex Heuristics for Experience**: `years_of_experience` is extracted semantically by `job_parser_agent` or provided by structured APIs. Regex-based guessing is forbidden to avoid false positives (e.g. company age).
+- **Stage 4 Filter**: `evaluate_post_parse_filters` only drops positions if `years_of_experience` is an explicit integer greater than `max_years_experience` in `profile/pipeline_config.json`. If `None`, it allows the ranker to evaluate fit.
 
 ### Configuration Files (`profile/`)
 
@@ -140,8 +142,7 @@ All 19 core tools used by `jobbud_agent` are organized within the `src/tools/` p
 
 ```text
 src/tools/
-├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all 19 core tools)
-├── fetchers.py        # External web scraping & portal fetching (fetch_exactas_job_board, fetch_linkedin_job_content, fetch_greenhouse_job_content)
+├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all 19 core tools from fetchers, queries, management, boards)
 ├── queries.py         # Job querying, inspection & filters (check_existing_job, get_job_raw_text, get_job_details, get_top_job_recommendations, list_jobs_by_status, filter_jobs_by_blacklist, filter_job_by_location)
 ├── management.py      # Status edits, deletions, undo reversion & pipeline execution (mark_job_status, delete_job_from_json, revert_last_job_action, execute_job_pipeline_tool, execute_multi_board_pipeline_tool)
 └── boards.py          # Job board registry & deterministic ordering (add_board_url, list_job_boards, get_board_to_analyze, delete_board_url)

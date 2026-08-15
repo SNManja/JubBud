@@ -141,30 +141,7 @@ def _extract_application_method(
     return "No especificado en el aviso (ver portal de la empresa)"
 
 
-def extract_years_of_experience(title: str = "", text: str = "") -> Any:
-    """
-    Extracts required years of experience from title and raw text.
-    Returns int (e.g. 5), range string (e.g. "3-5"), or "undefined" if not inferrable.
-    """
-    full_text = f"{title or ''}\n{text or ''}"
-
-    # 1. Range pattern: e.g. "3 to 5 years", "3-5 años", "2 - 4 years"
-    range_match = re.search(r'(\d+)\s*(?:a|to|-)\s*(\d+)\s*(?:\+|\s)*(?:years?|años?)', full_text, re.IGNORECASE)
-    if range_match:
-        min_y, max_y = range_match.group(1), range_match.group(2)
-        return f"{min_y}-{max_y}"
-
-    # 2. Minimum/Exact pattern: e.g. "minimum 5 years", "5+ years", "5 años de experiencia", "at least 3 years"
-    min_match = re.search(r'(?:minimum|mínimo|at least|al menos|experiencia)?\s*\(?\s*(\d+)\+?\s*(?:years?|años?)\b', full_text, re.IGNORECASE)
-    if min_match:
-        val = int(min_match.group(1))
-        if 1 <= val <= 25:
-            return val
-
-    return "undefined"
-
-
-def extract_seniority(title: str, text: str, seniority: Optional[str] = None, years_of_exp: Optional[Any] = None) -> str:
+def extract_seniority(title: str, text: str, seniority: Optional[str] = None) -> str:
     if seniority and str(seniority).strip() and str(seniority).strip().lower() not in ("not specified", "no especificada", "desconocida", "undefined", ""):
         return str(seniority).strip()
 
@@ -195,22 +172,7 @@ def extract_seniority(title: str, text: str, seniority: Optional[str] = None, ye
     if re.search(r"\b(lead|staff|principal|architect|arquitecto|head|manager|director|vp)\b", text_lower):
         return "Lead / Executive"
 
-    # 3. Infer from Years of Experience if available
-    if years_of_exp and str(years_of_exp).lower() != "undefined":
-        try:
-            num = int(str(years_of_exp).split("-")[0].strip())
-            if num >= 5:
-                return "Senior"
-            elif num >= 3:
-                return "Semi-Senior"
-            elif num >= 1:
-                return "Junior"
-            elif num == 0:
-                return "Trainee"
-        except Exception:
-            pass
-
-    return "undefined"
+    return "Not specified"
 
 
 def extract_commitment(title: str = "", text: str = "", commitment: Optional[str] = None) -> str:
@@ -291,10 +253,16 @@ def build_unified_job_dict(
         job_id=job_id
     )
 
-    norm_years_exp = years_of_experience if (years_of_experience and str(years_of_experience).lower() not in ("undefined", "none", "null", "")) else extract_years_of_experience(title=title, text=raw_text)
+    norm_years_exp = None
+    if years_of_experience is not None and str(years_of_experience).strip().lower() not in ("undefined", "none", "null", ""):
+        try:
+            norm_years_exp = int(str(years_of_experience).split("-")[0].strip())
+        except Exception:
+            norm_years_exp = None
+
     norm_commitment = extract_commitment(title=title, text=raw_text, commitment=commitment)
     norm_department = extract_department(title=title, text=raw_text, department=department)
-    norm_seniority = extract_seniority(title=title, text=raw_text, seniority=seniority, years_of_exp=norm_years_exp)
+    norm_seniority = extract_seniority(title=title, text=raw_text, seniority=seniority)
     norm_app_method = _extract_application_method(text=raw_text or summary, source_url=source_url, application_method=application_method, company=company, job_id=assigned_id)
 
     final_url = source_url.strip() if (source_url and str(source_url).strip().lower() not in ("none", "null", "")) else None
@@ -414,6 +382,7 @@ def save_job_json(
     commitment: str = "Not specified",
     department: Optional[str] = None,
     seniority: Optional[str] = None,
+    years_of_experience: Optional[Any] = None,
     source_page: str = "Manual",
     source_url: Optional[str] = None,
     job_id: Optional[str] = None,
@@ -431,6 +400,7 @@ def save_job_json(
         commitment=commitment,
         department=department,
         seniority=seniority,
+        years_of_experience=years_of_experience,
         salary_range=salary_range,
         key_technologies=key_technologies,
         main_requirements=main_requirements,

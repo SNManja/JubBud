@@ -20,7 +20,6 @@ jobbud_agent = Agent(
     description="An AI assistant specialized in job search optimization, position analysis, and career matching.",
     instruction=jobbud_instruction,
     tools=HERRAMIENTAS_BASICAS,
-    sub_agents=[job_parser_agent, job_ranker_agent]
 )
 
 # Export root_agent for ADK Web compatibility

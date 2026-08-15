@@ -626,13 +626,13 @@ def evaluate_post_parse_filters(job: dict) -> tuple[bool, str]:
     if not loc_passed:
         return False, loc_reason
 
-    # 4. Check Years of Experience Filter
-    from src.subagents.job_pipeline.runner import load_pipeline_config
+    # 4. Check Years of Experience Filter (strictly on explicit numeric value)
+    from src.subagents.job_pipeline.config import load_pipeline_config
     cfg = load_pipeline_config()
     max_years = cfg.get("max_years_experience", 3)
 
     raw_yexp = job.get("years_of_experience")
-    if raw_yexp and str(raw_yexp).lower() not in ("undefined", "none", "null", ""):
+    if raw_yexp is not None and str(raw_yexp).strip().lower() not in ("undefined", "none", "null", ""):
         try:
             num_y = int(str(raw_yexp).split("-")[0].strip())
             if num_y > max_years:

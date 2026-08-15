@@ -4,11 +4,9 @@ JobBud Tools Package.
 Consolidates and exports all basic tools as HERRAMIENTAS_BASICAS.
 """
 
-from src.tools.fetchers import (
-    fetch_exactas_job_board,
-    fetch_linkedin_job_content,
-    fetch_greenhouse_job_content
-)
+from src.fetchers.exactas import fetch_exactas_job_board
+from src.fetchers.linkedin import fetch_linkedin_job_content
+from src.fetchers.greenhouse import fetch_greenhouse_job_content
 from src.tools.queries import (
     check_existing_job,
     get_job_raw_text,
