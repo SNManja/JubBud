@@ -4,7 +4,7 @@
     "name": "InvGate",
     "url": "https://boards-api.greenhouse.io/v1/boards/invgate/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-17T06:07:19.971817",
+    "last_analyzed": "2026-08-17T08:08:00.998363",
     "created_at": "2026-08-06T04:01:51.589142",
     "notes": ""
   },
@@ -13,7 +13,7 @@
     "name": "Episode Six",
     "url": "https://boards-api.greenhouse.io/v1/boards/episodesix/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:10:11.165996",
+    "last_analyzed": "2026-08-17T08:00:04.870777",
     "created_at": "2026-08-06T04:01:51.590377",
     "notes": ""
   },
@@ -22,7 +22,7 @@
     "name": "Sezzle",
     "url": "https://boards-api.greenhouse.io/v1/boards/sezzle/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:10:26.764241",
+    "last_analyzed": "2026-08-17T08:00:49.273206",
     "created_at": "2026-08-06T04:01:51.591413",
     "notes": ""
   },
@@ -31,7 +31,7 @@
     "name": "Tires Easy",
     "url": "https://boards-api.greenhouse.io/v1/boards/tireseasycom/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:05:51.519583",
+    "last_analyzed": "2026-08-17T07:56:33.121607",
     "created_at": "2026-08-06T04:01:51.592464",
     "notes": ""
   },
@@ -40,7 +40,7 @@
     "name": "AppDirect",
     "url": "https://boards-api.greenhouse.io/v1/boards/appdirect/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:10:45.435082",
+    "last_analyzed": "2026-08-17T08:01:15.094449",
     "created_at": "2026-08-06T04:01:51.593439",
     "notes": ""
   },
@@ -49,7 +49,7 @@
     "name": "Testlio",
     "url": "https://boards-api.greenhouse.io/v1/boards/testlio/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-17T06:06:27.898065",
+    "last_analyzed": "2026-08-17T08:07:15.797748",
     "created_at": "2026-08-06T04:01:51.594061",
     "notes": ""
   },
@@ -58,7 +58,7 @@
     "name": "5CA",
     "url": "https://boards-api.greenhouse.io/v1/boards/5ca/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:11:00.816041",
+    "last_analyzed": "2026-08-17T08:01:30.739967",
     "created_at": "2026-08-06T04:01:51.594676",
     "notes": ""
   },
@@ -67,7 +67,7 @@
     "name": "Newsela",
     "url": "https://boards-api.greenhouse.io/v1/boards/newsela/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:09:19.394669",
+    "last_analyzed": "2026-08-17T07:58:38.709661",
     "created_at": "2026-08-06T04:01:51.595933",
     "notes": ""
   },
@@ -76,7 +76,7 @@
     "name": "Particle41",
     "url": "https://boards-api.greenhouse.io/v1/boards/particle41llc/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:11:34.443260",
+    "last_analyzed": "2026-08-17T08:02:05.501464",
     "created_at": "2026-08-06T04:02:15.929001",
     "notes": ""
   },
@@ -85,7 +85,7 @@
     "name": "Aspen View Tech",
     "url": "https://boards-api.greenhouse.io/v1/boards/aspenviewtech/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:11:49.704160",
+    "last_analyzed": "2026-08-17T08:02:42.922917",
     "created_at": "2026-08-06T04:02:15.930498",
     "notes": ""
   },
@@ -94,7 +94,7 @@
     "name": "Backblaze",
     "url": "https://boards-api.greenhouse.io/v1/boards/backblaze/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:12:07.869504",
+    "last_analyzed": "2026-08-17T08:02:58.246316",
     "created_at": "2026-08-06T04:02:15.931580",
     "notes": ""
   },
@@ -103,7 +103,7 @@
     "name": "Webflow",
     "url": "https://boards-api.greenhouse.io/v1/boards/webflow/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:07:55.824274",
+    "last_analyzed": "2026-08-17T07:57:06.444553",
     "created_at": "2026-08-06T04:02:15.932399",
     "notes": ""
   },
@@ -112,7 +112,7 @@
     "name": "SecurityScorecard",
     "url": "https://boards-api.greenhouse.io/v1/boards/securityscorecard/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:11:16.182286",
+    "last_analyzed": "2026-08-17T08:01:46.013326",
     "created_at": "2026-08-06T04:02:15.933113",
     "notes": ""
   },
@@ -121,7 +121,7 @@
     "name": "Stensul",
     "url": "https://boards-api.greenhouse.io/v1/boards/stensul/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:08:11.664859",
+    "last_analyzed": "2026-08-17T07:57:22.133292",
     "created_at": "2026-08-06T04:02:15.934339",
     "notes": ""
   },
@@ -130,7 +130,7 @@
     "name": "Cookunity",
     "url": "https://boards-api.greenhouse.io/v1/boards/cookunity/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:09:03.462369",
+    "last_analyzed": "2026-08-17T07:58:11.802439",
     "created_at": "2026-08-06T04:02:15.935069",
     "notes": ""
   },
@@ -139,7 +139,7 @@
     "name": "GoFundMe",
     "url": "https://boards-api.greenhouse.io/v1/boards/gofundme/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:08:29.797513",
+    "last_analyzed": "2026-08-17T07:57:40.943336",
     "created_at": "2026-08-06T04:02:15.935917",
     "notes": ""
   },
@@ -148,7 +148,7 @@
     "name": "Nerdy",
     "url": "https://boards-api.greenhouse.io/v1/boards/nerdy/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:09:37.649222",
+    "last_analyzed": "2026-08-17T07:59:15.902797",
     "created_at": "2026-08-06T04:02:15.936595",
     "notes": ""
   },
@@ -157,7 +157,7 @@
     "name": "Southworks",
     "url": "https://boards-api.greenhouse.io/v1/boards/southworks/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:08:45.321986",
+    "last_analyzed": "2026-08-17T07:57:56.597926",
     "created_at": "2026-08-06T04:02:15.937383",
     "notes": ""
   },
@@ -166,7 +166,7 @@
     "name": "Counterpart",
     "url": "https://boards-api.greenhouse.io/v1/boards/counterpart/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:09:52.871017",
+    "last_analyzed": "2026-08-17T07:59:45.951897",
     "created_at": "2026-08-06T04:02:15.939549",
     "notes": ""
   },
@@ -175,7 +175,7 @@
     "name": "Remote.com",
     "url": "https://boards-api.greenhouse.io/v1/boards/remotecom/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T07:13:32.929779",
+    "last_analyzed": "2026-08-17T08:04:20.303709",
     "created_at": "2026-08-10T23:17:08.895914",
     "notes": ""
   },
@@ -184,7 +184,7 @@
     "name": "DevRev",
     "url": "https://boards-api.greenhouse.io/v1/boards/devrev/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T08:15:44.478302",
+    "last_analyzed": "2026-08-17T08:04:38.430534",
     "created_at": "2026-08-10T23:22:43.931635",
     "notes": ""
   },
@@ -193,7 +193,7 @@
     "name": "Silver (Ashby)",
     "url": "https://jobs.ashbyhq.com/silver",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-17T06:08:25.888444",
+    "last_analyzed": "2026-08-17T08:08:16.255823",
     "created_at": "2026-08-15T09:09:43.126305",
     "notes": "Tablero general de Silver en Ashby HQ"
   },
@@ -202,7 +202,7 @@
     "name": "Canals (Ashby)",
     "url": "https://jobs.ashbyhq.com/canals",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:36:05.832461",
+    "last_analyzed": "2026-08-17T08:06:49.505152",
     "created_at": "2026-08-15T09:11:19.683127",
     "notes": "Tablero oficial de Canals en Ashby HQ"
   },
@@ -211,7 +211,7 @@
     "name": "Nexus.xyz",
     "url": "https://jobs.ashbyhq.com/nexus.xyz",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-17T06:09:55.312308",
+    "last_analyzed": "2026-08-17T08:08:35.134540",
     "created_at": "2026-08-15T09:27:34.780783",
     "notes": "Tablero Ashby añadido por el usuario"
   },
@@ -220,7 +220,7 @@
     "name": "Chainlink Labs",
     "url": "https://jobs.ashbyhq.com/chainlink-labs",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:35:34.722481",
+    "last_analyzed": "2026-08-17T08:06:30.704196",
     "created_at": "2026-08-15T09:27:34.781738",
     "notes": "Tablero Ashby añadido por el usuario"
   },
@@ -229,7 +229,7 @@
     "name": "Scale Army Careers",
     "url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-17T06:10:41.042138",
+    "last_analyzed": "2026-08-17T08:09:04.122478",
     "created_at": "2026-08-15T09:27:34.782687",
     "notes": "Tablero Ashby añadido por el usuario"
   },
@@ -238,7 +238,7 @@
     "name": "Xbow Careers",
     "url": "https://jobs.ashbyhq.com/xbowcareers",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-17T06:11:48.383210",
+    "last_analyzed": "2026-08-17T08:09:20.325353",
     "created_at": "2026-08-15T09:27:34.784642",
     "notes": "Tablero Ashby añadido por el usuario"
   },
@@ -247,7 +247,7 @@
     "name": "Ramp",
     "url": "https://jobs.ashbyhq.com/ramp",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:30:36.121437",
+    "last_analyzed": "2026-08-17T08:05:18.143087",
     "created_at": "2026-08-15T09:27:34.785549",
     "notes": "Tablero Ashby añadido por el usuario"
   },
@@ -256,7 +256,7 @@
     "name": "Qdrant.tech",
     "url": "https://jobs.ashbyhq.com/qdrant.tech",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:31:40.011575",
+    "last_analyzed": "2026-08-17T08:06:15.479667",
     "created_at": "2026-08-15T09:27:34.786549",
     "notes": "Tablero Ashby añadido por el usuario"
   }

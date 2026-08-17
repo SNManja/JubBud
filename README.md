@@ -1,6 +1,8 @@
 # 💼 JobBud — Intelligent Job Search Assistant with Google ADK
 
-[![English](https://img.shields.io/badge/Language-English-red.svg)](README.md) [![Spanish](https://img.shields.io/badge/Language-Español-blue.svg)](README.es.md)
+[![English](https://img.shields.io/badge/Language-English-red.svg)](README.md) [![Spanish](https://img.shields.io/badge/Language-Español-blue.svg)](README.es.md) [![Live Run Output Example](https://img.shields.io/badge/Live_Example-View_Report-green.svg)](EXAMPLE_OUTPUT.md)
+
+> 📊 **[Click here to view a real multi-board processing output example (29 boards analyzed)](EXAMPLE_OUTPUT.md)**
 
 **JobBud** is a conversational agent and master orchestrator designed to automate job searching, filtering, evaluation, and application lifecycle management for Computer Science students and Software Engineers.
 

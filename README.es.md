@@ -1,6 +1,8 @@
 # 💼 JobBud — Asistente Inteligente de Búsqueda Laboral con Google ADK
 
-[![Spanish](https://img.shields.io/badge/Language-Español-blue.svg)](README.es.md) [![English](https://img.shields.io/badge/Language-English-red.svg)](README.md)
+[![Spanish](https://img.shields.io/badge/Language-Español-blue.svg)](README.es.md) [![English](https://img.shields.io/badge/Language-English-red.svg)](README.md) [![Ejemplo de Salida Real](https://img.shields.io/badge/Ejemplo_Real-Ver_Reporte-green.svg)](EXAMPLE_OUTPUT.md)
+
+> 📊 **[Hacé clic acá para ver un ejemplo de reporte real de procesamiento multitablero (29 tableros analizados)](EXAMPLE_OUTPUT.md)**
 
 **JobBud** es un agente conversacional y orquestador maestro diseñado para automatizar la búsqueda, filtrado, evaluación y gestión de postulaciones laborales para estudiantes e ingenieros en Ciencias de la Computación.
 
