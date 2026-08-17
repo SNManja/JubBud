@@ -241,6 +241,20 @@ Good:
 
 Avoid hybrid or confusing formulations that blur job requirements and candidate evidence.
 
+### 📐 Mandatory JSON Schema Contract for `strengths` and `gaps`
+
+The schema contract across JobBud is strictly a flat list of strings:
+
+```json
+"strengths": ["string", "string"],
+"gaps": ["string", "string"]
+```
+
+⛔ **STRICT PROHIBITION**:
+- DO NOT return lists of objects or key-value dicts (e.g. `[{"text": "..."}]`, `[{"item": 1, "text": "..."}]`).
+- DO NOT wrap strings in nested structures.
+- ALWAYS return flat arrays of strings: `["evidence point 1", "evidence point 2"]`.
+
 ---
 
 ## 10. Recall and Scoring
@@ -354,12 +368,11 @@ Do not substitute a conversationally reconstructed score for the persisted score
 
 ---
 
-## 15. Language
+## 15. Language & Output Rationale
 
-- Spanish posting / user context → Spanish output.
-- English posting / user context → English output.
-
-Preserve original technologies, titles, and explicit requirement wording when useful.
+- **Configured Output Language**: Generate `justification`, `strengths`, `gaps`, and the final formatted response strictly in the language requested in the ranking prompt / pipeline config (`"es"` for Spanish, `"en"` for English).
+- **Agnostic Evaluation**: Evaluate postings regardless of their publication language, but articulate the candidate fit evaluation in the user's configured output language.
+- **Preservation of Technical Terms**: Preserve original technologies, libraries, tools, frameworks, and job titles intact (e.g. Python, React, PostgreSQL, Docker, AWS) without translating proper technical terms.
 
 ---
 

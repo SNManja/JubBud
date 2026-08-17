@@ -5,12 +5,55 @@ Tools specific to the JobRanker subagent.
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Any, Dict
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
 PROFILE_FILE_PATH = ROOT_DIR / "profile" / "candidate_profile.md"
 POLICY_FILE_PATH = ROOT_DIR / "profile" / "ranking_policy.md"
 JOBS_FILE_PATH = ROOT_DIR / "jobs.json"
+
+
+def _normalize_string_list(items: Any) -> List[str]:
+    """
+    Ensures strengths and gaps strictly conform to the List[str] contract.
+    Normalizes any nested structures (e.g. [{'text': '...'}], [{'item': 1, 'text': '...'}])
+    into flat strings.
+    """
+    if not items:
+        return []
+    if isinstance(items, str):
+        s = items.strip()
+        return [s] if s else []
+    if not isinstance(items, list):
+        s = str(items).strip()
+        return [s] if s else []
+
+    normalized: List[str] = []
+    for elem in items:
+        if isinstance(elem, str):
+            clean = elem.strip()
+            if clean:
+                normalized.append(clean)
+        elif isinstance(elem, dict):
+            val = (
+                elem.get("text")
+                or elem.get("description")
+                or elem.get("strength")
+                or elem.get("gap")
+                or elem.get("point")
+                or elem.get("value")
+            )
+            if not val:
+                str_vals = [str(v).strip() for v in elem.values() if isinstance(v, str) and str(v).strip()]
+                val = max(str_vals, key=len) if str_vals else ""
+            if val and str(val).strip():
+                normalized.append(str(val).strip())
+        elif elem is not None:
+            clean = str(elem).strip()
+            if clean:
+                normalized.append(clean)
+    return normalized
+
 
 
 def read_ranking_policy() -> str:
@@ -116,8 +159,8 @@ def update_job_ranking_json(
 
         target_job["score"] = score_val
         target_job["justification"] = str(justification)
-        target_job["strengths"] = list(strengths) if isinstance(strengths, list) else []
-        target_job["gaps"] = list(gaps) if isinstance(gaps, list) else []
+        target_job["strengths"] = _normalize_string_list(strengths)
+        target_job["gaps"] = _normalize_string_list(gaps)
         target_job["status"] = "ranked"
         target_job["ranked_at"] = datetime.now().isoformat()
 
@@ -204,8 +247,8 @@ def save_ranked_jobs_batch(ranked_jobs: List[dict]) -> str:
                 continue
 
             just_val = str(rjob.get("justification", ""))
-            str_val = rjob.get("strengths", []) if isinstance(rjob.get("strengths"), list) else []
-            gaps_val = rjob.get("gaps", []) if isinstance(rjob.get("gaps"), list) else []
+            str_val = _normalize_string_list(rjob.get("strengths"))
+            gaps_val = _normalize_string_list(rjob.get("gaps"))
             now_iso = datetime.now().isoformat()
 
             original_job = dict(_RANKING_BATCH_CACHE[jid])

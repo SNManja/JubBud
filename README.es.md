@@ -102,8 +102,18 @@ El sistema procesa ofertas laborales desde múltiples fuentes (APIs de portales 
 7. **Inspección Exhaustiva y Métodos de Postulación (`get_job_details`)**:
    - Recupera el detalle completo, justificación de fit, fortalezas, vacíos y el **link directo (`source_url`) junto con las instrucciones de postulación (`application_method`)** con fallback en 4 niveles.
 
-8. ⛔ **Política Cero Mock Data**:
-   - Prohibición estricta de generar o persistir datos ficticios (`test_adk_rank_1`) en `jobs.json`.
+8. **Soporte Multi-Idioma e Internacionalización Dinámica**:
+   - Configurable en `profile/pipeline_config.json` (`"language": "es" | "en" | null`).
+   - Si el idioma no está configurado o es inválido, `jobbud_agent` le pregunta al usuario y persiste su elección usando `set_language_preference`.
+   - Genera reportes de telemetría en el idioma configurado vía `src/subagents/job_pipeline/reporter.py`.
+   - Invariante: `job_parser_agent` se mantiene agnóstico al usuario y centrado en la publicación, mientras que `job_ranker_agent` evalúa y redacta sus justificaciones en el idioma elegido por el usuario.
+
+9. **Contrato Estricto de Esquema JSON para `strengths` y `gaps`**:
+   - `strengths` y `gaps` están garantizados como listas planas `List[str]` (`["texto 1", "texto 2"]`).
+   - Normalización determinista en Python (`_normalize_string_list`) asegura que nunca se guarden objetos anidados en `jobs.json`.
+
+10. ⛔ **Política Cero Mock Data**:
+    - Prohibición estricta de generar o persistir datos ficticios (`test_adk_rank_1`) en `jobs.json`.
 
 ---
 
@@ -119,7 +129,7 @@ jobbud/
 ├── profile/                     # Perfil del candidato y reglas de filtrado
 │   ├── candidate_profile.md     # Perfil profesional y preferencias del usuario
 │   ├── ranking_policy.md        # Jerarquía de reglas, scoring y política del usuario
-│   ├── pipeline_config.json     # Límites del pipeline (cap por board, timer de lote, exp máx, auto flag)
+│   ├── pipeline_config.json     # Límites del pipeline (idioma, cap por board, timer de lote, exp máx, auto flag)
 │   ├── board_urls.json          # Registro persistente de tableros de empleo
 │   ├── location_filters.json    # Países permitidos, ciudades/barrios y reglas remotas
 │   ├── title_blacklist.md       # Términos excluidos en títulos (Pre-Parseo)
@@ -127,7 +137,7 @@ jobbud/
 │   ├── blacklist_roles.md       # Roles/áreas excluidas (Post-Parseo)
 │   └── blacklist_seniority.md   # Seniorities excluidos (Post-Parseo)
 └── src/
-    ├── agent.py                 # Instancia principal de `jobbud_agent` (Google ADK Agent con 20 tools, 0 subagents)
+    ├── agent.py                 # Instancia principal de `jobbud_agent` (Google ADK Agent con 22 tools, 0 subagents)
     ├── config.py                # Carga centralizada de variables de entorno (.env)
     ├── guidelines.md            # Instrucciones del sistema y directivas conversacionales
     ├── fetchers/                # Capa de Ingesta Unificada que retorna List[JobDict]
@@ -156,11 +166,11 @@ jobbud/
     │       ├── config.py        # Lector de configuración del pipeline
     │       ├── state.py         # Manejo de caché y selector de índices
     │       ├── scope_parser.py  # Parser de scopes, fechas relativas e índices
-    │       └── reporter.py      # Formateador de telemetría y reportes Markdown
-    └── tools/                   # Colección modular de 20 herramientas
-        ├── __init__.py          # Exporta HERRAMIENTAS_BASICAS (las 20 herramientas)
+    │       └── reporter.py      # Formateador de telemetría y reportes Markdown (i18n)
+    └── tools/                   # Colección modular de 22 herramientas
+        ├── __init__.py          # Exporta HERRAMIENTAS_BASICAS (las 22 herramientas)
         ├── queries.py           # Consultas, inspecciones detalladas y filtros deterministas
-        ├── management.py        # Edición de estados, borrado, undo y herramientas de pipeline
+        ├── management.py        # Edición de estados, borrado, idioma, undo y herramientas de pipeline
         └── boards.py            # Registro y ordenamiento determinista de tableros
 ```
 

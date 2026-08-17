@@ -4,7 +4,7 @@
     "name": "InvGate",
     "url": "https://boards-api.greenhouse.io/v1/boards/invgate/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T08:15:48.985801",
+    "last_analyzed": "2026-08-17T06:07:19.971817",
     "created_at": "2026-08-06T04:01:51.589142",
     "notes": ""
   },
@@ -49,7 +49,7 @@
     "name": "Testlio",
     "url": "https://boards-api.greenhouse.io/v1/boards/testlio/jobs?content=true",
     "source_type": "greenhouse",
-    "last_analyzed": "2026-08-15T08:15:46.583772",
+    "last_analyzed": "2026-08-17T06:06:27.898065",
     "created_at": "2026-08-06T04:01:51.594061",
     "notes": ""
   },
@@ -193,7 +193,7 @@
     "name": "Silver (Ashby)",
     "url": "https://jobs.ashbyhq.com/silver",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:22:52.040727",
+    "last_analyzed": "2026-08-17T06:08:25.888444",
     "created_at": "2026-08-15T09:09:43.126305",
     "notes": "Tablero general de Silver en Ashby HQ"
   },
@@ -211,7 +211,7 @@
     "name": "Nexus.xyz",
     "url": "https://jobs.ashbyhq.com/nexus.xyz",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:27:47.880031",
+    "last_analyzed": "2026-08-17T06:09:55.312308",
     "created_at": "2026-08-15T09:27:34.780783",
     "notes": "Tablero Ashby añadido por el usuario"
   },
@@ -229,7 +229,7 @@
     "name": "Scale Army Careers",
     "url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:29:03.853178",
+    "last_analyzed": "2026-08-17T06:10:41.042138",
     "created_at": "2026-08-15T09:27:34.782687",
     "notes": "Tablero Ashby añadido por el usuario"
   },
@@ -238,7 +238,7 @@
     "name": "Xbow Careers",
     "url": "https://jobs.ashbyhq.com/xbowcareers",
     "source_type": "ashby",
-    "last_analyzed": "2026-08-15T09:30:17.990637",
+    "last_analyzed": "2026-08-17T06:11:48.383210",
     "created_at": "2026-08-15T09:27:34.784642",
     "notes": "Tablero Ashby añadido por el usuario"
   },

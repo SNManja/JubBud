@@ -102,8 +102,18 @@ The system ingests job postings from multiple sources (Greenhouse portal APIs, E
 7. **Extensive Vacancy Inspection & Cascading Direct Application Links (`get_job_details`)**:
    - Retrieves full structured job data, fit rationale, strengths, gaps, and **direct application URLs (`source_url`) and application instructions (`application_method`)** using a robust 4-level fallback.
 
-8. ⛔ **Zero Mock Data Policy**:
-   - Strict prohibition against creating or persisting synthetic or test jobs (`test_adk_rank_1`) in `jobs.json`.
+8. **Multi-Language Support & Dynamic Internationalization**:
+   - Configured via `profile/pipeline_config.json` (`"language": "es" | "en" | null`).
+   - If language is unspecified or invalid, `jobbud_agent` proactively prompts the user and persists the choice using `set_language_preference`.
+   - Generates transparent pipeline reports in the configured language via `src/subagents/job_pipeline/reporter.py`.
+   - Invariant: `job_parser_agent` remains publication-centric, while `job_ranker_agent` evaluates and returns rationale in the user's preferred language.
+
+9. **Strict JSON Schema Contract for `strengths` and `gaps`**:
+   - `strengths` and `gaps` are guaranteed to be flat `List[str]` (`["string 1", "string 2"]`).
+   - Deterministic normalization (`_normalize_string_list`) ensures all entries in `jobs.json` remain uniform without nested objects.
+
+10. ⛔ **Zero Mock Data Policy**:
+    - Strict prohibition against creating or persisting synthetic or test jobs (`test_adk_rank_1`) in `jobs.json`.
 
 ---
 
@@ -119,7 +129,7 @@ jobbud/
 ├── profile/                     # Candidate profile & deterministic filtering rules
 │   ├── candidate_profile.md     # Candidate background, skills & goals
 │   ├── ranking_policy.md        # User rule hierarchy, scoring policy & visibility directives
-│   ├── pipeline_config.json     # Pipeline limits (board cap, batch timer, max years exp, auto flag)
+│   ├── pipeline_config.json     # Pipeline limits (language, board cap, batch timer, max years exp, auto flag)
 │   ├── board_urls.json          # Persistent job board registry
 │   ├── location_filters.json    # Allowed/blocked countries, cities, and remote rules
 │   ├── title_blacklist.md       # Pre-Parse title blacklist
@@ -127,7 +137,7 @@ jobbud/
 │   ├── blacklist_roles.md       # Post-Parse role/area blacklist
 │   └── blacklist_seniority.md   # Post-Parse seniority blacklist
 └── src/
-    ├── agent.py                 # Main `jobbud_agent` instance (Google ADK Agent with 20 tools, 0 subagents)
+    ├── agent.py                 # Main `jobbud_agent` instance (Google ADK Agent with 22 tools, 0 subagents)
     ├── config.py                # Environment variable loader (.env)
     ├── guidelines.md            # System prompt & conversational guidelines
     ├── fetchers/                # Unified Ingestion Layer returning List[JobDict]
@@ -156,11 +166,11 @@ jobbud/
     │       ├── config.py        # Pipeline config parser
     │       ├── state.py         # Cache & selection parser
     │       ├── scope_parser.py  # Scope, relative time & index filtering
-    │       └── reporter.py      # Telemetry & multi-board report formatter
-    └── tools/                   # Modular collection of 20 core tools
-        ├── __init__.py          # Re-exports HERRAMIENTAS_BASICAS (all 20 core tools)
+    │       └── reporter.py      # Telemetry & multi-board report formatter (i18n)
+    └── tools/                   # Modular collection of 22 core tools
+        ├── __init__.py          # Re-exports HERRAMIENTAS_BASICAS (all 22 core tools)
         ├── queries.py           # Job querying, inspection & deterministic filters
-        ├── management.py        # Status edits, deletions, undo & pipeline tools
+        ├── management.py        # Status edits, deletions, language prefs, undo & pipeline tools
         └── boards.py            # Job board registry management & ordering
 ```
 

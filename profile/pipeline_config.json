@@ -1,16 +1,14 @@
 {
+  "_comment_language": "Idioma para interacción, reportes y rankeo ('es' = Español, 'en' = English, o null si no está configurado).",
+  "language": "en",
   "_comment_max_jobs_per_board": "Límite máximo de vacantes que se envían a rankear con LLM por cada consulta a un Job Board.",
   "max_jobs_per_board": null,
-
   "_comment_delay_between_batches": "Pausa en segundos (timer) entre cada llamada en lote (chunk) al subagente ranker con LLM.",
   "delay_between_batches_seconds": 5,
-
   "_comment_delay_between_boards": "Pausa en segundos (timer) entre la consulta a un Job Board y el siguiente durante la ejecución multitablero.",
   "delay_between_boards_seconds": 15,
-
   "_comment_max_years_experience": "Límite máximo de años de experiencia requeridos para considerar viable una vacante (ej. 3 años max).",
   "max_years_experience": 3,
-
   "_comment_auto_pipeline_execution": "Indica si el pipeline se ejecuta de forma automática sin pedir confirmación manual al usuario.",
   "auto_pipeline_execution": true
 }

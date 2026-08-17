@@ -279,5 +279,44 @@ def execute_multi_board_pipeline_tool(scope: str = "unanalyzed") -> str:
         return f"Error in multi-board pipeline execution: {str(e)}"
 
 
+def set_language_preference(language: str) -> str:
+    """
+    Sets and persists the user's preferred language in profile/pipeline_config.json ('es' for Spanish, 'en' for English).
+
+    Args:
+        language: Language code ('es' or 'en').
+
+    Returns:
+        Confirmation message in the chosen language.
+    """
+    from src.subagents.job_pipeline.config import set_pipeline_config_language
+
+    success, msg = set_pipeline_config_language(language)
+    if not success:
+        return f"Error: {msg}"
+
+    clean = language.strip().lower()
+    if clean == "es":
+        return "Success: Idioma de preferencia guardado como 'es' (Español). A partir de ahora todas las respuestas, reportes y evaluaciones se realizarán en español."
+    elif clean == "en":
+        return "Success: Language preference saved as 'en' (English). From now on, all responses, reports, and evaluations will be delivered in English."
+    return f"Success: {msg}"
+
+
+def get_language_preference() -> str:
+    """
+    Retrieves the currently configured language preference from profile/pipeline_config.json.
+
+    Returns:
+        'es', 'en', or 'unspecified'.
+    """
+    from src.subagents.job_pipeline.config import load_pipeline_config
+
+    cfg = load_pipeline_config()
+    lang = cfg.get("language")
+    return lang if lang else "unspecified"
+
+
+
 
 

@@ -195,10 +195,17 @@ def get_job_details(identifier: str) -> str:
 
         link_display = f"[{source_url}]({source_url})" if (source_url and str(source_url).startswith("http")) else "No disponible en el aviso"
 
-        techs = ", ".join(found.get("key_technologies", [])) or "No especificado"
-        reqs = "\n  - ".join(found.get("main_requirements", [])) or "No especificados"
-        strengths = ", ".join(found.get("strengths", [])) or "Ninguna registrada"
-        gaps = ", ".join(found.get("gaps", [])) or "Ninguno registrado"
+        from src.subagents.job_ranker.tools import _normalize_string_list
+
+        techs_list = _normalize_string_list(found.get("key_technologies", []))
+        reqs_list = _normalize_string_list(found.get("main_requirements", []))
+        strengths_list = _normalize_string_list(found.get("strengths", []))
+        gaps_list = _normalize_string_list(found.get("gaps", []))
+
+        techs = ", ".join(techs_list) or "No especificado"
+        reqs = "\n  - ".join(reqs_list) or "No especificados"
+        strengths = "\n  - " + "\n  - ".join(strengths_list) if strengths_list else "Ninguna registrada"
+        gaps = "\n  - " + "\n  - ".join(gaps_list) if gaps_list else "Ninguno registrado"
 
         return (
             f"📋 **DETALLES COMPLETOS Y MÉTODO DE POSTULACIÓN DE LA VACANTE**\n\n"

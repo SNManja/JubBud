@@ -111,10 +111,20 @@ JobBud operates as a **modular orchestration system with unified fetcher ingesti
 
 ---
 
-## 📐 Unified `jobs.json` Schema
+## 📐 Unified `jobs.json` Schema & Strict Contract
 
 All job sources standardize job objects using a single unified JSON schema matching Greenhouse positions:
 `id`, `created_at`, `title`, `company`, `location`, `work_mode`, `commitment`, `department`, `seniority`, `years_of_experience`, `salary_range`, `key_technologies`, `main_requirements`, `summary`, `raw_text`, `language`, `source_page`, `source_url`, `application_method`, `status` ("new", "ranked", "disqualified", "applied"), `score`, `justification`, `strengths`, `gaps`, `ranked_at`, `user_notes`.
+
+### Strict Type Contract for `strengths` and `gaps`
+The schema contract across JobBud is strictly flat arrays of strings:
+```json
+"strengths": ["string", "string"],
+"gaps": ["string", "string"]
+```
+- **Prohibition**: Lists of objects or key-value dicts (e.g. `[{"text": "..."}]`, `[{"item": 1, "text": "..."}]`) are forbidden.
+- **Deterministic Python Normalization (`_normalize_string_list`)**: Enforced in `save_ranked_jobs_batch` and `update_job_ranking_json` to guarantee that all persisted entries are 100% flat `List[str]`.
+
 
 ---
 
@@ -129,7 +139,7 @@ To drastically minimize LLM token consumption, the pipeline applies a multi-stag
 
 | Archivo | Rol en el Filtrado / Pipeline | Regla / Propósito |
 | :--- | :--- | :--- |
-| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | **Controlador del Pipeline** | Configura `max_jobs_per_board` (cap máximo por consulta), `delay_between_batches_seconds` (timer entre lotes), `delay_between_boards_seconds` (timer entre tableros), `max_years_experience` (máximo de años de experiencia permitidos, ej: 3) y `auto_pipeline_execution`. |
+| **[`profile/pipeline_config.json`](file:///home/santi/jobbud/profile/pipeline_config.json)** | **Controlador del Pipeline** | Configura `language` (idioma de interacción, reportes y rankeo: 'es', 'en' o null para preguntar), `max_jobs_per_board` (cap máximo por consulta), `delay_between_batches_seconds` (timer entre lotes), `delay_between_boards_seconds` (timer entre tableros), `max_years_experience` (máximo de años de experiencia permitidos, ej: 3) y `auto_pipeline_execution`. |
 | **[`profile/title_blacklist.md`](file:///home/santi/jobbud/profile/title_blacklist.md)** | **Filtro Duro Pre-Parseo** | Omite vacantes si el título contiene términos excluidos. |
 | **[`profile/department_blacklist.md`](file:///home/santi/jobbud/profile/department_blacklist.md)** | **Filtro Duro Pre-Parseo** | Omite si los metadatos de la API incluyen departamentos no deseados. |
 | **[`profile/blacklist_roles.md`](file:///home/santi/jobbud/profile/blacklist_roles.md)** | **Filtro Post-Parseo** | Omite por área/rol parseado (ej. Sales, Recruiter, HR). |
@@ -140,13 +150,13 @@ To drastically minimize LLM token consumption, the pipeline applies a multi-stag
 
 ## 🛠️ Modular Tools Structure (`src/tools/`)
 
-All 20 core tools used by `jobbud_agent` are organized within the `src/tools/` package:
+All core tools used by `jobbud_agent` are organized within the `src/tools/` package:
 
 ```text
 src/tools/
-├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all 20 core tools from fetchers, queries, management, boards)
+├── __init__.py        # Re-exports HERRAMIENTAS_BASICAS (all core tools from fetchers, queries, management, boards)
 ├── queries.py         # Job querying, inspection & filters (check_existing_job, get_job_raw_text, get_job_details, get_top_job_recommendations, list_jobs_by_status, filter_jobs_by_blacklist, filter_job_by_location)
-├── management.py      # Status edits, deletions, undo reversion & pipeline execution (mark_job_status, delete_job_from_json, revert_last_job_action, execute_job_pipeline_tool, execute_multi_board_pipeline_tool)
+├── management.py      # Status edits, deletions, undo reversion, language preference & pipeline execution (mark_job_status, delete_job_from_json, revert_last_job_action, execute_job_pipeline_tool, execute_multi_board_pipeline_tool, set_language_preference, get_language_preference)
 └── boards.py          # Job board registry & deterministic ordering (add_board_url, list_job_boards, get_board_to_analyze, delete_board_url)
 ```
 

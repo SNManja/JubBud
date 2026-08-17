@@ -1,57 +1,148 @@
 [
   {
-    "id": "exactas_69_26",
-    "created_at": "2026-08-15T08:13:27.676399",
-    "title": "C++ Low-Latency Platform Engineer",
-    "company": "Neix (Quant)",
-    "location": "San Fernando, Prov. Bs. As., Argentina",
-    "work_mode": "Presencial",
-    "commitment": "Full-time",
-    "department": "Engineering / Trading",
-    "seniority": "Junior",
-    "years_of_experience": 1,
-    "salary_range": "A concertar",
+    "id": "greenhouse_testlio_8114240",
+    "created_at": "2026-08-17T06:06:28.393563",
+    "title": "Testing a Financial App for Italian Business Owners",
+    "company": "testlio",
+    "location": "Remote in EMEA",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Freelancers",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
     "key_technologies": [
-      "C++",
-      "Linux",
-      "Redes",
-      "Bases de datos",
-      "Market Data / Feed Handler"
+      "Go"
     ],
-    "main_requirements": [
-      "Estudiante avanzado y/o Graduado/a en Cs. Matemáticas, Cs. Físicas o Cs. de la Computación",
-      "Buen nivel de C++ (performance mindset: memoria, estructuras, profiling)",
-      "Fundamentos de Linux y redes (procesos, sockets, herramientas de diagnóstico)",
-      "Manejo de bases de datos",
-      "Inglés intermedio",
-      "Experiencia previa"
+    "main_requirements": [],
+    "summary": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we are looking for Business Owners based in",
+    "raw_text": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we are looking for Business Owners based in Italy to collaborate in testing a popular platform's new user onboarding flow for businesses.\nYour testing will help identify and resolve issues for business owners across Italy who wish to create PayPal business accounts. We're specifically looking for individuals who own\nLimited Companies (Società a Responsabilità Limitata - S.R.L. / S.R.L.S.)\nin\nItaly\nand speak\nItalian\n. Your task would be to create a Paypal Business account for your company and record any bugs along the way. You will be acting like a new PayPal user, sharing your honest feedback about the experience. With your help, the PayPal team will be amble to improve the experience of new users!\nNote: We cannot collaborate if you have an existing PayPal account tied to your Limited Company. It is OK if you have a personal PayPal account, as this will not disrupt the testing flow.\nTo participate in this project, you will need to create an account on our platform. Through this account, we can assign you testing tasks. You will be asked to use our website for defect tracking and will receive materials to prepare you for testing.\nBenefits of being a freelancer at Testlio\nSchedule: You can create your schedule and work on other testing runs that interest you.\nLocation: Testlio is a 100% remote company. Seriously, you can work from the coffee shop, your home, or while waiting for class.\nGrowth: You’ll be testing global-scale mobile apps and have the chance to boost your skills and grow your career.\nPayment: You are paid by the hour, not by the bug. This means you get paid even if you did not uncover any bugs.\nRequirements\nAge: You have to be at least 18 years old.\nLocation: Must be physically located in Italy.\nAvailability: 30 minutes for your Testlio account setup and 2 hours for the actual PayPal testing task, which will be paid.\nDevices: iOS device (iPhone or iPad), Android device (Android Tablet or Phone), Laptop/Desktop.\nExperience: Software testing experience is a plus, but if you are new to testing, we offer free courses to help you learn and grow. We offer a preparatory course that will help you learn more about testing on our website.\nWhat does testing look like?\nType of testing: Functional testing.\nType of work: short-term, freelance.\nWorkload: Regular weekly cadence, with additional ad-hoc requests possible throughout the week\nPay rate: The pay rate for this is\n30 USD/hr\n.\nPayment: You are paid weekly via PayPal or Payoneer.\nWe will pay you through a personal Paypal account, if you chose to go with that option.\nWe will send you the USD amount, which you can then transfer/convert to EUR if it is more convenient to you.\nHow to start?\nIf you have any questions or need help, please contact Opportunities@testlio.com using the code ITALYCOMPANY in the Subject line/email body so we can quickly identify your request.\nOnce you are ready, please fill out the initial application below. Those who meet the requirements will receive further information to participate in this paid testing opportunity.",
+    "language": "en",
+    "source_page": "Greenhouse (testlio)",
+    "source_url": "https://job-boards.greenhouse.io/testlio/jobs/8114240",
+    "application_method": "Enviar CV por correo a Opportunities@testlio.com",
+    "status": "ranked",
+    "score": 15,
+    "justification": "The candidate is incompatible with the mandatory location (Italy) and business/tax entity requirements (Italian Limited Company) specified in the posting, resulting in a poor fit.",
+    "strengths": [
+      "The posting welcomes newcomers to software testing, aligning with the candidate's openness to entry-level roles."
     ],
-    "summary": "Neix busca un C++ Low-Latency Platform Engineer con sólida base técnica en Cs. Matemáticas, Físicas o de la Computación para participar en el desarrollo de trading algorítmico de baja latencia sobre el hot path del sistema. Se requiere experiencia previa, buen manejo de C++, Linux, redes y bases de datos, con modalidad en relación de dependencia en San Fernando.",
-    "raw_text": "Página Origen: Exactas UBA\nURL Origen: https://exactas.uba.ar/ofertas-de-trabajo-profesional/ofertas-activas-estudiantes/\n\nOferta #69/26: Estudiante avanzado y/o Graduado/a en Cs. Matemáticas / Cs. Físicas / Cs. de la Computación // Nombre del puesto: C++ Low-Latency Platform Engineer (Neix - Quant)\nPerfil solicitado: Estudiante avanzado y/o Graduado/a en Cs. Matemáticas / Cs. Físicas / Cs. de la Computación.\nCantidad de puestos a cubrir: 1\nTipo de vínculo: Relación de dependencia\nNombre del puesto: C++ Low-Latency Platform Engineer (Neix – Quant)\nActividad principal / descripción de tareas\n: se busca incorporar perfiles con fuerte base técnica para entrenarse y crecer en trading algorítmico de baja latencia basado en C++.\nEl trabajo se realiza sobre el “hot path” del sistema y abarca, según el perfil y la evolución, módulos como Market Data / Feed Handler, Order & Execution y Controls/Observability (métricas, alertas y estados operativos).\nSe\nvalora\na personas con:\n* buen nivel de C++ (performance mindset: memoria, estructuras, profiling),\n* Manejo de bases de datos,\n* fundamentos de Linux y redes (procesos, sockets, herramientas de diagnóstico),\n* ganas de aprender microestructura de mercados, medir (p99/p99.9), automatizar y documentar.\nIdiomas\n: inglés intermedio\nConocimientos informáticos:\n* buen nivel de C++ (performance mindset: memoria, estructuras, profiling),\n* fundamentos de Linux y redes (procesos, sockets, herramientas de diagnóstico),\n* Manejo de bases de datos,\nResulta necesario contar con experiencia previa. Se brindará capacitación al ingresante.\nhttps://www.neix.com.ar\nZona de trabajo: San Fernando, Prov. Bs. As.\nHorario estipulado: Jornada completa\nRemuneración: A concertar\nFecha de cierre: 14/08/26\nQuien se interese, debe enviar CV a:\ntalentos@neix.com.ar\nReferencia: Martina Perez Monti – Cargo: Contacto Laboral",
-    "language": "es",
-    "source_page": "Exactas UBA",
-    "source_url": "https://exactas.uba.ar/ofertas-de-trabajo-profesional/ofertas-activas-estudiantes/",
-    "application_method": "Enviar CV a talentos@neix.com.ar",
-    "status": "disqualified",
-    "score": null,
-    "justification": null,
-    "strengths": [],
-    "gaps": [],
-    "ranked_at": null,
-    "user_notes": "Descartada por requerir experiencia previa en C++ de baja latencia y modalidad presencial en San Fernando que no se ajusta al perfil actual.",
-    "updated_at": "2026-08-15T08:19:25.541432"
+    "gaps": [
+      "The posting explicitly requires the candidate to be physically located in Italy and own a Limited Company (S.R.L. / S.R.L.S.) in Italy, which is not matched by the candidate profile.",
+      "The candidate does not speak Italian as required for this testing project."
+    ],
+    "ranked_at": "2026-08-17T06:06:47.774229",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_testlio_8127860",
+    "created_at": "2026-08-17T06:06:28.397083",
+    "title": "Uber Driver for Testing the Uber App (Remote in France)",
+    "company": "testlio",
+    "location": "Remote in EMEA",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Freelancers",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we're working with Uber to help bring improv",
+    "raw_text": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we're working with Uber to help bring improvements to their Uber Driver app. We're looking for already registered and active\nUber drivers\nlocated in France to test out new features of the app. Your feedback will be valuable in ensuring that other users such as yourself will have a smooth experience on the app.\nTo participate in this project, you will need to create an account on our platform. Through this account, we can assign you testing tasks. You will be asked to use our website for defect tracking and will receive materials to prepare you for testing.\nPayrate:\n$27 USD / h\n.\nYou will be paid per hour, not per issues/bugs you find on the Uber app. That way, you will get paid even if you don't find any bugs.\nYou can chose to be paid via Paypal or Payoneer for tasks completed on our website.\nBenefits of being a freelancer at Testlio\nSchedule: You can create your schedule and work on other testing runs that interest you.\nLocation: Testlio is a 100% remote company. Seriously, you can work from the coffee shop, your home, or while waiting for class.\nGrowth: You’ll be testing global-scale mobile apps and have the chance to boost your skills and grow your career.\nPayment: You are paid by the hour, not by the bug. This means you get paid even if you did not uncover any bugs.\nRequirements\nAge: You have to be at least 18 years old.\nLocation: Must be physically located in France.\nAvailability: 1 hour of testing time\nDevices: iPhone and/or Android Phone\nWhat does testing look like?\nType of testing: functional testing.\nType of work: short-term, freelance.\nWorkload: Regular weekly cadence, with additional ad-hoc requests possible throughout the week\nPay rate: The pay rate for this is 27 USD/hr.\nPayment: You are paid weekly via PayPal or Payoneer.\nWe will send you the USD amount, which you can then transfer/convert to EUR if it is more convenient to you.\nHow to start?\nIf you have any questions or need help, please contact Opportunities@testlio.com using the code DRIVERFR in the Subject line/email body so we can quickly identify your request.\nOnce you are ready, please fill out the initial application below. Those who meet the requirements will receive further information to participate in this paid testing opportunity.",
+    "language": "en",
+    "source_page": "Greenhouse (testlio)",
+    "source_url": "https://job-boards.greenhouse.io/testlio/jobs/8127860",
+    "application_method": "Enviar CV por correo a Opportunities@testlio.com",
+    "status": "ranked",
+    "score": 10,
+    "justification": "The candidate does not meet the mandatory location requirement (France) and the mandatory role requirement (registered and active Uber driver), making this position a poor fit.",
+    "strengths": [
+      "The posting mentions remote freelance opportunities, which align generally with flexible work preferences."
+    ],
+    "gaps": [
+      "The posting explicitly requires the candidate to be physically located in France and be an already registered and active Uber driver, which is not satisfied by the candidate profile."
+    ],
+    "ranked_at": "2026-08-17T06:06:47.774252",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_testlio_8127961",
+    "created_at": "2026-08-17T06:06:28.401003",
+    "title": "Uber Driver for Testing the Uber App (Remote in Switzerland)",
+    "company": "testlio",
+    "location": "Remote in EMEA",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Freelancers",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we're working with Uber to help bring improv",
+    "raw_text": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we're working with Uber to help bring improvements to their Uber Driver app. We're looking for already registered and active\nUber drivers\nlocated in Switzerland to test out new features of the app. Your feedback will be valuable in ensuring that other users such as yourself will have a smooth experience on the app.\nTo participate in this project, you will need to create an account on our platform. Through this account, we can assign you testing tasks. You will be asked to use our website for defect tracking and will receive materials to prepare you for testing.\nPayrate:\n$27 USD / h\n.\nYou will be paid per hour, not per issues/bugs you find on the Uber app. That way, you will get paid even if you don't find any bugs.\nYou can chose to be paid via Paypal or Payoneer for tasks completed on our website.\nBenefits of being a freelancer at Testlio\nSchedule: You can create your schedule and work on other testing runs that interest you.\nLocation: Testlio is a 100% remote company. Seriously, you can work from the coffee shop, your home, or while waiting for class.\nGrowth: You’ll be testing global-scale mobile apps and have the chance to boost your skills and grow your career.\nPayment: You are paid by the hour, not by the bug. This means you get paid even if you did not uncover any bugs.\nRequirements\nAge: You have to be at least 18 years old.\nLocation: Must be physically located in Switzerland.\nAvailability: 1 hour of testing time\nDevices: iPhone and/or Android Phone\nExperience: Must be an active Uber Driver\nWhat does testing look like?\nType of testing: functional testing.\nType of work: short-term, freelance.\nWorkload: Regular weekly cadence, with additional ad-hoc requests possible throughout the week\nPay rate: The pay rate for this is 27 USD/hr.\nPayment: You are paid weekly via PayPal or Payoneer.\nWe will send you the USD amount, which you can then transfer/convert to EUR if it is more convenient to you.\nHow to start?\nIf you have any questions or need help, please contact Opportunities@testlio.com using the code DRIVERCH in the Subject line/email body so we can quickly identify your request.\nOnce you are ready, please fill out the initial application below. Those who meet the requirements will receive further information to participate in this paid testing opportunity.",
+    "language": "en",
+    "source_page": "Greenhouse (testlio)",
+    "source_url": "https://job-boards.greenhouse.io/testlio/jobs/8127961",
+    "application_method": "Enviar CV por correo a Opportunities@testlio.com",
+    "status": "ranked",
+    "score": 15,
+    "justification": "The candidate does not meet the mandatory location requirement (must be physically located in Switzerland) nor the mandatory requirement of being an active Uber driver. This results in a fundamental location and prerequisite mismatch, yielding a poor fit score according to the ranking policy.",
+    "strengths": [
+      "The candidate is comfortable with remote work and asynchronous tasks."
+    ],
+    "gaps": [
+      "The posting requires the candidate to be physically located in Switzerland and be an active Uber Driver.",
+      "The candidate has no relation to or presence in Switzerland and is not an active Uber driver."
+    ],
+    "ranked_at": "2026-08-17T06:07:02.813538",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_testlio_8125614",
+    "created_at": "2026-08-17T06:06:28.404238",
+    "title": "Uber Driver for Testing the Uber App (Remote in the Netherlands)",
+    "company": "testlio",
+    "location": "Remote in EMEA",
+    "work_mode": "Remote",
+    "commitment": "Not specified",
+    "department": "Freelancers",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we're working with Uber to help bring improv",
+    "raw_text": "Hi there! We are Testlio, a global software testing company with its own freelance network. Our freelancers test apps from companies across the globe. Testlio is a great place for people who value the freedom and flexibility of remote work.\nAt the moment, we're working with Uber to help bring improvements to their Uber Driver app. We're looking for already registered and active\nUber drivers\nlocated in the Netherlands to test out new features of the app. Your feedback will be valuable in ensuring that other users such as yourself will have a smooth experience on the app.\nTo participate in this project, you will need to create an account on our platform. Through this account, we can assign you testing tasks. You will be asked to use our website for defect tracking and will receive materials to prepare you for testing.\nPayrate:\n$27 USD / h\n.\nYou will be paid per hour, not per issues/bugs you find on the Uber app. That way, you will get paid even if you don't find any bugs.\nYou can chose to be paid via Paypal or Payoneer for tasks completed on our website.\nBenefits of being a freelancer at Testlio\nSchedule: You can create your schedule and work on other testing runs that interest you.\nLocation: Testlio is a 100% remote company. Seriously, you can work from the coffee shop, your home, or while waiting for class.\nGrowth: You’ll be testing global-scale mobile apps and have the chance to boost your skills and grow your career.\nPayment: You are paid by the hour, not by the bug. This means you get paid even if you did not uncover any bugs.\nRequirements\nAge: You have to be at least 18 years old.\nLocation: Must be physically located in the Netherlands.\nAvailability: 1 hour of testing time\nDevices: iPhone and/or Android Phone\nWhat does testing look like?\nType of testing: functional testing.\nType of work: short-term, freelance.\nWorkload: Regular weekly cadence, with additional ad-hoc requests possible throughout the week\nPay rate: The pay rate for this is 27 USD/hr.\nPayment: You are paid weekly via PayPal or Payoneer.\nWe will send you the USD amount, which you can then transfer/convert to EUR if it is more convenient to you.\nHow to start?\nIf you have any questions or need help, please contact Opportunities@testlio.com using the code DRIVERNL in the Subject line/email body so we can quickly identify your request.\nOnce you are ready, please fill out the initial application below. Those who meet the requirements will receive further information to participate in this paid testing opportunity.",
+    "language": "en",
+    "source_page": "Greenhouse (testlio)",
+    "source_url": "https://job-boards.greenhouse.io/testlio/jobs/8125614",
+    "application_method": "Enviar CV por correo a Opportunities@testlio.com",
+    "status": "ranked",
+    "score": 15,
+    "justification": "The candidate fails the mandatory location requirement (must be physically located in the Netherlands) and the mandatory requirement of being an active Uber driver. These unmet physical and professional prerequisites result in a low fit score.",
+    "strengths": [
+      "The candidate is comfortable with remote work and online platforms."
+    ],
+    "gaps": [
+      "The posting requires the candidate to be physically located in the Netherlands and be an active Uber Driver.",
+      "The candidate has no presence in the Netherlands and is not an active Uber driver."
+    ],
+    "ranked_at": "2026-08-17T06:07:02.813548",
+    "user_notes": null
   },
   {
     "id": "greenhouse_invgate_4456847002",
-    "created_at": "2026-08-15T08:15:49.214674",
+    "created_at": "2026-08-17T06:07:20.190917",
     "title": "Bilingual Application Support Analyst",
     "company": "invgate",
     "location": "Argentina",
     "work_mode": "Remote",
     "commitment": "Not specified",
     "department": "Technical assistance and Support",
-    "seniority": "Junior",
-    "years_of_experience": 2,
+    "seniority": "Not specified",
+    "years_of_experience": null,
     "salary_range": "Not specified",
     "key_technologies": [
       "SQL",
@@ -66,30 +157,65 @@
     "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4456847002",
     "status": "ranked",
     "score": 35,
-    "justification": "The posting explicitly requires 2+ years of experience supporting SaaS or complex enterprise applications for external users as a mandatory condition. Under the ranking policy, when a posting explicitly requires 2+ years of professional experience as a mandatory requirement, the fit score must not exceed 39. Although the candidate possesses relevant technical knowledge (SQL, Linux, English/Spanish bilingualism) and the role is junior in title, the explicit 2+ YOE requirement creates a major professional experience barrier.",
+    "justification": "The candidate matches the technical stack requirements partially (SQL, Linux exposure via personal projects and university background) and fits the bilingual (English and Spanish) profile. However, the posting explicitly requires 2+ years of professional experience supporting SaaS or complex enterprise applications, which triggers the policy barrier for candidates with 0 professional YOE, capping the score at 39.",
     "strengths": [
-      "The role requires bilingual proficiency in English and Spanish; the candidate has strong bilingual communication skills.",
-      "The role mentions SQL and Linux as key or plus technologies; the candidate has practical experience with both SQL and Linux environments.",
-      "The position is located in Argentina / remote-compatible with the region and the title is Junior, aligning with the candidate's general entry-level scope."
+      "The candidate is fully bilingual in English and Spanish, matching the bilingual requirement of the role.",
+      "The posting asks for SQL and Linux familiarity, which the candidate has covered through personal projects and advanced university studies in Computer Science."
     ],
     "gaps": [
-      "The posting explicitly requires 2+ years of experience supporting SaaS or complex enterprise applications for external users.",
-      "The candidate profile indicates 0 formal professional years of experience (YOE)."
+      "The posting explicitly requires 2+ years of experience supporting SaaS or complex enterprise applications for external users, whereas the candidate has 0 formal professional years of experience.",
+      "Knowledge of Active Directory, LDAP, Apache, and advanced networking/virtualized environments are listed as big pluses/familiarity requirements where the candidate's practical exposure is limited or self-taught."
     ],
-    "ranked_at": "2026-08-15T08:16:32.041729",
+    "ranked_at": "2026-08-17T06:07:24.958608",
+    "user_notes": null
+  },
+  {
+    "id": "greenhouse_invgate_5419932002",
+    "created_at": "2026-08-17T06:07:20.192528",
+    "title": "DBA",
+    "company": "invgate",
+    "location": "Argentina",
+    "work_mode": "Not specified",
+    "commitment": "Not specified",
+    "department": "Infrastructure",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "Not specified",
+    "key_technologies": [
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\nPara continuar expandiéndo",
+    "raw_text": "InvGate es una empresa SaaS en constante crecimiento que desarrolla productos destinados al IT management y a la automatización de servicios. Actualmente contamos con clientes en más de 60 países y en industrias tan diversas como bancos, e-commerce, educación y tecnología.\nPara continuar expandiéndonos, buscamos un/a\nDATABASE ENGINEER\npara encargarse de la administración y mantenimiento de nuestras bases de datos (Postgres y MySQL), gestionando su óptima configuración, actualizaciones, uso de recursos y aplicación de buenas prácticas.\nLa posición interactúa con los equipos de desarrollo y SRE para ayudarlos en el mejor uso de las bases de datos: sugerir cambios en esquema, creación de índices, asistencia en el desarrollo de queries, interpretación de planes de ejecución de consultas.\nNo dudes en postularte si:\nDisfrutas de trabajar en equipo.\nSos curioso y te gusta investigar nuevas tecnologías\nEstás comprometido con seguir las buenas prácticas y producir código de calidad.\nTe atraen los desafíos y te gusta resolver problemas!\n¿Qué buscamos?\nExperiencia sólida (mínimo 5 años) trabajando con MySQL y/o Postgres\nConocimientos avanzados de AWS RDS.\nExperiencia en DB Security y Optimización de consultas\nConocimientos de MSSQL y aplicaciones web serán considerados un Plus\nTe ofrecemos oportunidades reales de desarrollo de carrera, clases de inglés cubiertas al 100% y tres semanas de vacaciones pagas.",
+    "language": "en",
+    "source_page": "Greenhouse (invgate)",
+    "source_url": "https://job-boards.greenhouse.io/invgate/jobs/5419932002",
+    "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/5419932002",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The candidate is an advanced CS student with 0 formal professional YOE, whereas the posting explicitly mandates a solid background with a minimum of 5 years of professional experience working with MySQL and/or Postgres. According to the ranking policy, when 2+ years of professional experience are explicitly required, the fit score must not exceed 39. Despite the technical alignment in PostgreSQL and databases, the mandatory 5-year experience requirement establishes a definitive barrier.",
+    "strengths": [
+      "The role involves working with PostgreSQL, matching the candidate's practical database experience from personal projects like Batchpix.",
+      "The candidate demonstrates strong autonomous learning and problem-solving skills aligned with the team's culture of investigating new technologies."
+    ],
+    "gaps": [
+      "The posting explicitly requires solid experience (minimum 5 years) working with MySQL and/or Postgres, which exceeds the candidate's 0 professional YOE.",
+      "The role requires advanced knowledge of AWS RDS, while the candidate's AWS and cloud exposure is limited to personal/home server exploration."
+    ],
+    "ranked_at": "2026-08-17T06:07:39.422116",
     "user_notes": null
   },
   {
     "id": "greenhouse_invgate_4610663002",
-    "created_at": "2026-08-15T08:15:49.247732",
+    "created_at": "2026-08-17T06:07:20.215486",
     "title": "Software Engineer - Full Stack",
     "company": "invgate",
     "location": "Argentina",
     "work_mode": "Hybrid",
     "commitment": "Not specified",
     "department": "Engineering",
-    "seniority": "undefined",
-    "years_of_experience": "undefined",
+    "seniority": "Not specified",
+    "years_of_experience": null,
     "salary_range": "Not specified",
     "key_technologies": [],
     "main_requirements": [],
@@ -100,31 +226,31 @@
     "source_url": "https://job-boards.greenhouse.io/invgate/jobs/4610663002",
     "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4610663002",
     "status": "ranked",
-    "score": 50,
-    "justification": "La vacante busca un Ingeniero de Software Full Stack sin especificar un mínimo formal de años de experiencia profesional (YOE), lo cual evita el corte absoluto por el límite de 2+ YOE. Sin embargo, el rol exige experiencia previa en desarrollo Backend/Full Stack (preferentemente en PHP) y colaboración en productos de software en producción (revisión de código de pares, escalabilidad y calidad en SaaS global), aspectos para los cuales el candidato cuenta con proyectos académicos y personales sólidos (Node.js, PostgreSQL, TypeScript, Python) pero carece de experiencia laboral formal previa. Esto sitúa la vacante como un ajuste débil/posible (débil fit por falta de experiencia profesional y stack preferente en PHP), ubicándose en el rango de 40-59 según las pautas de política para perfiles sin experiencia previa y requisitos de desarrollo en producción.",
+    "score": 62,
+    "justification": "The role is a Full Stack Software Engineer position at InvGate in Argentina. The posting does not specify any strict years of professional experience, seniority, or a completed degree as absolute mandatory barriers, fitting the candidate's entry-level status. However, the posting expresses a preference for PHP and backend experience, whereas the candidate's profile centers around JavaScript, TypeScript, Node.js, Python, and C++, with no professional experience or PHP listed. Because there is no mandatory experience barrier but there are notable technology stack gaps (PHP and specific backend familiarity), the fit is evaluated as a possible/weak fit. Under the ranking policy, since there is no explicit YOE barrier, it falls into the possible fit range (60-74), but given the missing core stack preference (PHP) and lack of professional experience, a score of 62 is appropriate.",
     "strengths": [
-      "La vacante valora explícitamente la formación académica relacionada (Licenciatura en Ciencias de la Computación), área en la cual el candidato es estudiante avanzado en UBA Exactas.",
-      "El puesto menciona el uso de tecnologías e innovaciones orientadas a LLMs (agent augmentation), en las cuales el candidato posee proyectos prácticos (JobBud).",
-      "Se aceptan perfiles con experiencia en cualquier lenguaje backend, aunque se prefiere PHP; el candidato cuenta con proyectos backend utilizando Node.js/TypeScript, Python y C++."
+      "The position is located in Argentina (Hybrid/Remote compatible), matching the candidate's location context.",
+      "The posting does not specify a mandatory professional years of experience requirement, making it accessible to an entry-level candidate.",
+      "The candidate brings general programming foundations from advanced Computer Science studies at UBA Exactas and backend experience in Node.js and Python."
     ],
     "gaps": [
-      "El puesto busca desarrolladores Backend/Full Stack, preferentemente con experiencia previa en PHP (lenguaje no demostrado en el perfil del candidato).",
-      "El rol se plantea como una posición de mayor recorrido técnico en un producto consolidado (InvGate Service Management), valorando experiencia previa en revisión de código de pares y sólidos patrones de diseño avanzados aplicados en entornos profesionales."
+      "The posting requires experience in backend/full stack development, preferably with PHP, which is not demonstrated in the candidate profile.",
+      "The posting values academic training and knowledge of web application security, while the candidate is an advanced CS student currently developing foundational knowledge."
     ],
-    "ranked_at": "2026-08-15T08:16:53.116391",
+    "ranked_at": "2026-08-17T06:07:51.495362",
     "user_notes": null
   },
   {
     "id": "greenhouse_invgate_4495272002",
-    "created_at": "2026-08-15T08:15:49.249569",
+    "created_at": "2026-08-17T06:07:20.216887",
     "title": "Software Engineer - Python/Django",
     "company": "invgate",
     "location": "Argentina",
     "work_mode": "Hybrid",
     "commitment": "Not specified",
     "department": "Engineering",
-    "seniority": "undefined",
-    "years_of_experience": "undefined",
+    "seniority": "Not specified",
+    "years_of_experience": null,
     "salary_range": "Not specified",
     "key_technologies": [
       "Python",
@@ -139,65 +265,22 @@
     "application_method": "Postulación web en: https://job-boards.greenhouse.io/invgate/jobs/4495272002",
     "status": "ranked",
     "score": 65,
-    "justification": "The role requires Python and Django for backend/full-stack development in an Argentina-based company (with hybrid/remote flexibility), fitting the candidate's geographic location and Python skills. However, the posting specifies solid knowledge of Django and values SaaS/ITSM experience, which are gaps for an entry-level candidate. No professional YOE is explicitly mandated in the posting, making it a possible fit that warrants manual review.",
-    "strengths": [],
+    "justification": "The posting is for a Software Engineer (Python/Django) at InvGate, operating in a hybrid mode in Argentina with no explicit professional years of experience or seniority required. According to the ranking policy, when no professional YOE is stated, the candidate is not penalized with a mandatory YOE cap. The candidate is an advanced CS student with practical Python scripting, backend, database, and API experience, providing a solid foundational overlap. However, the posting explicitly requires solid knowledge of Python and Django; while Python is present, Django is not demonstrated in the profile. Since the role has no strict experience barrier and good technical proximity, it falls comfortably into the possible fit range.",
+    "strengths": [
+      "No professional years of experience or seniority are explicitly required in the posting.",
+      "The role requires Python proficiency, relational databases, and API design, which aligns with the candidate's Python scripting and backend project experience.",
+      "The work mode and location (Hybrid/Remote in Argentina) match candidate preferences."
+    ],
     "gaps": [
-      "The posting explicitly requests solid knowledge of Python and Django, but the candidate profile does not demonstrate Django experience.",
-      "The posting values experience with SaaS or ITSM products, which is not demonstrated in the candidate profile."
+      "The posting explicitly requires solid knowledge of Python and Django, and while the candidate has Python experience, Django is not demonstrated in the candidate profile.",
+      "The role values prior experience in SaaS or ITSM products and experience with Angular."
     ],
-    "ranked_at": "2026-08-15T08:17:28.778529",
-    "user_notes": null
-  },
-  {
-    "id": "linkedin_4453752989",
-    "created_at": "2026-08-15T08:21:51.550440",
-    "title": "Junior Java Developer",
-    "company": "Adistec",
-    "location": "Buenos Aires Province, Argentina",
-    "work_mode": "Not specified",
-    "commitment": "Full-time",
-    "department": "Engineering",
-    "seniority": "Junior",
-    "years_of_experience": 1,
-    "salary_range": "A convenir",
-    "key_technologies": [
-      "Java",
-      "Spring MVC",
-      "Spring Boot",
-      "Hibernate",
-      "Maven",
-      "REST services",
-      "Web Services",
-      "APIs",
-      "JavaScript",
-      "React",
-      "GIT"
-    ],
-    "main_requirements": [
-      "Estudiante universitario en curso de Ingeniería en Sistemas o afines",
-      "Al menos 1 año de experiencia en programación JAVA (Excluyente)",
-      "Conocimientos en Spring MVC, Spring Boot, Hibernate, Maven",
-      "Experiencia en servicios REST, Web Services y APIs",
-      "Manejo de GIT y metodologías ágiles",
-      "Inglés intermedio (deseable)"
-    ],
-    "summary": "Adistec busca un Junior Java Developer para Buenos Aires con al menos 1 año de experiencia en Java, Spring Boot y metodologías ágiles para el diseño, desarrollo y mantenimiento de aplicaciones web.",
-    "raw_text": "Title: Adistec hiring Junior Java Developer in Buenos Aires Province, Argentina | LinkedIn\nDescription: En Adistec Argentina nos encontramos en la búsqueda de un Junior Java Developer para sumarse a nuestro equipo. Te invitamos a sumarte a una empresa líder en distribución de valor agregado de Latinoamérica y el Caribe, con más de 20 años de trayectoria en el mercado, entregando soluciones de tecnología de la información. DESCRIPCIÓN DEL PUESTO Es responsable del diseño y desarrollo de nuevas aplicaciones y procesos brindado respuesta a los diversos requerimientos y del mantenimiento de los mismos. PRINCIPALES RESPONSABILIDADES Contribuir en la creación y mantenimiento de aplicaciones web desarrolladas previamente y en uso por la compañía Participar en el desarrollo y diseño de nuevas aplicaciones web y procesos para interconectar estas aplicaciones con otros sistemas. Asegurar la calidad de las aplicaciones desarrolladas adhiriéndose a los estándares de desarrollo web. Asegurar la correcta operación de las aplicaciones desarrollas haciendo revisión de código y pruebas. Dar soporte de las aplicaciones, programas y scripts desarrollados y a desarrollar. Mantener registros históricos de desarrollos y revisiones. Documentar scripts, programas y procesos. Preparar documentos de referencia y manuales para los usuarios de las aplicaciones. Nota: La posición puede realizar otros proyectos o tareas diversas según lo solicitado o asignado. PERFIL DEL PUESTO Educación Universitario en Curso de Ingeniería en Sistemas o afines. Conocimientos Uso de herramientas como Spring MVC, Spring Boot, Hibernate, Maven. Experiencia en servicios REST, Web Services &amp; APIs. Frontend: Javascript &amp; React (deseable) Manejo de GIT. Uso de metologías ágiles. Experiencia Al menos 1 año de experiencia en programación JAVA (Excluyente) Idioma Inglés intermedio (deseable) Competencias Actitud de servicio Comunicación Efectiva Orientación a la Excelencia Proactividad Trabajo en equipo Aprendizaje Continuo Capacidad de Análisis Creatividad e Innovación Flexibilidad Confidencialidad Manejo de Presión Orientación a Resultados Planificación y Organización Beneficios Excelente clima laboral, capacitación en nuevas tecnologías, pertenecer a una empresa joven e innovadora, formar parte de variados proyectos, pertenecer a un equipo regional con diferentes culturas y posibilidades de crecimiento profesional. Horario de trabajo De lunes a viernes de 09:00 am a 18:00 pm Declaración de Igualdad de Oportunidad de Empleo* Estamos comprometidos con la igualdad de oportunidades de empleo independientemente de la raza, el color, la información genética, el credo, la religión, el sexo, la orientación sexual, la identidad de género, el estado de extranjero legal, el origen nacional, la edad, el estado civil o el estado de veterano protegido. Apoyamos un lugar de trabajo inclusivo en el que los asociados se destaquen en función del mérito personal, la calificación, la experiencia, la capacidad y el desempeño laboral.",
-    "language": "es",
-    "source_page": "LinkedIn",
-    "source_url": "https://www.linkedin.com/jobs/view/4453752989/?",
-    "application_method": "No especificado",
-    "status": "pending_ranking",
-    "score": null,
-    "justification": null,
-    "strengths": [],
-    "gaps": [],
-    "ranked_at": null,
+    "ranked_at": "2026-08-17T06:08:09.291794",
     "user_notes": null
   },
   {
     "id": "ashby_silver_55d10c7c-00c0-41e2-acf5-68a23ada8050",
-    "created_at": "2026-08-15T09:06:56.292270",
+    "created_at": "2026-08-17T06:08:26.128530",
     "title": "Opportunity in Tech company - Mobile Engineer",
     "company": "silver",
     "location": "Argentina",
@@ -219,26 +302,23 @@
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/55d10c7c-00c0-41e2-acf5-68a23ada8050/application",
     "status": "ranked",
     "score": 35,
-    "justification": "La vacante solicita desarrollo, mantenimiento y distribución de aplicaciones móviles (iOS con Swift, UIKit, RxSwift o Android con Kotlin, RxJava) utilizando Golang. El perfil del candidato (Santiago Manjarín) abarca backend (Node.js, TypeScript, Python), C/C++ y bases de datos, pero no cuenta con experiencia ni proyectos demostrados en desarrollo móvil (iOS/Android, Swift, Kotlin o frameworks móviles). Al no haber requisitos formales de YOE o seniority, no aplica un tope duro de YOE, pero la brecha técnica en el stack principal (móvil) es total, situándolo como un ajuste débil.",
+    "justification": "The role requires mobile engineering expertise (Swift, Kotlin, mobile SDKs, app distribution) with no professional YOE minimum specified, but the candidate's profile is focused on backend, systems, Python/Node/C++, and full-stack web/infrastructure rather than mobile development. Consequently, this is a weak fit.",
     "strengths": [
-      {
-        "text": "La vacante busca profesionales en Argentina en formato híbrido con buen manejo de inglés y flexibilidad general, lo cual coincide con la ubicación y disponibilidad del candidato."
-      }
+      "The posting is open to long-term players and start-up environments, which aligns with the candidate's enthusiasm for learning and dynamic settings."
     ],
     "gaps": [
-      {
-        "text": "La vacante no especifica requisitos formales de experiencia o seniority, pero está orientada a desarrollo móvil (iOS/Android) con Golang, tecnologías y stack específico (Swift, Kotlin, SDKs móviles) no demostrados en el perfil del candidato."
-      }
+      "The posting is for a mobile engineering role focusing on mobile SDKs, Swift/UIKit/RxSwift or Kotlin/RxJava, which does not align with the candidate's core backend, systems, and full-stack profile.",
+      "The candidate has no professional experience in mobile application development or the specified mobile tech stack."
     ],
-    "ranked_at": "2026-08-15T09:07:28.888795",
+    "ranked_at": "2026-08-17T06:08:38.845284",
     "user_notes": null
   },
   {
     "id": "ashby_silver_0dae1154-c185-4981-a97a-cb02f4dd2473",
-    "created_at": "2026-08-15T09:06:56.293667",
+    "created_at": "2026-08-17T06:08:26.129811",
     "title": "Coperniq (YC W23) - Full Stack Engineer (Node/React)",
     "company": "silver",
-    "location": "Argentina",
+    "location": "Argentina; Colombia",
     "work_mode": "Remote",
     "commitment": "Full-time",
     "department": "Engineering",
@@ -263,27 +343,21 @@
     "source_url": "https://jobs.ashbyhq.com/silver/0dae1154-c185-4981-a97a-cb02f4dd2473",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/0dae1154-c185-4981-a97a-cb02f4dd2473/application",
     "status": "ranked",
-    "score": 30,
-    "justification": "La política de ranking establece que si una vacante requiere explícitamente 2 o más años de experiencia profesional como condición obligatoria (en este caso 7+ años), el puntaje no debe exceder de 39, independientemente de que el mensaje del empleador fomente postularse sin cumplir todos los requisitos. Aunque el candidato cuenta con habilidades en Node.js, TypeScript y PostgreSQL, la exigencia de 7+ años de experiencia profesional representa una barrera insalvable para un perfil junior/trainee sin experiencia formal.",
+    "score": 35,
+    "justification": "The posting explicitly mandates 7+ years of full-stack development experience and seniority (\"Senior Full Stack Engineer\" in raw text), which directly violates the mandatory experience and seniority bounds in the ranking policy for a 0-YOE candidate (score capped at 39). Therefore, the fit score is 35.",
     "strengths": [
-      {
-        "text": "El candidato posee proyectos académicos y personales utilizando TypeScript, Node.js y PostgreSQL, los cuales solapan parcialmente con parte del stack tecnológico secundario de la vacante."
-      }
+      "The posting's technical stack includes TypeScript, Node.js, React, PostgreSQL, Docker, and AWS, which match parts of the candidate's personal and academic project stack."
     ],
     "gaps": [
-      {
-        "text": "La vacante requiere explícitamente 7+ años de experiencia en desarrollo full-stack. El candidato cuenta con 0 años de experiencia profesional formal."
-      },
-      {
-        "text": "Se requiere dominio profundo de un stack específico complejo (AWS, React, GraphQL, TypeScript, Node.js, NestJS, MikroORM, PostgreSQL, Docker, Kubernetes, GitLab CI/CD). El candidato tiene experiencia académica y proyectos personales en Node/TypeScript/PostgreSQL/Docker, pero carece de los 7+ años de trayectoria profesional exigidos."
-      }
+      "The posting explicitly requires 7+ years of full-stack development experience, which significantly exceeds the candidate's 0 professional YOE.",
+      "The role requires deep proficiency in enterprise and startup stacks including NestJS, GraphQL, MikroORM, and GitLab CI/CD, which are not fully covered in the candidate profile."
     ],
-    "ranked_at": "2026-08-15T09:07:28.888821",
+    "ranked_at": "2026-08-17T06:08:38.845294",
     "user_notes": null
   },
   {
     "id": "ashby_silver_72971322-0ac8-468b-b8f1-2612d78b7769",
-    "created_at": "2026-08-15T09:06:56.294204",
+    "created_at": "2026-08-17T06:08:26.130459",
     "title": "Technical Interviewer - Pay-per-Interview",
     "company": "silver",
     "location": "Argentina",
@@ -306,24 +380,21 @@
     "source_url": "https://jobs.ashbyhq.com/silver/72971322-0ac8-468b-b8f1-2612d78b7769",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/72971322-0ac8-468b-b8f1-2612d78b7769/application",
     "status": "ranked",
-    "score": 25,
-    "justification": "La posición de 'Technical Interviewer' requiere explícitamente 3+ años de experiencia profesional en start-ups de producto y experiencia conduciendo o aprobando entrevistas técnicas en vivo. El candidato es un perfil junior / trainee (estudiante avanzado de Computación con proyectos personales) que no cumple con los años mínimos de experiencia profesional requeridos ni con la trayectoria en evaluación técnica de otros candidatos, aplicándose el tope correspondiente por barrera de experiencia.",
+    "score": 35,
+    "justification": "The posting requires 3+ years of experience in a product startup and proven experience conducting professional live coding interviews and technical screenings. This represents an explicit experience requirement and domain mismatch for a candidate with 0 professional YOE. Score capped at 39 per policy.",
     "strengths": [
-      {
-        "text": "La vacante se ubica en Argentina en modalidad remota y contempla lenguajes generales (Python, JavaScript) con los cuales el candidato tiene familiaridad a través de sus proyectos personales y académicos."
-      }
+      "The candidate is fluent in popular backend languages like Python and JavaScript, aligning with the technical challenge language requirements."
     ],
     "gaps": [
-      {
-        "text": "La vacante requiere 3 o más años de experiencia en una startup de producto u experiencia equivalente, además de experiencia previa pasando entrevistas de código en vivo. El candidato es un estudiante avanzado sin experiencia profesional formal previa."
-      }
+      "The posting requires 3 years of experience or more in a Product Startup or equivalent experience.",
+      "The role requires experience passing live coding interviews at companies and conducting professional technical screenings."
     ],
-    "ranked_at": "2026-08-15T09:07:28.888833",
+    "ranked_at": "2026-08-17T06:08:38.845297",
     "user_notes": null
   },
   {
     "id": "ashby_silver_b35ced58-0a04-4a93-854c-80b717e7ec53",
-    "created_at": "2026-08-15T09:06:56.296881",
+    "created_at": "2026-08-17T06:08:26.133680",
     "title": "Opportunity in Tech Company - Backend Engineer",
     "company": "silver",
     "location": "Buenos Aires",
@@ -345,22 +416,23 @@
     "source_url": "https://jobs.ashbyhq.com/silver/b35ced58-0a04-4a93-854c-80b717e7ec53",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/b35ced58-0a04-4a93-854c-80b717e7ec53/application",
     "status": "ranked",
-    "score": 45,
-    "justification": "The role is a backend engineering position requiring Java 17 and production distributed systems experience. The posting does not state a professional years of experience (YOE) requirement, which avoids mandatory YOE penalty caps. However, the candidate profile lacks Java and production distributed systems experience, placing this as a weak/possible fit due to core stack mismatch. Score awarded is 45.",
+    "score": 35,
+    "justification": "The role requires professional experience with distributed systems in production and a Java 17 tech stack, neither of which are demonstrated in the candidate profile. While no specific years of experience are explicitly mandated, the candidate is at the entry level (0 professional YOE) and lacks the core production Java background. Therefore, the fit score is capped in the weak fit range.",
     "strengths": [
-      "The role is a backend engineering position without an explicit professional YOE requirement, aligning with the candidate's entry-level status.",
-      "The posting involves backend development and architecture tasks where foundational CS knowledge is relevant."
+      "The location (Buenos Aires) and hybrid work mode align with candidate preferences.",
+      "The candidate has strong general backend fundamentals through academic training and personal projects."
     ],
     "gaps": [
-      "The posting requires Java 17 and running distributed systems in production; the candidate profile does not demonstrate professional Java or production distributed systems experience.",
-      "The posting requires experience with Honeycomb, Grafana, and Sentry for observability, which are not demonstrated in the candidate profile."
+      "The posting explicitly requires experience with running distributed systems in production.",
+      "The role's core technology stack is Java 17, which is not demonstrated in the candidate profile.",
+      "The posting expects cross-team collaboration in complex enterprise environments."
     ],
-    "ranked_at": "2026-08-15T09:08:01.965725",
+    "ranked_at": "2026-08-17T06:08:54.484256",
     "user_notes": null
   },
   {
     "id": "ashby_silver_18cb5a3e-dd56-4d21-9528-7c573b1104d9",
-    "created_at": "2026-08-15T09:06:56.302046",
+    "created_at": "2026-08-17T06:08:26.139113",
     "title": "Securitize - Fullstack Developer",
     "company": "silver",
     "location": "Argentina",
@@ -386,20 +458,21 @@
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/18cb5a3e-dd56-4d21-9528-7c573b1104d9/application",
     "status": "ranked",
     "score": 35,
-    "justification": "The posting explicitly requires a minimum of 5 years of professional development experience. According to the ranking policy, when a posting mandates 2+ years of professional experience (here 5 years) for a 0-YOE candidate, the score MUST NOT exceed 39. Despite the candidate having project experience in Python and TypeScript/React, the mandatory professional experience barrier caps the score at 35.",
+    "justification": "The posting explicitly mandates a minimum of 5 years of professional development experience. Under the ranking policy, when 2+ years of professional experience are mandatory, the fit score must not exceed 39. Although the candidate has project experience in Python, TypeScript, and React, the professional experience barrier applies.",
     "strengths": [
-      "The role involves full-stack development using Python and TypeScript/React, which aligns with technologies used in the candidate's personal projects (Batchpix, JobBud)."
+      "The candidate has concrete project experience using Python, TypeScript, and React.",
+      "The remote work mode and Argentina location match candidate availability."
     ],
     "gaps": [
-      "The posting explicitly requires a minimum of 5 years of professional development experience, whereas the candidate has 0 formal professional YOE.",
-      "The posting expects extensive Node.js, Python, and relational/non-relational database experience in professional settings."
+      "The posting explicitly requires a minimum of 5 years of professional development experience.",
+      "Extensive NodeJS and Python production experience in enterprise financial systems is required, whereas the candidate has 0 formal professional YOE."
     ],
-    "ranked_at": "2026-08-15T09:08:01.965734",
+    "ranked_at": "2026-08-17T06:08:54.484265",
     "user_notes": null
   },
   {
     "id": "ashby_silver_e8a2b44c-3046-44b5-8106-a04024528564",
-    "created_at": "2026-08-15T09:06:56.313080",
+    "created_at": "2026-08-17T06:08:26.147648",
     "title": "Metabase - Success Engineer",
     "company": "silver",
     "location": "Argentina",
@@ -423,24 +496,25 @@
     "source_url": "https://jobs.ashbyhq.com/silver/e8a2b44c-3046-44b5-8106-a04024528564",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/e8a2b44c-3046-44b5-8106-a04024528564/application",
     "status": "ranked",
-    "score": 35,
-    "justification": "The posting explicitly requires 3+ years of experience writing production code, administering systems, and/or managing databases. Under the ranking policy, a mandatory 2+ YOE requirement for a 0-YOE candidate caps the score at 39. Despite the candidate having strong database/SQL knowledge and Docker/Linux familiarity from personal projects and studies, the professional experience barrier applies, resulting in a score of 35.",
+    "score": 38,
+    "justification": "The posting explicitly requires 3+ years of experience writing production code, administering systems, and/or managing databases. Because this requirement exceeds 2+ years of mandatory professional experience, the ranking policy caps the fit score at 39, despite the candidate's database and SQL project experience.",
     "strengths": [
-      "The candidate has strong database and SQL skills along with familiarity with Docker and infrastructure basics, relevant to technical support and success engineering.",
-      "The role values database and SQL knowledge, matching academic and project experience."
+      "The candidate demonstrates strong database and SQL skills through personal projects.",
+      "The remote and asynchronous work environment fits the candidate's preferences well."
     ],
     "gaps": [
-      "The posting explicitly requires 3+ years of experience writing production code, administering systems, and/or managing databases, whereas the candidate has 0 formal professional YOE."
+      "The posting requires 3+ years of experience writing production code, administering systems, and/or managing databases.",
+      "The candidate lacks formal professional production code and systems administration experience."
     ],
-    "ranked_at": "2026-08-15T09:08:01.965739",
+    "ranked_at": "2026-08-17T06:08:54.484269",
     "user_notes": null
   },
   {
     "id": "ashby_silver_e14a139d-1103-433d-aa20-8a95fab63fe6",
-    "created_at": "2026-08-15T09:06:56.321166",
+    "created_at": "2026-08-17T06:08:26.154998",
     "title": "ShareCare - Backend Engineer (Python)",
     "company": "silver",
-    "location": "Argentina",
+    "location": "Argentina; Uruguay",
     "work_mode": "Remote",
     "commitment": "Full-time",
     "department": "Engineering",
@@ -461,189 +535,20 @@
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/e14a139d-1103-433d-aa20-8a95fab63fe6/application",
     "status": "ranked",
     "score": 35,
-    "justification": "The position requires at least 4 years of practical experience in building web applications and specific tool proficiency like pytest, which conflicts with the candidate's entry-level status (0 professional YOE). Although the candidate has Python and SQL experience through projects, the mandatory 4+ YOE requirement acts as a major experience barrier under the ranking policy.",
+    "justification": "The job explicitly mandates at least 4 years of practical web application experience and proficiency in Django Rest Framework, whereas the candidate has 0 formal professional years of experience and no demonstrated Django or pytest experience. Per ranking policy, mandatory requirements of 2+ years of experience cap the fit score at 39.",
     "strengths": [
-      {
-        "text": "The posting requires Python and PostgreSQL/SQL, which aligns with the candidate's practical project experience in Python and PostgreSQL."
-      },
-      {
-        "text": "The candidate is an advanced CS student in UBA Exactas, aligning with strong theoretical and algorithmic foundations."
-      }
+      "The candidate has practical experience with Python, SQL, PostgreSQL, Git, and Docker, which directly align with core technical requirements in the posting."
     ],
     "gaps": [
-      {
-        "text": "The posting explicitly requires at least 4 years of practical experience in building web applications, whereas the candidate has 0 professional years of experience."
-      },
-      {
-        "text": "Requires proficiency in mock and pytest (not explicitly demonstrated in the candidate profile)."
-      }
+      "The posting explicitly requires at least 4 years of practical experience in building web applications, while the candidate has 0 formal professional years of experience.",
+      "The posting requires proficiency with Django Rest Framework and mock/pytest, which are not demonstrated in the candidate profile."
     ],
-    "ranked_at": "2026-08-15T09:08:28.749182",
-    "user_notes": null
-  },
-  {
-    "id": "ashby_silver_48e6f9de-0c2a-4f52-b362-b978e57bddb2",
-    "created_at": "2026-08-15T09:06:56.335909",
-    "title": "Wonderful - Forward Deployed Engineer",
-    "company": "silver",
-    "location": "Argentina / Hybrid",
-    "work_mode": "Hybrid",
-    "commitment": "Full-time",
-    "department": "Engineering",
-    "seniority": "Not specified",
-    "years_of_experience": null,
-    "salary_range": "Not specified",
-    "key_technologies": [],
-    "main_requirements": [],
-    "summary": "Forward Deployed Engineer (FDE)\nABOUT Wonderful\nWonderful https://www.wonderful.ai enables enterprises to build, test, deploy, and monitor AI agents for their most complex needs, serving customers and employees seamlessly across voice, chat, email, and back-office systems in any language or cultural",
-    "raw_text": "Forward Deployed Engineer (FDE)\nABOUT Wonderful\nWonderful https://www.wonderful.ai enables enterprises to build, test, deploy, and monitor AI agents for their most complex needs, serving customers and employees seamlessly across voice, chat, email, and back-office systems in any language or cultural context.\nROLE OVERVIEW\nAs a Forward Deployed Engineer (FDE) at Wonderful, you’ll solve high-impact, real-world problems alongside enterprise customers and own work from first principles through production outcomes.\nYou’ll work directly with customers to understand critical workflows, design AI-driven solutions, and deploy agents that operate reliably in production. You’ll own projects end-to-end from problem definition and system design to launch and iteration - and be accountable for real business impact.\nThis is a hands on-generalist role for engineers who enjoy navigating ambiguity, learning quickly, and working across systems while partnering with enterprises as they become AI-driven organizations.\nWHAT YOU’LL DO\n- Partner with customers to understand operational challenges and success criteria\n- Translate open-ended problems into clear technical designs and implementations\n- Build AI agents that integrate with customer systems and perform real tasks\n- Own deployments, including reliability, performance, and continuous improvement\n- Test with real data, measure outcomes, and iterate based on results\n- Collaborate with Product & Engineering to ship high-quality solutions\n- Contribute to tools, documentation, and best practices that scale customer delivery\nWHAT WE’RE LOOKING FOR\n- 5+ years of experience in software engineering or technical problem-solving roles\n- Strong fundamentals in software design, system thinking\n- Experience working across systems, integrations, and data flows\n- Comfort working directly with customers and owning ambiguous problems\n- Clear communication skills and a strong ownership mindset\n- Curiosity and interest in building AI-powered systems that work in practice\nNICE TO HAVE\n- Experience in forward-deployed, solutions engineering, or customer-facing roles\n- Exposure to AI agents, automation, or conversational systems\n- Experience operating and improving production systems",
-    "language": "en",
-    "source_page": "Ashby (silver)",
-    "source_url": "https://jobs.ashbyhq.com/silver/48e6f9de-0c2a-4f52-b362-b978e57bddb2",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/48e6f9de-0c2a-4f52-b362-b978e57bddb2/application",
-    "status": "ranked",
-    "score": 30,
-    "justification": "The role explicitly requires 5+ years of experience in software engineering or technical problem-solving roles. Per the ranking policy, a mandatory 2+ professional YOE requirement caps the score at a maximum of 39 for this 0-YOE candidate. Despite the candidate's strong problem-solving skills and project autonomy, the explicit professional experience requirement is a barrier.",
-    "strengths": [
-      {
-        "text": "The role values strong system thinking, problem-solving, and generalist execution, which align with the candidate's project autonomy and background in computer science fundamentals."
-      }
-    ],
-    "gaps": [
-      {
-        "text": "The posting explicitly requires 5+ years of experience in software engineering or technical problem-solving roles, which exceeds the candidate's 0 professional YOE."
-      }
-    ],
-    "ranked_at": "2026-08-15T09:08:28.749192",
-    "user_notes": null
-  },
-  {
-    "id": "ashby_silver_676d00fe-5635-4e00-b4f7-9dc23fe65375",
-    "created_at": "2026-08-15T09:06:56.348551",
-    "title": "Fullstack Product Engineer (Python/Angular)",
-    "company": "silver",
-    "location": "Argentina",
-    "work_mode": "Remote",
-    "commitment": "Full-time",
-    "department": "Engineering",
-    "seniority": "Not specified",
-    "years_of_experience": null,
-    "salary_range": "$60K - $90K",
-    "key_technologies": [
-      "Python",
-      "TypeScript",
-      "Angular",
-      "PostgreSQL",
-      "AWS"
-    ],
-    "main_requirements": [],
-    "summary": "Full-Stack Product Engineer\nBuild across the stack · Own features end-to-end · Ship continuously\nThe Role\nWe’re looking for a Full-Stack Product Engineer who loves building products — not just writing code. You’ll own features end-to-end: understanding customer problems, designing solutions, and shi",
-    "raw_text": "Full-Stack Product Engineer\nBuild across the stack · Own features end-to-end · Ship continuously\nThe Role\nWe’re looking for a Full-Stack Product Engineer who loves building products — not just writing code. You’ll own features end-to-end: understanding customer problems, designing solutions, and shipping them to production. You’ll collaborate across the company while helping shape both the product and the engineering behind it.\nWe move quickly, ship continuously, and value engineers with strong product intuition as much as technical excellence.\nWhat You’ll Do\n- Help move products from idea to the hands of customers, contributing across problem definition, design, and delivery.\n- Collaborate with stakeholders and teammates to understand needs and turn them into shipped features.\n- Make product and technical decisions independently, with the autonomy and judgment to move without waiting for sign-off at every turn.\n- Build across the entire stack — frontend, backend, and infrastructure.\nShip early, learn quickly, and iterate based on real customer feedback.\nOur Tech Stack\n- Frontend: Angular, TypeScript\n- Backend: Django, Python, PostgreSQL\n- Infrastructure: AWS, Terraform\n- We care far more about strong engineering fundamentals, product thinking, and a willingness to learn than experience with a particular framework.\nHow We Use AI\nAI is part of how we build, not what we build.\nWe use modern AI tools to accelerate development, improve quality, and automate repetitive work so engineers can focus on solving meaningful problems. We embrace experimentation, but engineering judgment always comes first.\nWe continuously improve how we build software through design reviews, code walkthroughs, knowledge sharing, and experimenting with the latest developer tools.\nWhat We’re Looking For\n• Strong full-stack engineering skills.\n• A product mindset and customer-first thinking.\n• Ownership and the ability to work independently.\n• Curiosity and a willingness to learn.\n• Clear communication and collaboration.\n• Pragmatic engineering judgment.\nOur Values\nIdeas Over Titles — The best ideas win, regardless of where they come from. We value intellectual honesty and healthy debate over hierarchy.\nBetter Over Perfect — We believe in shipping, learning, and continuously improving instead of waiting for perfect solutions.\nCourage Over Comfort — We challenge assumptions, give candid feedback, and do what’s right for our customers and teammates — even when it’s uncomfortable.",
-    "language": "en",
-    "source_page": "Ashby (silver)",
-    "source_url": "https://jobs.ashbyhq.com/silver/676d00fe-5635-4e00-b4f7-9dc23fe65375",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/676d00fe-5635-4e00-b4f7-9dc23fe65375/application",
-    "status": "ranked",
-    "score": 55,
-    "justification": "The position is a Full-Stack Product Engineer role requiring strong full-stack skills, product mindset, and independent execution. While the posting does not explicitly state a rigid professional YOE minimum, full-stack product engineering roles typically expect professional experience. The candidate demonstrates strong project work in Python, TypeScript, and SQL/PostgreSQL, but lacks professional experience and familiarity with Angular or AWS. It represents a possible-to-weak fit requiring manual review.",
-    "strengths": [
-      {
-        "text": "The tech stack includes Python and TypeScript, matching the candidate's practical project experience."
-      },
-      {
-        "text": "The employer values strong engineering fundamentals, product thinking, and a willingness to learn over specific framework experience, which matches the candidate's strong CS foundation and autonomous project background."
-      }
-    ],
-    "gaps": [
-      {
-        "text": "The role expects full-stack independence and product engineering execution in a fast-paced environment, while the candidate lacks professional software engineering experience."
-      },
-      {
-        "text": "Uses Angular and AWS/Terraform in the stack; the candidate has general backend/frontend projects (React, Python, Node) but lacks direct Angular or AWS professional experience."
-      }
-    ],
-    "ranked_at": "2026-08-15T09:08:28.749195",
-    "user_notes": null
-  },
-  {
-    "id": "ashby_silver_f276bab3-7bcf-460c-a918-1af1b418bfa9",
-    "created_at": "2026-08-15T09:06:56.366423",
-    "title": "Greenhouse - Software Engineer, Data Experience",
-    "company": "silver",
-    "location": "Argentina",
-    "work_mode": "Remote",
-    "commitment": "Full-time",
-    "department": "Engineering",
-    "seniority": "Not specified",
-    "years_of_experience": null,
-    "salary_range": "$43 per hour",
-    "key_technologies": [
-      "TypeScript",
-      "Go",
-      "React"
-    ],
-    "main_requirements": [],
-    "summary": "SOFTWARE ENGINEER, DATA EXPERIENCE\nArgentina\nOur mission https://www.greenhouse.com/mission at Greenhouse https://www.greenhouse.com is to make hiring work for everyone – so we go to great lengths to hire great people because we believe that they’re the foundation of our success. At Greenhouse, you’",
-    "raw_text": "SOFTWARE ENGINEER, DATA EXPERIENCE\nArgentina\nOur mission https://www.greenhouse.com/mission at Greenhouse https://www.greenhouse.com is to make hiring work for everyone – so we go to great lengths to hire great people because we believe that they’re the foundation of our success. At Greenhouse, you’ll join a team that collaborates purposefully, fosters inclusivity, and communicates with transparency and accountability so we can achieve our mission.\nWHO WILL LOVE THIS JOB\n- A Product-Minded Engineer – You don't just write code; you understand the end-user experience and can make thoughtful, directionally correct technical decisions aligned with product vision.\n- A Data-Experience Builder – You are energized by crafting crisp, responsive, data-rich applications and internal tools using modern TypeScript and frontend/backend patterns.\n- A Pragmatic Innovator – You actively leverage AI-assisted development (such as agentic coding workflows) to streamline your day-to-day work, increase throughput, and spend more time solving high-leverage problems.\n- A Quality Champion – You care deeply about engineering standards, strong automated test coverage, and building durable software that stands the test of time.\nWHAT YOU’LL DO\n- Implement net-new functionality into the core Analytics platform to drive strategic company priorities.\n- Maintain and optimize existing Analytics products, ensuring high availability, performance, and UI responsiveness.\n- Partner daily with Data Experience engineers, Product Managers, Product Designers, and members of the Data Platform team to take features from ideation to production.\n- Write robust automated tests, contribute to code reviews, and help raise the technical baseline across the codebase.\n- Work fluently with agentic coding assistants and modern AI developer tools to ship features faster and improve developer ergonomics.\nYOU SHOULD HAVE\n- 5+ years of experience shipping production-grade TypeScript and React applications.\n- 1+ years of hands-on experience building data-rich applications or dashboards where performance, UI responsiveness, and state management matter.\n- Experience with Duckdb, a plus\n- Proven track record of delivering clean, maintainable code backed by high levels of automated test coverage.\n- Comfort and proficiency using AI-assisted/agentic coding tools in your daily development workflow.\n- Excellent communication and cross-functional collaboration skills in a remote, distributed environment.\nWHO WE ARE\nAt Greenhouse, we live by our mission through using our own product https://www.greenhouse.com/interviewing-at-greenhouse to help us hire the right person for the job, every time. We’re committed to designing and responsibly using AI tools to transform how we work while keeping people at the center. We are a remote-first company and have shared office spaces in New York City and Ireland, and optional co-working spaces that give us flexibility to do our best work anywhere. We take an active role in our growth through a performance review program that’s committed to providing actionable feedback, and a bonus structure that rewards great performance. We believe that bringing together a variety of perspectives makes us a stronger company – and we nurture leaders who create an inclusive culture and invest into employee resource groups that celebrate our differences and life experiences. We’re proud to have built an award-winning culture https://www.greenhouse.com/awards that’s been recognized as Fortune’s Best Places to Work and Inc.’s Best Workplaces multiple years in a row.\n--\nJoin us to do the best work of your career, solving meaningful problems with remarkable teams.\nThis is an independent contractor engagement in Argentina. Deel will serve as Contractor of Record and will contract with and pay the independent contractor. The independent contractor will provide services to Greenhouse on a non-exclusive basis, may provide services to other clients, and will be responsible for determining the manner and means of performing the services, subject to the applicable statement of work and agreed deliverables. This engagement is not an employment relationship with Greenhouse. No employment relationship, social benefits, or labor entitlements under Argentine Law 20,744 are created by this engagement. .\nThrough this arrangement, Deel is hiring an independent contractor to provide services to the Data Experience team at Greenhouse.\nThe Data Experience team is critical to delivering net-new functionality to our Analytics platform, supporting our existing suite of products, and elevating the overall technical quality of our application stack.\nThis role will support the development and maintenance of the Company’s web-based applications as part of an approximately 12-month engagement. In this role, you will focus on high-quality feature execution and technical reliability across the application stack for the Company\nThis is a collaborative, execution-focused, non-exclusive engagement. Services will include design, development, and delivery of platform infrastructure as scoped with the Data Experience team.\nCONTRACT & LOCATION DETAILS\n- Contract duration: Approximately 12 months, with potential for extension based on business needs\n- Engagement type: A non-exclusive contract role engaged through a Contractor of Record (COR) via Deel in Argentina\n- Location: Argentina (remote)\n- Working model: Collaboration with a distributed, US & Canada-based team, with reasonable availability for coordination during core Greenhouse working hours",
-    "language": "en",
-    "source_page": "Ashby (silver)",
-    "source_url": "https://jobs.ashbyhq.com/silver/f276bab3-7bcf-460c-a918-1af1b418bfa9",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/f276bab3-7bcf-460c-a918-1af1b418bfa9/application",
-    "status": "ranked",
-    "score": 35,
-    "justification": "The role requires 5+ years of experience shipping production-grade TypeScript and React applications, which exceeds the candidate's professional experience (0 formal professional YOE). According to the ranking policy, when a posting explicitly requires 2+ years of professional experience as a mandatory condition, the fit score must not exceed 39. Despite the candidate having project-level experience with TypeScript, React, and Node.js, the mandatory 5+ YOE requirement creates a significant barrier.",
-    "strengths": [
-      "The candidate has project-level experience with TypeScript and React, aligning with the core technologies mentioned in the posting.",
-      "The candidate is comfortable using AI-assisted/agentic coding tools in their daily workflow, which is mentioned as a plus/preference in the posting."
-    ],
-    "gaps": [
-      "The posting explicitly requires 5+ years of experience shipping production-grade TypeScript and React applications (candidate has 0 formal professional years of experience).",
-      "The posting explicitly requires 1+ years of hands-on experience building data-rich applications or dashboards professionally."
-    ],
-    "ranked_at": "2026-08-15T09:08:49.493755",
-    "user_notes": null
-  },
-  {
-    "id": "ashby_canals_06a7ec78-d84f-4035-9799-747524dbdc49",
-    "created_at": "2026-08-15T09:17:47.445858",
-    "title": "Junior Software Engineer",
-    "company": "canals",
-    "location": "Colombia; Argentina; Brazil",
-    "work_mode": "Remote",
-    "commitment": "Full-time",
-    "department": "Engineering",
-    "seniority": "Junior",
-    "years_of_experience": null,
-    "salary_range": "Not specified",
-    "key_technologies": [
-      "Python",
-      "Node",
-      "Go"
-    ],
-    "main_requirements": [],
-    "summary": "ABOUT CANALS\nCanals builds software for wholesale distributors, helping them operate more efficiently through automation and AI.\nOur customers are the companies responsible for moving the materials that power the real economy; electrical supplies, plumbing products, roofing materials, HVAC equipment",
-    "raw_text": "ABOUT CANALS\nCanals builds software for wholesale distributors, helping them operate more efficiently through automation and AI.\nOur customers are the companies responsible for moving the materials that power the real economy; electrical supplies, plumbing products, roofing materials, HVAC equipment, and more. Every day, thousands of people rely on Canals to help process orders, manage purchasing, handle accounts payable, and streamline critical business workflows.\nWe're a profitable, rapidly growing company with a team of roughly 100 people distributed across North and South America. We care deeply about building great products, hiring exceptional people, and creating an environment where talented individuals can do the best work of their careers.\nTHE ROLE\nOur customer base is growing fast, and we’re looking for a Junior Software Engineer eager to learn and grow with us. You’ll work alongside experienced engineers building scalable, high-performance systems that solve real-world problems in logistics and automation.\nThis is a great opportunity to gain exposure to modern engineering practices, real customers, and a product that delivers measurable business impact.\nWHAT YOU’LL DO\n- Work closely with senior engineers to design, build, and maintain backend systems that power our platform.\n- Contribute to feature development, bug fixes, and performance improvements.\n- Participate in code reviews, testing, and documentation to ensure quality and maintainability.\n- Collaborate with product and design teams to bring ideas from concept to production.\n- Learn new tools and technologies, and grow into greater ownership over time.\nWHAT YOU'LL BRING\n- Typically, 0–2 years of professional experience as a software engineer (internships or projects count!).\n- Solid programming fundamentals and familiarity with at least one backend language (Go, Python, Node, etc.).\n- Curiosity and a desire to understand how complex systems fit together.\n- Eagerness to learn from others and contribute to a collaborative, high-performing team.\n- Strong communication and problem-solving skills.\n- Interest in startups, AI, or logistics a plus.\nWHY JOIN CANALS\nWe're building software that solves real problems for an industry that keeps the world running. Our customers rely on our platform every day to operate their businesses.\nWe've found strong product-market fit and continue to grow quickly, creating opportunities for people who want to have a meaningful impact on the trajectory of a company.\nWe believe great people build great companies. That's why we invest heavily in hiring, development, and creating an environment where talented individuals can do the best work of their careers.\nYou'll work alongside ambitious, thoughtful teammates who care deeply about what they do, challenge each other directly, and have a lot of fun along the way.\nWe value ownership, transparency, and continuous improvement. Good ideas can come from anywhere, and people are trusted to make things happen.\nWe're remote-first, flexible, and distributed across North and South America, bringing together talented people from a wide range of backgrounds and experiences.\nCanals.ai is an",
-    "language": "en",
-    "source_page": "Ashby (canals)",
-    "source_url": "https://jobs.ashbyhq.com/canals/06a7ec78-d84f-4035-9799-747524dbdc49",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/canals/06a7ec78-d84f-4035-9799-747524dbdc49/application",
-    "status": "ranked",
-    "score": 82,
-    "justification": "La vacante es de nivel Junior Software Engineer orientada a perfiles con 0-2 años de experiencia profesional (incluyendo proyectos o pasantías), encuadrando perfectamente en la seniority del candidato. El stack tecnológico incluye Python, Node y Go, donde el candidato demuestra experiencia práctica sólida en Python y Node.js a través de sus proyectos personales y académicos, además de estar cursando Ciencias de la Computación. La ubicación remota en LATAM (Argentina) es compatible. El único detalle menor es que el candidato cuenta con proyectos propios y académicos avanzados pero sin experiencia laboral previa en relación de dependencia, aunque el propio texto de la oferta aclara que los proyectos cuentan. fit_score: 82.",
-    "strengths": [
-      "El rol busca un Junior Software Engineer con 0-2 años de experiencia (explicitando que los proyectos cuentan), lo cual se alinea con el perfil del candidato.",
-      "La vacante requiere familiaridad con lenguajes backend como Python o Node, tecnologías en las que el candidato cuenta con proyectos prácticos (como JobBud y Batchpix).",
-      "La modalidad remota desde Argentina es totalmente compatible con la ubicación y disponibilidad del candidato."
-    ],
-    "gaps": [
-      "El perfil del candidato indica 0 años de experiencia profesional formal (aunque menciona que pasantías y proyectos cuentan, la posición pide típicamente de 0 a 2 años y el candidato es Junior/Trainee sin experiencia previa en empresa formal)."
-    ],
-    "ranked_at": "2026-08-15T09:17:54.971593",
+    "ranked_at": "2026-08-17T06:09:16.405999",
     "user_notes": null
   },
   {
     "id": "ashby_silver_0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8",
-    "created_at": "2026-08-15T09:22:52.365581",
+    "created_at": "2026-08-17T06:08:26.158419",
     "title": "Ramp - Software Engineer",
     "company": "silver",
     "location": "Remote; Argentina",
@@ -668,75 +573,134 @@
     "source_url": "https://jobs.ashbyhq.com/silver/0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8/application",
     "status": "ranked",
-    "score": 72,
-    "justification": "The position is for a Software Engineer at Ramp (via silver) focusing on backend systems, APIs, and spend control infrastructure, with key technologies including Python, TypeScript, Go, PostgreSQL, and AWS. The posting does not explicitly mandate a specific number of professional years of experience or a completed degree, noting instead 'Software engineering experience (backend or fullstack with a backend focus)'. According to the ranking policy, when no strict YOE minimum is stated, we evaluate based on skills, education, and projects without applying a mandatory 2+ YOE cap. The candidate brings strong alignment with Python, TypeScript, PostgreSQL, and backend development through substantial personal projects (e.g., JobBud, Batchpix), as well as ongoing CS education at UBA Exactas. However, the candidate lacks formal professional software engineering experience. Therefore, this represents a possible/good entry fit depending on how strictly the hiring team evaluates commercial background, yielding a moderate-to-good fit score of 72.",
+    "score": 58,
+    "justification": "The role requires general backend software engineering experience and aligns well with Python, TypeScript, and PostgreSQL stack elements present in candidate projects. However, while the posting does not explicitly mandate a rigid 2+ YOE minimum, it expects professional software engineering experience handling large-scale systems, which represents a notable experience gap for a 0-YOE candidate, placing this in the weak-to-possible fit range.",
     "strengths": [
-      {
-        "text": "The role seeks strong fundamentals in backend systems and API design, with Python, TypeScript, and PostgreSQL listed as key technologies; the candidate has concrete project experience using Python, TypeScript, Node.js, and PostgreSQL."
-      },
-      {
-        "text": "The posting values product sense and problem-solving without strict degree requirements, while the candidate is an advanced Computer Science student at UBA with strong foundational knowledge and autonomous project delivery (e.g., Batchpix, JobBud)."
-      }
+      "The candidate has practical project experience with Python, TypeScript, PostgreSQL, and backend API design.",
+      "The candidate's autonomous project execution demonstrates high agency, aligning with the company's builder culture."
     ],
     "gaps": [
-      {
-        "text": "The posting requests software engineering experience (backend or fullstack with backend focus), but the candidate has 0 formal professional years of experience (YOE)."
-      },
-      {
-        "text": "Familiarity with AWS and modern observability tooling is listed as a requirement/familiarity point, which the candidate only has in a limited/personal server context without professional production scope."
-      }
+      "The posting seeks software engineering experience with backend systems and API design at scale, while the candidate has 0 formal professional years of experience.",
+      "The candidate profile does not demonstrate professional experience with Go, AWS, or enterprise-grade observability and transactional financial infrastructure."
     ],
-    "ranked_at": "2026-08-15T09:23:09.832275",
+    "ranked_at": "2026-08-17T06:09:16.406013",
     "user_notes": null
   },
   {
-    "id": "ashby_nexus_xyz_1155bf9e-3098-4f00-a691-f8df52b65ceb",
-    "created_at": "2026-08-15T09:27:48.127502",
-    "title": "Systems Engineer (Contract, LATAM)",
-    "company": "nexus.xyz",
-    "location": "LATAM",
-    "work_mode": "Remote",
-    "commitment": "Contract",
+    "id": "ashby_silver_48e6f9de-0c2a-4f52-b362-b978e57bddb2",
+    "created_at": "2026-08-17T06:08:26.167803",
+    "title": "Wonderful - Forward Deployed Engineer",
+    "company": "silver",
+    "location": "Argentina / Hybrid; Buenos Aires",
+    "work_mode": "Hybrid",
+    "commitment": "Full-time",
     "department": "Engineering",
-    "seniority": "Junior",
+    "seniority": "Not specified",
     "years_of_experience": null,
     "salary_range": "Not specified",
-    "key_technologies": [
-      "Go",
-      "Rust"
-    ],
+    "key_technologies": [],
     "main_requirements": [],
-    "summary": "About Nexus\nNexus is the engine for verifiable finance — a blockchain designed to natively embed the world’s financial system into one compounding system. Built to support every major financial market on a single global exchange, Nexus unifies infrastructure that has historically been fragmented acr",
-    "raw_text": "About Nexus\nNexus is the engine for verifiable finance — a blockchain designed to natively embed the world’s financial system into one compounding system. Built to support every major financial market on a single global exchange, Nexus unifies infrastructure that has historically been fragmented across chains and intermediaries.\nHeadquartered in San Francisco with a growing presence in Buenos Aires, Nexus is proud to be a cross-continental team of engineers, cryptographers, and market builders. We’re investing deeply in the Latin American ecosystem — and always looking for world-class talent to join us.\nNexus is backed by leading investors, including Pantera, Lightspeed, Dragonfly, Faction, Blockchain Builders Fund, Alliance, and SVA, and works with more than 100 partners across the global finance and blockchain stack.\nLOCATION: REMOTE\nTYPE: CONTRACT\nDURATION: 12 MONTHS WITH POTENTIAL FOR EXTENSION\nTHE ROLE\nWE’RE HIRING SR SYSTEMS ENGINEERS IN LATIN AMERICA TO WORK AT THE CORE OF NEXUS’S EXECUTION STACK — CONTRIBUTING TO THE RUNTIME BEHIND OUR LAYER 1 PROTOCOL AND THE HIGH-PERFORMANCE ENGINE THAT POWERS DECENTRALIZED TRADING.\nThis is not a typical backend role. You will work on performance-critical systems where microseconds matter, building execution paths that may evolve into core protocol primitives. Your work will directly shape how orders are processed, state transitions are computed, and performance guarantees are achieved across the network.\nWhether you're a strong mid-level engineer looking to grow into system ownership, or a senior/principal engineer eager to architect high-throughput distributed systems, this role offers the opportunity to build software that runs at the heart of a global execution layer.\nYou’ll collaborate closely with protocol, cryptography, and product teams in San Francisco while contributing remotely from Argentina.\nWhat You’ll Do\n- Design and implement high-performance components in Rust, C++, or Go for Nexus’s DEX engine and protocol runtime.\n- Build low-latency pipelines for order execution, event propagation, and state updates.\n- Optimize concurrency, scheduling, memory layout, and I/O paths for determinism and throughput.\n- Contribute to the evolution of execution abstractions that may be enshrined at the protocol layer.\n- Work with protocol engineers to ensure safety, composability, and consensus compatibility.\n- Investigate and resolve performance bottlenecks using profiling, tracing, and benchmarking techniques.\n- Help define standards for reliability, correctness, and high-assurance distributed execution.\n- For senior/principal candidates: Drive system design decisions, shape execution architecture, and mentor others in performance engineering.\nWhat We’re Looking For\n- Strong experience with Rust, C++, Go, or other systems programming languages.\n- Understanding of high-performance or distributed systems (e.g., low-latency engines, runtimes, databases, OS-level concurrency).\n- Ability to think in terms of execution flows, concurrency models, resource lifecycles, and system invariants.\n- Practical experience profiling CPU, memory, and synchronization overhead.\n- Comfort working close to runtime constraints where performance, determinism, and resilience are critical.\n- Excellent communication skills in Business English (spoken and written).\nLevels We're Hiring\n- Junior 1–3 years - Solid foundations, eagerness to grow, guided ownership\n- Senior 5+ years - System design leadership, cross-team impact, mentorship\nBonus Points For\n- Experience building matching engines, databases, compilers, blockchain runtimes, or HPC systems.\n- Familiarity with lock-free concurrency, zero-copy data structures, or cache-aware design.\n- Exposure to protocol engineering, consensus systems, or transaction ordering.\n- Background in correctness-focused engineering (e.g., formal verification, static analysis).\n- Open-source contributions to systems-level projects.\nWhy Join Us\n- Build the execution backbone of a Layer 1 blockchain and next-generation DEX engine.\n- Work on systems where your optimizations translate directly into global performance gains.\n- Grow from mid-level contributor to system owner — or drive execution architecture as a senior/principal.\n- Shape primitives designed to last — correct, performant, and potentially enshrined at the protocol level.\n- Join a high-performance engineering culture where ambition and deep technical work are expected.",
+    "summary": "Forward Deployed Engineer (FDE)\nABOUT Wonderful\nWonderful https://www.wonderful.ai enables enterprises to build, test, deploy, and monitor AI agents for their most complex needs, serving customers and employees seamlessly across voice, chat, email, and back-office systems in any language or cultural",
+    "raw_text": "Forward Deployed Engineer (FDE)\nABOUT Wonderful\nWonderful https://www.wonderful.ai enables enterprises to build, test, deploy, and monitor AI agents for their most complex needs, serving customers and employees seamlessly across voice, chat, email, and back-office systems in any language or cultural context.\nROLE OVERVIEW\nAs a Forward Deployed Engineer (FDE) at Wonderful, you’ll solve high-impact, real-world problems alongside enterprise customers and own work from first principles through production outcomes.\nYou’ll work directly with customers to understand critical workflows, design AI-driven solutions, and deploy agents that operate reliably in production. You’ll own projects end-to-end from problem definition and system design to launch and iteration - and be accountable for real business impact.\nThis is a hands on-generalist role for engineers who enjoy navigating ambiguity, learning quickly, and working across systems while partnering with enterprises as they become AI-driven organizations.\nWHAT YOU’LL DO\n- Partner with customers to understand operational challenges and success criteria\n- Translate open-ended problems into clear technical designs and implementations\n- Build AI agents that integrate with customer systems and perform real tasks\n- Own deployments, including reliability, performance, and continuous improvement\n- Test with real data, measure outcomes, and iterate based on results\n- Collaborate with Product & Engineering to ship high-quality solutions\n- Contribute to tools, documentation, and best practices that scale customer delivery\nWHAT WE’RE LOOKING FOR\n- 5+ years of experience in software engineering or technical problem-solving roles\n- Strong fundamentals in software design, system thinking\n- Experience working across systems, integrations, and data flows\n- Comfort working directly with customers and owning ambiguous problems\n- Clear communication skills and a strong ownership mindset\n- Curiosity and interest in building AI-powered systems that work in practice\nNICE TO HAVE\n- Experience in forward-deployed, solutions engineering, or customer-facing roles\n- Exposure to AI agents, automation, or conversational systems\n- Experience operating and improving production systems",
     "language": "en",
-    "source_page": "Ashby (nexus.xyz)",
-    "source_url": "https://jobs.ashbyhq.com/nexus.xyz/1155bf9e-3098-4f00-a691-f8df52b65ceb",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/nexus.xyz/1155bf9e-3098-4f00-a691-f8df52b65ceb/application",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/48e6f9de-0c2a-4f52-b362-b978e57bddb2",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/48e6f9de-0c2a-4f52-b362-b978e57bddb2/application",
     "status": "ranked",
-    "score": 45,
-    "justification": "The candidate is an advanced CS student with strong fundamentals and personal projects (including C++ and systems projects), which aligns with the technical domain of systems engineering. However, the posting specifies hiring at the Junior level (1–3 years with solid foundations) or Senior level (5+ years). Under the ranking policy, a junior level requiring 1–3 years of professional experience combined with 0 professional YOE typically places the score in the 40–59 range (Weak Fit / Possible Fit depending on evidence). Although the candidate has personal project experience in C++ and systems, professional low-latency systems engineering experience is absent, representing a core gap for a blockchain execution layer role. Therefore, a fit score of 45 is awarded.",
+    "score": 35,
+    "justification": "The posting explicitly mandates 5+ years of experience in software engineering or technical problem-solving roles. Per the ranking policy, when 2+ years of professional experience are mandatory, the fit score must not exceed 39.",
     "strengths": [
-      "The role accepts Rust, C++, or Go; the candidate has academic and personal project experience in C++ and systems (e.g., custom memory/multithreading/processing in Batchpix and an educational x86 kernel).",
-      "The candidate has a strong foundation in Computer Science from UBA Exactas (algorithms, operating systems, systems architecture).",
-      "The position is remote in LATAM (Argentina), which matches the candidate's location and work mode preferences."
+      "The candidate has relevant interest and familiarity with building AI-powered workflows and agents."
     ],
     "gaps": [
-      {
-        "item": "The posting explicitly requires 1–3 years for Junior level (or 5+ for Senior). The candidate has 0 formal professional years of experience."
-      },
-      {
-        "item": "The role requires strong systems-level programming experience in Go, Rust, or C++ for performance-critical blockchain/trading engines, whereas the candidate's C++ and systems experience is academic/personal (e.g., Batchpix, educational x86 kernel) rather than professional low-latency systems experience."
-      },
-      {
-        "item": "The posting expects practical experience profiling CPU, memory, and synchronization overhead in production systems."
-      }
+      "The posting explicitly requires 5+ years of experience in software engineering or technical problem-solving roles, while the candidate has 0 formal professional years of experience.",
+      "The candidate lacks professional experience in forward-deployed or customer-facing enterprise technical consulting roles."
     ],
-    "ranked_at": "2026-08-15T09:27:52.462516",
+    "ranked_at": "2026-08-17T06:09:16.406018",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_676d00fe-5635-4e00-b4f7-9dc23fe65375",
+    "created_at": "2026-08-17T06:08:26.183748",
+    "title": "Fullstack Product Engineer (Python/Angular)",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$60K - $90K",
+    "key_technologies": [
+      "Python",
+      "TypeScript",
+      "Angular",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "main_requirements": [],
+    "summary": "Full-Stack Product Engineer\nBuild across the stack · Own features end-to-end · Ship continuously\nThe Role\nWe’re looking for a Full-Stack Product Engineer who loves building products — not just writing code. You’ll own features end-to-end: understanding customer problems, designing solutions, and shi",
+    "raw_text": "Full-Stack Product Engineer\nBuild across the stack · Own features end-to-end · Ship continuously\nThe Role\nWe’re looking for a Full-Stack Product Engineer who loves building products — not just writing code. You’ll own features end-to-end: understanding customer problems, designing solutions, and shipping them to production. You’ll collaborate across the company while helping shape both the product and the engineering behind it.\nWe move quickly, ship continuously, and value engineers with strong product intuition as much as technical excellence.\nWhat You’ll Do\n- Help move products from idea to the hands of customers, contributing across problem definition, design, and delivery.\n- Collaborate with stakeholders and teammates to understand needs and turn them into shipped features.\n- Make product and technical decisions independently, with the autonomy and judgment to move without waiting for sign-off at every turn.\n- Build across the entire stack — frontend, backend, and infrastructure.\nShip early, learn quickly, and iterate based on real customer feedback.\nOur Tech Stack\n- Frontend: Angular, TypeScript\n- Backend: Django, Python, PostgreSQL\n- Infrastructure: AWS, Terraform\n- We care far more about strong engineering fundamentals, product thinking, and a willingness to learn than experience with a particular framework.\nHow We Use AI\nAI is part of how we build, not what we build.\nWe use modern AI tools to accelerate development, improve quality, and automate repetitive work so engineers can focus on solving meaningful problems. We embrace experimentation, but engineering judgment always comes first.\nWe continuously improve how we build software through design reviews, code walkthroughs, knowledge sharing, and experimenting with the latest developer tools.\nWhat We’re Looking For\n• Strong full-stack engineering skills.\n• A product mindset and customer-first thinking.\n• Ownership and the ability to work independently.\n• Curiosity and a willingness to learn.\n• Clear communication and collaboration.\n• Pragmatic engineering judgment.\nOur Values\nIdeas Over Titles — The best ideas win, regardless of where they come from. We value intellectual honesty and healthy debate over hierarchy.\nBetter Over Perfect — We believe in shipping, learning, and continuously improving instead of waiting for perfect solutions.\nCourage Over Comfort — We challenge assumptions, give candid feedback, and do what’s right for our customers and teammates — even when it’s uncomfortable.",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/676d00fe-5635-4e00-b4f7-9dc23fe65375",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/676d00fe-5635-4e00-b4f7-9dc23fe65375/application",
+    "status": "ranked",
+    "score": 78,
+    "justification": "The position is a Fullstack Product Engineer role in Argentina with no explicit professional years of experience requirement. The tech stack includes Python, TypeScript, PostgreSQL, and AWS, and the employer explicitly notes they care far more about strong engineering fundamentals, product thinking, and a willingness to learn than experience with a particular framework. The candidate is an advanced CS student with solid project experience in Python, TypeScript, PostgreSQL, and Git/Linux. Because the posting does not mandate professional experience and emphasizes learning potential and fundamentals, this is a strong possible/good fit for an advanced student or entry-level applicant, scoring 78.",
+    "strengths": [
+      "The candidate has concrete project experience using Python, TypeScript, and PostgreSQL.",
+      "The posting explicitly values strong engineering fundamentals, product thinking, and a willingness to learn over specific framework experience, which matches the candidate's self-taught and project-driven background.",
+      "Remote location in Argentina matches the role requirement."
+    ],
+    "gaps": [
+      "The candidate has 0 formal professional YOE, though no professional YOE minimum is explicitly stated in the posting.",
+      "Experience with Terraform and Angular is not demonstrated in the candidate profile (though Angular/TypeScript is part of the stack, the candidate profile highlights React for frontend)."
+    ],
+    "ranked_at": "2026-08-17T06:09:35.377093",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_silver_f276bab3-7bcf-460c-a918-1af1b418bfa9",
+    "created_at": "2026-08-17T06:08:26.195106",
+    "title": "Greenhouse - Software Engineer, Data Experience",
+    "company": "silver",
+    "location": "Argentina",
+    "work_mode": "Remote",
+    "commitment": "Full-time",
+    "department": "Engineering",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$43 per hour",
+    "key_technologies": [
+      "TypeScript",
+      "Go",
+      "React"
+    ],
+    "main_requirements": [],
+    "summary": "SOFTWARE ENGINEER, DATA EXPERIENCE\nArgentina\nOur mission https://www.greenhouse.com/mission at Greenhouse https://www.greenhouse.com is to make hiring work for everyone – so we go to great lengths to hire great people because we believe that they’re the foundation of our success. At Greenhouse, you’",
+    "raw_text": "SOFTWARE ENGINEER, DATA EXPERIENCE\nArgentina\nOur mission https://www.greenhouse.com/mission at Greenhouse https://www.greenhouse.com is to make hiring work for everyone – so we go to great lengths to hire great people because we believe that they’re the foundation of our success. At Greenhouse, you’ll join a team that collaborates purposefully, fosters inclusivity, and communicates with transparency and accountability so we can achieve our mission.\nWHO WILL LOVE THIS JOB\n- A Product-Minded Engineer – You don't just write code; you understand the end-user experience and can make thoughtful, directionally correct technical decisions aligned with product vision.\n- A Data-Experience Builder – You are energized by crafting crisp, responsive, data-rich applications and internal tools using modern TypeScript and frontend/backend patterns.\n- A Pragmatic Innovator – You actively leverage AI-assisted development (such as agentic coding workflows) to streamline your day-to-day work, increase throughput, and spend more time solving high-leverage problems.\n- A Quality Champion – You care deeply about engineering standards, strong automated test coverage, and building durable software that stands the test of time.\nWHAT YOU’LL DO\n- Implement net-new functionality into the core Analytics platform to drive strategic company priorities.\n- Maintain and optimize existing Analytics products, ensuring high availability, performance, and UI responsiveness.\n- Partner daily with Data Experience engineers, Product Managers, Product Designers, and members of the Data Platform team to take features from ideation to production.\n- Write robust automated tests, contribute to code reviews, and help raise the technical baseline across the codebase.\n- Work fluently with agentic coding assistants and modern AI developer tools to ship features faster and improve developer ergonomics.\nYOU SHOULD HAVE\n- 5+ years of experience shipping production-grade TypeScript and React applications.\n- 1+ years of hands-on experience building data-rich applications or dashboards where performance, UI responsiveness, and state management matter.\n- Experience with Duckdb, a plus\n- Proven track record of delivering clean, maintainable code backed by high levels of automated test coverage.\n- Comfort and proficiency using AI-assisted/agentic coding tools in your daily development workflow.\n- Excellent communication and cross-functional collaboration skills in a remote, distributed environment.\nWHO WE ARE\nAt Greenhouse, we live by our mission through using our own product https://www.greenhouse.com/interviewing-at-greenhouse to help us hire the right person for the job, every time. We’re committed to designing and responsibly using AI tools to transform how we work while keeping people at the center. We are a remote-first company and have shared office spaces in New York City and Ireland, and optional co-working spaces that give us flexibility to do our best work anywhere. We take an active role in our growth through a performance review program that’s committed to providing actionable feedback, and a bonus structure that rewards great performance. We believe that bringing together a variety of perspectives makes us a stronger company – and we nurture leaders who create an inclusive culture and invest into employee resource groups that celebrate our differences and life experiences. We’re proud to have built an award-winning culture https://www.greenhouse.com/awards that’s been recognized as Fortune’s Best Places to Work and Inc.’s Best Workplaces multiple years in a row.\n--\nJoin us to do the best work of your career, solving meaningful problems with remarkable teams.\nThis is an independent contractor engagement in Argentina. Deel will serve as Contractor of Record and will contract with and pay the independent contractor. The independent contractor will provide services to Greenhouse on a non-exclusive basis, may provide services to other clients, and will be responsible for determining the manner and means of performing the services, subject to the applicable statement of work and agreed deliverables. This engagement is not an employment relationship with Greenhouse. No employment relationship, social benefits, or labor entitlements under Argentine Law 20,744 are created by this engagement. .\nThrough this arrangement, Deel is hiring an independent contractor to provide services to the Data Experience team at Greenhouse.\nThe Data Experience team is critical to delivering net-new functionality to our Analytics platform, supporting our existing suite of products, and elevating the overall technical quality of our application stack.\nThis role will support the development and maintenance of the Company’s web-based applications as part of an approximately 12-month engagement. In this role, you will focus on high-quality feature execution and technical reliability across the application stack for the Company\nThis is a collaborative, execution-focused, non-exclusive engagement. Services will include design, development, and delivery of platform infrastructure as scoped with the Data Experience team.\nCONTRACT & LOCATION DETAILS\n- Contract duration: Approximately 12 months, with potential for extension based on business needs\n- Engagement type: A non-exclusive contract role engaged through a Contractor of Record (COR) via Deel in Argentina\n- Location: Argentina (remote)\n- Working model: Collaboration with a distributed, US & Canada-based team, with reasonable availability for coordination during core Greenhouse working hours",
+    "language": "en",
+    "source_page": "Ashby (silver)",
+    "source_url": "https://jobs.ashbyhq.com/silver/f276bab3-7bcf-460c-a918-1af1b418bfa9",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/silver/f276bab3-7bcf-460c-a918-1af1b418bfa9/application",
+    "status": "ranked",
+    "score": 30,
+    "justification": "The role is an independent contractor position via Deel in Argentina requiring 5+ years of experience shipping production-grade TypeScript and React applications. The candidate is an advanced CS student with 0 formal professional YOE and academic/project-level experience rather than 5+ years of professional production experience. Following the ranking policy for explicit 2+ years of professional experience (and specifically 5+ years here), the score is capped at 39 or lower.",
+    "strengths": [
+      "The candidate has project-level familiarity with JavaScript, TypeScript, and React, aligning with parts of the requested frontend stack.",
+      "Remote location in Argentina matches the geographic requirement."
+    ],
+    "gaps": [
+      "The posting requires 5+ years of experience shipping production-grade TypeScript and React applications, which exceeds the candidate's professional experience (0 formal professional YOE).",
+      "Experience with DuckDB is a plus, which is not demonstrated in the candidate profile."
+    ],
+    "ranked_at": "2026-08-17T06:09:35.377116",
     "user_notes": null
   },
   {
     "id": "ashby_nexus_xyz_e6877f82-5d71-4a52-a131-c09dd7b148dd",
-    "created_at": "2026-08-15T09:27:48.131222",
+    "created_at": "2026-08-17T06:09:55.534363",
     "title": "Backend Engineer (Contract - LATAM)",
     "company": "nexus.xyz",
     "location": "LATAM",
@@ -765,22 +729,24 @@
     "source_url": "https://jobs.ashbyhq.com/nexus.xyz/e6877f82-5d71-4a52-a131-c09dd7b148dd",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/nexus.xyz/e6877f82-5d71-4a52-a131-c09dd7b148dd/application",
     "status": "ranked",
-    "score": 60,
-    "justification": "The posting is for a Backend Engineer (Contract - LATAM) at nexus.xyz, hiring at multiple levels including Junior (1-3 years: solid foundations, eagerness to grow, guided ownership). The candidate is an advanced CS student with 0 formal professional YOE, making the lower bound of the junior level (1 year) a partial mismatch, though the posting explicitly mentions 'junior' and 'eagerness to grow/guided ownership'. The candidate has strong technical overlap with Python, Node.js, and relational databases (PostgreSQL), which are listed among the key proficiencies. However, the role also requires or involves Rust and blockchain/DeFi infrastructure components where the candidate has no direct professional experience. Following the ranking policy for approximately 1 YOE / junior roles where 1-3 years is indicated, and combining the good technical stack overlap (Python/Node/PostgreSQL) with the lack of professional YOE and Rust experience, a score of 60 falls squarely into the 'Possible Fit' band, reflecting a plausible entry-level / junior match worth manual review.",
+    "score": 55,
+    "justification": "The role is open to junior engineers (1-3 years) and the tech stack includes Python and Node.js, which align well with the candidate's projects. However, the junior tier specifies 1-3 years of experience, and the candidate currently has 0 formal professional years of experience. Considering the junior level is accessible and there is good technical stack overlap (Python, Node.js, PostgreSQL, Docker), this fits well into the possible fit band for 1-3 years requested experience. Score awarded: 55.",
     "strengths": [
-      "The posting explicitly hires at the Junior level ('1–3 years - Solid foundations, eagerness to grow, guided ownership') and accepts Remote (Argentina/LATAM) candidates.",
-      "The candidate has concrete project experience with Node.js, Python, and PostgreSQL, which directly match the required proficiencies in Node.js, Python, and relational databases."
+      "The posting explicitly considers junior level candidates (1-3 years), making it an entry-accessible tier.",
+      "The tech stack includes Python and Node.js, matching the candidate's practical project experience.",
+      "The role is remote for LATAM, aligning with the candidate's preferences."
     ],
     "gaps": [
-      "The posting explicitly lists 2+ years of professional experience as part of the junior tier criteria (Junior 1-3 years: Solid foundations, eagerness to grow, guided ownership), whereas the candidate has 0 formal professional YOE.",
-      "The role involves building backend services in Rust for Layer 1 and DEX, which is not demonstrated in the candidate profile."
+      "The posting mentions junior level as 1-3 years of experience, whereas the candidate has 0 formal professional years of experience.",
+      "Experience with Rust or Go is mentioned in the stack, which is not demonstrated in the candidate profile.",
+      "Blockchain and distributed systems experience is not demonstrated in the profile."
     ],
-    "ranked_at": "2026-08-15T09:28:27.927136",
+    "ranked_at": "2026-08-17T06:10:24.388400",
     "user_notes": null
   },
   {
     "id": "ashby_scale_20army_20careers_e34e165a-81fa-40d2-bd8a-4a56246617ec",
-    "created_at": "2026-08-15T09:29:04.357918",
+    "created_at": "2026-08-17T06:10:41.556769",
     "title": "Full-Stack Developer",
     "company": "Scale%20Army%20Careers",
     "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
@@ -806,22 +772,22 @@
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/e34e165a-81fa-40d2-bd8a-4a56246617ec/application",
     "status": "ranked",
     "score": 35,
-    "justification": "La vacante requiere explícitamente 3+ años de experiencia profesional en desarrollo full-stack/web, además de dominio sólido de PHP y Laravel, tecnologías que no forman parte del perfil del candidato (quien cuenta con 0 años de experiencia profesional). Según la política de ranking, un requisito explícito de 2+ años de experiencia profesional limita estrictamente el fit_score a un máximo de 39, a pesar de que hay cierta superposición en JavaScript/SQL/Linux a nivel personal.",
+    "justification": "The candidate is an advanced CS student with 0 formal professional years of experience, whereas this role explicitly requires 3+ years of professional full-stack development experience. Furthermore, the core technical stack centers on PHP and Laravel, which the candidate does not demonstrate. Although the candidate has strong general backend skills (Node.js, SQL, Python), the mandatory experience and stack mismatch result in a poor fit score capped according to ranking policy for 2+ years mandatory experience requirements.",
     "strengths": [
-      "The posting allows remote candidates based in LATAM/Argentina with U.S. time zone availability, matching the candidate's geographic context.",
-      "The candidate has personal project experience with JavaScript, React, SQL, and Linux environments which intersect with secondary stack elements."
+      "The position is fully remote and compatible with LATAM time zones (9 AM - 5 PM EST).",
+      "The role involves full-stack web application development and backend services, aligning with the candidate's general software development interests."
     ],
     "gaps": [
-      "The posting explicitly requires 3+ years of experience in full-stack development or web development; the candidate has 0 professional YOE.",
-      "The posting mandates strong proficiency with PHP and Laravel; the candidate profile does not demonstrate PHP or Laravel.",
-      "The posting requires experience building responsive user interfaces from Figma design files and working extensively with Linux servers/deployment tasks in a professional setting."
+      "The posting explicitly requires 3+ years of experience in full-stack or web development, which exceeds the candidate's professional experience.",
+      "The role requires professional proficiency in PHP and Laravel, which are not part of the candidate's primary stack or profile evidence.",
+      "The posting requires professional experience with MySQL/MariaDB database design and optimization at scale."
     ],
-    "ranked_at": "2026-08-15T09:29:16.941308",
+    "ranked_at": "2026-08-17T06:10:48.919362",
     "user_notes": null
   },
   {
     "id": "ashby_scale_20army_20careers_2152077c-5ded-4254-8162-abf961ac4614",
-    "created_at": "2026-08-15T09:29:04.368106",
+    "created_at": "2026-08-17T06:10:41.567911",
     "title": "Product & Design",
     "company": "Scale%20Army%20Careers",
     "location": "Argentina",
@@ -840,21 +806,21 @@
     "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/2152077c-5ded-4254-8162-abf961ac4614",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/2152077c-5ded-4254-8162-abf961ac4614/application",
     "status": "ranked",
-    "score": 20,
-    "justification": "La posición está orientada puramente a Product Design y UI/UX Design, un dominio que el perfil del candidato rechaza explícitamente (\"no busca roles puramente comerciales, ventas, recruiting, HR, marketing o diseño/UI-UX\"). No hay alineación con el perfil técnico de desarrollo de software del candidato. Por lo tanto, se asigna un puntaje bajo de fit acorde a un dominio no compatible.",
+    "score": 15,
+    "justification": "The candidate profile explicitly avoids roles focused on design, UI/UX, or product design, preferring software engineering, backend, and technical implementation. There is a complete domain mismatch between the candidate's technical skills and this design-focused pipeline.",
     "strengths": [
-      "The candidate is based in Argentina and meets the geographic and remote availability criteria for LATAM."
+      "The position offers fully remote work flexibility for candidates based in LATAM."
     ],
     "gaps": [
-      "The position focuses on Product Design, UI/UX Design, wireframing, and user research, whereas the candidate's profile is strictly focused on software engineering and backend development.",
-      "The candidate's profile explicitly states they do not seek roles focused on design/UI-UX."
+      "The role focuses on Product Design, UI/UX Design, and user-centered design solutions, which falls outside the candidate's technical profile and stated preferences.",
+      "The candidate profile explicitly states a preference for backend, automation, and software engineering roles, while avoiding roles focused on UI/UX or design."
     ],
-    "ranked_at": "2026-08-15T09:29:16.941321",
+    "ranked_at": "2026-08-17T06:10:48.919373",
     "user_notes": null
   },
   {
     "id": "ashby_scale_20army_20careers_2032e4c3-fb67-424f-9f9a-0ee4f0527ee3",
-    "created_at": "2026-08-15T09:29:04.383480",
+    "created_at": "2026-08-17T06:10:41.586462",
     "title": "Magento Web Developer",
     "company": "Scale%20Army%20Careers",
     "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
@@ -873,21 +839,130 @@
     "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/2032e4c3-fb67-424f-9f9a-0ee4f0527ee3",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/2032e4c3-fb67-424f-9f9a-0ee4f0527ee3/application",
     "status": "ranked",
-    "score": 30,
-    "justification": "La vacante requiere explícitamente entre 2 y 5+ años de experiencia trabajando con Magento (Adobe Commerce), además de un enfoque principal en gestión diaria de e-commerce y diseño UX/UI. Dado que el candidato tiene 0 años de experiencia profesional y su perfil técnico está orientado al desarrollo backend, sistemas y software general (rechazando además roles enfocados en diseño/UI-UX), se aplica la política de experiencia (cap estricto en 39 por requerir 2+ años de experiencia profesional obligatorios) y la incompatibilidad de dominio funcional. Se califica con 30.",
+    "score": 35,
+    "justification": "The role explicitly requires 2 to 5+ years of professional experience with Magento (Adobe Commerce) and e-commerce website management, which the candidate lacks. Additionally, the role involves extensive UX/UI design and visual asset creation, which conflicts with the candidate's technical software engineering focus. Under the ranking policy, a mandatory requirement of 2+ professional years combined with domain mismatch places the score in the low fit band.",
     "strengths": [
-      "The position is remote and open to candidates based in Argentina (LATAM), matching the candidate's location."
+      "The position is fully remote and open to candidates based in LATAM (Argentina) working during U.S. business hours.",
+      "Basic HTML/CSS and problem-solving skills align with general technical foundations, though not the specific e-commerce platform requirements."
     ],
     "gaps": [
-      "The posting explicitly requires 2–5+ years of experience working with Magento (Adobe Commerce); the candidate has 0 professional YOE and no demonstrated Magento experience.",
-      "The role heavily emphasizes e-commerce daily operations, content management, and UX/UI design improvements, which depart from the candidate's core backend and software engineering interest."
+      "The posting explicitly requires 2–5+ years of experience working with Magento (Adobe Commerce).",
+      "The role requires continuous ongoing management and updates of an e-commerce platform using Magento and e-commerce CMS tooling.",
+      "The position places a heavy emphasis on UX/UI design for e-commerce and visual asset editing using Photoshop or Figma."
     ],
-    "ranked_at": "2026-08-15T09:29:16.941325",
+    "ranked_at": "2026-08-17T06:10:48.919378",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_e9771800-dd4a-41cc-8db5-a0a4c9b7b49b",
+    "created_at": "2026-08-17T06:10:41.591768",
+    "title": "QA Automation Engineer",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Technology & Product - Business Warrior",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$2.5K – $3K per month",
+    "key_technologies": [
+      "JavaScript",
+      "TypeScript",
+      "Docker"
+    ],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a fast-growing fintech company focused on building",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a fast-growing fintech company focused on building AI-driven SaaS solutions for small businesses. Their platform supports business optimization and financial services through scalable multi-tenant technology, and they are expanding their QA engineering team to strengthen automation, testing infrastructure, and platform reliability.\nLOCATION\nFully-Remote | 9 AM – 5 PM EST\nROLE OVERVIEW\nThe QA Automation Engineer will own and expand the company’s AI-driven testing framework while leading both automated and manual QA efforts across a multi-tenant SaaS platform. This role focuses on Playwright automation, AI-powered testing workflows, CI/CD integration, and overall QA process ownership to ensure high-quality product delivery and platform stability.\nKEY RESPONSIBILITIES\nAI-AUGMENTED TESTING PLATFORM\n- Own and extend the Playwright-based end-to-end automation suite.\n- Implement AI-powered testing workflows using tools such as Claude and MCP for test generation and auto-fix capabilities.\n- Integrate and maintain Jira webhooks for automated Playwright test generation.\n- Continuously optimize automated testing performance, reliability, and scalability.\nTEST EXECUTION & COVERAGE\n- Develop and execute automated testing coverage across payment flows, DMN edge cases, business rules validation, and UI consistency.\n- Perform manual scenario testing to validate tenant-specific workflows and logic.\n- Support UAT testing and release validation processes.\nCI/CD INTEGRATION & PIPELINE MANAGEMENT\n- Integrate automated testing into CI/CD pipelines across staging and UAT environments.\n- Maintain and improve quality gates during deployment and release cycles.\n- Collaborate closely with engineering teams to ensure smooth testing integration within development workflows.\nQA LEADERSHIP & OWNERSHIP\n- Own the end-to-end QA process across the platform.\n- Establish QA documentation standards, workflows, and testing best practices.\n- Identify and implement improvements to testing processes and automation systems.\nTEST DATA MANAGEMENT\n- Manage multi-tenant test data architecture to ensure isolation, integrity, and consistency across environments.\n- Maintain accurate test data and isolated test cases throughout CI/CD workflows.\nQUALIFICATIONS\nEXPERIENCE\n- 2+ years of experience as a QA Engineer, including at least 1 year working with AI-driven testing and Playwright.\n- Experience testing SaaS platforms within multi-tenant environments.\n- Hands-on experience with AI-powered testing tools such as Claude, MCP, or similar technologies.\n- Experience integrating automated testing into CI/CD pipelines, preferably using GitHub Actions.\n- Familiarity with Docker, multi-environment deployments, and API testing.\nSKILLS\n- Strong expertise in Playwright, JavaScript/TypeScript, Claude, and MCP.\n- Familiarity with Jira and the Atlassian ecosystem.\n- Strong understanding of automated and manual testing methodologies.\n- Knowledge of multi-tenant SaaS testing, database management, and isolated testing environments.\n- Excellent analytical, documentation, and troubleshooting abilities.\n- Strong communication and collaboration skills with both technical and non-technical stakeholders.\nWHAT SUCCESS LOOKS LIKE\n- Fully automated and optimized AI-driven testing workflows using Playwright and Claude.\n- High automated test coverage across critical platform functionality.\n- Smooth CI/CD integration with strong quality controls and minimal release issues.\n- Delivery of a stable, scalable, and well-tested SaaS platform with minimal defects.\n- Clear QA processes, documentation standards, and ownership across the engineering organization.\nOPPORTUNITY\nThis is an exciting opportunity to play a key leadership role within a growing fintech company focused on AI-powered SaaS solutions. The QA Automation Engineer will have the opportunity to shape the company’s long-term QA strategy, own critical testing infrastructure, and contribute directly to platform scalability, stability, and product quality.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/e9771800-dd4a-41cc-8db5-a0a4c9b7b49b",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/e9771800-dd4a-41cc-8db5-a0a4c9b7b49b/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The posting explicitly mandates 2+ years of professional QA Engineering experience, including at least 1 year with AI-driven testing and Playwright. According to the ranking policy, when a posting explicitly requires 2+ years of professional experience as a mandatory condition for a 0-YOE candidate, the fit score MUST NOT exceed 39. Although the candidate has familiarity with Python, TypeScript, and automated testing tools in personal projects, the mandatory professional experience barrier caps the score.",
+    "strengths": [
+      "The posting mentions remote eligibility in LATAM (Argentina), which matches the candidate's regional location.",
+      "The candidate has familiarity with TypeScript and Docker, which are referenced in the posting stack."
+    ],
+    "gaps": [
+      "The posting explicitly requires 2+ years of experience as a QA Engineer, including at least 1 year working with AI-driven testing and Playwright.",
+      "The candidate has 0 formal professional years of experience (YOE)."
+    ],
+    "ranked_at": "2026-08-17T06:11:13.572172",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_67b3f164-fb8b-4afe-90c9-54d3b6ee7a36",
+    "created_at": "2026-08-17T06:10:41.681748",
+    "title": "Manhattan WMS Specialist",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Operations - Jay Group",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$2.7K – $3.2K per month",
+    "key_technologies": [
+      "SQL"
+    ],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a leading provider of third-party logistics (3PL)",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a leading provider of third-party logistics (3PL) solutions, delivering warehouse and supply chain services to a diverse range of customers. As they continue to optimize warehouse operations, they are seeking a Manhattan WMS Specialist to serve as the functional expert for their Manhattan Warehouse Management System, supporting system configuration, troubleshooting, documentation, and operational excellence.\nROLE OVERVIEW\nThe Manhattan WMS Specialist will be responsible for serving as the functional expert for the Manhattan Warehouse Management System, ensuring warehouse operations run efficiently through system configuration, operational support, troubleshooting, and documentation. The Manhattan WMS Specialist will configure warehouse workflows, support warehouse users, monitor system interfaces, investigate functional issues, and collaborate with Operations teams to implement continuous improvements. This role is ideal for someone with hands-on Manhattan WMS experience who enjoys bridging warehouse operations and technology.\nLOCATION\nFully Remote | 9:00 AM - 5:00 PM EST\nKEY RESPONSIBILITIES\nWMS CONFIGURATION & ADMINISTRATION\n- Configure and maintain Manhattan WMS based on business requirements.\n- Configure warehouse processes, including putaway rules, allocation rules, slotting configuration, barcode/UPC/serial number scanning, and warehouse process workflows.\n- Implement configuration updates in collaboration with Operations teams.\n- Support continuous improvement initiatives across the WMS environment.\nSYSTEM MONITORING & TROUBLESHOOTING\n- Monitor API integrations, FTP file transfers, and system interface queues.\n- Review system error logs and troubleshoot functional configuration issues before escalating when appropriate.\n- Investigate operational system issues affecting warehouse users.\n- Resolve functional issues that impact warehouse efficiency and system performance.\nDOCUMENTATION & USER SUPPORT\n- Create user documentation and training materials following system configuration changes.\n- Update onboarding documentation, SOPs, and warehouse process guides.\n- Provide functional guidance and support to warehouse users.\n- Ensure documentation accurately reflects current warehouse processes and system functionality.\nCROSS-FUNCTIONAL COLLABORATION\n- Work closely with Operations teams to implement configuration updates.\n- Gather business requirements and translate operational needs into WMS configurations.\n- Support process improvement initiatives that enhance warehouse productivity and system performance.\nQUALIFICATIONS\nEXPERIENCE\n- 2+ years of hands-on Manhattan WMS configuration experience.\n- Experience configuring warehouse rules and operational workflows.\n- Experience troubleshooting functional WMS issues and interpreting system error logs.\n- Experience supporting warehouse operations within a WMS environment.\n- Previous experience supporting 3PL warehouse operations is preferred.\n- Experience creating training documentation, onboarding materials, and SOPs is preferred.\nSKILLS\n- Strong understanding of warehouse operations and Warehouse Management Systems.\n- Hands-on experience with Manhattan WMS.\n- Familiarity with APIs, FTP file transfers, and system interfaces.\n- Experience with Manhattan Green Screen / AS400 is preferred.\n- Experience using SQL for troubleshooting and data validation is preferred.\n- Strong analytical and troubleshooting skills.\n- Excellent technical documentation and communication skills.\n- Strong collaboration and stakeholder management abilities.\n- Ability to independently investigate and resolve functional system issues.\nWHAT SUCCESS LOOKS LIKE\n- Manhattan WMS is accurately configured to support efficient warehouse operations.\n- Functional system issues are identified, investigated, and resolved quickly while complex technical issues are escalated appropriately.\n- Warehouse users receive clear documentation and training materials following system and process updates.\n- Configuration updates are implemented successfully in partnership with Operations teams.\n- System interfaces, file transfers, and error logs are proactively monitored to minimize operational disruptions.\n- The WMS Specialist becomes a trusted subject matter expert, driving continuous process improvements across warehouse operations.\nOPPORTUNITY\nThis is an excellent opportunity to join a leading third-party logistics organization where you'll serve as the functional expert for one of the industry's premier Warehouse Management Systems. As the Manhattan WMS Specialist, you'll play a critical role in improving warehouse operations, supporting end users, and driving continuous process improvements while working at the intersection of technology and logistics.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/67b3f164-fb8b-4afe-90c9-54d3b6ee7a36",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/67b3f164-fb8b-4afe-90c9-54d3b6ee7a36/application",
+    "status": "ranked",
+    "score": 25,
+    "justification": "The role requires 2+ years of hands-on Manhattan WMS (Warehouse Management System) configuration experience and specialized supply chain domain knowledge. The candidate profile focuses on software engineering, computer science fundamentals, and backend development, with zero experience in enterprise warehouse management systems or logistics software. Under the ranking policy, missing core domain expertise combined with explicit professional experience requirements results in a low fit score.",
+    "strengths": [
+      "The posting is remote and open to candidates in LATAM (Argentina), matching the candidate's region."
+    ],
+    "gaps": [
+      "The posting explicitly requires 2+ years of hands-on Manhattan WMS configuration experience.",
+      "The candidate has no professional experience or background in Manhattan Warehouse Management System (WMS) configuration or 3PL warehouse operations."
+    ],
+    "ranked_at": "2026-08-17T06:11:13.572183",
+    "user_notes": null
+  },
+  {
+    "id": "ashby_scale_20army_20careers_179cb82d-d21d-46c2-87e9-69492a4ec03a",
+    "created_at": "2026-08-17T06:10:41.692302",
+    "title": "IT Operations Coordinator",
+    "company": "Scale%20Army%20Careers",
+    "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
+    "work_mode": "Remote",
+    "commitment": "Contract",
+    "department": "Technology & Product - Ventura Air Services",
+    "seniority": "Not specified",
+    "years_of_experience": null,
+    "salary_range": "$1.5K – $2.1K per month",
+    "key_technologies": [],
+    "main_requirements": [],
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a rapidly growing private aviation company focused",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nOur client is a rapidly growing private aviation company focused on delivering exceptional operational execution and customer service. Operating in a fast-paced, high-performance environment, they are seeking an IT Operations Coordinator to serve as a trusted operational partner to leadership while supporting internal technology coordination, administrative operations, and cross-functional process improvement as the company continues to scale.\nROLE OVERVIEW\nThe IT Operations Coordinator will be responsible for coordinating employee technology support, executive administration, project management, vendor relationships, and day-to-day business operations. The IT Operations Coordinator will work closely with leadership and the company's outsourced IT provider to ensure employees receive timely support while helping improve internal processes, maintain operational documentation, and coordinate cross-functional initiatives. This role is ideal for someone who enjoys wearing multiple hats, solving problems proactively, and bringing structure and organization to a fast-growing business.\nLOCATION\nFully Remote | 9:00 AM - 5:00 PM EST\nKEY RESPONSIBILITIES\nIT COORDINATION & EMPLOYEE SUPPORT\n- Serve as the primary internal point of contact for employee technology requests.\n- Coordinate with the outsourced IT provider to resolve hardware, software, and access-related issues.\n- Support employee onboarding and offboarding, including user account creation, permissions, and equipment coordination.\n- Assist with Microsoft 365 administration, user management, and basic technology troubleshooting.\n- Maintain IT documentation, asset inventories, and internal technology processes.\nEXECUTIVE & ADMINISTRATIVE SUPPORT\n- Provide administrative support to company leadership, including calendar management, scheduling, meeting coordination, and follow-up on action items.\n- Coordinate travel arrangements and other executive administrative tasks.\n- Maintain organized documentation and ensure operational records remain accurate and current.\nPROJECT COORDINATION\n- Coordinate cross-functional projects using Asana or similar project management platforms.\n- Monitor project timelines and follow up with stakeholders to ensure deliverables remain on schedule.\n- Document workflows and identify opportunities to improve operational efficiency.\nHR & VENDOR ADMINISTRATION\n- Support employee onboarding and general HR administration.\n- Coordinate relationships with software vendors and external service providers.\n- Track contracts, renewals, subscriptions, and vendor agreements.\n- Maintain employee records and operational documentation.\nGENERAL OPERATIONS\n- Support leadership with day-to-day operational initiatives.\n- Take ownership of administrative and operational projects from initiation through completion.\n- Continuously identify opportunities to improve internal organization, communication, and operational efficiency.\nQUALIFICATIONS\nEXPERIENCE\n- 2–4 years of experience in Operations, Executive Support, IT Administration, Office Management, or a related role.\n- Experience supporting Microsoft 365 and/or Google Workspace environments.\n- Experience coordinating with third-party vendors or outsourced IT providers is preferred.\n- Previous experience supporting executive leadership in a fast-paced environment is a plus.\n- Experience coordinating cross-functional operational projects is preferred.\nSKILLS\n- Strong organizational and time management skills.\n- Excellent written and verbal English communication skills.\n- Exceptional attention to detail and accuracy.\n- Experience using Asana or similar project management software.\n- Strong proficiency with Microsoft Office, including Outlook, Excel, Word, and Teams.\n- Experience with Microsoft 365 administration.\n- Ability to learn new software platforms and internal systems quickly.\n- Strong problem-solving and troubleshooting abilities.\n- Ability to manage multiple priorities while maintaining professionalism.\n- Excellent stakeholder management and follow-up skills.\n- Proactive, resourceful, and highly accountable.\nWHAT SUCCESS LOOKS LIKE\n- Employees receive timely, organized support for technology requests through effective coordination with the outsourced IT provider.\n- Leadership confidently delegates operational and administrative responsibilities, allowing greater focus on strategic priorities.\n- Projects remain organized, deadlines are consistently met, and follow-up across departments is proactive.\n- Company documentation, vendor relationships, and operational records are maintained with accuracy.\n- Internal processes become increasingly efficient through proactive problem-solving and continuous improvement.\n- Leadership recognizes the Executive Operations & IT Coordinator as a trusted operational partner.\nOPPORTUNITY\nThis is an exciting opportunity to join a rapidly growing private aviation company where operational excellence drives business success. As the IT Operations Coordinator, you'll work directly with leadership, help build scalable internal processes, coordinate technology and operational initiatives, and play a foundational role as one of the company's first dedicated operations team members.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "language": "en",
+    "source_page": "Ashby (Scale%20Army%20Careers)",
+    "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/179cb82d-d21d-46c2-87e9-69492a4ec03a",
+    "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/179cb82d-d21d-46c2-87e9-69492a4ec03a/application",
+    "status": "ranked",
+    "score": 35,
+    "justification": "The role explicitly requires 2 to 4 years of professional experience in IT Administration, Operations, or Executive Support. The candidate has 0 formal professional years of experience and a profile oriented toward software development and computer science studies. Although the candidate has personal experience with Linux, GitHub Actions, and tech tooling, the required professional operations and administrative experience is not met. Following the ranking policy for roles requiring 2+ years of professional experience, the score is capped in the lower band.",
+    "strengths": [
+      "The posting is remote and open to candidates in LATAM (Argentina), aligning with the candidate's location.",
+      "The candidate has general technical affinity and problem-solving skills from their computer science studies and personal projects."
+    ],
+    "gaps": [
+      "The posting explicitly requires 2–4 years of professional experience in Operations, Executive Support, IT Administration, or Office Management.",
+      "The candidate has 0 formal professional years of experience (YOE) and a profile focused on software engineering and computer science rather than IT administration or executive operations."
+    ],
+    "ranked_at": "2026-08-17T06:11:13.572186",
     "user_notes": null
   },
   {
     "id": "ashby_scale_20army_20careers_1a9876c8-b351-4a81-9fca-81d7526d28c7",
-    "created_at": "2026-08-15T09:29:04.487167",
+    "created_at": "2026-08-17T06:10:41.698825",
     "title": "Flight Operations Coordinator",
     "company": "Scale%20Army%20Careers",
     "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
@@ -907,26 +982,20 @@
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/1a9876c8-b351-4a81-9fca-81d7526d28c7/application",
     "status": "ranked",
     "score": 25,
-    "justification": "The candidate has 0 formal professional YOE and a technical/CS academic background, whereas this role explicitly requires 2–5 years of professional experience in private aviation and Part 135 flight operations. According to the ranking policy, a mandatory requirement of 2+ professional years of experience caps the fit score at 39 or below.",
+    "justification": "The candidate has 0 formal professional years of experience and no background in aviation or flight operations. The posting explicitly requires 2–5 years of experience in private aviation or Part 135 flight operations. Applying ranking policy for mandatory experience barriers (2+ YOE required for a 0-YOE candidate), the fit score is capped at 39.",
     "strengths": [
-      {
-        "text": "The candidate profile demonstrates strong problem-solving skills and self-directed learning capabilities applicable to complex operational environments."
-      }
+      "The role is fully remote and open to LATAM candidates within U.S. business hours, matching the candidate's remote availability."
     ],
     "gaps": [
-      {
-        "text": "The posting explicitly requires 2–5 years of experience coordinating private aviation or Part 135 flight operations."
-      },
-      {
-        "text": "Prior professional experience supporting business aviation flight departments is required."
-      }
+      "The posting explicitly requires 2–5 years of experience coordinating private aviation or Part 135 flight operations.",
+      "The candidate has no professional experience in private aviation, flight operations, or logistics coordination."
     ],
-    "ranked_at": "2026-08-15T09:30:00.054277",
+    "ranked_at": "2026-08-17T06:11:28.448317",
     "user_notes": null
   },
   {
     "id": "ashby_scale_20army_20careers_abf88096-ca6d-4789-8589-a2d9e228ccb8",
-    "created_at": "2026-08-15T09:29:04.493564",
+    "created_at": "2026-08-17T06:10:41.705022",
     "title": "Maintenance Ops Coordinator",
     "company": "Scale%20Army%20Careers",
     "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
@@ -946,27 +1015,21 @@
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/abf88096-ca6d-4789-8589-a2d9e228ccb8/application",
     "status": "ranked",
     "score": 25,
-    "justification": "The candidate has 0 professional YOE and an academic background in computer science, whereas this role requires 3–5 years of specialized professional experience in aircraft maintenance planning and Part 135/91 operations. In accordance with the ranking policy, a mandatory 2+ professional YOE requirement caps the score at 39 or below.",
+    "justification": "The candidate has 0 professional years of experience and no background in aircraft maintenance operations. The role requires 3–5 years of experience in aircraft maintenance planning, maintenance control, or maintenance coordination. Under ranking policy rules for mandatory multi-year professional experience, the fit score is capped below 39.",
     "strengths": [
-      {
-        "text": "The candidate demonstrates strong attention to detail and analytical skills through academic and project work."
-      }
+      "The role is fully remote and compatible with candidates based in LATAM."
     ],
     "gaps": [
-      {
-        "text": "The posting explicitly requires 3–5 years of experience in aircraft maintenance planning, maintenance control, or maintenance coordination."
-      },
-      {
-        "text": "Previous experience supporting Part 135 or Part 91 flight operations is required."
-      }
+      "The posting explicitly requires 3–5 years of experience in aircraft maintenance planning, maintenance control, or maintenance coordination.",
+      "The candidate has no professional experience in aviation maintenance management or regulatory compliance."
     ],
-    "ranked_at": "2026-08-15T09:30:00.054290",
+    "ranked_at": "2026-08-17T06:11:28.448327",
     "user_notes": null
   },
   {
     "id": "ashby_scale_20army_20careers_96151893-6617-49cd-b087-0c9a3bd1b182",
-    "created_at": "2026-08-15T09:29:04.556843",
-    "title": "Full Stack Developer (Python/JS)",
+    "created_at": "2026-08-17T06:10:41.773368",
+    "title": ".NET/C# Software Engineer",
     "company": "Scale%20Army%20Careers",
     "location": "Egypt; Argentina; Ethiopia; South Africa; Nigeria",
     "work_mode": "Remote",
@@ -979,182 +1042,30 @@
       "Python",
       "JavaScript",
       "TypeScript",
-      "Node.js",
-      "Node",
       "React",
-      "Vue",
-      "SQL",
-      "PostgreSQL"
+      "AWS",
+      "Azure"
     ],
     "main_requirements": [],
-    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nAs a .NET/C# Software Developer, you will help build and evolve",
-    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nAs a .NET/C# Software Developer, you will help build and evolve the platform while delivering meaningful customer-facing features. This is a hands-on role focused on shipping high-quality production code, improving system reliability, and contributing to the modernization of established legacy systems.\nA critical focus of this position is working with .NET/C# legacy systems. The ideal candidate is comfortable maintaining and extending older, established codebases while balancing development speed, code quality, scalability, and long-term maintainability.\nLOCATION\nFully Remote | 9:00 AM - 5:00 PM PST\nQUALIFICATIONS\nExperience\n- 3–6 years of software engineering experience.\n- Experience building and shipping production systems.\n- Hands-on experience maintaining and extending established  legacy systems.\n- Experience working with SQL Server as a primary database.\n- Experience developing and supporting customer-facing software features.\n- Experience debugging production systems and resolving technical issues.\nSKILLS\n- Demonstrates strong .NET and C# development capabilities, particularly when maintaining, debugging, and extending older, established codebases.\n- Has strong SQL Server experience and can work effectively with the database within production software environments.\n- Demonstrates strong debugging and problem-solving abilities when working with legacy systems and production issues.\n- Can build production-quality software across frontend and backend systems while balancing speed, reliability, scalability, and maintainability.\n- Is comfortable contributing to system design and architecture with guidance while identifying opportunities to improve performance and system health.\n- Can take ownership of features or services throughout the development lifecycle, from implementation through production.\n- Uses AI development tools such as Copilot, Cursor, Claude, ChatGPT, or similar platforms to improve productivity and development workflows.\n- Communicates progress clearly and contributes effectively to code reviews and established engineering standards.\nNICE TO HAVE\n- Experience with JavaScript or TypeScript, particularly Vue/Nuxt, React/Next, or Node.js.\n- Experience working within e-commerce environments such as Shopify, BigCommerce, or Magento, including exposure to order logic and tracking events.\n- Knowledge of logistics or shipping concepts such as dimensional sizing, customs, and duties.\n- Experience working with fulfillment systems or processes.\n- Experience with PostgreSQL or MySQL.\nMINDSET & ATTRIBUTES\n- Ownership-driven and pragmatic.\n- Comfortable working across both modern and legacy systems.\n- Focused on delivering reliable, real-world impact.\n- Strong problem solver who can operate effectively within established systems.\n- Focused on quality while maintaining practical delivery speed.\nWHAT SUCCESS LOOKS LIKE\n- High-quality customer-facing features are delivered consistently.\n- Key services or components are independently owned.\n- System stability improves and bugs are reduced.\n- Meaningful contributions are made toward modernizing legacy systems.\n- Performance, scalability, reliability, and overall system health continue to improve.\nOPPORTUNITY\nThis role provides the opportunity to make a direct impact on an established software platform by delivering customer-facing features, improving reliability, and contributing to the modernization of legacy systems. You will work hands-on across the platform while taking increasing ownership of features, services, and technical improvements.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
+    "summary": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nCLIENT OVERVIEW\nOur client is a company serving businesses in th",
+    "raw_text": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone.\nCLIENT OVERVIEW\nOur client is a company serving businesses in the international shipping and e-commerce space through client-facing software systems and applications. They are seeking a self-sufficient engineer who can support existing production systems, troubleshoot technical issues, and contribute across both backend and frontend development.\nROLE OVERVIEW\nAs a .NET/C#  Software Engineer, you will support, maintain, and develop systems used by clients across international shipping and e-commerce operations.\nThis is a hands-on, execution-focused role centered on ticket troubleshooting, debugging, systems maintenance, and full-stack development. You will primarily work with Python on the backend and JavaScript/TypeScript on the frontend using React and Next.js within a Microsoft/Azure environment.\nThe ideal candidate can quickly learn an existing technical environment, independently work through tickets and production issues, and proactively identify opportunities to contribute without requiring constant direction.\nLOCATION\nFully Remote | 9:00 AM - 5:00 PM PST\nCLIENT OVERVIEW\nOur client is a company serving businesses in the international shipping and e-commerce space through client-facing software systems and applications. They are seeking a self-sufficient engineer who can support existing production systems, troubleshoot technical issues, and contribute across both backend and frontend development.\nKEY RESPONSIBILITIES\nAPPLICATION SUPPORT & TICKET RESOLUTION\n- Support client-facing systems and applications used within international shipping and e-commerce operations.\n- Troubleshoot and resolve incoming tickets, bugs, and system issues.\n- Independently investigate technical problems and identify practical solutions.\n- Own assigned tickets and issues through resolution.\n- Communicate progress, blockers, and technical issues clearly with the broader team.\n- Proactively identify additional work and opportunities to contribute when ticket volume is low.\nFULL-STACK DEVELOPMENT\n- Build, maintain, and support functionality across backend and frontend systems.\n- Develop and maintain backend functionality using Python.\n- Develop and maintain frontend functionality using JavaScript and TypeScript.\n- Work with React and Next.js to support client-facing applications.\n- Translate requirements and technical issues into reliable software solutions.\n- Build and ship production software while balancing speed, reliability, and maintainability.\nSYSTEMS MAINTENANCE & RELIABILITY\n- Maintain existing production systems and support reliable day-to-day operations.\n- Debug production issues and identify underlying causes.\n- Address recurring system problems and help reduce operational overhead.\n- Identify opportunities to improve system reliability and maintainability.\n- Quickly learn existing systems, workflows, and technical environments to become independently productive.\nCLOUD & TECHNICAL ENVIRONMENT\n- Work within a Microsoft/Azure environment to support application and infrastructure requirements.\n- Apply relevant cloud experience to troubleshoot and maintain production systems.\n- Contribute effectively within the company's existing technical architecture.\n- Apply AWS knowledge when relevant to existing or future systems.\nAI-ASSISTED DEVELOPMENT\n- Use AI tools thoughtfully as part of everyday development and troubleshooting workflows.\n- Leverage AI-assisted development tools to improve productivity and problem-solving.\n- Evaluate AI-generated recommendations and code using sound engineering judgment.\n- Use AI to accelerate development without compromising code quality or system reliability.\nTEAM COLLABORATION\n- Collaborate with the team to understand requirements, priorities, and technical issues.\n- Work independently with minimal day-to-day supervision while maintaining visibility into progress.\n- Ask thoughtful questions when working with unfamiliar systems or requirements.\n- Take accountability for assigned work through completion.\n- Communicate clearly when additional information or support is required.\nQUALIFICATIONS\nEXPERIENCE\n- 3–6 years of software engineering experience or equivalent hands-on experience.\n- Experience working across full-stack applications in production environments.\n- Experience building and shipping production software.\n- Experience maintaining and supporting existing production systems.\n- Experience independently troubleshooting bugs, tickets, and system issues.\nSKILLS\n- Demonstrates strong Python development skills and can build, maintain, and troubleshoot backend application functionality.\n- Has strong JavaScript and TypeScript experience and can effectively contribute to frontend development using React and Next.js.\n- Has hands-on experience working with Microsoft Azure and understands how to support applications within a cloud-based environment.\n- Can independently debug production issues, investigate unfamiliar systems, and develop practical solutions with minimal supervision.\n- Has experience maintaining existing software systems and understands the importance of reliability, maintainability, and reducing recurring technical issues.\n- Can work effectively across frontend and backend systems and take technical work from investigation through implementation and resolution.\n- Demonstrates strong problem-solving skills and can quickly learn unfamiliar technical environments, systems, and workflows.\n- Can clearly communicate technical progress, blockers, and issues while maintaining ownership of assigned work.\n- Is comfortable using AI-assisted development tools thoughtfully to improve engineering productivity and problem-solving.\nPREFERRED EXPERIENCE\n- Experience with .NET and C# is considered a plus.\n- Experience working with ERP systems is preferred.\n- E-commerce experience involving order management, tracking, shipping, or related workflows is considered a strong advantage.\n- Experience with Shopify is considered a strong bonus.\n- Experience within third-party logistics, logistics, or shipping environments is preferred.\n- Familiarity with international shipping, carriers, shipment tracking, customs, duties, or related systems is beneficial.\n- AWS experience is considered valuable.\n- Experience incorporating GitHub Copilot, Cursor, Claude, ChatGPT, or similar AI tools into development workflows is preferred.\nMINDSET & ATTRIBUTES\n- Self-sufficient and capable of moving work forward without constant direction.\n- Proactive in identifying additional opportunities to contribute.\n- Curious and comfortable learning unfamiliar systems.\n- Pragmatic and focused on solving real technical and operational problems.\n- Accountable for tickets, issues, and development work through completion.\n- Comfortable acknowledging knowledge gaps and asking thoughtful questions when necessary.\n- AI-forward and willing to incorporate emerging tools into everyday engineering workflows.\n- Focused on maintaining reliable systems while continuously improving how work gets done.\nWHAT SUCCESS LOOKS LIKE\nWithin the first six months:\n- The engineer quickly becomes productive within the existing technical environment.\n- Tickets, bugs, and system issues are independently investigated and resolved.\n- Existing systems remain reliable through effective troubleshooting and maintenance.\n- Day-to-day work requires minimal supervision.\n- Additional opportunities to contribute are proactively identified when ticket volume is low.\n- The engineer contributes effectively across both frontend and backend development.\n- Recurring technical issues and operational overhead are reduced over time.\n- Communication with the broader team remains clear and consistent.\n- AI tools are used effectively and responsibly to improve development speed and problem-solving.\nOPPORTUNITY\nThis role offers the opportunity to take meaningful ownership within an established technical environment supporting international shipping and e-commerce operations.\nYou will work across backend and frontend systems, solve real production challenges, and contribute directly to the reliability of client-facing applications. For an engineer who enjoys troubleshooting, independent problem-solving, full-stack development, and using AI to work more effectively, this role provides the opportunity to make a measurable impact while expanding technical expertise.\nAPPLICATION PROCESS:\nTO BE CONSIDERED FOR THIS ROLE THESE STEPS NEED TO BE FOLLOWED:\n- Fill in the application form\n- Record a video showcasing your skill sets",
     "language": "en",
     "source_page": "Ashby (Scale%20Army%20Careers)",
     "source_url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/96151893-6617-49cd-b087-0c9a3bd1b182",
     "application_method": "Postulación web en: https://jobs.ashbyhq.com/Scale%20Army%20Careers/96151893-6617-49cd-b087-0c9a3bd1b182/application",
     "status": "ranked",
-    "score": 30,
-    "justification": "Although the candidate has backend and systems project experience, this role explicitly requires 3–6 years of software engineering experience and hands-on production work with .NET/C# legacy systems and SQL Server. With 0 formal professional YOE and missing the core .NET stack requirements, the mandatory 2+ YOE requirement applies a strict score cap of 39 or below per the ranking policy.",
+    "score": 40,
+    "justification": "The candidate demonstrates relevant technical skills in Python, JavaScript, TypeScript, and React through personal and academic projects. However, the posting explicitly requires 3–6 years of software engineering experience or equivalent hands-on professional production experience. In accordance with the ranking policy for mandatory professional experience requirements, the score is capped in the weak fit range.",
     "strengths": [
-      {
-        "text": "The candidate has project experience in backend development, databases (PostgreSQL/MongoDB), and version control, showing basic alignment with software engineering workflows."
-      }
+      "The posting accepts Python and JavaScript/TypeScript with React, matching the candidate's practical project stack.",
+      "The role is fully remote and open to LATAM-based candidates.",
+      "The company is open to AI-assisted development workflows, aligning with the candidate's familiarity with AI tools."
     ],
     "gaps": [
-      {
-        "text": "The posting explicitly requires 3–6 years of software engineering experience and hands-on experience maintaining and extending established legacy systems in .NET/C#."
-      },
-      {
-        "text": "The candidate profile does not demonstrate professional experience with .NET/C# or SQL Server enterprise environments."
-      }
+      "The posting explicitly requires 3–6 years of software engineering experience in production environments, which exceeds the candidate's professional experience level.",
+      "Professional experience with Microsoft Azure and e-commerce/shipping integrations is not demonstrated in the candidate profile."
     ],
-    "ranked_at": "2026-08-15T09:30:00.054295",
+    "ranked_at": "2026-08-17T06:11:28.448331",
     "user_notes": null
-  },
-  {
-    "id": "ashby_ramp_f564dcf9-9390-4a3f-896f-8047a5086040",
-    "created_at": "2026-08-15T09:30:36.592244",
-    "title": "Mobile Engineer, Android",
-    "company": "ramp",
-    "location": "New York, NY (HQ); Remote (Canada); San Francisco, CA; Remote (US)",
-    "work_mode": "Hybrid",
-    "commitment": "Full-time",
-    "department": "Engineering - Mobile",
-    "seniority": "Not specified",
-    "years_of_experience": null,
-    "salary_range": "$189K - $330K",
-    "key_technologies": [
-      "Python",
-      "TypeScript",
-      "React",
-      "SQL"
-    ],
-    "main_requirements": [],
-    "summary": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books",
-    "raw_text": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books.\nThe problems are high-stakes, data-dense, and unforgiving.\nWe hire people with high agency and high urgency. We look for slope over intercept. We care less about where you trained and more about what you’ve built. At Ramp, everyone is a builder who owns problems end to end and makes consequential decisions that shape the outcome.\nThe median Ramp customer saves 5% and grows revenue 16% in their first year – far in excess of businesses operating without Ramp. We believe every ambitious company deserves the same.\nIf you want to build systems that directly shape how companies move and manage billions, Ramp is the place to do it.\nABOUT THE ROLE\nAs an Android Engineer at Ramp, you’ll enhance our successful and rapidly growing mobile app. You will improve the core platform that thousands of businesses rely on while also building the future of automated finance by integrating AI and intelligent agents into the mobile experience. This is a chance to grow your skills on a proven product and define the next generation of fintech.\nCheck out our Engineering Blog https://engineering.ramp.com/ for more on our tech stack, mission and values!\nWHAT YOU’LL DO\n- Design, build, and launch new products to Ramp’s Android app\n- Help establish engineering processes, tools, and systems that allow us to scale the code base and productivity\n- Conduct code reviews and set engineering standards\n- Work with Product and Design to identify key features that will make the app successful\n- Work alongside Product and other cross-functional teams to understand customer feedback and continuously improve our product\nWHAT YOU NEED\n- Minimum 1 year of experience in mobile development\n- Proficiency in Kotlin and Compose for Android development\n- Experience launching at least one mobile app and/or several features that reached a large number of users\n- Desire to work in a fast-paced environment, continuously grow, and master your craft\n- Strong understanding of mobile design patterns and best practices\nNICE TO HAVES\n- Experience with web apps (React, TypeScript)\n- Experience with backend technologies (Python, Flask, SQL, OpenAPI)\n- Experience with our mobile stack in addition to Kotlin and Compose: MVVM, coroutines, flows, gradle, OpenAPI & Buildkite\n- Experience managing apps in the Google Play Console\nBENEFITS AVAILABLE TO ALL FULL-TIME RAMP EMPLOYEES (GLOBAL)\n- Flexible PTO\n- Centralized home-office equipment ordering\n- Health and wellness stipend\n- Budget for intra-office travel\n- Weekly coffee stipend\nUNITED STATES\n- 100% medical, dental & vision insurance coverage for you, with partial coverage for dependents\n- One Medical annual membership\n- 401(k), including employer match on contributions made while employed by Ramp\n- Fertility HRA (up to $10,000 per year)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay\n- Pet insurance\n- In-office perks: lunch, snacks, drinks, and more\n- Relocation expense coverage to NYC or SF (if needed)\nCANADA\n- Group medical, dental, and vision coverage through Sun Life\n- Life, AD&D, and disability coverage\n- Fertility drug coverage (up to $4,000 lifetime)\n- Group Retirement Plan with employer match (RRSP + DPSP)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay, with additional time available at reduced pay\n- Employee Assistance Program and virtual care through Lumino Health\nUNITED KINGDOM\n- Private medical insurance through Freedom Elite\n- Virtual GP and at-home care via eMed x Livi\n- Workplace pension through Penfold, with salary sacrifice option\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay with additional time available at reduced pay\nREFERRAL INSTRUCTIONS\nIf you are being referred for the role, please contact that person to apply on your behalf.\nOTHER NOTICES\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nBeware of recruiting scams: Ramp will only contact you through official @Ramp.com http://Ramp.com email addresses and will never ask for payment or sensitive personal information during the hiring process.\nRamp",
-    "language": "en",
-    "source_page": "Ashby (ramp)",
-    "source_url": "https://jobs.ashbyhq.com/ramp/f564dcf9-9390-4a3f-896f-8047a5086040",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/ramp/f564dcf9-9390-4a3f-896f-8047a5086040/application",
-    "status": "ranked",
-    "score": 35,
-    "justification": "The candidate is an advanced CS student with 0 formal professional years of experience, whereas this role explicitly requires a minimum of 1 year of experience in mobile development. Additionally, the core stack (Kotlin and Compose for Android) is not demonstrated in the candidate profile, whose stack centers around Python, TypeScript/Node.js, C/C++, and SQL. Although the posting lists some nice-to-haves related to web and backend (React, TypeScript, Python, SQL), the primary focus of the role is Android mobile engineering and the 1-year experience requirement constitutes a mandatory barrier for a 0-YOE candidate under the current ranking policy.",
-    "strengths": [
-      {
-        "text": "The posting lists nice-to-have exposure to web and backend technologies such as Python, TypeScript, and SQL, which align with skills present in the candidate's profile."
-      }
-    ],
-    "gaps": [
-      {
-        "text": "The candidate has 0 formal professional YOE, whereas the posting requires a minimum of 1 year of experience in mobile development."
-      },
-      {
-        "text": "The role is specifically for Android development (Kotlin and Compose), while the candidate's primary profile focuses on backend, systems, Python, TypeScript, and C/C++, without demonstrating mobile or Kotlin/Compose development experience."
-      }
-    ],
-    "ranked_at": "2026-08-15T09:30:47.944320",
-    "user_notes": null
-  },
-  {
-    "id": "ashby_ramp_4859cd5e-f2a9-44d7-81f7-8bfc0e62369f",
-    "created_at": "2026-08-15T09:30:36.604071",
-    "title": "Mobile Engineer, iOS",
-    "company": "ramp",
-    "location": "New York, NY (HQ); Remote (Canada); San Francisco, CA; Remote (US)",
-    "work_mode": "Hybrid",
-    "commitment": "Full-time",
-    "department": "Engineering - Software Engineering - Industry",
-    "seniority": "Not specified",
-    "years_of_experience": null,
-    "salary_range": "$189K - $330K",
-    "key_technologies": [
-      "Python",
-      "TypeScript",
-      "React",
-      "SQL"
-    ],
-    "main_requirements": [],
-    "summary": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books",
-    "raw_text": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books.\nThe problems are high-stakes, data-dense, and unforgiving.\nWe hire people with high agency and high urgency. We look for slope over intercept. We care less about where you trained and more about what you’ve built. At Ramp, everyone is a builder who owns problems end to end and makes consequential decisions that shape the outcome.\nThe median Ramp customer saves 5% and grows revenue 16% in their first year – far in excess of businesses operating without Ramp. We believe every ambitious company deserves the same.\nIf you want to build systems that directly shape how companies move and manage billions, Ramp is the place to do it.\nABOUT THE ROLE\nAs an iOS Engineer at Ramp, you’ll enhance our successful and rapidly growing mobile app. You will improve the core platform that thousands of businesses rely on while also building the future of automated finance by integrating AI and intelligent agents into the mobile experience. This is a chance to grow your skills on a proven product and define the next generation of fintech.\nCheck out our Engineering Blog https://engineering.ramp.com/ for more on our tech stack, mission, and values!\nWHAT YOU’LL DO\n- Design, build, and launch new products to Ramp’s iOS app.\n- Help establish engineering processes, tools, and systems that allow us to scale the code base and productivity.\n- Conduct code reviews and set engineering standards.\n- Work with Product and Design to identify key features that will make the app successful.\n- Work alongside Product and other cross-functional teams to understand customer feedback and continuously improve our product.\nWHAT YOU NEED\n- Minimum 1 year of experience in mobile development.\n- Proficiency in Swift and SwiftUI for iOS development.\n- Experience launching at least one mobile app and/or several features that reached a large number of users.\n- Desire to work in a fast-paced environment, continuously grow, and master your craft.\n- Strong understanding of mobile design patterns and best practices.\nNICE TO HAVES\n- Experience with web apps (React, TypeScript).\n- Experience with backend technologies (Python, Flask, SQL, OpenAPI).\n- Experience with our mobile stack in addition to Swift and SwiftUI: Swift Concurrency, The Composable Architecture, Bazel, OpenAPI & Buildkite\n- Experience managing apps with App Store Connect\nBENEFITS AVAILABLE TO ALL FULL-TIME RAMP EMPLOYEES (GLOBAL)\n- Flexible PTO\n- Centralized home-office equipment ordering\n- Health and wellness stipend\n- Budget for intra-office travel\n- Weekly coffee stipend\nUNITED STATES\n- 100% medical, dental & vision insurance coverage for you, with partial coverage for dependents\n- One Medical annual membership\n- 401(k), including employer match on contributions made while employed by Ramp\n- Fertility HRA (up to $10,000 per year)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay\n- Pet insurance\n- In-office perks: lunch, snacks, drinks, and more\n- Relocation expense coverage to NYC or SF (if needed)\nCANADA\n- Group medical, dental, and vision coverage through Sun Life\n- Life, AD&D, and disability coverage\n- Fertility drug coverage (up to $4,000 lifetime)\n- Group Retirement Plan with employer match (RRSP + DPSP)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay, with additional time available at reduced pay\n- Employee Assistance Program and virtual care through Lumino Health\nUNITED KINGDOM\n- Private medical insurance through Freedom Elite\n- Virtual GP and at-home care via eMed x Livi\n- Workplace pension through Penfold, with salary sacrifice option\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay with additional time available at reduced pay\nREFERRAL INSTRUCTIONS\nIf you are being referred for the role, please contact that person to apply on your behalf.\nOTHER NOTICES\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nBeware of recruiting scams: Ramp will only contact you through official @Ramp.com http://Ramp.com email addresses and will never ask for payment or sensitive personal information during the hiring process.\nRamp",
-    "language": "en",
-    "source_page": "Ashby (ramp)",
-    "source_url": "https://jobs.ashbyhq.com/ramp/4859cd5e-f2a9-44d7-81f7-8bfc0e62369f",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/ramp/4859cd5e-f2a9-44d7-81f7-8bfc0e62369f/application",
-    "status": "ranked",
-    "score": 38,
-    "justification": "The position is for an iOS Engineer at Ramp, which explicitly mandates a minimum of 1 year of experience in mobile development, proficiency in Swift/SwiftUI, and experience launching a mobile app or features reaching many users. The candidate is an advanced CS student with 0 professional YOE and no demonstrated experience in mobile development, Swift, or SwiftUI. Although the candidate has general software engineering skills in TypeScript, Python, and React (listed as nice-to-haves), the core technical requirements and mandatory mobile experience represent major gaps, resulting in a low fit score according to ranking policy guidelines for missing mandatory experience and core stack.",
-    "strengths": [
-      "The candidate profile demonstrates familiarity with some nice-to-have secondary technologies mentioned in the posting, specifically TypeScript, React, Python, and SQL, through personal and academic projects."
-    ],
-    "gaps": [
-      "The posting explicitly requires a minimum of 1 year of experience in mobile development, which the candidate does not have (0 professional YOE).",
-      "The posting requires proficiency in Swift and SwiftUI for iOS development, technologies not demonstrated in the candidate profile.",
-      "The posting requires experience launching at least one mobile app and/or several features that reached a large number of users, which is not present in the candidate profile."
-    ],
-    "ranked_at": "2026-08-15T09:31:03.491498",
-    "user_notes": null
-  },
-  {
-    "id": "ashby_ramp_95f450a1-0d38-4d58-9aac-9d7e655adc36",
-    "created_at": "2026-08-15T09:30:36.695075",
-    "title": "Security Engineer, Privacy",
-    "company": "ramp",
-    "location": "New York, NY (HQ); San Francisco, CA; Remote (US)",
-    "work_mode": "Hybrid",
-    "commitment": "Full-time",
-    "department": "Engineering - Backend",
-    "seniority": "Not specified",
-    "years_of_experience": null,
-    "salary_range": "$184.8K - $374.9K",
-    "key_technologies": [
-      "Python",
-      "React",
-      "AWS"
-    ],
-    "main_requirements": [],
-    "summary": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books",
-    "raw_text": "ABOUT RAMP\nRamp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $200B in annualized spend flows in and out of 70,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books.\nThe problems are high-stakes, data-dense, and unforgiving.\nWe hire people with high agency and high urgency. We look for slope over intercept. We care less about where you trained and more about what you’ve built. At Ramp, everyone is a builder who owns problems end to end and makes consequential decisions that shape the outcome.\nThe median Ramp customer saves 5% and grows revenue 16% in their first year – far in excess of businesses operating without Ramp. We believe every ambitious company deserves the same.\nIf you want to build systems that directly shape how companies move and manage billions, Ramp is the place to do it.\nAs Ramp’s founding Privacy engineer, you will build a privacy program that powers Ramp’s growth while earning trust from customers and prospects.\nWhat You’ll Do\n- Build privacy-focused application primitives and integrate them into our existing products\n- Partner with other engineering teams to design and deploy solutions which are inherently privacy-centric and secure\n- Improve, implement, and deploy data retention and anonymization strategies across our environment\n- Track shifting legal standards (alongside with Ramp’s Privacy Counsel) and update Ramp systems and processes to match\nWhat You Need\n- Minimum of 4 years of experience building software\n- Minimum of 2 years of experienced focused on platform, privacy, and/or security\n- Desire to work in a fast-paced environment, continuously grow, and master your craft\n- Ability to turn business and product ideas into engineering solutions\nNice-to-Haves\n- Working knowledge of data-protection legal requirements\n- Experience with Python (Flask), React, and AWS (ECS, as well as other core services)\nBENEFITS AVAILABLE TO ALL FULL-TIME RAMP EMPLOYEES (GLOBAL)\n- Flexible PTO\n- Centralized home-office equipment ordering\n- Health and wellness stipend\n- Budget for intra-office travel\n- Weekly coffee stipend\nUNITED STATES\n- 100% medical, dental & vision insurance coverage for you, with partial coverage for dependents\n- One Medical annual membership\n- 401(k), including employer match on contributions made while employed by Ramp\n- Fertility HRA (up to $10,000 per year)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay\n- Pet insurance\n- In-office perks: lunch, snacks, drinks, and more\n- Relocation expense coverage to NYC or SF (if needed)\nCANADA\n- Group medical, dental, and vision coverage through Sun Life\n- Life, AD&D, and disability coverage\n- Fertility drug coverage (up to $4,000 lifetime)\n- Group Retirement Plan with employer match (RRSP + DPSP)\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay, with additional time available at reduced pay\n- Employee Assistance Program and virtual care through Lumino Health\nUNITED KINGDOM\n- Private medical insurance through Freedom Elite\n- Virtual GP and at-home care via eMed x Livi\n- Workplace pension through Penfold, with salary sacrifice option\n- Parental leave: up to 16 weeks (birthing + bonding) or 8 weeks (bonding only) at 100% pay with additional time available at reduced pay\nREFERRAL INSTRUCTIONS\nIf you are being referred for the role, please contact that person to apply on your behalf.\nOTHER NOTICES\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nBeware of recruiting scams: Ramp will only contact you through official @Ramp.com http://Ramp.com email addresses and will never ask for payment or sensitive personal information during the hiring process.\nRamp",
-    "language": "en",
-    "source_page": "Ashby (ramp)",
-    "source_url": "https://jobs.ashbyhq.com/ramp/95f450a1-0d38-4d58-9aac-9d7e655adc36",
-    "application_method": "Postulación web en: https://jobs.ashbyhq.com/ramp/95f450a1-0d38-4d58-9aac-9d7e655adc36/application",
-    "status": "ranked",
-    "score": 35,
-    "justification": "La vacante requiere un mínimo de 4 años de experiencia construyendo software y al menos 2 años enfocados en platform, privacy y/o seguridad. El perfil del candidato es de nivel junior / entry level (0 años de experiencia profesional formal), lo cual constituye una barrera explícita según la política de ranking (requiere 2+ años profesionales obligatorios, limitando el puntaje a <= 39). A pesar de que se listan tecnologías afines como Python y React en nice-to-haves, la exigencia de experiencia profesional en seguridad/privacidad excede significativamente el nivel actual del candidato.",
-    "strengths": [
-      "El candidato cuenta con proyectos académicos y personales utilizando Python y desarrollo backend, tecnologías mencionadas en los nice-to-haves del puesto.",
-      "El candidato es estudiante avanzado de Ciencias de la Computación, alineándose con la formación técnica valorada."
-    ],
-    "gaps": [
-      "The posting explicitly requires a minimum of 4 years of experience building software.",
-      "The posting explicitly requires a minimum of 2 years of experience focused on platform, privacy, and/or security."
-    ],
-    "ranked_at": "2026-08-15T09:31:23.503157",
-    "user_notes": null
-  },
-  {
-    "id": "chainlink_software_engineer_i_ccip",
-    "title": "Software Engineer I, CCIP",
-    "company": "Chainlink Labs",
-    "location": "Argentina",
-    "work_mode": "Remote",
-    "department": "Engineering",
-    "seniority": "Junior",
-    "raw_text": "Chainlink Labs\nSoftware Engineer I, CCIP\nLocation\nCharlotte; Argentina; Belgium; Brazil; Canada; Colombia; Greece; Ireland; Las Vegas; Mexico; Netherlands; Phoenix; Poland; Portugal; Spain; Tampa; United Kingdom\nEmployment Type\nFull time\nLocation Type\nRemote\nDepartment\nEngineering\nOverview\nAbout Chainlink\nChainlink is the industry-standard oracle platform bringing the capital markets onchain and powering the majority of decentralized finance (DeFi).\nAbout The Role\nThe CCIP Protocol team is hiring a Software Engineer to design and maintain the services that coordinate fast, fault-tolerant cross-chain transactions under adversarial conditions.\nRequirements\nDemonstrated backend engineering experience using Go, Rust, or TypeScript.\nExperience delivering software within crypto projects or remote-first engineering organizations.\nProven ability to design distributed systems with security and reliability as foundational engineering principles.\nBuilt or maintained backend systems that operate in production with a focus on resiliency and operational excellence.\nPreferred Requirements\nDemonstrated knowledge of DeFi protocols and the broader decentralized application ecosystem.\nExperience deploying or operating services using cloud infrastructure and tooling such as containerized workloads and public cloud platforms.\nApply for this Job: https://jobs.ashbyhq.com/chainlink-labs/8485e325-111f-4370-b3c6-0ed95872144f",
-    "score": 45,
-    "justification": "The role is an entry-level 'Software Engineer I' position and is remote in Argentina, which matches the candidate's geographic preference and seniority level. However, the posting requires production-grade backend experience in distributed systems, crypto projects, and Go/Rust/TypeScript, which exceeds the candidate's current academic and project-based background (0 professional YOE). Therefore, it is evaluated as a Weak/Possible Fit with a score of 45.",
-    "strengths": [
-      "The role is explicitly junior ('Software Engineer I'), matching the candidate's target seniority.",
-      "The location is Remote in Argentina, matching the candidate's geographic requirements.",
-      "The posting accepts TypeScript, aligning with the candidate's project experience in Node.js/TypeScript."
-    ],
-    "gaps": [
-      "The posting requires backend engineering experience using Go, Rust, or TypeScript (candidate has Node.js/TypeScript project experience, but no professional Go/Rust or advanced TypeScript backend production experience).",
-      "The posting requires production-grade experience designing and maintaining distributed systems under adversarial conditions.",
-      "The posting requests experience delivering software within crypto projects or remote-first engineering organizations."
-    ],
-    "status": "ranked",
-    "ranked_at": "2026-08-15T09:38:40.744313"
   }
 ]

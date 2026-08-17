@@ -173,6 +173,12 @@ def evaluate_ranking_chunk_with_adk(chunk: List[Dict[str, Any]]) -> str:
     Invokes job_ranker_agent via Google ADK InMemoryRunner to evaluate a batch chunk
     of jobs against candidate_profile.md.
     """
+    from src.subagents.job_pipeline.config import load_pipeline_config
+
+    cfg = load_pipeline_config()
+    lang = cfg.get("language") or "es"
+    lang_name = "Español" if lang == "es" else "English"
+
     runner = InMemoryRunner(agent=job_ranker_agent)
     session = runner.session_service.create_session_sync(
         user_id="jobbud_user", app_name=runner.app_name
@@ -180,7 +186,10 @@ def evaluate_ranking_chunk_with_adk(chunk: List[Dict[str, Any]]) -> str:
 
     prompt = (
         f"Evalúa la compatibilidad (fit) de las siguientes vacantes (lote) contra candidate_profile.md (usa read_candidate_profile) "
-        f"y guarda los resultados en jobs.json usando save_ranked_jobs_batch:\n\n"
+        f"y guarda los resultados en jobs.json usando save_ranked_jobs_batch.\n"
+        f"REGLA DE IDIOMA OBLIGATORIA: Redacta la justificación ('justification'), fortalezas ('strengths'), debilidades ('gaps') "
+        f"y tu respuesta textual en el idioma configurado: '{lang}' ({lang_name}). Preserva los términos técnicos y nombres propios intactos.\n"
+        f"CONTRATO ESTRICTO DE ESQUEMA: 'strengths' y 'gaps' DEBEN ser listas planas de strings simples (ej: 'strengths': ['punto 1', 'punto 2']). JAMÁS uses listas de diccionarios/objetos como [{{'text': '...'}}].\n\n"
         f"{json.dumps(chunk, ensure_ascii=False, indent=2)}"
     )
     message = types.Content(role="user", parts=[types.Part.from_text(text=prompt)])
