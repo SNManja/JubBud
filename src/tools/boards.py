@@ -71,7 +71,13 @@ def add_board_url(name: str, url: str, notes: Optional[str] = None) -> str:
     if not clean_url or not clean_name:
         return "Error: Both board name and URL are required."
 
-    source_type = "greenhouse" if "greenhouse" in clean_url.lower() else ("ashby" if "ashby" in clean_url.lower() else "web")
+    source_type = (
+        "greenhouse" if "greenhouse" in clean_url.lower()
+        else ("ashby" if "ashby" in clean_url.lower()
+        else ("lever" if "lever" in clean_url.lower()
+        else ("exactas" if "exactas" in clean_url.lower()
+        else "web")))
+    )
     board_id = f"board_{re.sub(r'[^a-zA-Z0-9_]', '', clean_name.lower())}"
 
     boards = _load_board_urls()
@@ -214,6 +220,14 @@ def get_board_to_analyze(identifier: str) -> str:
     elif stype == "ashby" or "ashby" in url.lower():
         from src.fetchers import fetch_ashby_job_content
         fetch_res = fetch_ashby_job_content(url)
+        return f"🔍 **Analizando Tablero '{selected_board.get('name')}'** (Último análisis actualizado a {now_str[:16].replace('T', ' ')}):\n\n{fetch_res}"
+    elif stype == "lever" or "lever" in url.lower():
+        from src.fetchers import fetch_lever_job_content
+        fetch_res = fetch_lever_job_content(url)
+        return f"🔍 **Analizando Tablero '{selected_board.get('name')}'** (Último análisis actualizado a {now_str[:16].replace('T', ' ')}):\n\n{fetch_res}"
+    elif stype == "exactas" or "exactas" in url.lower():
+        from src.fetchers import fetch_exactas_job_board
+        fetch_res = fetch_exactas_job_board(url)
         return f"🔍 **Analizando Tablero '{selected_board.get('name')}'** (Último análisis actualizado a {now_str[:16].replace('T', ' ')}):\n\n{fetch_res}"
     else:
         return f"Board URL resolved: {url}. Please analyze position details."

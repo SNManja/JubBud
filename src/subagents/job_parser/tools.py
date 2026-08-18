@@ -57,6 +57,11 @@ def _generate_stable_job_id(
         if ashby_match:
             return f"ashby_{ashby_match.group(1).lower()}_{ashby_match.group(2).lower()}"
 
+        # 5. Lever from URL
+        lever_match = re.search(r'(?:jobs\.lever\.co|api\.lever\.co/v0/postings)/([a-zA-Z0-9_\-]+)/([a-f0-9\-]{36}|[a-zA-Z0-9_\-]+)', s_url, re.IGNORECASE)
+        if lever_match:
+            return f"lever_{lever_match.group(1).lower()}_{lever_match.group(2).lower()}"
+
     # Exactas match in title or summary text
     exactas_match = re.search(r'Oferta\s*#?\s*(\d+[\/\-_]\d+)', text_to_search, re.IGNORECASE)
     if exactas_match:
@@ -125,6 +130,16 @@ def _extract_application_method(
         if len(parts) >= 2:
             num_p = f"{parts[1]}/{parts[2]}" if len(parts) >= 3 else parts[1]
             return f"Postulación web en: https://empleos.exactas.uba.ar/oferta/{num_p}"
+    elif "ashby_" in clean_jid:
+        parts = clean_jid.split("_")
+        if len(parts) >= 3:
+            comp_tok, j_uuid = parts[1], parts[2]
+            return f"Postulación web en: https://jobs.ashbyhq.com/{comp_tok}/{j_uuid}"
+    elif "lever_" in clean_jid:
+        parts = clean_jid.split("_")
+        if len(parts) >= 3:
+            comp_tok, j_uuid = parts[1], parts[2]
+            return f"Postulación web en: https://jobs.lever.co/{comp_tok}/{j_uuid}"
 
     if clean_comp and clean_comp not in ("not specified", "unknown", "none", "null", ""):
         try:

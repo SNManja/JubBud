@@ -22,6 +22,7 @@ JobBud operates as a **modular orchestration system with unified fetcher ingesti
        │ 1. Unified Ingestion Layer (`src/fetchers/`)                │
        │ - greenhouse.py: API -> List[JobDict] (0 LLM tokens)        │
        │ - ashby.py: API -> List[JobDict] (0 LLM tokens)             │
+       │ - lever.py: API -> List[JobDict] (0 LLM tokens)             │
        │ - exactas.py: Scrapes UBA -> calls job_parser_agent         │
        │ - linkedin.py: Fetches HTML -> calls job_parser_agent       │
        │ - manual.py: Ingests raw text -> calls job_parser_agent     │
@@ -79,13 +80,14 @@ JobBud operates as a **modular orchestration system with unified fetcher ingesti
 
 - **`jobbud_agent` (Master Conversational Orchestrator)**:
   - Manages conversation, user intent, workflow execution, status changes, and final output formatting.
-  - Interacts **exclusively through its 20 tools (`HERRAMIENTAS_BASICAS`)** with 0 direct subagents in `sub_agents`.
+  - Interacts **exclusively through its 23 tools (`HERRAMIENTAS_BASICAS`)** with 0 direct subagents in `sub_agents`.
   - **Modo Ejecución Automática de Pipeline**: Al consultar un tablero de empleo o vacante, ejecuta `execute_job_pipeline_tool` o `execute_multi_board_pipeline_tool` para procesar el filtrado determinista y el rankeo en lotes de forma automática.
 
 - **Unified Ingestion Layer (`src/fetchers/`)**:
   - Encapsulates portal-specific scraping and API fetching into dedicated single-responsibility modules:
     - [greenhouse.py](file:///home/santi/jobbud/src/fetchers/greenhouse.py): Direct mapping to `List[JobDict]` (0 tokens LLM).
     - [ashby.py](file:///home/santi/jobbud/src/fetchers/ashby.py): Direct mapping to `List[JobDict]` via Ashby Public API (0 tokens LLM).
+    - [lever.py](file:///home/santi/jobbud/src/fetchers/lever.py): Direct mapping to `List[JobDict]` via Lever Public API (0 tokens LLM).
     - [exactas.py](file:///home/santi/jobbud/src/fetchers/exactas.py): Scrapes FCEyN UBA and invokes `job_parser_agent`.
     - [linkedin.py](file:///home/santi/jobbud/src/fetchers/linkedin.py): Fetches LinkedIn HTML and invokes `job_parser_agent`.
     - [manual.py](file:///home/santi/jobbud/src/fetchers/manual.py): Normalizes user chat input via `job_parser_agent`.
@@ -182,6 +184,7 @@ To guarantee data integrity and eliminate duplicate job entries across sessions,
 * **Exactas UBA**: `exactas_{num_part}` (e.g. `Oferta #86/26` → `exactas_86_26`). Extraído de metadatos o URLs tipo `/oferta/86-26`.
 * **LinkedIn**: `linkedin_{numeric_id}` (extraído de metadatos o URLs tipo `view/4445031526`).
 * **Ashby**: `ashby_{company}_{job_id}` (extraído de metadatos o URLs tipo `ashbyhq.com/company/id`).
+* **Lever**: `lever_{company}_{job_id}` (extraído de metadatos o URLs tipo `jobs.lever.co/company/id` o API `api.lever.co/v0/postings/company/id`).
 * **Manual / Un-ID'd Text Fallback**: `manual_{md5(company:title)[:8]}` (e.g. `manual_bebce99c`). Si un aviso carece de ID al pasar por el ranker, se le asigna automáticamente un ID determinista según su URL o hash MD5.
 
 ### 2. 3-Level Deduplication Architecture
@@ -200,7 +203,7 @@ To ensure every job has actionable application instructions, `_extract_applicati
 1. **Direct Email in Text**: Detects contact email in body text $\rightarrow$ `Enviar CV por correo a...`.
 2. **Explicit `source_url`**: Uses stored `source_url` $\rightarrow$ `Postulación web en: {source_url}`.
 3. **HTTP/HTTPS URL in Body Text**: Scans raw description text for URLs $\rightarrow$ `Postulación web en: {url}`.
-4. **Canonical URL Reconstruction**: Reconstructs direct web application links from Greenhouse (`job-boards.greenhouse.io`), LinkedIn (`linkedin.com/jobs/view`), Exactas, or registered portal URLs in `profile/board_urls.json`.
+4. **Canonical URL Reconstruction**: Reconstructs direct web application links from Greenhouse (`job-boards.greenhouse.io`), LinkedIn (`linkedin.com/jobs/view`), Ashby (`jobs.ashbyhq.com`), Lever (`jobs.lever.co`), Exactas, or registered portal URLs in `profile/board_urls.json`.
 
 ---
 

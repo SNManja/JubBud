@@ -18,6 +18,7 @@ from src.fetchers.greenhouse import (
 from src.fetchers.exactas import fetch_exactas_jobs, fetch_exactas_job_board
 from src.fetchers.linkedin import fetch_linkedin_job, fetch_linkedin_job_content
 from src.fetchers.ashby import fetch_ashby_jobs, fetch_ashby_job_content, parse_ashby_url
+from src.fetchers.lever import fetch_lever_jobs, fetch_lever_job_content, parse_lever_url
 from src.fetchers.manual import ingest_manual_job
 
 __all__ = [
@@ -29,6 +30,9 @@ __all__ = [
     "fetch_ashby_jobs",
     "fetch_ashby_job_content",
     "parse_ashby_url",
+    "fetch_lever_jobs",
+    "fetch_lever_job_content",
+    "parse_lever_url",
     "fetch_exactas_jobs",
     "fetch_exactas_job_board",
     "fetch_linkedin_job",

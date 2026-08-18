@@ -8,6 +8,7 @@ from src.fetchers.exactas import fetch_exactas_job_board
 from src.fetchers.linkedin import fetch_linkedin_job_content
 from src.fetchers.greenhouse import fetch_greenhouse_job_content
 from src.fetchers.ashby import fetch_ashby_job_content
+from src.fetchers.lever import fetch_lever_job_content
 from src.tools.queries import (
     check_existing_job,
     get_job_raw_text,
@@ -52,6 +53,7 @@ HERRAMIENTAS_BASICAS = [
     fetch_exactas_job_board,
     fetch_greenhouse_job_content,
     fetch_ashby_job_content,
+    fetch_lever_job_content,
     add_board_url,
     list_job_boards,
     get_board_to_analyze,
